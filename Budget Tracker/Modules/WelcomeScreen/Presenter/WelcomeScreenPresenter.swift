@@ -17,7 +17,16 @@ class WelcomeScreenPresenter:
     var router: WelcomeScreenRouterInput!
     var interactor: WelcomeScreenInteractorInput!
     
+    
     // MARK: - WelcomeScreenViewOutput
+    
+    func logInButtonClicked() {
+       router.showLogInScreen()
+    }
+    
+    func signUpButtonClicked() {
+       router.showSignUpScreen()
+    }
     
     // MARK: - WelcomeScreenInteractorOutput
     

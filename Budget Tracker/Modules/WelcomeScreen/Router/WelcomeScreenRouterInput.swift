@@ -10,4 +10,9 @@ import Foundation
 
 protocol WelcomeScreenRouterInput: AnyObject {
     
+    /// Shows log in screen
+    func showLogInScreen()
+    
+    /// Shows sign up screen
+    func showSignUpScreen()
 }
