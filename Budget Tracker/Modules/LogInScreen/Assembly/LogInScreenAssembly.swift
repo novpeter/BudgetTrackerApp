@@ -25,6 +25,7 @@ class LogInScreenAssembly: LogInScreenFactoryProtocol {
         let presenter = LogInScreenPresenter()
         let router = LogInScreenRouter()
         let interactor = LogInScreenInteractor()
+        let authService = AuthorizationService()
         
         view.presenter = presenter
         
@@ -33,5 +34,9 @@ class LogInScreenAssembly: LogInScreenFactoryProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
+        interactor.authorizationService = authService
+        
+        router.presenter = presenter
+        router.mainAssembly = MainScreenAssembly()
     }
 }

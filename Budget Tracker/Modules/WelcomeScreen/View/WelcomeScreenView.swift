@@ -131,8 +131,8 @@ class WelcomeScreenView: UIView {
         })
         
         buttonsStackView.snp.makeConstraints { (make) in
-            make.left.equalTo(self).offset(64)
-            make.right.equalTo(self).offset(-64)
+            make.left.equalTo(self).offset(48)
+            make.right.equalTo(self).offset(-48)
             make.bottom.equalTo(self).offset(-120)
         }
         

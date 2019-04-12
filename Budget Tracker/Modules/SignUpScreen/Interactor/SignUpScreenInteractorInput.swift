@@ -10,4 +10,12 @@ import Foundation
 
 protocol SignUpScreenInteractorInput: AnyObject {
     
+    /// Sign's up new user
+    ///
+    /// - Parameters:
+    ///   - name: user name
+    ///   - email: user email
+    ///   - password: password
+    ///   - confirmedPassword: confirmed password
+    func signUp(name: String?, email: String?, password: String?, confirmedPassword: String?)
 }

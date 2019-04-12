@@ -13,9 +13,13 @@ class WelcomeScreenViewController: UIViewController {
     var presenter: WelcomeScreenViewOutput!
     
     override func loadView() {
+        super.loadView()
+        
         let view = WelcomeScreenView(frame: UIScreen.main.bounds)
+        
         view.logInButton.addTarget(self, action: #selector(logInButtonClicked), for: .touchUpInside)
         view.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
+        
         self.view = view
     }
     

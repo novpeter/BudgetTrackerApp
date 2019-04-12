@@ -33,5 +33,8 @@ class SignUpScreenAssembly: SignUpScreenFactoryProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
+        
+        router.presenter = presenter
+        router.mainAssembly = MainScreenAssembly()
     }
 }

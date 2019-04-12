@@ -10,4 +10,12 @@ import Foundation
 
 protocol SignUpScreenViewOutput: AnyObject {
     
+    /// Handle sign up button click. Gets all text from fields
+    ///
+    /// - Parameters:
+    ///   - name: user name
+    ///   - email: user email
+    ///   - password: password
+    ///   - confirmedPassword: confirmed password
+    func signUpButtonClicked(name: String?, email: String?, password: String?, confirmedPassword: String?)
 }

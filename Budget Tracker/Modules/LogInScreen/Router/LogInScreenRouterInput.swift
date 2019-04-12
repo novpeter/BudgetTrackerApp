@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import SCLAlertView
 
 protocol LogInScreenRouterInput: AnyObject {
     
+    /// Shows alert with given title and description
+    ///
+    /// - Parameters:
+    ///   - title: title
+    ///   - description: description
+    ///   - type: alert type
+    func showAlert(title: String, description: String, type: SCLAlertViewStyle)
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SCLAlertView
 
 class SignUpScreenPresenter:
     SignUpScreenViewOutput,
@@ -17,9 +18,18 @@ class SignUpScreenPresenter:
     var router: SignUpScreenRouterInput!
     var interactor: SignUpScreenInteractorInput!
     
+   
+    func signUpButtonClicked(name: String?, email: String?, password: String?, confirmedPassword: String?) {
+        interactor.signUp(name: name, email: email, password: password, confirmedPassword: confirmedPassword)
+    }
+    
     // MARK: - SignUpScreenViewOutput
     
     // MARK: - SignUpScreenInteractorOutput
+    
+    func showAlert(title: String, description: String, alertType: SCLAlertViewStyle) {
+        router.showAlert(title: title, description: description, type: alertType)
+    }
     
     // MARK: - SignUpScreenRouterOutput
 }

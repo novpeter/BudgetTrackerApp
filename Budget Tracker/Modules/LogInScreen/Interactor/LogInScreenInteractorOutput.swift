@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import SCLAlertView
 
 protocol LogInScreenInteractorOutput: AnyObject {
     
+    /// Notifies presenter to call alert
+    ///
+    /// - Parameters:
+    ///   - title: alert title
+    ///   - description: alert description
+    ///   - alertType: alert type
+    func showAlert(title: String, description: String, alertType: SCLAlertViewStyle)
 }
