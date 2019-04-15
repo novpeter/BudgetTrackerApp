@@ -40,5 +40,9 @@ class LogInScreenPresenter:
         router.showAlert(title: title, description: description, type: alertType)
     }
     
+    func showMainScreen() {
+        router.showMainScreen()
+    }
+    
     // MARK: - LogInScreenRouterOutput
 }

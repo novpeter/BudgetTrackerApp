@@ -16,6 +16,7 @@ class LogInScreenRouter: LogInScreenRouterInput {
     var presenter: LogInScreenRouterOutput!
     
     func showAlert(title: String, description: String, type: SCLAlertViewStyle) {
+        
         switch type {
         case .error:
             SCLAlertView().showError(title, subTitle: description)
@@ -26,5 +27,13 @@ class LogInScreenRouter: LogInScreenRouterInput {
         default:
             break
         }
+    }
+    
+    func showMainScreen() {
+        let mainScreenViewController = mainAssembly.getViewController()
+        let navigationController = UINavigationController(rootViewController: mainScreenViewController)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = navigationController
+        appDelegate.window?.makeKey()
     }
 }

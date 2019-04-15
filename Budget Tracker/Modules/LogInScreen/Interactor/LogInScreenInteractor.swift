@@ -16,7 +16,7 @@ class LogInScreenInteractor: LogInScreenInteractorInput {
     
     
     func logIn(email: String?, password: String?) {
-        guard let email = email, let password = password else { return }
+        guard let email = email?.lowercased(), let password = password else { return }
         
         if !email.regex(mask: Regex.Email) {
             presenter.showAlert(title: AlertTitles.WrongEmail, description: "", alertType: .error)
@@ -29,10 +29,15 @@ class LogInScreenInteractor: LogInScreenInteractorInput {
         }
         
         // запрос серверу на вход
+        
+        presenter.showMainScreen()
     }
     
     func googleLogIn(accountId: String, token: String, email: String, fullName: String) {
         
+        // запрос серверу на вход через гугл аккаунт
+        
+        presenter.showMainScreen()
     }
     
     func forgotPassword(email: String?) {

@@ -26,4 +26,12 @@ class SignUpScreenRouter: SignUpScreenRouterInput {
             break
         }
     }
+    
+    func showMainScreen() {
+        let mainScreenViewController = mainAssembly.getViewController()
+        let navigationController = UINavigationController(rootViewController: mainScreenViewController)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = navigationController
+        appDelegate.window?.makeKey()
+    }
 }

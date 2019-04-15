@@ -18,4 +18,7 @@ protocol LogInScreenInteractorOutput: AnyObject {
     ///   - description: alert description
     ///   - alertType: alert type
     func showAlert(title: String, description: String, alertType: SCLAlertViewStyle)
+    
+    /// Calls router to show main screen
+    func showMainScreen()
 }

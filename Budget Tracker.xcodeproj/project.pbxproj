@@ -82,7 +82,6 @@
 		4B4D1FB422608DBA0013D0E6 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1FA822608DBA0013D0E6 /* MainScreenRouter.swift */; };
 		4B4D1FB62260A88E0013D0E6 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D1FB52260A88E0013D0E6 /* credentials.plist */; };
 		4B4D1FB92260DEE70013D0E6 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1FB82260DEE70013D0E6 /* AuthorizationService.swift */; };
-		4B4D1FBB2260DF9A0013D0E6 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1FBA2260DF9A0013D0E6 /* Enums.swift */; };
 		4B5B09CB225BC06C00A10365 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B09CA225BC06C00A10365 /* ColorConstants.swift */; };
 		4B5B09CD225BC07700A10365 /* FontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B09CC225BC07700A10365 /* FontConstants.swift */; };
 		4BA060A7225E827F0024E6FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA060A6225E827F0024E6FE /* Extensions.swift */; };
@@ -173,7 +172,6 @@
 		4B4D1FA822608DBA0013D0E6 /* MainScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
 		4B4D1FB52260A88E0013D0E6 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		4B4D1FB82260DEE70013D0E6 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
-		4B4D1FBA2260DF9A0013D0E6 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		4B5B09CA225BC06C00A10365 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		4B5B09CC225BC07700A10365 /* FontConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConstants.swift; sourceTree = "<group>"; };
 		4BA060A6225E827F0024E6FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -215,8 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				4B47790C225E6D74000E673B /* Assembly */,
-				4B47790F225E6D74000E673B /* Presenter */,
 				4B477911225E6D74000E673B /* View */,
+				4B47790F225E6D74000E673B /* Presenter */,
 				4B477915225E6D74000E673B /* Interactor */,
 				4B477919225E6D74000E673B /* Router */,
 			);
@@ -474,7 +472,6 @@
 				4B5B09CC225BC07700A10365 /* FontConstants.swift */,
 				4BABA0DA225D375700CA1E08 /* TextConstants.swift */,
 				4BA060A6225E827F0024E6FE /* Extensions.swift */,
-				4B4D1FBA2260DF9A0013D0E6 /* Enums.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -774,7 +771,6 @@
 				4B4A1F43225CFD43005D1819 /* WelcomeScreenRouter.swift in Sources */,
 				4B47791F225E6D74000E673B /* LogInScreenPresenter.swift in Sources */,
 				4B4D1FB122608DBA0013D0E6 /* MainScreenInteractor.swift in Sources */,
-				4B4D1FBB2260DF9A0013D0E6 /* Enums.swift in Sources */,
 				4BABA0DD225D3A6700CA1E08 /* WelcomeScreenView.swift in Sources */,
 				4B477943225E6DC6000E673B /* SignUpScreenInteractorInput.swift in Sources */,
 				4B477942225E6DC6000E673B /* SignUpScreenViewInput.swift in Sources */,

@@ -14,7 +14,7 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
     
     
     func signUp(name: String?, email: String?, password: String?, confirmedPassword: String?) {
-        guard let name = name, let email = email, let password = password, let confirmedPassword = confirmedPassword
+        guard let name = name, let email = email?.lowercased(), let password = password, let confirmedPassword = confirmedPassword
             else { return }
         
         if name.count < 3 {
@@ -38,5 +38,7 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
         }
         
         // запрос серверу на регистрацию и получение токена
+        
+        presenter.showMainScreen()
     }
 }

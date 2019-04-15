@@ -18,4 +18,7 @@ protocol SignUpScreenRouterInput: AnyObject {
     ///   - description: description
     ///   - type: alert type
     func showAlert(title: String, description: String, type: SCLAlertViewStyle)
+    
+    /// Shows main screen
+    func showMainScreen()
 }

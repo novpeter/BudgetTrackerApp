@@ -52,3 +52,7 @@ struct AlertTitles {
     static let Done = "Done!"
     static let PasswordWasSent = "The password was sent on "
 }
+
+struct URLConstants {
+    static let baseURLString = "https://budget-tracker-web-server.azurewebsites.net/api"
+}
