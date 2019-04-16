@@ -12,7 +12,6 @@ class MainScreenViewController: UIViewController {
     
     var presenter: MainScreenViewOutput!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

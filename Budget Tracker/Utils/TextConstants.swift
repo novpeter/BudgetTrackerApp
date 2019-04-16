@@ -44,6 +44,8 @@ struct Regex {
 }
 
 struct AlertTitles {
+    static let GenericError = "Something went wrong"
+    static let CheckAllFields = "Check all fields"
     static let WrongName = "Wrong name"
     static let WrongEmail = "Wrong email"
     static let WrongPassword = "Wrong password"

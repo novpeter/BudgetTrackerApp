@@ -15,7 +15,10 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
     
     func signUp(name: String?, email: String?, password: String?, confirmedPassword: String?) {
         guard let name = name, let email = email?.lowercased(), let password = password, let confirmedPassword = confirmedPassword
-            else { return }
+        else {
+            presenter.showAlert(title: AlertTitles.GenericError, description: AlertTitles.CheckAllFields, alertType: .error)
+            return
+        }
         
         if name.count < 3 {
             presenter.showAlert(title: AlertTitles.WrongName, description: "", alertType: .error)

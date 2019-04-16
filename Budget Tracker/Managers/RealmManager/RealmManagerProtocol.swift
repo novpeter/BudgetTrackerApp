@@ -10,9 +10,7 @@ import Foundation
 import RealmSwift
 
 protocol RealmManagerProtocol {
-    
-    var mainRealm: Realm { get set }
-    
+        
     /// Return objects by given type
     ///
     /// - Parameter type: type of objects

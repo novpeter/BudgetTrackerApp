@@ -13,22 +13,25 @@ class LogInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     
     var presenter: LogInScreenViewOutput!
     
+    lazy var contentView = LogInScreenView()
+    
     override func loadView() {
         super.loadView()
-        
-        let view = LogInScreenView()
         
         let googleCredentials = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "credentials", ofType: "plist")!)
         
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().clientID = googleCredentials!["CLIENT_ID"] as? String
-        
-        view.logInButton.addTarget(self, action: #selector(logInButtonClicked), for: .touchUpInside)
-        view.googleLogInButton.addTarget(self, action: #selector(googleLogInButtonClicked), for: .touchUpInside)
-        view.forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonClicked), for: .touchUpInside)
-        
-        self.view = view
+
+        view = contentView
+        addTargets()
+    }
+    
+    private func addTargets() {
+        contentView.logInButton.addTarget(self, action: #selector(logInButtonClicked), for: .touchUpInside)
+        contentView.googleLogInButton.addTarget(self, action: #selector(googleLogInButtonClicked), for: .touchUpInside)
+        contentView.forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonClicked), for: .touchUpInside)
     }
     
     override func viewDidLoad() {
@@ -46,10 +49,8 @@ class LogInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     @objc private func logInButtonClicked(sender: UIButton) {
         sender.pulsate()
         
-        guard let view = self.view as? LogInScreenView else { return }
-        let email = view.emailTextField.text
-        let password = view.passwordTextField.text
-
+        let email = contentView.emailTextField.text
+        let password = contentView.passwordTextField.text
         presenter.logInButtonClicked(email: email, password: password)
     }
     
@@ -57,9 +58,7 @@ class LogInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     @objc private func forgotPasswordButtonClicked(sender: UIButton) {
         sender.pulsate()
         
-        guard let view = self.view as? LogInScreenView else { return }
-        let email = view.emailTextField.text
-        
+        let email = contentView.emailTextField.text
         presenter.forgotPasswordButtonClicked(email: email)
     }
     

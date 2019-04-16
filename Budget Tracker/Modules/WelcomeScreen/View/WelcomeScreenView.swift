@@ -14,43 +14,33 @@ class WelcomeScreenView: UIView {
     // MARK: - Components
     
     lazy var topLabel: UILabel = {
-        
         let label: UILabel = UILabel()
         label.textAlignment = .left
         label.text = Titles.AppNameTopPart
         label.font = Fonts.PoppinsBold48
         label.textColor = Colors.TextColors.Black
-        
         return label
     }()
     
     lazy var bottomLabel: UILabel = {
-        
         let label: UILabel = UILabel()
-        
         label.textAlignment = .right
         label.text = Titles.AppNameBottomPart
         label.font = Fonts.PoppinsBold48
         label.textColor = Colors.TextColors.Black
-        
         return label
     }()
     
     lazy var labelsStackView: UIStackView = {
-        
         let stackView: UIStackView = UIStackView(arrangedSubviews: [topLabel, bottomLabel])
-        
         stackView.axis = .vertical
         stackView.spacing = 1
         stackView.distribution = .fillEqually
-        
         return stackView
     }()
     
     lazy var logInButton: UIButton = {
-        
         let button = UIButton()
-        
         button.layer.cornerRadius = 15.0
         button.layer.borderWidth = 0.15
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
@@ -62,14 +52,11 @@ class WelcomeScreenView: UIView {
         button.setTitleColor(Colors.TextColors.White, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
         button.backgroundColor = Colors.ButtonColors.Blue
-        
         return button
     }()
     
     lazy var signUpButton: UIButton = {
-        
         let button = UIButton()
-        
         button.layer.cornerRadius = 15.0
         button.layer.borderWidth = 0.15
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
@@ -81,18 +68,14 @@ class WelcomeScreenView: UIView {
         button.setTitleColor(Colors.TextColors.Grey, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
         button.backgroundColor = Colors.ButtonColors.White
-        
         return button
     }()
     
     lazy var buttonsStackView: UIStackView = {
-        
         let stackView = UIStackView(arrangedSubviews: [signUpButton, logInButton])
-        
         stackView.axis = .vertical
         stackView.spacing = 20
         stackView.distribution = .fillEqually
-        
         return stackView
     }()
     

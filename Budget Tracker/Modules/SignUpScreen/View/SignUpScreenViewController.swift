@@ -12,13 +12,17 @@ class SignUpScreenViewController: UIViewController {
     
     var presenter: SignUpScreenViewOutput!
     
+    lazy var contentView = SignUpScreenView()
+    
     override func loadView() {
         super.loadView()
         
-        let view = SignUpScreenView()
-        view.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
-        
-        self.view = view
+        view = contentView
+        addTargets()
+    }
+    
+    private func addTargets() {
+        contentView.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
     }
     
     override func viewDidLoad() {
@@ -34,12 +38,10 @@ class SignUpScreenViewController: UIViewController {
     @objc func signUpButtonClicked(sender: UIButton) {
         sender.pulsate()
         
-        guard let view = self.view as? SignUpScreenView else { return }
-        
-        let name = view.nameTextField.text
-        let email = view.emailTextField.text
-        let password = view.passwordTextField.text
-        let confirmedPassword = view.confirmPasswordTextField.text
+        let name = contentView.nameTextField.text
+        let email = contentView.emailTextField.text
+        let password = contentView.passwordTextField.text
+        let confirmedPassword = contentView.confirmPasswordTextField.text
         
         presenter.signUpButtonClicked(name: name, email: email, password: password, confirmedPassword: confirmedPassword)
     }
