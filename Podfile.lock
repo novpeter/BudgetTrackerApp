@@ -1,26 +1,50 @@
 PODS:
+  - GoogleSignIn (4.4.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - GoogleToolboxForMac/Defines (2.2.0)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.0)
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
+  - GTMSessionFetcher/Core (1.2.1)
   - Realm (3.14.0):
     - Realm/Headers (= 3.14.0)
   - Realm/Headers (3.14.0)
   - RealmSwift (3.14.0):
     - Realm (= 3.14.0)
+  - SCLAlertView (0.8)
   - SnapKit (4.0.1)
 
 DEPENDENCIES:
+  - GoogleSignIn
   - RealmSwift
+  - SCLAlertView
   - SnapKit (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
     - Realm
     - RealmSwift
+    - SCLAlertView
     - SnapKit
 
 SPEC CHECKSUMS:
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
+  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
+  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
   RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: d4092e687cf241bbd2d020277a8d13af4bfd6965
+PODFILE CHECKSUM: 81e016292b0f987891ae78fb62755f58800d22c3
 
 COCOAPODS: 1.6.1

@@ -7,20 +7,30 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    let realmManager = RealmManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let viewController = WelcomeScreenViewController()
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: Fonts.PoppinsMedium16!]
+        UINavigationBar.appearance().tintColor = Colors.TextColors.Black
+        UINavigationBar.appearance().barTintColor = .white
+    
+        let viewController = WelcomeScreenAssembly().getViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.topItem?.title = " "
+        
         window?.rootViewController = navigationController
         
         return true
@@ -48,6 +58,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn
+            .sharedInstance()
+            .handle(url as URL?,
+                    sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                    annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+    }
 }
 

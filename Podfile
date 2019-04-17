@@ -8,5 +8,7 @@ target 'Budget Tracker' do
   # Pods for Budget Tracker
   pod 'SnapKit', '~> 4.0.0'
   pod 'RealmSwift'
+  pod 'GoogleSignIn'
+  pod 'SCLAlertView'
 
 end

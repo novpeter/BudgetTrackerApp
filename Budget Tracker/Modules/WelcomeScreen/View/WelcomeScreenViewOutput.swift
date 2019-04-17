@@ -10,4 +10,9 @@ import Foundation
 
 protocol WelcomeScreenViewOutput: AnyObject {
     
+    /// Log in button clicked
+    func logInButtonClicked()
+    
+    /// Sign up button clicked
+    func signUpButtonClicked()
 }
