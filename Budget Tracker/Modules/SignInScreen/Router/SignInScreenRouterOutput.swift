@@ -1,5 +1,5 @@
 //
-//  LogInScreenRouterOutput.swift
+//  SignInScreenRouterOutput.swift
 //  Budget Tracker
 //
 //  Created by Петр on 10/04/2019.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol LogInScreenRouterOutput: AnyObject {
+protocol SignInScreenRouterOutput: AnyObject {
     
 }

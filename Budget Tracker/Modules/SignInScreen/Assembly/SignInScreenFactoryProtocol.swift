@@ -1,5 +1,5 @@
 //
-//  LogInScreenViewInput.swift
+//  SignInScreenFactoryProtocol.swift
 //  Budget Tracker
 //
 //  Created by Петр on 10/04/2019.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol LogInScreenViewInput: AnyObject {
+protocol SignInScreenFactoryProtocol: AnyObject {
     
+    func getViewController() -> SignInScreenViewController
 }

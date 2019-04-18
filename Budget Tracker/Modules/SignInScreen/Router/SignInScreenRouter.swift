@@ -1,5 +1,5 @@
 //
-//  LogInScreenRouter.swift
+//  SignInScreenRouter.swift
 //  Budget Tracker
 //
 //  Created by Петр on 10/04/2019.
@@ -9,11 +9,11 @@
 import UIKit
 import SCLAlertView
 
-class LogInScreenRouter: LogInScreenRouterInput {
+class SignInScreenRouter: SignInScreenRouterInput {
     
     var mainAssembly: MainScreenFactoryProtocol!
-    var view: LogInScreenViewController!
-    var presenter: LogInScreenRouterOutput!
+    var view: SignInScreenViewController!
+    var presenter: SignInScreenRouterOutput!
     
     func showAlert(title: String, description: String, type: SCLAlertViewStyle) {
         

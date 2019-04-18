@@ -27,9 +27,9 @@ struct Placeholders {
 
 struct ButtonTitles {
     static let SignUp = "Sign up"
-    static let LogIn = "Log in"
+    static let SignIn = "Sign in"
     static let ForgotPassword = "Forgot password?"
-    static let GoogleLogIn = "via Google account"
+    static let GoogleSignIn = "via Google account"
     static let Add = "Add"
     static let Synchronize = "Synchronize"
     static let LogOut = "Log out"
@@ -56,5 +56,11 @@ struct AlertTitles {
 }
 
 struct URLConstants {
-    static let baseURLString = "https://budget-tracker-web-server.azurewebsites.net/api"
+//    static let baseURLString = "https://budget-tracker-web-server.azurewebsites.net/api"
+    static let baseURLString = "https://localhost:5001/api"
+}
+
+struct AuthType {
+    static let Regular = "Regular"
+    static let Google = "Goolgle"
 }

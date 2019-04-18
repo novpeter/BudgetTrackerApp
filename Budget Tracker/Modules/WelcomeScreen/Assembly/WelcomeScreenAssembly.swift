@@ -35,7 +35,7 @@ class WelcomeScreenAssembly: WelcomeScreenFactoryProtocol {
         interactor.presenter = presenter
         
         router.view = view
-        router.logInAssembly = LogInScreenAssembly()
+        router.signInAssembly = SignInScreenAssembly()
         router.signUpAssembly = SignUpScreenAssembly()
     }
 }

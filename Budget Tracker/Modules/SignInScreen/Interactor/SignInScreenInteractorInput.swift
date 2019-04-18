@@ -1,5 +1,5 @@
 //
-//  LogInScreenInteractorInput.swift
+//  SignInScreenInteractorInput.swift
 //  Budget Tracker
 //
 //  Created by Петр on 10/04/2019.
@@ -8,23 +8,23 @@
 
 import Foundation
 
-protocol LogInScreenInteractorInput: AnyObject {
+protocol SignInScreenInteractorInput: AnyObject {
  
-    /// Log's in
+    /// Sign's in
     ///
     /// - Parameters:
     ///   - email: user email
     ///   - password: password
-    func logIn(email: String?, password: String?)
+    func signIn(email: String?, password: String?)
     
-    /// Log's in via google account
+    /// Sign's in via google account
     ///
     /// - Parameters:
     ///   - accountId: account id
     ///   - token: token
     ///   - email: user email
     ///   - fullName: user full name
-    func googleLogIn(accountId: String, token: String, email: String, fullName: String)
+    func googleSignIn(accountId: String, token: String, email: String, fullName: String)
     
     /// Recovers password
     ///

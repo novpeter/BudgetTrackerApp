@@ -20,8 +20,8 @@ class WelcomeScreenPresenter:
     
     // MARK: - WelcomeScreenViewOutput
     
-    func logInButtonClicked() {
-       router.showLogInScreen()
+    func signInButtonClicked() {
+       router.showSignInScreen()
     }
     
     func signUpButtonClicked() {

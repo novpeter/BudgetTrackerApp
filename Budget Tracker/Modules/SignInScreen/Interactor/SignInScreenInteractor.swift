@@ -1,5 +1,5 @@
 //
-//  LogInScreenInteractor.swift
+//  SignInScreenInteractor.swift
 //  Budget Tracker
 //
 //  Created by Петр on 10/04/2019.
@@ -9,13 +9,12 @@
 import UIKit
 import SCLAlertView
 
-class LogInScreenInteractor: LogInScreenInteractorInput {
+class SignInScreenInteractor: SignInScreenInteractorInput {
     
-    var authorizationService: AuthorizationService!
-    var presenter: LogInScreenInteractorOutput!
+    var presenter: SignInScreenInteractorOutput!
     
     
-    func logIn(email: String?, password: String?) {
+    func signIn(email: String?, password: String?) {
         guard let email = email?.lowercased(), let password = password else { return }
         
         if !email.regex(mask: Regex.Email) {
@@ -28,12 +27,30 @@ class LogInScreenInteractor: LogInScreenInteractorInput {
             return
         }
         
-        // запрос серверу на вход
-        
+//        let user = SignInUser(fullName: nil, email: email, token: nil, password: password)
+//        let requestBody = SignInRequestBody(authType: AuthType.Regular, payload: user)
+//        
+//        NetworkManager.request(target: .signIn(body: requestBody), success: { (response) in
+//
+//            do
+//            {
+//                let response = try JSONDecoder().decode(AuthResponse.self, from: response.data)
+//                print("TOKEN: \(response.payload.sessionToken)")
+//            }
+//            catch {
+//
+//            }
+//
+//        }, error: { (error) in
+//            print(error.localizedDescription)
+//        }, failure: { (error) in
+//            print(error.localizedDescription)
+//        })
         presenter.showMainScreen()
+        
     }
     
-    func googleLogIn(accountId: String, token: String, email: String, fullName: String) {
+    func googleSignIn(accountId: String, token: String, email: String, fullName: String) {
         
         // запрос серверу на вход через гугл аккаунт
         

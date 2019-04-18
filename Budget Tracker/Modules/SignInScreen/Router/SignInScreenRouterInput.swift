@@ -1,15 +1,14 @@
 //
-//  LogInScreenRouterInput.swift
+//  SignInScreenRouterInput.swift
 //  Budget Tracker
 //
 //  Created by Петр on 10/04/2019.
 //  Copyright © 2019 DreamTeam. All rights reserved.
 //
 
-import Foundation
 import SCLAlertView
 
-protocol LogInScreenRouterInput: AnyObject {
+protocol SignInScreenRouterInput: AnyObject {
     
     /// Shows alert with given title and description
     ///

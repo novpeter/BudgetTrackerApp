@@ -12,12 +12,12 @@ class WelcomeScreenRouter: WelcomeScreenRouterInput {
     
     var view: WelcomeScreenViewController!
     var presenter: WelcomeScreenRouterOutput!
-    var logInAssembly: LogInScreenFactoryProtocol!
+    var signInAssembly: SignInScreenFactoryProtocol!
     var signUpAssembly: SignUpScreenFactoryProtocol!
     
-    func showLogInScreen() {
-        let logInViewController = logInAssembly.getViewController()
-        view.navigationController?.pushViewController(logInViewController, animated: true)
+    func showSignInScreen() {
+        let signInViewController = signInAssembly.getViewController()
+        view.navigationController?.pushViewController(signInViewController, animated: true)
     }
     
     func showSignUpScreen() {

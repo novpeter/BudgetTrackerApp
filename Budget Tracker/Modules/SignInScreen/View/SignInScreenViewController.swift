@@ -1,5 +1,5 @@
 //
-//  LogInScreenViewController.swift
+//  SignInScreenViewController.swift
 //  Budget Tracker
 //
 //  Created by Петр on 10/04/2019.
@@ -9,11 +9,11 @@
 import UIKit
 import GoogleSignIn
 
-class LogInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
+class SignInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     
-    var presenter: LogInScreenViewOutput!
+    var presenter: SignInScreenViewOutput!
     
-    lazy var contentView = LogInScreenView()
+    lazy var contentView = SignInScreenView()
     
     override func loadView() {
         super.loadView()
@@ -29,8 +29,8 @@ class LogInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     }
     
     private func addTargets() {
-        contentView.logInButton.addTarget(self, action: #selector(logInButtonClicked), for: .touchUpInside)
-        contentView.googleLogInButton.addTarget(self, action: #selector(googleLogInButtonClicked), for: .touchUpInside)
+        contentView.signInButton.addTarget(self, action: #selector(signInButtonClicked), for: .touchUpInside)
+        contentView.googleSignInButton.addTarget(self, action: #selector(googleSignInButtonClicked), for: .touchUpInside)
         contentView.forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonClicked), for: .touchUpInside)
     }
     
@@ -46,12 +46,12 @@ class LogInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     
     // MARK: - Button's handlers
     
-    @objc private func logInButtonClicked(sender: UIButton) {
+    @objc private func signInButtonClicked(sender: UIButton) {
         sender.pulsate()
         
         let email = contentView.emailTextField.text
         let password = contentView.passwordTextField.text
-        presenter.logInButtonClicked(email: email, password: password)
+        presenter.signInButtonClicked(email: email, password: password)
     }
     
     
@@ -65,7 +65,7 @@ class LogInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     
     // MARK: - Google auth
    
-    @objc private func googleLogInButtonClicked(sender: UIButton) {
+    @objc private func googleSignInButtonClicked(sender: UIButton) {
         sender.pulsate()
         GIDSignIn.sharedInstance().signIn()
     }
@@ -75,7 +75,7 @@ class LogInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
             print("Google authorization error: \(error.localizedDescription)")
         }
         else {
-            presenter.googleLogInButtonClicked(
+            presenter.googleSignInButtonClicked(
                 accountId: user.userID,
                 token: user.authentication.idToken,
                 email: user.profile.email,
@@ -84,6 +84,6 @@ class LogInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignI
     }
 }
 
-extension LogInScreenViewController: LogInScreenViewInput {
+extension SignInScreenViewController: SignInScreenViewInput {
     
 }

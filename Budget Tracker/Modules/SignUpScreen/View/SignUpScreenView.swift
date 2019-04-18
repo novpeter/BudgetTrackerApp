@@ -1,5 +1,5 @@
 //
-//  LogInScreenView.swift
+//  SignInScreenView.swift
 //  Budget Tracker
 //
 //  Created by Петр on 11/04/2019.

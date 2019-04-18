@@ -39,7 +39,7 @@ class WelcomeScreenView: UIView {
         return stackView
     }()
     
-    lazy var logInButton: UIButton = {
+    lazy var signInButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 15.0
         button.layer.borderWidth = 0.15
@@ -48,7 +48,7 @@ class WelcomeScreenView: UIView {
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.LogIn, for: .normal)
+        button.setTitle(ButtonTitles.SignIn, for: .normal)
         button.setTitleColor(Colors.TextColors.White, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
         button.backgroundColor = Colors.ButtonColors.Blue
@@ -72,7 +72,7 @@ class WelcomeScreenView: UIView {
     }()
     
     lazy var buttonsStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [signUpButton, logInButton])
+        let stackView = UIStackView(arrangedSubviews: [signUpButton, signInButton])
         stackView.axis = .vertical
         stackView.spacing = 20
         stackView.distribution = .fillEqually
@@ -119,7 +119,7 @@ class WelcomeScreenView: UIView {
             make.bottom.equalTo(self).offset(-120)
         }
         
-        logInButton.snp.makeConstraints { (make) in
+        signInButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(buttonsStackView)
             make.height.equalTo(50)
         }

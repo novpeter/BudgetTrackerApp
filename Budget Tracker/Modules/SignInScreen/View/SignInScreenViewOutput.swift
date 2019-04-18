@@ -1,5 +1,5 @@
 //
-//  LogInScreenViewOutput.swift
+//  SignInScreenViewOutput.swift
 //  Budget Tracker
 //
 //  Created by Петр on 10/04/2019.
@@ -8,23 +8,23 @@
 
 import Foundation
 
-protocol LogInScreenViewOutput: AnyObject {
+protocol SignInScreenViewOutput: AnyObject {
     
-    /// Handles log in button click
+    /// Handles sign in button click
     ///
     /// - Parameters:
     ///   - email: user email
     ///   - password: password
-    func logInButtonClicked(email: String?, password: String?)
+    func signInButtonClicked(email: String?, password: String?)
     
-    /// Handles google log in button click
+    /// Handles google sign in button click
     ///
     /// - Parameters:
     ///   - accountId: id of user account
     ///   - token: token
     ///   - email: user email
     ///   - fullName: user full name
-    func googleLogInButtonClicked(accountId: String, token: String, email: String, fullName: String)
+    func googleSignInButtonClicked(accountId: String, token: String, email: String, fullName: String)
     
     /// Handles forgot password button click
     ///

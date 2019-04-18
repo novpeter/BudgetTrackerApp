@@ -1,5 +1,5 @@
 //
-//  LogInScreenAssembly.swift
+//  SignInScreenAssembly.swift
 //  Budget Tracker
 //
 //  Created by Петр on 10/04/2019.
@@ -9,23 +9,22 @@
 import Foundation
 import UIKit
 
-class LogInScreenAssembly: LogInScreenFactoryProtocol {
+class SignInScreenAssembly: SignInScreenFactoryProtocol {
     
-    func getViewController() -> LogInScreenViewController {
+    func getViewController() -> SignInScreenViewController {
         
-        let viewController = LogInScreenViewController()
+        let viewController = SignInScreenViewController()
         configureModule(with: viewController)
         return viewController
     }
     
-    private func configureModule(with view: LogInScreenViewController?) {
+    private func configureModule(with view: SignInScreenViewController?) {
         
         guard let view = view else { fatalError() }
         
-        let presenter = LogInScreenPresenter()
-        let router = LogInScreenRouter()
-        let interactor = LogInScreenInteractor()
-        let authService = AuthorizationService()
+        let presenter = SignInScreenPresenter()
+        let router = SignInScreenRouter()
+        let interactor = SignInScreenInteractor()
         
         view.presenter = presenter
         
@@ -34,7 +33,6 @@ class LogInScreenAssembly: LogInScreenFactoryProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
-        interactor.authorizationService = authService
         
         router.presenter = presenter
         router.mainAssembly = MainScreenAssembly()

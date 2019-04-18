@@ -22,7 +22,7 @@ class WelcomeScreenViewController: UIViewController {
     }
     
     private func addTargets() {
-        contentView.logInButton.addTarget(self, action: #selector(logInButtonClicked), for: .touchUpInside)
+        contentView.signInButton.addTarget(self, action: #selector(signInButtonClicked), for: .touchUpInside)
         contentView.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
     }
     
@@ -42,9 +42,9 @@ class WelcomeScreenViewController: UIViewController {
     
     // MARK: - Button's handlers
     
-    @objc func logInButtonClicked(sender: UIButton) {
+    @objc func signInButtonClicked(sender: UIButton) {
         sender.pulsate()
-        presenter.logInButtonClicked()
+        presenter.signInButtonClicked()
     }
     
     @objc func signUpButtonClicked(sender: UIButton) {

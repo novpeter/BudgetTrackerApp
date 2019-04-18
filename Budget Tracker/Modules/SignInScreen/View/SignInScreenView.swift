@@ -1,5 +1,5 @@
 //
-//  LogInScreenView.swift
+//  SignInScreenView.swift
 //  Budget Tracker
 //
 //  Created by Петр on 11/04/2019.
@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class LogInScreenView: UIView {
+class SignInScreenView: UIView {
     
     // MARK: - Components
     
@@ -51,7 +51,7 @@ class LogInScreenView: UIView {
         return stackView
     }()
 
-    lazy var googleLogInButton: UIButton = {
+    lazy var googleSignInButton: UIButton = {
         
         let button = UIButton()
         
@@ -62,7 +62,7 @@ class LogInScreenView: UIView {
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.GoogleLogIn, for: .normal)
+        button.setTitle(ButtonTitles.GoogleSignIn, for: .normal)
         button.setTitleColor(Colors.TextColors.Grey, for: .normal)
         button.setImage(UIImage(named: "google"), for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
@@ -71,7 +71,7 @@ class LogInScreenView: UIView {
         return button
     }()
     
-    lazy var logInButton: UIButton = {
+    lazy var signInButton: UIButton = {
         
         let button = UIButton()
         
@@ -82,7 +82,7 @@ class LogInScreenView: UIView {
         button.layer.shadowOpacity = 1.0
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.LogIn, for: .normal)
+        button.setTitle(ButtonTitles.SignIn, for: .normal)
         button.setTitleColor(Colors.TextColors.White, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
         button.backgroundColor = Colors.ButtonColors.Blue
@@ -106,7 +106,7 @@ class LogInScreenView: UIView {
     
     lazy var buttonsStackView: UIStackView = {
         
-        let stackView = UIStackView(arrangedSubviews: [googleLogInButton, logInButton])
+        let stackView = UIStackView(arrangedSubviews: [googleSignInButton, signInButton])
         
         stackView.axis = .vertical
         stackView.spacing = 20
@@ -160,17 +160,17 @@ class LogInScreenView: UIView {
             make.top.equalTo(self).offset(44)
         }
         
-        logInButton.snp.makeConstraints { (make) in
+        signInButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(buttonsStackView)
             make.height.equalTo(50)
         }
         
-        googleLogInButton.snp.makeConstraints { (make) in
+        googleSignInButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(buttonsStackView)
             make.height.equalTo(50)
         }
         
-        googleLogInButton.imageEdgeInsets.right = 40.0
+        googleSignInButton.imageEdgeInsets.right = 40.0
         
         forgotPasswordButton.snp.makeConstraints { (make) in
             make.bottom.equalTo(mainStackView).offset(40)
