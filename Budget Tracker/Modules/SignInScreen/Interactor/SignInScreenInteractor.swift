@@ -12,6 +12,7 @@ import SCLAlertView
 class SignInScreenInteractor: SignInScreenInteractorInput {
     
     var presenter: SignInScreenInteractorOutput!
+    var networkManager: NetworkManagerProtocol!
     
     
     func signIn(email: String?, password: String?) {
@@ -27,26 +28,24 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
             return
         }
         
-//        let user = SignInUser(fullName: nil, email: email, token: nil, password: password)
-//        let requestBody = SignInRequestBody(authType: AuthType.Regular, payload: user)
-//        
-//        NetworkManager.request(target: .signIn(body: requestBody), success: { (response) in
-//
-//            do
-//            {
-//                let response = try JSONDecoder().decode(AuthResponse.self, from: response.data)
-//                print("TOKEN: \(response.payload.sessionToken)")
-//            }
-//            catch {
-//
-//            }
-//
-//        }, error: { (error) in
-//            print(error.localizedDescription)
-//        }, failure: { (error) in
-//            print(error.localizedDescription)
-//        })
-        presenter.showMainScreen()
+        let user = SignInUser(fullName: nil, email: email, token: nil, password: password)
+        let requestBody = SignInRequestBody(authType: AuthType.Regular, payload: user)
+
+        networkManager.request(target: .signIn(body: requestBody), success: { (response) in
+
+            do
+            {
+                let response = try JSONDecoder().decode(AuthResponse.self, from: response.data)
+                print("TOKEN: \(response.payload.sessionToken)")
+            }
+            catch {
+
+            }
+
+        }, error: { (error) in
+            print(error.localizedDescription)
+        })
+        // presenter.showMainScreen()
         
     }
     

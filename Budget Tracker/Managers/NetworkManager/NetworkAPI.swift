@@ -12,9 +12,9 @@ enum NetworkAPI {
     case signIn(body: SignInRequestBody)
     case signUp(body: SignUpRequestBody)
     case logOut(token: String)
-    case createOperation(token: String, operation: OperationModel)
+    case createOperation(token: String, operation: OperationRequestBody)
     case deleteOperation(token: String, id: Int)
-    case updateOperation(token: String, operation: OperationModel)
+    case updateOperation(token: String, operation: OperationRequestBody)
     case getOpearition(token: String, id: Int)
     case getOperations(token: String)
 }
@@ -26,11 +26,11 @@ extension NetworkAPI: TargetType {
     var path: String {
         switch self {
         case .signIn:
-            return "/sign-in"
+            return "/user/sign-in"
         case .signUp:
-            return "/sign-up"
+            return "/user/sign-up"
         case .logOut:
-            return "/log-out"
+            return "/user/log-out"
         case .deleteOperation(_, let id),
              .getOpearition(_, let id): return "/operation/\(id)"
         case .getOperations,

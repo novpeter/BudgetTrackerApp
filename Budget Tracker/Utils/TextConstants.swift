@@ -56,8 +56,8 @@ struct AlertTitles {
 }
 
 struct URLConstants {
-//    static let baseURLString = "https://budget-tracker-web-server.azurewebsites.net/api"
-    static let baseURLString = "https://localhost:5001/api"
+    static let baseURLString = "https://budget-tracker-web-server.azurewebsites.net/api"
+//    static let baseURLString = "https://localhost:5001/api"
 }
 
 struct AuthType {

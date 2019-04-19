@@ -14,47 +14,36 @@ class SignInScreenView: UIView {
     // MARK: - Components
     
     lazy var emailTextField: UITextField = {
-       
         let textField = UITextField()
-        
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Email
         textField.font = Fonts.PoppinsMedium16
         textField.textColor = Colors.TextColors.Black
         textField.tintColor = Colors.TextColors.Grey
-        
         return textField
     }()
     
     lazy var passwordTextField: UITextField = {
-        
         let textField = UITextField()
-        
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Password
         textField.font = Fonts.PoppinsMedium16
         textField.textColor = Colors.TextColors.Black
         textField.tintColor = Colors.TextColors.Grey
         textField.isSecureTextEntry = true
-        
         return textField
     }()
     
     lazy var textFieldsStackView: UIStackView = {
-        
         let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField])
-        
         stackView.axis = .vertical
         stackView.spacing = 40
         stackView.distribution = .fillEqually
-        
         return stackView
     }()
 
     lazy var googleSignInButton: UIButton = {
-        
         let button = UIButton()
-        
         button.layer.cornerRadius = 15.0
         button.layer.borderWidth = 0.15
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
@@ -67,14 +56,11 @@ class SignInScreenView: UIView {
         button.setImage(UIImage(named: "google"), for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
         button.backgroundColor = Colors.ButtonColors.White
-        
         return button
     }()
     
     lazy var signInButton: UIButton = {
-        
         let button = UIButton()
-        
         button.layer.cornerRadius = 15.0
         button.layer.borderWidth = 0.15
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
@@ -86,43 +72,33 @@ class SignInScreenView: UIView {
         button.setTitleColor(Colors.TextColors.White, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
         button.backgroundColor = Colors.ButtonColors.Blue
-        
         return button
     }()
     
     lazy var forgotPasswordButton: UIButton = {
-        
         let button = UIButton()
-        
         button.layer.borderWidth = 0
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.ForgotPassword, for: .normal)
         button.setTitleColor(Colors.TextColors.Blue, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsBold12
         button.backgroundColor = .clear
-        
         return button
     }()
     
     lazy var buttonsStackView: UIStackView = {
-        
         let stackView = UIStackView(arrangedSubviews: [googleSignInButton, signInButton])
-        
         stackView.axis = .vertical
         stackView.spacing = 20
         stackView.distribution = .fillEqually
-        
         return stackView
     }()
     
     lazy var mainStackView: UIStackView = {
-        
         let stackView = UIStackView(arrangedSubviews: [textFieldsStackView, buttonsStackView])
-        
         stackView.axis = .vertical
         stackView.spacing = 40
         stackView.distribution = .fillEqually
-        
         return stackView
     }()
     

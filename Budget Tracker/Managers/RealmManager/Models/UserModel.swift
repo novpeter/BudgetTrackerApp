@@ -10,5 +10,13 @@ import RealmSwift
 
 @objcMembers
 class UserModel: Object {
-
+    
+    dynamic var id = String(describing: UUID.init())
+    dynamic var fullName = String()
+    dynamic var email = String()
+    dynamic var sessionToken = String()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

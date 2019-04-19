@@ -6,8 +6,6 @@
 //  Copyright © 2019 DreamTeam. All rights reserved.
 //
 
-import Foundation
-
 struct SignInRequestBody: Codable {
     var authType: String
     var payload: SignInUser

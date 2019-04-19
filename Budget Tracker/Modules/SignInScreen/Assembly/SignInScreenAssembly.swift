@@ -25,6 +25,7 @@ class SignInScreenAssembly: SignInScreenFactoryProtocol {
         let presenter = SignInScreenPresenter()
         let router = SignInScreenRouter()
         let interactor = SignInScreenInteractor()
+        let networkManager = NetworkManager()
         
         view.presenter = presenter
         
@@ -33,6 +34,7 @@ class SignInScreenAssembly: SignInScreenFactoryProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
+        interactor.networkManager = networkManager
         
         router.presenter = presenter
         router.mainAssembly = MainScreenAssembly()
