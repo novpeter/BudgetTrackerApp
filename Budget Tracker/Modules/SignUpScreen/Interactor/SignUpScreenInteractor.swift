@@ -11,7 +11,7 @@ import UIKit
 class SignUpScreenInteractor: SignUpScreenInteractorInput {
     
     var presenter: SignUpScreenInteractorOutput!
-    var networkManager: NetworkManagerProtocol!
+    var authService: AuthServiceProtocol!
     
     func signUp(name: String?, email: String?, password: String?, confirmedPassword: String?) {
         guard let name = name, let email = email?.lowercased(), let password = password, let confirmedPassword = confirmedPassword
@@ -36,8 +36,13 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
             return
         }
         
-        // запрос серверу на регистрацию и получение токена
-        
-        presenter.showMainScreen()
+        authService.signUp(name: name, email: email, password: password) { (result) in
+            switch result {
+            case .Success:
+                self.presenter.showMainScreen()
+            case .Error(let error):
+                self.presenter.showAlert(title: AlertTitles.GenericError, description: error.localizedDescription, alertType: .error)
+            }
+        }
     }
 }

@@ -24,7 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = Colors.TextColors.Black
         UINavigationBar.appearance().barTintColor = .white
     
-        let viewController = WelcomeScreenAssembly().getViewController()
+        var viewController: UIViewController
+        
+        if (realmManager.getObjects(with: UserModel.self)?.first) != nil {
+            viewController = LogOutScreenAssembly().getViewController()
+        }
+        else {
+            viewController = WelcomeScreenAssembly().getViewController()
+        }
+        
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)

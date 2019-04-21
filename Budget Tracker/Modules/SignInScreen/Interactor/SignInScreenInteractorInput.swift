@@ -20,11 +20,10 @@ protocol SignInScreenInteractorInput: AnyObject {
     /// Sign's in via google account
     ///
     /// - Parameters:
-    ///   - accountId: account id
     ///   - token: token
     ///   - email: user email
     ///   - fullName: user full name
-    func googleSignIn(accountId: String, token: String, email: String, fullName: String)
+    func googleSignIn(token: String, email: String, fullName: String)
     
     /// Recovers password
     ///

@@ -74,6 +74,10 @@ struct SignInUser: Codable {
 struct SignUpRequestBody: Codable {
     var payload: SignUpUser
     
+    init(payload: SignUpUser) {
+        self.payload = payload
+    }
+    
     enum CodingKeys: String, CodingKey {
         case payload = "Payload"
     }
@@ -93,6 +97,12 @@ struct SignUpUser: Codable {
     var name: String
     var email: String
     var password: String
+    
+    init(name: String, email: String, password: String) {
+        self.name = name
+        self.email = email
+        self.password = password
+    }
     
     enum CodingKeys: String, CodingKey {
         case name = "Name"

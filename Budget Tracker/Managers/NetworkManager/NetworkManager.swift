@@ -27,7 +27,7 @@ class NetworkManager: NetworkManagerProtocol {
                     do
                     {
                         let responseMessage = try JSONDecoder().decode(ErrorResponse.self, from: response.data)
-                        let error = NSError(domain: String(), code: response.statusCode, userInfo: [NSLocalizedDescriptionKey: responseMessage])
+                        let error = NSError(domain: String(), code: response.statusCode, userInfo: [NSLocalizedDescriptionKey: responseMessage.message])
                         errorCallback(error)
                     }
                     catch {

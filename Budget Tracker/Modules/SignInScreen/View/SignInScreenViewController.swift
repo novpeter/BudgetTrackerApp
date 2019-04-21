@@ -76,7 +76,6 @@ class SignInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSign
         }
         else {
             presenter.googleSignInButtonClicked(
-                accountId: user.userID,
                 token: user.authentication.idToken,
                 email: user.profile.email,
                 fullName: user.profile.name)

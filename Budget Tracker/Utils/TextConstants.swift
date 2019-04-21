@@ -40,7 +40,7 @@ struct ButtonTitles {
 
 struct Regex {
     static let Email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    static let Password = "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{6,16}"
+    static let Password = "[0-9a-zA-Z]{8,20}"
 }
 
 struct AlertTitles {
@@ -49,7 +49,7 @@ struct AlertTitles {
     static let WrongName = "Wrong name"
     static let WrongEmail = "Wrong email"
     static let WrongPassword = "Wrong password"
-    static let PasswordReciepe = "Password should contain one letter, one special symbol, one digit and lenght more than 6"
+    static let PasswordReciepe = "Password should contain one upper case and lower case letter, one digit and lenght more than 8"
     static let PasswordsNotMatch = "Passwords do not match"
     static let Done = "Done!"
     static let PasswordWasSent = "The password was sent on "
@@ -57,10 +57,9 @@ struct AlertTitles {
 
 struct URLConstants {
     static let baseURLString = "https://budget-tracker-web-server.azurewebsites.net/api"
-//    static let baseURLString = "https://localhost:5001/api"
 }
 
 struct AuthType {
     static let Regular = "Regular"
-    static let Google = "Goolgle"
+    static let Google = "Google"
 }

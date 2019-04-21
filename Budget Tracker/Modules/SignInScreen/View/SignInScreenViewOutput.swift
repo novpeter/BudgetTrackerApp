@@ -20,11 +20,10 @@ protocol SignInScreenViewOutput: AnyObject {
     /// Handles google sign in button click
     ///
     /// - Parameters:
-    ///   - accountId: id of user account
     ///   - token: token
     ///   - email: user email
     ///   - fullName: user full name
-    func googleSignInButtonClicked(accountId: String, token: String, email: String, fullName: String)
+    func googleSignInButtonClicked(token: String, email: String, fullName: String)
     
     /// Handles forgot password button click
     ///

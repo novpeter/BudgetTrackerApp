@@ -23,8 +23,8 @@ class SignInScreenPresenter:
         interactor.signIn(email: email, password: password)
     }
     
-    func googleSignInButtonClicked(accountId: String, token: String, email: String, fullName: String) {
-        interactor.googleSignIn(accountId: accountId, token: token, email: email, fullName: fullName)
+    func googleSignInButtonClicked(token: String, email: String, fullName: String) {
+        interactor.googleSignIn(token: token, email: email, fullName: fullName)
     }
     
     func forgotPasswordButtonClicked(email: String?) {
