@@ -15,13 +15,19 @@ enum NetworkAPI {
     case createOperation(token: String, operation: OperationRequestBody)
     case deleteOperation(token: String, id: Int)
     case updateOperation(token: String, operation: OperationRequestBody)
-    case getOpearition(token: String, id: Int)
+    case getOperation(token: String, id: Int)
     case getOperations(token: String)
 }
 
 extension NetworkAPI: TargetType {
     
-    var baseURL: URL { return URL(string: URLConstants.baseURLString)! }
+    var baseURL: URL {
+        get {
+            guard let url = URL(string: URLConstants.baseURLString)
+            else { fatalError("Cannot set base url") }
+            return url
+        }
+    }
     
     var path: String {
         switch self {
@@ -32,7 +38,7 @@ extension NetworkAPI: TargetType {
         case .logOut:
             return "/user/log-out"
         case .deleteOperation(_, let id),
-             .getOpearition(_, let id): return "/operation/\(id)"
+             .getOperation(_, let id): return "/operation/\(id)"
         case .getOperations,
              .createOperation,
              .updateOperation:
@@ -43,7 +49,7 @@ extension NetworkAPI: TargetType {
     var method: Method {
         switch self {
         case .getOperations,
-             .getOpearition:
+             .getOperation:
             return .get
         case .signIn,
             .signUp,
@@ -80,7 +86,7 @@ extension NetworkAPI: TargetType {
             .createOperation(let token, _),
             .deleteOperation(let token, _),
             .updateOperation(let token, _),
-            .getOpearition(let token, _),
+            .getOperation(let token, _),
             .getOperations(let token):
             return [
                 "Authorization": "\(token)",
