@@ -10,5 +10,6 @@ target 'Budget Tracker' do
   pod 'RealmSwift'
   pod 'GoogleSignIn'
   pod 'SCLAlertView'
+  pod 'Moya', '13.0.0' 
 
 end

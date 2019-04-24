@@ -25,6 +25,9 @@ class SignUpScreenAssembly: SignUpScreenFactoryProtocol {
         let presenter = SignUpScreenPresenter()
         let router = SignUpScreenRouter()
         let interactor = SignUpScreenInteractor()
+        let networkManager = NetworkManager()
+        let realmManager = RealmManager()
+        let authService = AuthService()
         
         view.presenter = presenter
         
@@ -33,6 +36,9 @@ class SignUpScreenAssembly: SignUpScreenFactoryProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
+        interactor.authService = authService
+        authService.networkManager = networkManager
+        authService.realmManager = realmManager
         
         router.presenter = presenter
         router.mainAssembly = MainScreenAssembly()

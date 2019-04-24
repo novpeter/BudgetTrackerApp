@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B47791D225E6D74000E673B /* LogInScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47790D225E6D74000E673B /* LogInScreenFactoryProtocol.swift */; };
-		4B47791E225E6D74000E673B /* LogInScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47790E225E6D74000E673B /* LogInScreenAssembly.swift */; };
-		4B47791F225E6D74000E673B /* LogInScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477910225E6D74000E673B /* LogInScreenPresenter.swift */; };
-		4B477920225E6D74000E673B /* LogInScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477912225E6D74000E673B /* LogInScreenViewController.swift */; };
-		4B477921225E6D74000E673B /* LogInScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477913225E6D74000E673B /* LogInScreenViewInput.swift */; };
-		4B477922225E6D74000E673B /* LogInScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477914225E6D74000E673B /* LogInScreenViewOutput.swift */; };
-		4B477923225E6D74000E673B /* LogInScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477916225E6D74000E673B /* LogInScreenInteractorOutput.swift */; };
-		4B477924225E6D74000E673B /* LogInScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477917225E6D74000E673B /* LogInScreenInteractorInput.swift */; };
-		4B477925225E6D74000E673B /* LogInScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477918225E6D74000E673B /* LogInScreenInteractor.swift */; };
-		4B477926225E6D74000E673B /* LogInScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47791A225E6D74000E673B /* LogInScreenRouter.swift */; };
-		4B477927225E6D74000E673B /* LogInScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47791B225E6D74000E673B /* LogInScreenRouterInput.swift */; };
-		4B477928225E6D74000E673B /* LogInScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47791C225E6D74000E673B /* LogInScreenRouterOutput.swift */; };
+		4B47791D225E6D74000E673B /* SignInScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47790D225E6D74000E673B /* SignInScreenFactoryProtocol.swift */; };
+		4B47791E225E6D74000E673B /* SignInScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47790E225E6D74000E673B /* SignInScreenAssembly.swift */; };
+		4B47791F225E6D74000E673B /* SignInScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477910225E6D74000E673B /* SignInScreenPresenter.swift */; };
+		4B477920225E6D74000E673B /* SignInScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477912225E6D74000E673B /* SignInScreenViewController.swift */; };
+		4B477921225E6D74000E673B /* SignInScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477913225E6D74000E673B /* SignInScreenViewInput.swift */; };
+		4B477922225E6D74000E673B /* SignInScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477914225E6D74000E673B /* SignInScreenViewOutput.swift */; };
+		4B477923225E6D74000E673B /* SignInScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477916225E6D74000E673B /* SignInScreenInteractorOutput.swift */; };
+		4B477924225E6D74000E673B /* SignInScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477917225E6D74000E673B /* SignInScreenInteractorInput.swift */; };
+		4B477925225E6D74000E673B /* SignInScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477918225E6D74000E673B /* SignInScreenInteractor.swift */; };
+		4B477926225E6D74000E673B /* SignInScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47791A225E6D74000E673B /* SignInScreenRouter.swift */; };
+		4B477927225E6D74000E673B /* SignInScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47791B225E6D74000E673B /* SignInScreenRouterInput.swift */; };
+		4B477928225E6D74000E673B /* SignInScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47791C225E6D74000E673B /* SignInScreenRouterOutput.swift */; };
 		4B47793D225E6DC6000E673B /* SignUpScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47792D225E6DC6000E673B /* SignUpScreenAssembly.swift */; };
 		4B47793E225E6DC6000E673B /* SignUpScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47792E225E6DC6000E673B /* SignUpScreenFactoryProtocol.swift */; };
 		4B47793F225E6DC6000E673B /* SignUpScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477930225E6DC6000E673B /* SignUpScreenPresenter.swift */; };
@@ -66,7 +66,7 @@
 		4B4A1F49225CFFB9005D1819 /* RealmManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A1F48225CFFB9005D1819 /* RealmManagerProtocol.swift */; };
 		4B4A1F4B225CFFE6005D1819 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A1F4A225CFFE6005D1819 /* NetworkManager.swift */; };
 		4B4A1F4D225D003A005D1819 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A1F4C225D003A005D1819 /* NetworkManagerProtocol.swift */; };
-		4B4D1F92225FD9040013D0E6 /* LogInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1F91225FD9040013D0E6 /* LogInScreenView.swift */; };
+		4B4D1F92225FD9040013D0E6 /* SignInScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1F91225FD9040013D0E6 /* SignInScreenView.swift */; };
 		4B4D1F94225FF10F0013D0E6 /* SignUpScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1F93225FF10F0013D0E6 /* SignUpScreenView.swift */; };
 		4B4D1FA922608DBA0013D0E6 /* MainScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1F9922608DBA0013D0E6 /* MainScreenAssembly.swift */; };
 		4B4D1FAA22608DBA0013D0E6 /* MainScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1F9A22608DBA0013D0E6 /* MainScreenFactoryProtocol.swift */; };
@@ -81,14 +81,33 @@
 		4B4D1FB322608DBA0013D0E6 /* MainScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1FA722608DBA0013D0E6 /* MainScreenRouterOutput.swift */; };
 		4B4D1FB422608DBA0013D0E6 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1FA822608DBA0013D0E6 /* MainScreenRouter.swift */; };
 		4B4D1FB62260A88E0013D0E6 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D1FB52260A88E0013D0E6 /* credentials.plist */; };
-		4B4D1FB92260DEE70013D0E6 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D1FB82260DEE70013D0E6 /* AuthorizationService.swift */; };
 		4B5B09CB225BC06C00A10365 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B09CA225BC06C00A10365 /* ColorConstants.swift */; };
 		4B5B09CD225BC07700A10365 /* FontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B09CC225BC07700A10365 /* FontConstants.swift */; };
 		4BA060A7225E827F0024E6FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA060A6225E827F0024E6FE /* Extensions.swift */; };
+		4BA1D156226C904B0071D35A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA1D155226C904B0071D35A /* AuthService.swift */; };
+		4BA1D158226C93F40071D35A /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA1D157226C93F40071D35A /* AuthServiceProtocol.swift */; };
 		4BABA0DB225D375700CA1E08 /* TextConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA0DA225D375700CA1E08 /* TextConstants.swift */; };
 		4BABA0DD225D3A6700CA1E08 /* WelcomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA0DC225D3A6700CA1E08 /* WelcomeScreenView.swift */; };
 		4BABA0E1225E203000CA1E08 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA0E0225E203000CA1E08 /* UserModel.swift */; };
 		4BABA0E3225E203B00CA1E08 /* OperationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA0E2225E203B00CA1E08 /* OperationModel.swift */; };
+		4BBA5F862268B59800666F36 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F852268B59800666F36 /* NetworkAPI.swift */; };
+		4BBA5F8D2268C4B100666F36 /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F8C2268C4B100666F36 /* UserRequests.swift */; };
+		4BBA5F8F2268C73200666F36 /* OperationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F8E2268C73200666F36 /* OperationRequests.swift */; };
+		4BF606272269001700EB7FFB /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF606262269001700EB7FFB /* ErrorResponse.swift */; };
+		4BF606292269066200EB7FFB /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF606282269066200EB7FFB /* AuthResponse.swift */; };
+		4BF6063E2269117C00EB7FFB /* LogOutScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6062E2269117C00EB7FFB /* LogOutScreenFactoryProtocol.swift */; };
+		4BF6063F2269117C00EB7FFB /* LogOutScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6062F2269117C00EB7FFB /* LogOutScreenAssembly.swift */; };
+		4BF606402269117C00EB7FFB /* LogOutScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF606312269117C00EB7FFB /* LogOutScreenPresenter.swift */; };
+		4BF606412269117C00EB7FFB /* LogOutScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF606332269117C00EB7FFB /* LogOutScreenViewInput.swift */; };
+		4BF606422269117C00EB7FFB /* LogOutScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF606342269117C00EB7FFB /* LogOutScreenViewOutput.swift */; };
+		4BF606432269117C00EB7FFB /* LogOutScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF606352269117C00EB7FFB /* LogOutScreenViewController.swift */; };
+		4BF606442269117C00EB7FFB /* LogOutScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF606372269117C00EB7FFB /* LogOutScreenInteractor.swift */; };
+		4BF606452269117C00EB7FFB /* LogOutScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF606382269117C00EB7FFB /* LogOutScreenInteractorInput.swift */; };
+		4BF606462269117C00EB7FFB /* LogOutScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF606392269117C00EB7FFB /* LogOutScreenInteractorOutput.swift */; };
+		4BF606472269117C00EB7FFB /* LogOutScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6063B2269117C00EB7FFB /* LogOutScreenRouterOutput.swift */; };
+		4BF606482269117C00EB7FFB /* LogOutScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6063C2269117C00EB7FFB /* LogOutScreenRouter.swift */; };
+		4BF606492269117C00EB7FFB /* LogOutScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6063D2269117C00EB7FFB /* LogOutScreenRouterInput.swift */; };
+		4BF6064B2269BA1300EB7FFB /* LogOutScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6064A2269BA1300EB7FFB /* LogOutScreenView.swift */; };
 		4BFFFC9022419CC400EE5228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFFFC8F22419CC400EE5228 /* AppDelegate.swift */; };
 		4BFFFC9722419CC600EE5228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BFFFC9622419CC600EE5228 /* Assets.xcassets */; };
 		4BFFFC9A22419CC600EE5228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BFFFC9822419CC600EE5228 /* LaunchScreen.storyboard */; };
@@ -97,18 +116,18 @@
 
 /* Begin PBXFileReference section */
 		05EA09A1DDC79F8B124A207B /* Pods_Budget_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B47790D225E6D74000E673B /* LogInScreenFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenFactoryProtocol.swift; sourceTree = "<group>"; };
-		4B47790E225E6D74000E673B /* LogInScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenAssembly.swift; sourceTree = "<group>"; };
-		4B477910225E6D74000E673B /* LogInScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenPresenter.swift; sourceTree = "<group>"; };
-		4B477912225E6D74000E673B /* LogInScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenViewController.swift; sourceTree = "<group>"; };
-		4B477913225E6D74000E673B /* LogInScreenViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenViewInput.swift; sourceTree = "<group>"; };
-		4B477914225E6D74000E673B /* LogInScreenViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenViewOutput.swift; sourceTree = "<group>"; };
-		4B477916225E6D74000E673B /* LogInScreenInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenInteractorOutput.swift; sourceTree = "<group>"; };
-		4B477917225E6D74000E673B /* LogInScreenInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenInteractorInput.swift; sourceTree = "<group>"; };
-		4B477918225E6D74000E673B /* LogInScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenInteractor.swift; sourceTree = "<group>"; };
-		4B47791A225E6D74000E673B /* LogInScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenRouter.swift; sourceTree = "<group>"; };
-		4B47791B225E6D74000E673B /* LogInScreenRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenRouterInput.swift; sourceTree = "<group>"; };
-		4B47791C225E6D74000E673B /* LogInScreenRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInScreenRouterOutput.swift; sourceTree = "<group>"; };
+		4B47790D225E6D74000E673B /* SignInScreenFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenFactoryProtocol.swift; sourceTree = "<group>"; };
+		4B47790E225E6D74000E673B /* SignInScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenAssembly.swift; sourceTree = "<group>"; };
+		4B477910225E6D74000E673B /* SignInScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenPresenter.swift; sourceTree = "<group>"; };
+		4B477912225E6D74000E673B /* SignInScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenViewController.swift; sourceTree = "<group>"; };
+		4B477913225E6D74000E673B /* SignInScreenViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenViewInput.swift; sourceTree = "<group>"; };
+		4B477914225E6D74000E673B /* SignInScreenViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenViewOutput.swift; sourceTree = "<group>"; };
+		4B477916225E6D74000E673B /* SignInScreenInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		4B477917225E6D74000E673B /* SignInScreenInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenInteractorInput.swift; sourceTree = "<group>"; };
+		4B477918225E6D74000E673B /* SignInScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenInteractor.swift; sourceTree = "<group>"; };
+		4B47791A225E6D74000E673B /* SignInScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenRouter.swift; sourceTree = "<group>"; };
+		4B47791B225E6D74000E673B /* SignInScreenRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenRouterInput.swift; sourceTree = "<group>"; };
+		4B47791C225E6D74000E673B /* SignInScreenRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenRouterOutput.swift; sourceTree = "<group>"; };
 		4B47792D225E6DC6000E673B /* SignUpScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpScreenAssembly.swift; sourceTree = "<group>"; };
 		4B47792E225E6DC6000E673B /* SignUpScreenFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpScreenFactoryProtocol.swift; sourceTree = "<group>"; };
 		4B477930225E6DC6000E673B /* SignUpScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpScreenPresenter.swift; sourceTree = "<group>"; };
@@ -156,7 +175,7 @@
 		4B4A1F48225CFFB9005D1819 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 		4B4A1F4A225CFFE6005D1819 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4B4A1F4C225D003A005D1819 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
-		4B4D1F91225FD9040013D0E6 /* LogInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreenView.swift; sourceTree = "<group>"; };
+		4B4D1F91225FD9040013D0E6 /* SignInScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreenView.swift; sourceTree = "<group>"; };
 		4B4D1F93225FF10F0013D0E6 /* SignUpScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreenView.swift; sourceTree = "<group>"; };
 		4B4D1F9922608DBA0013D0E6 /* MainScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenAssembly.swift; sourceTree = "<group>"; };
 		4B4D1F9A22608DBA0013D0E6 /* MainScreenFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenFactoryProtocol.swift; sourceTree = "<group>"; };
@@ -171,14 +190,33 @@
 		4B4D1FA722608DBA0013D0E6 /* MainScreenRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenRouterOutput.swift; sourceTree = "<group>"; };
 		4B4D1FA822608DBA0013D0E6 /* MainScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
 		4B4D1FB52260A88E0013D0E6 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
-		4B4D1FB82260DEE70013D0E6 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		4B5B09CA225BC06C00A10365 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		4B5B09CC225BC07700A10365 /* FontConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConstants.swift; sourceTree = "<group>"; };
 		4BA060A6225E827F0024E6FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4BA1D155226C904B0071D35A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		4BA1D157226C93F40071D35A /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		4BABA0DA225D375700CA1E08 /* TextConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextConstants.swift; sourceTree = "<group>"; };
 		4BABA0DC225D3A6700CA1E08 /* WelcomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenView.swift; sourceTree = "<group>"; };
 		4BABA0E0225E203000CA1E08 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4BABA0E2225E203B00CA1E08 /* OperationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationModel.swift; sourceTree = "<group>"; };
+		4BBA5F852268B59800666F36 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		4BBA5F8C2268C4B100666F36 /* UserRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequests.swift; sourceTree = "<group>"; };
+		4BBA5F8E2268C73200666F36 /* OperationRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationRequests.swift; sourceTree = "<group>"; };
+		4BF606262269001700EB7FFB /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		4BF606282269066200EB7FFB /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		4BF6062E2269117C00EB7FFB /* LogOutScreenFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenFactoryProtocol.swift; sourceTree = "<group>"; };
+		4BF6062F2269117C00EB7FFB /* LogOutScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenAssembly.swift; sourceTree = "<group>"; };
+		4BF606312269117C00EB7FFB /* LogOutScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenPresenter.swift; sourceTree = "<group>"; };
+		4BF606332269117C00EB7FFB /* LogOutScreenViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenViewInput.swift; sourceTree = "<group>"; };
+		4BF606342269117C00EB7FFB /* LogOutScreenViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenViewOutput.swift; sourceTree = "<group>"; };
+		4BF606352269117C00EB7FFB /* LogOutScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenViewController.swift; sourceTree = "<group>"; };
+		4BF606372269117C00EB7FFB /* LogOutScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenInteractor.swift; sourceTree = "<group>"; };
+		4BF606382269117C00EB7FFB /* LogOutScreenInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenInteractorInput.swift; sourceTree = "<group>"; };
+		4BF606392269117C00EB7FFB /* LogOutScreenInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		4BF6063B2269117C00EB7FFB /* LogOutScreenRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenRouterOutput.swift; sourceTree = "<group>"; };
+		4BF6063C2269117C00EB7FFB /* LogOutScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenRouter.swift; sourceTree = "<group>"; };
+		4BF6063D2269117C00EB7FFB /* LogOutScreenRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutScreenRouterInput.swift; sourceTree = "<group>"; };
+		4BF6064A2269BA1300EB7FFB /* LogOutScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutScreenView.swift; sourceTree = "<group>"; };
 		4BFFFC8C22419CC400EE5228 /* Budget Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Budget Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BFFFC8F22419CC400EE5228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BFFFC9622419CC600EE5228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -209,7 +247,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		4B47790B225E6D74000E673B /* LogInScreen */ = {
+		4B47790B225E6D74000E673B /* SignInScreen */ = {
 			isa = PBXGroup;
 			children = (
 				4B47790C225E6D74000E673B /* Assembly */,
@@ -218,14 +256,14 @@
 				4B477915225E6D74000E673B /* Interactor */,
 				4B477919225E6D74000E673B /* Router */,
 			);
-			path = LogInScreen;
+			path = SignInScreen;
 			sourceTree = "<group>";
 		};
 		4B47790C225E6D74000E673B /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				4B47790D225E6D74000E673B /* LogInScreenFactoryProtocol.swift */,
-				4B47790E225E6D74000E673B /* LogInScreenAssembly.swift */,
+				4B47790D225E6D74000E673B /* SignInScreenFactoryProtocol.swift */,
+				4B47790E225E6D74000E673B /* SignInScreenAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -233,7 +271,7 @@
 		4B47790F225E6D74000E673B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				4B477910225E6D74000E673B /* LogInScreenPresenter.swift */,
+				4B477910225E6D74000E673B /* SignInScreenPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -241,10 +279,10 @@
 		4B477911225E6D74000E673B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4B477912225E6D74000E673B /* LogInScreenViewController.swift */,
-				4B4D1F91225FD9040013D0E6 /* LogInScreenView.swift */,
-				4B477913225E6D74000E673B /* LogInScreenViewInput.swift */,
-				4B477914225E6D74000E673B /* LogInScreenViewOutput.swift */,
+				4B477912225E6D74000E673B /* SignInScreenViewController.swift */,
+				4B4D1F91225FD9040013D0E6 /* SignInScreenView.swift */,
+				4B477913225E6D74000E673B /* SignInScreenViewInput.swift */,
+				4B477914225E6D74000E673B /* SignInScreenViewOutput.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,9 +290,9 @@
 		4B477915225E6D74000E673B /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				4B477918225E6D74000E673B /* LogInScreenInteractor.swift */,
-				4B477917225E6D74000E673B /* LogInScreenInteractorInput.swift */,
-				4B477916225E6D74000E673B /* LogInScreenInteractorOutput.swift */,
+				4B477918225E6D74000E673B /* SignInScreenInteractor.swift */,
+				4B477917225E6D74000E673B /* SignInScreenInteractorInput.swift */,
+				4B477916225E6D74000E673B /* SignInScreenInteractorOutput.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -262,9 +300,9 @@
 		4B477919225E6D74000E673B /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				4B47791A225E6D74000E673B /* LogInScreenRouter.swift */,
-				4B47791B225E6D74000E673B /* LogInScreenRouterInput.swift */,
-				4B47791C225E6D74000E673B /* LogInScreenRouterOutput.swift */,
+				4B47791A225E6D74000E673B /* SignInScreenRouter.swift */,
+				4B47791B225E6D74000E673B /* SignInScreenRouterInput.swift */,
+				4B47791C225E6D74000E673B /* SignInScreenRouterOutput.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -456,14 +494,6 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		4B4D1FB72260DDD20013D0E6 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				4B4D1FB82260DEE70013D0E6 /* AuthorizationService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		4B5B0986225B9A0D00A10365 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,9 +510,10 @@
 			isa = PBXGroup;
 			children = (
 				4B4A1F28225CFD43005D1819 /* WelcomeScreen */,
-				4B47790B225E6D74000E673B /* LogInScreen */,
+				4B47790B225E6D74000E673B /* SignInScreen */,
 				4B47792B225E6DC6000E673B /* SignUpScreen */,
 				4B4D1F9722608DBA0013D0E6 /* MainScreen */,
+				4BF6062C2269117C00EB7FFB /* LogOutScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -509,6 +540,9 @@
 		4B5B09D1225BCDEE00A10365 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				4BBA5F872268C3B000666F36 /* RequestModels */,
+				4BF606252268FFF500EB7FFB /* ResponseModels */,
+				4BBA5F852268B59800666F36 /* NetworkAPI.swift */,
 				4B4A1F4A225CFFE6005D1819 /* NetworkManager.swift */,
 				4B4A1F4C225D003A005D1819 /* NetworkManagerProtocol.swift */,
 			);
@@ -540,6 +574,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		4BA1D154226C90350071D35A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4BA1D159226C93FB0071D35A /* AuthService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4BA1D159226C93FB0071D35A /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				4BA1D155226C904B0071D35A /* AuthService.swift */,
+				4BA1D157226C93F40071D35A /* AuthServiceProtocol.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
 		4BABA0E4225E204200CA1E08 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,6 +598,84 @@
 				4BABA0E2225E203B00CA1E08 /* OperationModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4BBA5F872268C3B000666F36 /* RequestModels */ = {
+			isa = PBXGroup;
+			children = (
+				4BBA5F8C2268C4B100666F36 /* UserRequests.swift */,
+				4BBA5F8E2268C73200666F36 /* OperationRequests.swift */,
+			);
+			path = RequestModels;
+			sourceTree = "<group>";
+		};
+		4BF606252268FFF500EB7FFB /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				4BF606262269001700EB7FFB /* ErrorResponse.swift */,
+				4BF606282269066200EB7FFB /* AuthResponse.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		4BF6062C2269117C00EB7FFB /* LogOutScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4BF6062D2269117C00EB7FFB /* Assembly */,
+				4BF606322269117C00EB7FFB /* View */,
+				4BF606302269117C00EB7FFB /* Presenter */,
+				4BF606362269117C00EB7FFB /* Interactor */,
+				4BF6063A2269117C00EB7FFB /* Router */,
+			);
+			path = LogOutScreen;
+			sourceTree = "<group>";
+		};
+		4BF6062D2269117C00EB7FFB /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				4BF6062E2269117C00EB7FFB /* LogOutScreenFactoryProtocol.swift */,
+				4BF6062F2269117C00EB7FFB /* LogOutScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		4BF606302269117C00EB7FFB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4BF606312269117C00EB7FFB /* LogOutScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4BF606322269117C00EB7FFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4BF606352269117C00EB7FFB /* LogOutScreenViewController.swift */,
+				4BF6064A2269BA1300EB7FFB /* LogOutScreenView.swift */,
+				4BF606332269117C00EB7FFB /* LogOutScreenViewInput.swift */,
+				4BF606342269117C00EB7FFB /* LogOutScreenViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4BF606362269117C00EB7FFB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4BF606372269117C00EB7FFB /* LogOutScreenInteractor.swift */,
+				4BF606382269117C00EB7FFB /* LogOutScreenInteractorInput.swift */,
+				4BF606392269117C00EB7FFB /* LogOutScreenInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4BF6063A2269117C00EB7FFB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4BF6063B2269117C00EB7FFB /* LogOutScreenRouterOutput.swift */,
+				4BF6063C2269117C00EB7FFB /* LogOutScreenRouter.swift */,
+				4BF6063D2269117C00EB7FFB /* LogOutScreenRouterInput.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		4BFFFC8322419CC400EE5228 = {
@@ -571,8 +700,8 @@
 			isa = PBXGroup;
 			children = (
 				4BFFFC8F22419CC400EE5228 /* AppDelegate.swift */,
-				4B4D1FB72260DDD20013D0E6 /* Services */,
 				4B5B0988225B9A1A00A10365 /* Managers */,
+				4BA1D154226C90350071D35A /* Services */,
 				4B5B0987225B9A1400A10365 /* Modules */,
 				4B5B0986225B9A0D00A10365 /* Utils */,
 				4B5B09D2225CBDC900A10365 /* Resources */,
@@ -734,10 +863,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Budget Tracker/Pods-Budget Tracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
@@ -745,10 +877,13 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
@@ -767,66 +902,85 @@
 				4B4D1FB422608DBA0013D0E6 /* MainScreenRouter.swift in Sources */,
 				4B4A1F4D225D003A005D1819 /* NetworkManagerProtocol.swift in Sources */,
 				4B477948225E6DC6000E673B /* SignUpScreenRouterOutput.swift in Sources */,
+				4BF606452269117C00EB7FFB /* LogOutScreenInteractorInput.swift in Sources */,
 				4B4A1F41225CFD43005D1819 /* WelcomeScreenInteractorInput.swift in Sources */,
+				4BF6063E2269117C00EB7FFB /* LogOutScreenFactoryProtocol.swift in Sources */,
+				4BBA5F862268B59800666F36 /* NetworkAPI.swift in Sources */,
 				4B4A1F43225CFD43005D1819 /* WelcomeScreenRouter.swift in Sources */,
-				4B47791F225E6D74000E673B /* LogInScreenPresenter.swift in Sources */,
+				4B47791F225E6D74000E673B /* SignInScreenPresenter.swift in Sources */,
 				4B4D1FB122608DBA0013D0E6 /* MainScreenInteractor.swift in Sources */,
 				4BABA0DD225D3A6700CA1E08 /* WelcomeScreenView.swift in Sources */,
 				4B477943225E6DC6000E673B /* SignUpScreenInteractorInput.swift in Sources */,
 				4B477942225E6DC6000E673B /* SignUpScreenViewInput.swift in Sources */,
 				4B47793F225E6DC6000E673B /* SignUpScreenPresenter.swift in Sources */,
 				4B4A1F40225CFD43005D1819 /* WelcomeScreenInteractorOutput.swift in Sources */,
-				4B477921225E6D74000E673B /* LogInScreenViewInput.swift in Sources */,
+				4B477921225E6D74000E673B /* SignInScreenViewInput.swift in Sources */,
 				4B4A1F4B225CFFE6005D1819 /* NetworkManager.swift in Sources */,
 				4B4D1FAD22608DBA0013D0E6 /* MainScreenViewInput.swift in Sources */,
 				4B4D1FAC22608DBA0013D0E6 /* MainScreenViewOutput.swift in Sources */,
-				4B477927225E6D74000E673B /* LogInScreenRouterInput.swift in Sources */,
-				4B477926225E6D74000E673B /* LogInScreenRouter.swift in Sources */,
+				4BA1D158226C93F40071D35A /* AuthServiceProtocol.swift in Sources */,
+				4BF606492269117C00EB7FFB /* LogOutScreenRouterInput.swift in Sources */,
+				4B477927225E6D74000E673B /* SignInScreenRouterInput.swift in Sources */,
+				4B477926225E6D74000E673B /* SignInScreenRouter.swift in Sources */,
+				4BF606432269117C00EB7FFB /* LogOutScreenViewController.swift in Sources */,
+				4BF606422269117C00EB7FFB /* LogOutScreenViewOutput.swift in Sources */,
+				4BF606462269117C00EB7FFB /* LogOutScreenInteractorOutput.swift in Sources */,
 				4B5B09CD225BC07700A10365 /* FontConstants.swift in Sources */,
-				4B47791E225E6D74000E673B /* LogInScreenAssembly.swift in Sources */,
+				4B47791E225E6D74000E673B /* SignInScreenAssembly.swift in Sources */,
 				4BABA0DB225D375700CA1E08 /* TextConstants.swift in Sources */,
 				4B4A1F45225CFD43005D1819 /* WelcomeScreenRouterOutput.swift in Sources */,
 				4BABA0E1225E203000CA1E08 /* UserModel.swift in Sources */,
 				4B477941225E6DC6000E673B /* SignUpScreenViewController.swift in Sources */,
 				4B4D1F94225FF10F0013D0E6 /* SignUpScreenView.swift in Sources */,
 				4B4A1F44225CFD43005D1819 /* WelcomeScreenRouterInput.swift in Sources */,
+				4BF606442269117C00EB7FFB /* LogOutScreenInteractor.swift in Sources */,
 				4B477940225E6DC6000E673B /* SignUpScreenViewOutput.swift in Sources */,
 				4B4D1FAA22608DBA0013D0E6 /* MainScreenFactoryProtocol.swift in Sources */,
 				4B5B09CB225BC06C00A10365 /* ColorConstants.swift in Sources */,
-				4B477920225E6D74000E673B /* LogInScreenViewController.swift in Sources */,
+				4B477920225E6D74000E673B /* SignInScreenViewController.swift in Sources */,
 				4B4D1FAF22608DBA0013D0E6 /* MainScreenInteractorOutput.swift in Sources */,
 				4B4A1F49225CFFB9005D1819 /* RealmManagerProtocol.swift in Sources */,
+				4BF606272269001700EB7FFB /* ErrorResponse.swift in Sources */,
 				4B4D1FAE22608DBA0013D0E6 /* MainScreenViewController.swift in Sources */,
 				4B477944225E6DC6000E673B /* SignUpScreenInteractor.swift in Sources */,
+				4BBA5F8F2268C73200666F36 /* OperationRequests.swift in Sources */,
 				4B47793D225E6DC6000E673B /* SignUpScreenAssembly.swift in Sources */,
 				4B4D1FB322608DBA0013D0E6 /* MainScreenRouterOutput.swift in Sources */,
 				4B4D1FA922608DBA0013D0E6 /* MainScreenAssembly.swift in Sources */,
+				4BF606402269117C00EB7FFB /* LogOutScreenPresenter.swift in Sources */,
+				4BF6063F2269117C00EB7FFB /* LogOutScreenAssembly.swift in Sources */,
 				4B477946225E6DC6000E673B /* SignUpScreenRouter.swift in Sources */,
+				4BBA5F8D2268C4B100666F36 /* UserRequests.swift in Sources */,
 				4B47793E225E6DC6000E673B /* SignUpScreenFactoryProtocol.swift in Sources */,
-				4B477928225E6D74000E673B /* LogInScreenRouterOutput.swift in Sources */,
+				4B477928225E6D74000E673B /* SignInScreenRouterOutput.swift in Sources */,
 				4B4A1F3C225CFD43005D1819 /* WelcomeScreenPresenter.swift in Sources */,
 				4B477945225E6DC6000E673B /* SignUpScreenInteractorOutput.swift in Sources */,
 				4B4A1F3D225CFD43005D1819 /* WelcomeScreenViewController.swift in Sources */,
+				4BF606482269117C00EB7FFB /* LogOutScreenRouter.swift in Sources */,
 				4B4D1FB022608DBA0013D0E6 /* MainScreenInteractorInput.swift in Sources */,
 				4B4D1FB222608DBA0013D0E6 /* MainScreenRouterInput.swift in Sources */,
-				4B477923225E6D74000E673B /* LogInScreenInteractorOutput.swift in Sources */,
+				4B477923225E6D74000E673B /* SignInScreenInteractorOutput.swift in Sources */,
+				4BF6064B2269BA1300EB7FFB /* LogOutScreenView.swift in Sources */,
+				4BF606292269066200EB7FFB /* AuthResponse.swift in Sources */,
 				4B4A1F42225CFD43005D1819 /* WelcomeScreenInteractor.swift in Sources */,
 				4BA060A7225E827F0024E6FE /* Extensions.swift in Sources */,
 				4BABA0E3225E203B00CA1E08 /* OperationModel.swift in Sources */,
 				4B477947225E6DC6000E673B /* SignUpScreenRouterInput.swift in Sources */,
-				4B4D1F92225FD9040013D0E6 /* LogInScreenView.swift in Sources */,
-				4B477925225E6D74000E673B /* LogInScreenInteractor.swift in Sources */,
-				4B47791D225E6D74000E673B /* LogInScreenFactoryProtocol.swift in Sources */,
+				4B4D1F92225FD9040013D0E6 /* SignInScreenView.swift in Sources */,
+				4B477925225E6D74000E673B /* SignInScreenInteractor.swift in Sources */,
+				4B47791D225E6D74000E673B /* SignInScreenFactoryProtocol.swift in Sources */,
 				4B4A1F3B225CFD43005D1819 /* WelcomeScreenAssembly.swift in Sources */,
+				4BF606472269117C00EB7FFB /* LogOutScreenRouterOutput.swift in Sources */,
 				4B4A1F47225CFF97005D1819 /* RealmManager.swift in Sources */,
-				4B4D1FB92260DEE70013D0E6 /* AuthorizationService.swift in Sources */,
 				4B4A1F3E225CFD43005D1819 /* WelcomeScreenViewOutput.swift in Sources */,
 				4B4D1FAB22608DBA0013D0E6 /* MainScreenPresenter.swift in Sources */,
 				4B4A1F3F225CFD43005D1819 /* WelcomeScreenViewInput.swift in Sources */,
 				4B4A1F3A225CFD43005D1819 /* WelcomeScreenFactoryProtocol.swift in Sources */,
-				4B477922225E6D74000E673B /* LogInScreenViewOutput.swift in Sources */,
+				4BF606412269117C00EB7FFB /* LogOutScreenViewInput.swift in Sources */,
+				4BA1D156226C904B0071D35A /* AuthService.swift in Sources */,
+				4B477922225E6D74000E673B /* SignInScreenViewOutput.swift in Sources */,
 				4B4A1F25225CE54C005D1819 /* BaseTextField.swift in Sources */,
-				4B477924225E6D74000E673B /* LogInScreenInteractorInput.swift in Sources */,
+				4B477924225E6D74000E673B /* SignInScreenInteractorInput.swift in Sources */,
 				4BFFFC9022419CC400EE5228 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

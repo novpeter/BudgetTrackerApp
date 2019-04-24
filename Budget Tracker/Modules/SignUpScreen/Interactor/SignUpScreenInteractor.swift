@@ -11,7 +11,7 @@ import UIKit
 class SignUpScreenInteractor: SignUpScreenInteractorInput {
     
     var presenter: SignUpScreenInteractorOutput!
-    
+    var authService: AuthServiceProtocol!
     
     func signUp(name: String?, email: String?, password: String?, confirmedPassword: String?) {
         guard let name = name, let email = email?.lowercased(), let password = password, let confirmedPassword = confirmedPassword
@@ -19,29 +19,30 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
             presenter.showAlert(title: AlertTitles.GenericError, description: AlertTitles.CheckAllFields, alertType: .error)
             return
         }
-        
         if name.count < 3 {
             presenter.showAlert(title: AlertTitles.WrongName, description: "", alertType: .error)
             return
         }
-        
         if !email.regex(mask: Regex.Email) {
             presenter.showAlert(title: AlertTitles.WrongEmail, description: "", alertType: .error)
             return
         }
-        
         if !password.regex(mask: Regex.Password) {
             presenter.showAlert(title: AlertTitles.WrongPassword, description: AlertTitles.PasswordReciepe, alertType: .error)
             return
         }
-        
         if password != confirmedPassword {
             presenter.showAlert(title: AlertTitles.WrongPassword, description: AlertTitles.PasswordsNotMatch, alertType: .error)
             return
         }
         
-        // запрос серверу на регистрацию и получение токена
-        
-        presenter.showMainScreen()
+        authService.signUp(name: name, email: email, password: password) { (result) in
+            switch result {
+            case .Success:
+                self.presenter.showMainScreen()
+            case .Error(let error):
+                self.presenter.showAlert(title: AlertTitles.GenericError, description: error.localizedDescription, alertType: .error)
+            }
+        }
     }
 }
