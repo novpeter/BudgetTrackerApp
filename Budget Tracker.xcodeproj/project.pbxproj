@@ -518,15 +518,6 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		4B5B0988225B9A1A00A10365 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				4B5B09D1225BCDEE00A10365 /* NetworkManager */,
-				4B5B09D0225BCDDA00A10365 /* RealmManager */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		4B5B09D0225BCDDA00A10365 /* RealmManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,6 +568,8 @@
 		4BA1D154226C90350071D35A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4B5B09D1225BCDEE00A10365 /* NetworkManager */,
+				4B5B09D0225BCDDA00A10365 /* RealmManager */,
 				4BA1D159226C93FB0071D35A /* AuthService */,
 			);
 			path = Services;
@@ -700,7 +693,6 @@
 			isa = PBXGroup;
 			children = (
 				4BFFFC8F22419CC400EE5228 /* AppDelegate.swift */,
-				4B5B0988225B9A1A00A10365 /* Managers */,
 				4BA1D154226C90350071D35A /* Services */,
 				4B5B0987225B9A1400A10365 /* Modules */,
 				4B5B0986225B9A0D00A10365 /* Utils */,
