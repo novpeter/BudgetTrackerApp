@@ -33,8 +33,8 @@ class LogOutScreenPresenter:
         router.showWelcomeScreen()
     }
     
-    func showAlert(title: String, description: String, type: SCLAlertViewStyle) {
-        router.showAlert(title: title, description: description, type: type)
+    func showAlert(title: AlertTitles, subTitle: AlertSubTitles, alertType: SCLAlertViewStyle) {
+        router.showAlert(title: title, subTitle: subTitle, type: alertType)
     }
     
     // MARK: - LogOutScreenRouterOutput

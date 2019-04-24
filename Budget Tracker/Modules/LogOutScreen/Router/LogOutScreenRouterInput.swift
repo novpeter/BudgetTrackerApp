@@ -10,14 +10,14 @@ import SCLAlertView
 
 protocol LogOutScreenRouterInput: AnyObject {
  
-    /// Navigates to welcome screen
-    func showWelcomeScreen()
-    
-    /// Shows alert message
+    /// Calls alert managet to show alert with given title and description
     ///
     /// - Parameters:
     ///   - title: title
-    ///   - description: description
-    ///   - type: type of alert
-    func showAlert(title: String, description: String, type: SCLAlertViewStyle)
+    ///   - subTitle: description
+    ///   - type: alert type
+    func showAlert(title: AlertTitles, subTitle: AlertSubTitles, type: SCLAlertViewStyle)
+    
+    /// Navigates to welcome screen
+    func showWelcomeScreen()
 }

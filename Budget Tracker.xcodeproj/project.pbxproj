@@ -90,6 +90,8 @@
 		4BABA0DD225D3A6700CA1E08 /* WelcomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA0DC225D3A6700CA1E08 /* WelcomeScreenView.swift */; };
 		4BABA0E1225E203000CA1E08 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA0E0225E203000CA1E08 /* UserModel.swift */; };
 		4BABA0E3225E203B00CA1E08 /* OperationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA0E2225E203B00CA1E08 /* OperationModel.swift */; };
+		4BAC0D76227056DA008F7813 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC0D75227056DA008F7813 /* AlertManager.swift */; };
+		4BAC0D78227056EB008F7813 /* AlertManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC0D77227056EB008F7813 /* AlertManagerProtocol.swift */; };
 		4BBA5F862268B59800666F36 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F852268B59800666F36 /* NetworkAPI.swift */; };
 		4BBA5F8D2268C4B100666F36 /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F8C2268C4B100666F36 /* UserRequests.swift */; };
 		4BBA5F8F2268C73200666F36 /* OperationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F8E2268C73200666F36 /* OperationRequests.swift */; };
@@ -199,6 +201,8 @@
 		4BABA0DC225D3A6700CA1E08 /* WelcomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenView.swift; sourceTree = "<group>"; };
 		4BABA0E0225E203000CA1E08 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4BABA0E2225E203B00CA1E08 /* OperationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationModel.swift; sourceTree = "<group>"; };
+		4BAC0D75227056DA008F7813 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		4BAC0D77227056EB008F7813 /* AlertManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManagerProtocol.swift; sourceTree = "<group>"; };
 		4BBA5F852268B59800666F36 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		4BBA5F8C2268C4B100666F36 /* UserRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequests.swift; sourceTree = "<group>"; };
 		4BBA5F8E2268C73200666F36 /* OperationRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationRequests.swift; sourceTree = "<group>"; };
@@ -439,8 +443,8 @@
 			isa = PBXGroup;
 			children = (
 				4B4D1F9822608DBA0013D0E6 /* Assembly */,
-				4B4D1F9B22608DBA0013D0E6 /* Presenter */,
 				4B4D1F9D22608DBA0013D0E6 /* View */,
+				4B4D1F9B22608DBA0013D0E6 /* Presenter */,
 				4B4D1FA122608DBA0013D0E6 /* Interactor */,
 				4B4D1FA522608DBA0013D0E6 /* Router */,
 			);
@@ -568,6 +572,7 @@
 		4BA1D154226C90350071D35A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4BAC0D74227056C6008F7813 /* AlertManager */,
 				4B5B09D1225BCDEE00A10365 /* NetworkManager */,
 				4B5B09D0225BCDDA00A10365 /* RealmManager */,
 				4BA1D159226C93FB0071D35A /* AuthService */,
@@ -591,6 +596,15 @@
 				4BABA0E2225E203B00CA1E08 /* OperationModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4BAC0D74227056C6008F7813 /* AlertManager */ = {
+			isa = PBXGroup;
+			children = (
+				4BAC0D75227056DA008F7813 /* AlertManager.swift */,
+				4BAC0D77227056EB008F7813 /* AlertManagerProtocol.swift */,
+			);
+			path = AlertManager;
 			sourceTree = "<group>";
 		};
 		4BBA5F872268C3B000666F36 /* RequestModels */ = {
@@ -943,6 +957,7 @@
 				4BF6063F2269117C00EB7FFB /* LogOutScreenAssembly.swift in Sources */,
 				4B477946225E6DC6000E673B /* SignUpScreenRouter.swift in Sources */,
 				4BBA5F8D2268C4B100666F36 /* UserRequests.swift in Sources */,
+				4BAC0D78227056EB008F7813 /* AlertManagerProtocol.swift in Sources */,
 				4B47793E225E6DC6000E673B /* SignUpScreenFactoryProtocol.swift in Sources */,
 				4B477928225E6D74000E673B /* SignInScreenRouterOutput.swift in Sources */,
 				4B4A1F3C225CFD43005D1819 /* WelcomeScreenPresenter.swift in Sources */,
@@ -959,6 +974,7 @@
 				4BABA0E3225E203B00CA1E08 /* OperationModel.swift in Sources */,
 				4B477947225E6DC6000E673B /* SignUpScreenRouterInput.swift in Sources */,
 				4B4D1F92225FD9040013D0E6 /* SignInScreenView.swift in Sources */,
+				4BAC0D76227056DA008F7813 /* AlertManager.swift in Sources */,
 				4B477925225E6D74000E673B /* SignInScreenInteractor.swift in Sources */,
 				4B47791D225E6D74000E673B /* SignInScreenFactoryProtocol.swift in Sources */,
 				4B4A1F3B225CFD43005D1819 /* WelcomeScreenAssembly.swift in Sources */,

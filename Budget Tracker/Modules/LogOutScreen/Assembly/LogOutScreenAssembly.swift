@@ -26,9 +26,11 @@ class LogOutScreenAssembly: LogOutScreenFactoryProtocol {
         let presenter = LogOutScreenPresenter()
         let router = LogOutScreenRouter()
         let interactor = LogOutScreenInteractor()
+        
         let realmManager = RealmManager()
         let networkManager = NetworkManager()
         let authService = AuthService()
+        let alertManager = AlertManager()
         
         view.presenter = presenter
         
@@ -42,5 +44,6 @@ class LogOutScreenAssembly: LogOutScreenFactoryProtocol {
         authService.networkManager = networkManager
         
         router.welcomeAssembly = welcomeAssembly
+        router.alertManager = alertManager
     }
 }

@@ -13,11 +13,11 @@ protocol LogOutScreenInteractorOutput: AnyObject {
     /// Calls router to show welcome screen
     func showWelcomeScreen()
     
-    /// Calls router to show alert
+    /// Notifies presenter to call alert
     ///
     /// - Parameters:
-    ///   - title: title
-    ///   - description: description
-    ///   - type: type of alert
-    func showAlert(title: String, description: String, type: SCLAlertViewStyle)
+    ///   - title: alert title
+    ///   - subTitle: alert subTitle
+    ///   - alertType: alert type
+    func showAlert(title: AlertTitles, subTitle: AlertSubTitles, alertType: SCLAlertViewStyle)
 }
