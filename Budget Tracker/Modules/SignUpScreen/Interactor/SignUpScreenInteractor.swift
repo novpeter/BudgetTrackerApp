@@ -16,23 +16,23 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
     func signUp(name: String?, email: String?, password: String?, confirmedPassword: String?) {
         guard let name = name, let email = email?.lowercased(), let password = password, let confirmedPassword = confirmedPassword
         else {
-            presenter.showAlert(title: AlertTitles.GenericError, description: AlertDescriptions.CheckAllFields, alertType: .error)
+            presenter.showAlert(title: .GenericError, subTitle: .CheckAllFields, alertType: .error)
             return
         }
         if name.count < 3 {
-            presenter.showAlert(title: AlertTitles.WrongName, description: "", alertType: .error)
+            presenter.showAlert(title: AlertTitles.WrongName, subTitle: .Empty, alertType: .error)
             return
         }
         if !email.regex(mask: Regex.Email) {
-            presenter.showAlert(title: AlertTitles.WrongEmail, description: "", alertType: .error)
+            presenter.showAlert(title: AlertTitles.WrongEmail, subTitle: .Empty, alertType: .error)
             return
         }
         if !password.regex(mask: Regex.Password) {
-            presenter.showAlert(title: AlertTitles.WrongPassword, description: AlertDescriptions.PasswordReciepe, alertType: .error)
+            presenter.showAlert(title: .WrongPassword, subTitle: .PasswordReciepe, alertType: .error)
             return
         }
         if password != confirmedPassword {
-            presenter.showAlert(title: AlertTitles.WrongPassword, description: AlertTitles.PasswordsNotMatch, alertType: .error)
+            presenter.showAlert(title: .WrongPassword, subTitle: .PasswordsNotMatch, alertType: .error)
             return
         }
         
@@ -41,7 +41,8 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
             case .Success:
                 self.presenter.showMainScreen()
             case .Error(let error):
-                self.presenter.showAlert(title: AlertTitles.GenericError, description: error.localizedDescription, alertType: .error)
+                print("Sign up error: \(error.localizedDescription)")
+                self.presenter.showAlert(title: .GenericError, subTitle: .SignUpError, alertType: .error)
             }
         }
     }

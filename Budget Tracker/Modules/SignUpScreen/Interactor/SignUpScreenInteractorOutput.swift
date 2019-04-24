@@ -15,9 +15,9 @@ protocol SignUpScreenInteractorOutput: AnyObject {
     ///
     /// - Parameters:
     ///   - title: alert title
-    ///   - description: alert description
+    ///   - subTitle: alert subTitle
     ///   - alertType: alert type
-    func showAlert(title: String, description: String, alertType: SCLAlertViewStyle)
+    func showAlert(title: AlertTitles, subTitle: AlertSubTitles, alertType: SCLAlertViewStyle)
     
     /// Calls router to show main screen
     func showMainScreen()

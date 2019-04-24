@@ -14,19 +14,10 @@ class SignInScreenRouter: SignInScreenRouterInput {
     var mainAssembly: MainScreenFactoryProtocol!
     var view: SignInScreenViewController!
     var presenter: SignInScreenRouterOutput!
+    var alertManager: AlertManagerProtocol!
     
-    func showAlert(title: String, description: String, type: SCLAlertViewStyle) {
-        
-        switch type {
-        case .error:
-            SCLAlertView().showError(title, subTitle: description)
-        case .info:
-            SCLAlertView().showInfo(title, subTitle: description)
-        case .success:
-            SCLAlertView().showSuccess(title, subTitle: description)
-        default:
-            break
-        }
+    func showAlert(title: AlertTitles, subTitle: AlertSubTitles, type: SCLAlertViewStyle) {
+        alertManager.show(title: title, subTitle: subTitle, type: type)
     }
     
     func showMainScreen() {
