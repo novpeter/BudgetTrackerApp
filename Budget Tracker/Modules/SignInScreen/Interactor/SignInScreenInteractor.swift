@@ -24,7 +24,7 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
         }
         
         if !password.regex(mask: Regex.Password) {
-            presenter.showAlert(title: AlertTitles.WrongPassword, description: AlertTitles.PasswordReciepe, alertType: .error)
+            presenter.showAlert(title: AlertTitles.WrongPassword, description: AlertDescriptions.PasswordReciepe, alertType: .error)
             return
         }
         
@@ -57,6 +57,6 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
         
         // send password to email
         
-        presenter.showAlert(title: AlertTitles.Done, description: "\(AlertTitles.PasswordWasSent)\(email)", alertType: .success)
+        presenter.showAlert(title: AlertTitles.Done, description: "\(AlertDescriptions.PasswordWasSent)\(email)", alertType: .success)
     }
 }

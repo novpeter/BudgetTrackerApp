@@ -16,7 +16,7 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
     func signUp(name: String?, email: String?, password: String?, confirmedPassword: String?) {
         guard let name = name, let email = email?.lowercased(), let password = password, let confirmedPassword = confirmedPassword
         else {
-            presenter.showAlert(title: AlertTitles.GenericError, description: AlertTitles.CheckAllFields, alertType: .error)
+            presenter.showAlert(title: AlertTitles.GenericError, description: AlertDescriptions.CheckAllFields, alertType: .error)
             return
         }
         if name.count < 3 {
@@ -28,7 +28,7 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
             return
         }
         if !password.regex(mask: Regex.Password) {
-            presenter.showAlert(title: AlertTitles.WrongPassword, description: AlertTitles.PasswordReciepe, alertType: .error)
+            presenter.showAlert(title: AlertTitles.WrongPassword, description: AlertDescriptions.PasswordReciepe, alertType: .error)
             return
         }
         if password != confirmedPassword {

@@ -6,7 +6,7 @@
 //  Copyright © 2019 DreamTeam. All rights reserved.
 //
 
-import Foundation
+import SCLAlertView
 
 class LogOutScreenPresenter:
     LogOutScreenViewOutput,
@@ -18,16 +18,24 @@ class LogOutScreenPresenter:
     var interactor: LogOutScreenInteractorInput!
     
     func syncButtonClicked() {
-        
+        interactor.synchronize()
     }
     
     func logOutButtonClicked() {
-        
+        interactor.logOut()
     }
     
     // MARK: - LogOutScreenViewOutput
     
     // MARK: - LogOutScreenInteractorOutput
+    
+    func showWelcomeScreen() {
+        router.showWelcomeScreen()
+    }
+    
+    func showAlert(title: String, description: String, type: SCLAlertViewStyle) {
+        router.showAlert(title: title, description: description, type: type)
+    }
     
     // MARK: - LogOutScreenRouterOutput
 }

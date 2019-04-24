@@ -40,4 +40,14 @@ protocol AuthServiceProtocol {
     ///
     /// - Parameter email: user email
     func forgotPassword(email: String)
+    
+    /// Sends log out request to the server
+    ///
+    /// - Parameter completionBlock: completion block
+    func logOut(completionBlock: @escaping (ResponseResult) -> ())
+    
+    /// Synchronize all data with server
+    ///
+    /// - Parameter completionBlock: completion block
+    func synchronize(completionBlock: @escaping (ResponseResult) -> ())
 }

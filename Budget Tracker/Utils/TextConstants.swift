@@ -44,15 +44,20 @@ struct Regex {
 }
 
 struct AlertTitles {
-    static let GenericError = "Something went wrong"
-    static let CheckAllFields = "Check all fields"
+    static let GenericError = "Oops..."
     static let WrongName = "Wrong name"
     static let WrongEmail = "Wrong email"
     static let WrongPassword = "Wrong password"
-    static let PasswordReciepe = "Password should contain one upper case and lower case letter, one digit and lenght more than 8"
     static let PasswordsNotMatch = "Passwords do not match"
     static let Done = "Done!"
+}
+
+struct AlertDescriptions {
+    static let GenericError = "Something went wrong"
+    static let PasswordReciepe = "Password should contain one upper case and lower case letter, one digit and lenght more than 8"
     static let PasswordWasSent = "The password was sent on "
+    static let CheckAllFields = "Check all fields"
+    static let SynchronizeComplete = "All data was synchronize"
 }
 
 struct URLConstants {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GoogleSignIn
 
 enum ResponseResult {
     case Success
@@ -107,5 +108,36 @@ class AuthService: AuthServiceProtocol {
         }, error: { (error) in
             completionBlock(.Error(error))
         })
+    }
+    
+    func logOut(completionBlock: @escaping (ResponseResult) -> ()) {
+        guard let userToken = realmManager.getObjects(with: UserModel.self)?.first?.sessionToken
+        else {
+            let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Authentication error"])
+            completionBlock(.Error(error))
+            return
+        }
+        
+        // TODO: sync all operation
+        
+        GIDSignIn.sharedInstance().signOut()
+        
+        networkManager.request(target: .logOut(token: userToken), success: { (response) in
+            do
+            {
+                let _ = try JSONDecoder().decode(AuthResponse.self, from: response.data)
+                completionBlock(.Success)
+            }
+            catch let error {
+                completionBlock(.Error(error))
+            }
+        }, error: { (error) in
+            completionBlock(.Success)
+        })
+    }
+    
+    func synchronize(completionBlock: @escaping (ResponseResult) -> ()) {
+        // TODO: - sync all data
+        completionBlock(.Success)
     }
 }

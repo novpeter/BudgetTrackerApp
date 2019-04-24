@@ -6,8 +6,18 @@
 //  Copyright © 2019 DreamTeam. All rights reserved.
 //
 
-import Foundation
+import SCLAlertView
 
 protocol LogOutScreenInteractorOutput: AnyObject {
     
+    /// Calls router to show welcome screen
+    func showWelcomeScreen()
+    
+    /// Calls router to show alert
+    ///
+    /// - Parameters:
+    ///   - title: title
+    ///   - description: description
+    ///   - type: type of alert
+    func showAlert(title: String, description: String, type: SCLAlertViewStyle)
 }
