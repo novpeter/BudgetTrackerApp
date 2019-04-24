@@ -8,6 +8,7 @@
 
 import UIKit
 import SCLAlertView
+import SVProgressHUD
 
 class LogOutScreenRouter: LogOutScreenRouterInput {
     
@@ -35,5 +36,13 @@ class LogOutScreenRouter: LogOutScreenRouterInput {
         
         appDelegate.window?.rootViewController = navigationController
         appDelegate.window?.makeKey()
+    }
+    
+    func startLoading() {
+        SVProgressHUD.show()
+    }
+    
+    func stopLoading() {
+        SVProgressHUD.dismiss()
     }
 }

@@ -37,5 +37,13 @@ class LogOutScreenPresenter:
         router.showAlert(title: title, subTitle: subTitle, type: alertType)
     }
     
+    func startLoading() {
+        router.startLoading()
+    }
+    
+    func stopLoading() {
+        router.stopLoading()
+    }
+    
     // MARK: - LogOutScreenRouterOutput
 }

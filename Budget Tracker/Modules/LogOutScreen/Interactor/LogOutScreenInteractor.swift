@@ -14,11 +14,14 @@ class LogOutScreenInteractor: LogOutScreenInteractorInput {
     var authService: AuthServiceProtocol!
     
     func logOut() {
+        presenter.startLoading()
         authService.logOut { (result) in
             switch result {
             case .Success:
+                self.presenter.stopLoading()
                 self.presenter.showWelcomeScreen()
             case .Error(let error):
+                self.presenter.stopLoading()
                 print("Log out error: \(error.localizedDescription)")
                 self.presenter.showAlert(title: .GenericError, subTitle: .LogOutError, alertType: .error)
             }
@@ -26,11 +29,14 @@ class LogOutScreenInteractor: LogOutScreenInteractorInput {
     }
     
     func synchronize() {
+        presenter.startLoading()
         authService.synchronize { (result) in
             switch result {
             case .Success:
+                self.presenter.stopLoading()
                 self.presenter.showAlert(title: .Done, subTitle: .SynchronizeComplete, alertType: .success)
             case .Error(let error):
+                self.presenter.stopLoading()
                 print("Sync error: \(error.localizedDescription)")
                 self.presenter.showAlert(title: .GenericError, subTitle: .SyncError, alertType: .error)
             }

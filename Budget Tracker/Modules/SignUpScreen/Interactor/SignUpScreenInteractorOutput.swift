@@ -21,4 +21,10 @@ protocol SignUpScreenInteractorOutput: AnyObject {
     
     /// Calls router to show main screen
     func showMainScreen()
+    
+    /// Calls router to show loading spinner
+    func startLoading()
+    
+    /// Calls router to dismiss loading spinner
+    func stopLoading()
 }

@@ -20,4 +20,10 @@ protocol SignInScreenRouterInput: AnyObject {
     
     /// Shows main screen
     func showMainScreen()
+    
+    /// Show loading spinner
+    func startLoading()
+    
+    /// Dismiss loading spinner
+    func stopLoading()
 }

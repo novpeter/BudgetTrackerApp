@@ -34,6 +34,14 @@ class SignUpScreenPresenter:
     func showMainScreen() {
         router.showMainScreen()
     }
+    
+    func startLoading() {
+        router.startLoading()
+    }
+    
+    func stopLoading() {
+        router.stopLoading()
+    }
 
     // MARK: - SignUpScreenRouterOutput
 }

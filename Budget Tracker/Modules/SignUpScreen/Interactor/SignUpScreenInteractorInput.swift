@@ -10,7 +10,7 @@ import Foundation
 
 protocol SignUpScreenInteractorInput: AnyObject {
     
-    /// Sign's up new user
+    /// Signs up new user
     ///
     /// - Parameters:
     ///   - name: user name
