@@ -19,7 +19,8 @@ class LogOutScreenInteractor: LogOutScreenInteractorInput {
             case .Success:
                 self.presenter.showWelcomeScreen()
             case .Error(let error):
-                print(error.localizedDescription)
+                print("Log out error: \(error.localizedDescription)")
+                self.presenter.showAlert(title: .GenericError, subTitle: .LogOutError, alertType: .error)
             }
         }
     }
@@ -28,9 +29,10 @@ class LogOutScreenInteractor: LogOutScreenInteractorInput {
         authService.synchronize { (result) in
             switch result {
             case .Success:
-                self.presenter.showAlert(title: AlertTitles.Done, description: AlertDescriptions.SynchronizeComplete, type: .success)
+                self.presenter.showAlert(title: .Done, subTitle: .SynchronizeComplete, alertType: .success)
             case .Error(let error):
-                self.presenter.showAlert(title: AlertTitles.GenericError, description: error.localizedDescription, type: .error)
+                print("Sync error: \(error.localizedDescription)")
+                self.presenter.showAlert(title: .GenericError, subTitle: .SyncError, alertType: .error)
             }
         }
     }

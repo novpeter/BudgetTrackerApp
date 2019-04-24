@@ -13,9 +13,10 @@ class LogOutScreenRouter: LogOutScreenRouterInput {
     
     var presenter: LogOutScreenRouterOutput!
     var welcomeAssembly: WelcomeScreenFactoryProtocol!
+    var alertManager: AlertManagerProtocol!
     
-    func showAlert(title: String, description: String, type: SCLAlertViewStyle) {
-        // TODO: - Connect alert manager
+    func showAlert(title: AlertTitles, subTitle: AlertSubTitles, type: SCLAlertViewStyle) {
+        alertManager.show(title: title, subTitle: subTitle, type: type)
     }
     
     func showWelcomeScreen() {

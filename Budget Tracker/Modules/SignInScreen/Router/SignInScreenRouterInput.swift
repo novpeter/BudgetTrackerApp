@@ -10,13 +10,13 @@ import SCLAlertView
 
 protocol SignInScreenRouterInput: AnyObject {
     
-    /// Shows alert with given title and description
+    /// Calls alert managet to show alert with given title and description
     ///
     /// - Parameters:
     ///   - title: title
-    ///   - description: description
+    ///   - subTitle: description
     ///   - type: alert type
-    func showAlert(title: String, description: String, type: SCLAlertViewStyle)
+    func showAlert(title: AlertTitles, subTitle: AlertSubTitles, type: SCLAlertViewStyle)
     
     /// Shows main screen
     func showMainScreen()

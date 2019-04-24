@@ -25,9 +25,11 @@ class SignInScreenAssembly: SignInScreenFactoryProtocol {
         let presenter = SignInScreenPresenter()
         let router = SignInScreenRouter()
         let interactor = SignInScreenInteractor()
+        
         let networkManager = NetworkManager()
         let realmManager = RealmManager()
         let authService = AuthService()
+        let alertManager = AlertManager()
         
         view.presenter = presenter
         
@@ -42,5 +44,6 @@ class SignInScreenAssembly: SignInScreenFactoryProtocol {
         
         router.presenter = presenter
         router.mainAssembly = MainScreenAssembly()
+        router.alertManager = alertManager
     }
 }

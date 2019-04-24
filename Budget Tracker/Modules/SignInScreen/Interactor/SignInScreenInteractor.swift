@@ -19,12 +19,12 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
         guard let email = email?.lowercased(), let password = password else { return }
         
         if !email.regex(mask: Regex.Email) {
-            presenter.showAlert(title: AlertTitles.WrongEmail, description: "", alertType: .error)
+            presenter.showAlert(title: .WrongEmail, subTitle: .Empty, alertType: .error)
             return
         }
         
         if !password.regex(mask: Regex.Password) {
-            presenter.showAlert(title: AlertTitles.WrongPassword, description: AlertDescriptions.PasswordReciepe, alertType: .error)
+            presenter.showAlert(title: .WrongPassword, subTitle: .PasswordReciepe, alertType: .error)
             return
         }
         
@@ -33,7 +33,8 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
             case .Success:
                 self.presenter.showMainScreen()
             case .Error(let error):
-                self.presenter.showAlert(title: AlertTitles.GenericError, description: error.localizedDescription, alertType: .error)
+                print("Sign in error: \(error.localizedDescription)")
+                self.presenter.showAlert(title: .GenericError, subTitle: .SignInError, alertType: .error)
             }
         }
     }
@@ -44,19 +45,20 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
             case .Success:
                 self.presenter.showMainScreen()
             case .Error(let error):
-                self.presenter.showAlert(title: AlertTitles.GenericError, description: error.localizedDescription, alertType: .error)
+                print("Sign in error: \(error.localizedDescription)")
+                self.presenter.showAlert(title: AlertTitles.GenericError, subTitle: .SignInError, alertType: .error)
             }
         }
     }
     
     func forgotPassword(email: String?) {
         guard let email = email, email.regex(mask: Regex.Email) else {
-            presenter.showAlert(title: AlertTitles.WrongEmail, description: "", alertType: .error)
+            presenter.showAlert(title: AlertTitles.WrongEmail, subTitle: .Empty, alertType: .error)
             return
         }
         
         // send password to email
         
-        presenter.showAlert(title: AlertTitles.Done, description: "\(AlertDescriptions.PasswordWasSent)\(email)", alertType: .success)
+        presenter.showAlert(title: AlertTitles.Done, subTitle: .PasswordWasSent, alertType: .success)
     }
 }

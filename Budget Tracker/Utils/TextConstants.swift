@@ -43,21 +43,26 @@ struct Regex {
     static let Password = "[0-9a-zA-Z]{8,20}"
 }
 
-struct AlertTitles {
-    static let GenericError = "Oops..."
-    static let WrongName = "Wrong name"
-    static let WrongEmail = "Wrong email"
-    static let WrongPassword = "Wrong password"
-    static let PasswordsNotMatch = "Passwords do not match"
-    static let Done = "Done!"
+enum AlertTitles: String {
+    case GenericError = "Oops..."
+    case WrongName = "Wrong name"
+    case WrongEmail = "Wrong email"
+    case WrongPassword = "Wrong password"
+    case Done = "Done!"
 }
 
-struct AlertDescriptions {
-    static let GenericError = "Something went wrong"
-    static let PasswordReciepe = "Password should contain one upper case and lower case letter, one digit and lenght more than 8"
-    static let PasswordWasSent = "The password was sent on "
-    static let CheckAllFields = "Check all fields"
-    static let SynchronizeComplete = "All data was synchronize"
+enum AlertSubTitles: String {
+    case GenericError = "Something went wrong"
+    case PasswordReciepe = "Password should contain one upper case and lower case letter, one digit and lenght more than 8"
+    case PasswordWasSent = "The password was sent on entered email"
+    case CheckAllFields = "Check all fields"
+    case SynchronizeComplete = "All data was synchronize"
+    case PasswordsNotMatch = "Passwords do not match"
+    case Empty = ""
+    case SignUpError = "Sign up error. Please, try later"
+    case SignInError = "Sign in error. Please, try later"
+    case SyncError = "Cannot synchtonize now. Please, try later"
+    case LogOutError = "Cannot log out now. Please, check internet connection"
 }
 
 struct URLConstants {

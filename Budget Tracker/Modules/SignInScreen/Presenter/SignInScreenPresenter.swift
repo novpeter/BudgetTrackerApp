@@ -36,8 +36,8 @@ class SignInScreenPresenter:
     
     // MARK: - SignInScreenInteractorOutput
     
-    func showAlert(title: String, description: String, alertType: SCLAlertViewStyle) {
-        router.showAlert(title: title, description: description, type: alertType)
+    func showAlert(title: AlertTitles, subTitle: AlertSubTitles, alertType: SCLAlertViewStyle) {
+        router.showAlert(title: title, subTitle: subTitle, type: alertType)
     }
     
     func showMainScreen() {
