@@ -22,16 +22,6 @@ class LogOutScreenRouter: LogOutScreenRouterInput {
         let welcomeScreenViewController = welcomeAssembly.getViewController()
         let navigationController = UINavigationController(rootViewController: welcomeScreenViewController)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: Fonts.PoppinsMedium16!]
-        UINavigationBar.appearance().tintColor = Colors.TextColors.Black
-        UINavigationBar.appearance().barTintColor = .white
-        
-        navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navigationController.navigationBar.shadowImage = UIImage()
-        navigationController.navigationBar.topItem?.title = " "
-        
         appDelegate.window?.rootViewController = navigationController
         appDelegate.window?.makeKey()
     }
