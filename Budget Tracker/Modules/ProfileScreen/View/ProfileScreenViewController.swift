@@ -8,11 +8,11 @@
 
 import UIKit
 
-class LogOutScreenViewController: UIViewController {
+class ProfileScreenViewController: UIViewController {
     
-    var presenter: LogOutScreenViewOutput!
+    var presenter: ProfileScreenViewOutput!
     
-    lazy var contentView = LogOutScreenView()
+    lazy var contentView = ProfileScreenView()
     
     override func loadView() {
         super.loadView()
@@ -48,6 +48,6 @@ class LogOutScreenViewController: UIViewController {
     
 }
 
-extension LogOutScreenViewController: LogOutScreenViewInput {
+extension ProfileScreenViewController: ProfileScreenViewInput {
     
 }

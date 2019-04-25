@@ -8,7 +8,7 @@
 
 import SCLAlertView
 
-protocol LogOutScreenInteractorOutput: AnyObject {
+protocol ProfileScreenInteractorOutput: AnyObject {
     
     /// Calls router to show welcome screen
     func showWelcomeScreen()

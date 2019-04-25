@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogOutScreenView: UIView {
+class ProfileScreenView: UIView {
     
     // MARK: - Info stack view
     

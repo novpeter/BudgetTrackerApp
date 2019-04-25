@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LogOutScreenInteractorInput: AnyObject {
+protocol ProfileScreenInteractorInput: AnyObject {
     
     /// Logs out from current session
     func logOut()

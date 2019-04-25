@@ -8,7 +8,7 @@
 
 import SCLAlertView
 
-protocol LogOutScreenRouterInput: AnyObject {
+protocol ProfileScreenRouterInput: AnyObject {
  
     /// Calls alert managet to show alert with given title and description
     ///

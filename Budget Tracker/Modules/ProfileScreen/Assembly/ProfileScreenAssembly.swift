@@ -9,23 +9,23 @@
 import Foundation
 import UIKit
 
-class LogOutScreenAssembly: LogOutScreenFactoryProtocol {
+class ProfileScreenAssembly: ProfileScreenFactoryProtocol {
     
-    func getViewController() -> LogOutScreenViewController {
+    func getViewController() -> ProfileScreenViewController {
         
-        let viewController = LogOutScreenViewController()
+        let viewController = ProfileScreenViewController()
         configureModule(with: viewController)
         return viewController
     }
     
-    private func configureModule(with view: LogOutScreenViewController?) {
+    private func configureModule(with view: ProfileScreenViewController?) {
         
         guard let view = view else { fatalError() }
         
         let welcomeAssembly = WelcomeScreenAssembly()
-        let presenter = LogOutScreenPresenter()
-        let router = LogOutScreenRouter()
-        let interactor = LogOutScreenInteractor()
+        let presenter = ProfileScreenPresenter()
+        let router = ProfileScreenRouter()
+        let interactor = ProfileScreenInteractor()
         
         let realmManager = RealmManager()
         let networkManager = NetworkManager()

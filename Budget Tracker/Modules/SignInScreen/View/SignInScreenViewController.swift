@@ -37,15 +37,11 @@ class SignInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSign
         contentView.signInButton.addTarget(self, action: #selector(signInButtonClicked), for: .touchUpInside)
         contentView.googleSignInButton.addTarget(self, action: #selector(googleSignInButtonClicked), for: .touchUpInside)
         contentView.forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonClicked), for: .touchUpInside)
+        contentView.backButton.addTarget(self, action: #selector(onClickBack), for: .touchUpInside)
     }
     
     private func configureNavigationBar() {
-        let backButton: UIButton = UIButton()
-        backButton.setImage(UIImage(named: "backButton"), for: .normal)
-        backButton.addTarget(self, action: #selector(onClickBack), for: .touchUpInside)
-        backButton.frame = CGRect(x: 0, y: 0, width: 48, height: 34)
-        let barButton = UIBarButtonItem(customView: backButton)
-        navigationItem.leftBarButtonItem = barButton
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.backButton)
     }
     
     
@@ -67,7 +63,7 @@ class SignInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSign
         presenter.forgotPasswordButtonClicked(email: email)
     }
     
-    @objc func onClickBack(){
+    @objc func onClickBack() {
         navigationController?.popViewController(animated: true)
     }
     

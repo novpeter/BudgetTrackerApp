@@ -1,5 +1,5 @@
 //
-//  LogOutScreenFactoryProtocol.swift
+//  LogOutScreenViewInput.swift
 //  Budget Tracker
 //
 //  Created by Петр on 18/04/2019.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol LogOutScreenFactoryProtocol: AnyObject {
+protocol ProfileScreenViewInput: AnyObject {
     
-    func getViewController() -> LogOutScreenViewController
 }

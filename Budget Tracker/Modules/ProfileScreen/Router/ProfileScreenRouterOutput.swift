@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol LogOutScreenRouterOutput: AnyObject {
+protocol ProfileScreenRouterOutput: AnyObject {
     
 }

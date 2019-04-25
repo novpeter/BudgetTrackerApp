@@ -8,9 +8,9 @@
 
 import UIKit
 
-class LogOutScreenInteractor: LogOutScreenInteractorInput {
+class ProfileScreenInteractor: ProfileScreenInteractorInput {
     
-    var presenter: LogOutScreenInteractorOutput!
+    var presenter: ProfileScreenInteractorOutput!
     var authService: AuthServiceProtocol!
     
     func logOut() {

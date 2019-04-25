@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LogOutScreenViewOutput: AnyObject {
+protocol ProfileScreenViewOutput: AnyObject {
     
     /// Sync button was clicked
     func syncButtonClicked()

@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var viewController: UIViewController
         
         if (realmManager.getObjects(with: UserModel.self)?.first) != nil {
-            viewController = LogOutScreenAssembly().getViewController()
+            viewController = MainScreenAssembly().getViewController()
         }
         else {
             viewController = WelcomeScreenAssembly().getViewController()
