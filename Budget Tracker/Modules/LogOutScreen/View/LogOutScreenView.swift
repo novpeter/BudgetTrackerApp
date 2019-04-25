@@ -55,12 +55,12 @@ class LogOutScreenView: UIView {
     
     lazy var syncButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 15.0
-        button.layer.borderWidth = 0.15
+        button.layer.cornerRadius = UIConstants.buttonCornerRadius
+        button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         button.layer.shadowOffset = CGSize(width: 3, height: 10)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
+        button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
+        button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.Synchronize, for: .normal)
         button.setTitleColor(TextColors.Grey, for: .normal)
@@ -71,12 +71,12 @@ class LogOutScreenView: UIView {
     
     lazy var logOutButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 15.0
-        button.layer.borderWidth = 0.15
+        button.layer.cornerRadius = UIConstants.buttonCornerRadius
+        button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         button.layer.shadowOffset = CGSize(width: 3, height: 10)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
+        button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
+        button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.LogOut, for: .normal)
         button.setTitleColor(TextColors.White, for: .normal)
