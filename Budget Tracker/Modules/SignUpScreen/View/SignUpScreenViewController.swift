@@ -21,16 +21,22 @@ class SignUpScreenViewController: UIViewController {
         addTargets()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureNavigationBar()
+    }
+    
     private func addTargets() {
         contentView.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "backButton")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backButton")
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    private func configureNavigationBar() {
+        let backButton: UIButton = UIButton()
+        backButton.setImage(UIImage(named: "backButton"), for: .normal)
+        backButton.addTarget(self, action: #selector(onClickBack), for: .touchUpInside)
+        backButton.frame = CGRect(x: 0, y: 0, width: 48, height: 34)
+        let barButton = UIBarButtonItem(customView: backButton)
+        navigationItem.leftBarButtonItem = barButton
     }
  
     // MARK: - Button's handlers
@@ -46,6 +52,9 @@ class SignUpScreenViewController: UIViewController {
         presenter.signUpButtonClicked(name: name, email: email, password: password, confirmedPassword: confirmedPassword)
     }
     
+    @objc func onClickBack(){
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension SignUpScreenViewController: SignUpScreenViewInput {
