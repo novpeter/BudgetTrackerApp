@@ -31,12 +31,11 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
         presenter.startLoading()
         
         authService.signIn(email: email, password: password) { (result) in
+            self.presenter.stopLoading()
             switch result {
             case .Success:
-                self.presenter.stopLoading()
                 self.presenter.showMainScreen()
             case .Error(let error):
-                self.presenter.stopLoading()
                 print("Sign in error: \(error.localizedDescription)")
                 self.presenter.showAlert(title: .GenericError, subTitle: .SignInError, alertType: .error)
             }
@@ -46,12 +45,11 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
     func googleSignIn(token: String, email: String, fullName: String) {
         presenter.startLoading()
         authService.googleSignIn(token: token, email: email, fullName: fullName) { (result) in
+            self.presenter.stopLoading()
             switch result {
             case .Success:
-                self.presenter.stopLoading()
                 self.presenter.showMainScreen()
             case .Error(let error):
-                self.presenter.stopLoading()
                 print("Sign in error: \(error.localizedDescription)")
                 self.presenter.showAlert(title: AlertTitles.GenericError, subTitle: .SignInError, alertType: .error)
             }
