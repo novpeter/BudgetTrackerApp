@@ -18,7 +18,7 @@ class WelcomeScreenView: UIView {
         label.textAlignment = .left
         label.text = Titles.AppNameTopPart
         label.font = Fonts.PoppinsBold48
-        label.textColor = Colors.TextColors.Black
+        label.textColor = TextColors.Black
         return label
     }()
     
@@ -27,7 +27,7 @@ class WelcomeScreenView: UIView {
         label.textAlignment = .right
         label.text = Titles.AppNameBottomPart
         label.font = Fonts.PoppinsBold48
-        label.textColor = Colors.TextColors.Black
+        label.textColor = TextColors.Black
         return label
     }()
     
@@ -41,33 +41,33 @@ class WelcomeScreenView: UIView {
     
     lazy var signInButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 15.0
-        button.layer.borderWidth = 0.15
+        button.layer.cornerRadius = UIConstants.buttonCornerRadius
+        button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         button.layer.shadowOffset = CGSize(width: 3, height: 10)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
+        button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
+        button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.SignIn, for: .normal)
-        button.setTitleColor(Colors.TextColors.White, for: .normal)
+        button.setTitleColor(TextColors.White, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = Colors.ButtonColors.Blue
+        button.backgroundColor = ButtonColors.Blue
         return button
     }()
     
     lazy var signUpButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 15.0
-        button.layer.borderWidth = 0.15
+        button.layer.cornerRadius = UIConstants.buttonCornerRadius
+        button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         button.layer.shadowOffset = CGSize(width: 3, height: 10)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
+        button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
+        button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.SignUp, for: .normal)
-        button.setTitleColor(Colors.TextColors.Grey, for: .normal)
+        button.setTitleColor(TextColors.Grey, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = Colors.ButtonColors.White
+        button.backgroundColor = ButtonColors.White
         return button
     }()
     

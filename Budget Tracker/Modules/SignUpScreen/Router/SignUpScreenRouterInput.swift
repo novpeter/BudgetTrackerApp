@@ -21,4 +21,10 @@ protocol SignUpScreenRouterInput: AnyObject {
     
     /// Shows main screen
     func showMainScreen()
+    
+    /// Shows loading spinner
+    func startLoading()
+    
+    /// Dismiss loading spinner
+    func stopLoading()
 }

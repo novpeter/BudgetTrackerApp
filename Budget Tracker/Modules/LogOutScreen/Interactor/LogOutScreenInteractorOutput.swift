@@ -20,4 +20,10 @@ protocol LogOutScreenInteractorOutput: AnyObject {
     ///   - subTitle: alert subTitle
     ///   - alertType: alert type
     func showAlert(title: AlertTitles, subTitle: AlertSubTitles, alertType: SCLAlertViewStyle)
+    
+    /// Calls router to show loading spinner
+    func startLoading()
+    
+    /// Calls router to dismiss loading spinner
+    func stopLoading()
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import SCLAlertView
+import SVProgressHUD
 
 class SignUpScreenRouter: SignUpScreenRouterInput {
     
@@ -25,5 +26,13 @@ class SignUpScreenRouter: SignUpScreenRouterInput {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = navigationController
         appDelegate.window?.makeKey()
+    }
+    
+    func startLoading() {
+        SVProgressHUD.show()
+    }
+    
+    func stopLoading() {
+        SVProgressHUD.dismiss()
     }
 }

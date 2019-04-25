@@ -20,8 +20,8 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Name
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = Colors.TextColors.Black
-        textField.tintColor = Colors.TextColors.Grey
+        textField.textColor = TextColors.Black
+        textField.tintColor = TextColors.Grey
         
         return textField
     }()
@@ -33,8 +33,8 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Email
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = Colors.TextColors.Black
-        textField.tintColor = Colors.TextColors.Grey
+        textField.textColor = TextColors.Black
+        textField.tintColor = TextColors.Grey
         
         return textField
     }()
@@ -46,8 +46,8 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Password
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = Colors.TextColors.Black
-        textField.tintColor = Colors.TextColors.Grey
+        textField.textColor = TextColors.Black
+        textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
         
         return textField
@@ -60,8 +60,8 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.ConfirmPassword
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = Colors.TextColors.Black
-        textField.tintColor = Colors.TextColors.Grey
+        textField.textColor = TextColors.Black
+        textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
         
         return textField
@@ -71,17 +71,17 @@ class SignUpScreenView: UIView {
         
         let button = UIButton()
         
-        button.layer.cornerRadius = 15.0
-        button.layer.borderWidth = 0.15
+        button.layer.cornerRadius = UIConstants.buttonCornerRadius
+        button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         button.layer.shadowOffset = CGSize(width: 3, height: 10)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
+        button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
+        button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.SignUp, for: .normal)
-        button.setTitleColor(Colors.TextColors.Grey, for: .normal)
+        button.setTitleColor(TextColors.Grey, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = Colors.ButtonColors.White
+        button.backgroundColor = ButtonColors.White
         
         return button
     }()

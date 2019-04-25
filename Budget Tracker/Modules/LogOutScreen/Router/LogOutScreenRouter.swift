@@ -8,6 +8,7 @@
 
 import UIKit
 import SCLAlertView
+import SVProgressHUD
 
 class LogOutScreenRouter: LogOutScreenRouterInput {
     
@@ -25,7 +26,7 @@ class LogOutScreenRouter: LogOutScreenRouterInput {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: Fonts.PoppinsMedium16!]
-        UINavigationBar.appearance().tintColor = Colors.TextColors.Black
+        UINavigationBar.appearance().tintColor = TextColors.Black
         UINavigationBar.appearance().barTintColor = .white
         
         navigationController.navigationBar.isTranslucent = false
@@ -35,5 +36,13 @@ class LogOutScreenRouter: LogOutScreenRouterInput {
         
         appDelegate.window?.rootViewController = navigationController
         appDelegate.window?.makeKey()
+    }
+    
+    func startLoading() {
+        SVProgressHUD.show()
+    }
+    
+    func stopLoading() {
+        SVProgressHUD.dismiss()
     }
 }

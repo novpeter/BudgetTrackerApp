@@ -27,7 +27,7 @@ class LogOutScreenView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = Fonts.PoppinsBold20
-        label.textColor = Colors.TextColors.Black
+        label.textColor = TextColors.Black
         label.text = "Anton Ivanov"
         return label
     }()
@@ -36,7 +36,7 @@ class LogOutScreenView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = Fonts.PoppinsMedium16
-        label.textColor = Colors.TextColors.Grey
+        label.textColor = TextColors.Grey
         label.text = "petkacool1@gmail.com"
         return label
     }()
@@ -55,33 +55,33 @@ class LogOutScreenView: UIView {
     
     lazy var syncButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 15.0
-        button.layer.borderWidth = 0.15
+        button.layer.cornerRadius = UIConstants.buttonCornerRadius
+        button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         button.layer.shadowOffset = CGSize(width: 3, height: 10)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
+        button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
+        button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.Synchronize, for: .normal)
-        button.setTitleColor(Colors.TextColors.Grey, for: .normal)
+        button.setTitleColor(TextColors.Grey, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = Colors.ButtonColors.White
+        button.backgroundColor = ButtonColors.White
         return button
     }()
     
     lazy var logOutButton: UIButton = {
         let button = UIButton()
-        button.layer.cornerRadius = 15.0
-        button.layer.borderWidth = 0.15
+        button.layer.cornerRadius = UIConstants.buttonCornerRadius
+        button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         button.layer.shadowOffset = CGSize(width: 3, height: 10)
-        button.layer.shadowOpacity = 1.0
-        button.layer.shadowRadius = 10.0
+        button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
+        button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.LogOut, for: .normal)
-        button.setTitleColor(Colors.TextColors.White, for: .normal)
+        button.setTitleColor(TextColors.White, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = Colors.ButtonColors.Red
+        button.backgroundColor = ButtonColors.Red
         return button
     }()
     

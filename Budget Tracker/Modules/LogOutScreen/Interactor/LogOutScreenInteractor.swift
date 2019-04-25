@@ -14,7 +14,9 @@ class LogOutScreenInteractor: LogOutScreenInteractorInput {
     var authService: AuthServiceProtocol!
     
     func logOut() {
+        presenter.startLoading()
         authService.logOut { (result) in
+            self.presenter.stopLoading()
             switch result {
             case .Success:
                 self.presenter.showWelcomeScreen()
@@ -26,7 +28,9 @@ class LogOutScreenInteractor: LogOutScreenInteractorInput {
     }
     
     func synchronize() {
+        presenter.startLoading()
         authService.synchronize { (result) in
+            self.presenter.stopLoading()
             switch result {
             case .Success:
                 self.presenter.showAlert(title: .Done, subTitle: .SynchronizeComplete, alertType: .success)

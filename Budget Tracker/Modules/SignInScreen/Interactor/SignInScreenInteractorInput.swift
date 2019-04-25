@@ -10,14 +10,14 @@ import Foundation
 
 protocol SignInScreenInteractorInput: AnyObject {
  
-    /// Sign's in
+    /// Signs in
     ///
     /// - Parameters:
     ///   - email: user email
     ///   - password: password
     func signIn(email: String?, password: String?)
     
-    /// Sign's in via google account
+    /// Signs in via google account
     ///
     /// - Parameters:
     ///   - token: token

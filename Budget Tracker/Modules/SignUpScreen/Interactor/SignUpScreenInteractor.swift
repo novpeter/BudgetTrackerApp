@@ -36,7 +36,10 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
             return
         }
         
+        presenter.startLoading()
+        
         authService.signUp(name: name, email: email, password: password) { (result) in
+            self.presenter.stopLoading()
             switch result {
             case .Success:
                 self.presenter.showMainScreen()

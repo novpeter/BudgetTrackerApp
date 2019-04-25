@@ -20,4 +20,10 @@ protocol LogOutScreenRouterInput: AnyObject {
     
     /// Navigates to welcome screen
     func showWelcomeScreen()
+    
+    /// Shows loading spinner
+    func startLoading()
+    
+    /// Dismisses loading spinner
+    func stopLoading()
 }
