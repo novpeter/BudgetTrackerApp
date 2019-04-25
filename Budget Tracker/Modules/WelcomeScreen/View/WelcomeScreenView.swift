@@ -18,7 +18,7 @@ class WelcomeScreenView: UIView {
         label.textAlignment = .left
         label.text = Titles.AppNameTopPart
         label.font = Fonts.PoppinsBold48
-        label.textColor = Colors.TextColors.Black
+        label.textColor = TextColors.Black
         return label
     }()
     
@@ -27,7 +27,7 @@ class WelcomeScreenView: UIView {
         label.textAlignment = .right
         label.text = Titles.AppNameBottomPart
         label.font = Fonts.PoppinsBold48
-        label.textColor = Colors.TextColors.Black
+        label.textColor = TextColors.Black
         return label
     }()
     
@@ -49,9 +49,9 @@ class WelcomeScreenView: UIView {
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.SignIn, for: .normal)
-        button.setTitleColor(Colors.TextColors.White, for: .normal)
+        button.setTitleColor(TextColors.White, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = Colors.ButtonColors.Blue
+        button.backgroundColor = ButtonColors.Blue
         return button
     }()
     
@@ -65,9 +65,9 @@ class WelcomeScreenView: UIView {
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.SignUp, for: .normal)
-        button.setTitleColor(Colors.TextColors.Grey, for: .normal)
+        button.setTitleColor(TextColors.Grey, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = Colors.ButtonColors.White
+        button.backgroundColor = ButtonColors.White
         return button
     }()
     

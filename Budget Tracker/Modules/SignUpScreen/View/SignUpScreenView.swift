@@ -20,8 +20,8 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Name
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = Colors.TextColors.Black
-        textField.tintColor = Colors.TextColors.Grey
+        textField.textColor = TextColors.Black
+        textField.tintColor = TextColors.Grey
         
         return textField
     }()
@@ -33,8 +33,8 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Email
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = Colors.TextColors.Black
-        textField.tintColor = Colors.TextColors.Grey
+        textField.textColor = TextColors.Black
+        textField.tintColor = TextColors.Grey
         
         return textField
     }()
@@ -46,8 +46,8 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Password
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = Colors.TextColors.Black
-        textField.tintColor = Colors.TextColors.Grey
+        textField.textColor = TextColors.Black
+        textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
         
         return textField
@@ -60,8 +60,8 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.ConfirmPassword
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = Colors.TextColors.Black
-        textField.tintColor = Colors.TextColors.Grey
+        textField.textColor = TextColors.Black
+        textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
         
         return textField
@@ -79,9 +79,9 @@ class SignUpScreenView: UIView {
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.SignUp, for: .normal)
-        button.setTitleColor(Colors.TextColors.Grey, for: .normal)
+        button.setTitleColor(TextColors.Grey, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = Colors.ButtonColors.White
+        button.backgroundColor = ButtonColors.White
         
         return button
     }()

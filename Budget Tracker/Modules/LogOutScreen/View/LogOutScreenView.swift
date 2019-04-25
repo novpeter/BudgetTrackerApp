@@ -27,7 +27,7 @@ class LogOutScreenView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = Fonts.PoppinsBold20
-        label.textColor = Colors.TextColors.Black
+        label.textColor = TextColors.Black
         label.text = "Anton Ivanov"
         return label
     }()
@@ -36,7 +36,7 @@ class LogOutScreenView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = Fonts.PoppinsMedium16
-        label.textColor = Colors.TextColors.Grey
+        label.textColor = TextColors.Grey
         label.text = "petkacool1@gmail.com"
         return label
     }()
@@ -63,9 +63,9 @@ class LogOutScreenView: UIView {
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.Synchronize, for: .normal)
-        button.setTitleColor(Colors.TextColors.Grey, for: .normal)
+        button.setTitleColor(TextColors.Grey, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = Colors.ButtonColors.White
+        button.backgroundColor = ButtonColors.White
         return button
     }()
     
@@ -79,9 +79,9 @@ class LogOutScreenView: UIView {
         button.layer.shadowRadius = 10.0
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.LogOut, for: .normal)
-        button.setTitleColor(Colors.TextColors.White, for: .normal)
+        button.setTitleColor(TextColors.White, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = Colors.ButtonColors.Red
+        button.backgroundColor = ButtonColors.Red
         return button
     }()
     

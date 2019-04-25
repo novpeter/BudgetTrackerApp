@@ -26,7 +26,7 @@ class LogOutScreenRouter: LogOutScreenRouterInput {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: Fonts.PoppinsMedium16!]
-        UINavigationBar.appearance().tintColor = Colors.TextColors.Black
+        UINavigationBar.appearance().tintColor = TextColors.Black
         UINavigationBar.appearance().barTintColor = .white
         
         navigationController.navigationBar.isTranslucent = false
