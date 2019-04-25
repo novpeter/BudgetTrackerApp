@@ -111,12 +111,14 @@ class AuthService: AuthServiceProtocol {
     }
     
     func logOut(completionBlock: @escaping (ResponseResult) -> ()) {
-        guard let userToken = realmManager.getObjects(with: UserModel.self)?.first?.sessionToken
+        guard let user = realmManager.getObjects(with: UserModel.self)?.first
         else {
             let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Authentication error"])
             completionBlock(.Error(error))
             return
         }
+        
+        let userToken = user.sessionToken
         
         // TODO: sync all operation
         
@@ -125,14 +127,26 @@ class AuthService: AuthServiceProtocol {
         networkManager.request(target: .logOut(token: userToken), success: { (response) in
             do
             {
-                let _ = try JSONDecoder().decode(AuthResponse.self, from: response.data)
-                completionBlock(.Success)
+                if  (200...300).contains(response.statusCode) {
+                    self.realmManager.deleteObjects(objects: [user], errorBlock: { (error) in
+                        if let error = error {
+                            completionBlock(.Error(error))
+                        }
+                    })
+                    completionBlock(.Success)
+                }
+                else {
+                    throw NSError(
+                        domain: "",
+                        code: response.statusCode,
+                        userInfo: [NSLocalizedDescriptionKey: "Authentication error"])
+                }
             }
             catch let error {
                 completionBlock(.Error(error))
             }
         }, error: { (error) in
-            completionBlock(.Success)
+            completionBlock(.Error(error))
         })
     }
     
