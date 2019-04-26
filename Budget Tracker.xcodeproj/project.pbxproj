@@ -486,9 +486,9 @@
 		4B4D1FA522608DBA0013D0E6 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				4B4D1FA822608DBA0013D0E6 /* MainScreenRouter.swift */,
 				4B4D1FA622608DBA0013D0E6 /* MainScreenRouterInput.swift */,
 				4B4D1FA722608DBA0013D0E6 /* MainScreenRouterOutput.swift */,
-				4B4D1FA822608DBA0013D0E6 /* MainScreenRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";

@@ -14,17 +14,42 @@ class MainScreenView: UIView {
     
     lazy var profileButton: UIButton = {
         let profileButton = UIButton()
-        profileButton.setImage(UIImage(named: "profileButton"), for: .normal)
+        profileButton.setImage(UIImage(named: "profileButtonBlack"), for: .normal)
         profileButton.frame = UIConstants.navigationBarBattonFrame
         return profileButton
     }()
     
     lazy var statisticButton: UIButton = {
         let statisticButton = UIButton()
-        statisticButton.setImage(UIImage(named: "statisticButton"), for: .normal)
+        statisticButton.setImage(UIImage(named: "statisticButtonBlack"), for: .normal)
         statisticButton.frame = UIConstants.navigationBarBattonFrame
         return statisticButton
     }()
+    
+    lazy var datePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .date
+        return picker
+    }()
+    
+    lazy var dateToolBar: UIToolbar = {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        return toolbar
+    }()
+    
+    lazy var dateTextField: UITextField = {
+        let textField = UITextField()
+        textField.font = Fonts.PoppinsMedium16
+        textField.textColor = TextColors.Black
+        textField.text = "April 2019"
+        textField.textAlignment = .center
+        textField.inputAccessoryView = dateToolBar
+        textField.inputView = datePicker
+        return textField
+    }()
+    
+    
     
     // MARK: - Inits
     
@@ -51,5 +76,8 @@ class MainScreenView: UIView {
     
     private func addConstraints() {
         
+        dateTextField.snp.makeConstraints { (make) in
+            make.width.equalTo(120)
+        }
     }
 }

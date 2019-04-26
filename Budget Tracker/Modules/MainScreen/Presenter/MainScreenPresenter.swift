@@ -17,6 +17,14 @@ class MainScreenPresenter:
     var router: MainScreenRouterInput!
     var interactor: MainScreenInteractorInput!
     
+    func showProfileClicked() {
+        router.showProfileScreen()
+    }
+    
+    func showStatisticClicked() {
+        router.showStatisticScreen()
+    }
+    
     // MARK: - MainScreenViewOutput
     
     // MARK: - MainScreenInteractorOutput

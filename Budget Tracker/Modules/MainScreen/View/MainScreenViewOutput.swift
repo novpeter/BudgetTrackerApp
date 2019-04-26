@@ -10,4 +10,9 @@ import Foundation
 
 protocol MainScreenViewOutput: AnyObject {
     
+    /// Calls presenter to show profile screen
+    func showProfileClicked()
+    
+    /// Calls presenter to show statistic screen
+    func showStatisticClicked()
 }

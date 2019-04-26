@@ -1,5 +1,5 @@
 //
-//  LogOutScreenInteractorOutput.swift
+//  ProfileScreenInteractorOutput.swift
 //  Budget Tracker
 //
 //  Created by Петр on 18/04/2019.

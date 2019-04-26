@@ -1,5 +1,5 @@
 //
-//  LogOutScreenViewController.swift
+//  ProfileScreenViewController.swift
 //  Budget Tracker
 //
 //  Created by Петр on 18/04/2019.
@@ -21,17 +21,19 @@ class ProfileScreenViewController: UIViewController {
         addTargets()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureNavigationBar()
+    }
+    
     private func addTargets() {
         contentView.syncButton.addTarget(self, action: #selector(syncButtonClicked), for: .touchUpInside)
         contentView.logOutButton.addTarget(self, action: #selector(logOutButtonClicked), for: .touchUpInside)
+        contentView.backButton.addTarget(self, action: #selector(onClickBack), for: .touchUpInside)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "backButton")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backButton")
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    private func configureNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.backButton)
     }
     
     // MARK: - Button's handlers
@@ -44,6 +46,10 @@ class ProfileScreenViewController: UIViewController {
     @objc func logOutButtonClicked(sender: UIButton) {
         sender.pulsate()
         presenter.logOutButtonClicked()
+    }
+    
+    @objc func onClickBack(){
+        navigationController?.popViewController(animated: true)
     }
     
 }
