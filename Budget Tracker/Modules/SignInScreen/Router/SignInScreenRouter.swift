@@ -25,6 +25,11 @@ class SignInScreenRouter: SignInScreenRouterInput {
         let mainScreenViewController = mainAssembly.getViewController()
         let navigationController = UINavigationController(rootViewController: mainScreenViewController)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        
         appDelegate.window?.rootViewController = navigationController
         appDelegate.window?.makeKey()
     }

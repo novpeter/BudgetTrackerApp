@@ -28,19 +28,24 @@ class SignInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSign
         addTargets()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureNavigationBar()
+    }
+    
     private func addTargets() {
         contentView.signInButton.addTarget(self, action: #selector(signInButtonClicked), for: .touchUpInside)
         contentView.googleSignInButton.addTarget(self, action: #selector(googleSignInButtonClicked), for: .touchUpInside)
         contentView.forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonClicked), for: .touchUpInside)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .white
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "backButton")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backButton")
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    private func configureNavigationBar() {
+        let backButton: UIButton = UIButton()
+        backButton.setImage(UIImage(named: "backButton"), for: .normal)
+        backButton.addTarget(self, action: #selector(onClickBack), for: .touchUpInside)
+        backButton.frame = CGRect(x: 0, y: 0, width: 48, height: 34)
+        let barButton = UIBarButtonItem(customView: backButton)
+        navigationItem.leftBarButtonItem = barButton
     }
     
     
@@ -60,6 +65,10 @@ class SignInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSign
         
         let email = contentView.emailTextField.text
         presenter.forgotPasswordButtonClicked(email: email)
+    }
+    
+    @objc func onClickBack(){
+        navigationController?.popViewController(animated: true)
     }
     
     
