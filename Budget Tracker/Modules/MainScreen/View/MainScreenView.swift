@@ -139,16 +139,13 @@ class MainScreenView: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 12
-        
         stackView.backgroundColor = .red
-        
         return stackView
     }()
     
     lazy var infoView: UIView = {
         let view = UIView()
         view.backgroundColor = BackgroundColors.Blue
-        view.addSubview(infoStackView)
         return view
     }()
     
@@ -168,7 +165,6 @@ class MainScreenView: UIView {
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = BackgroundColors.White
-        scrollView.addSubview(infoView)
         return scrollView
     }()
     
@@ -193,6 +189,8 @@ class MainScreenView: UIView {
     // MARK: - Congigurating
     
     private func addSubviews() {
+        infoView.addSubview(infoStackView)
+        scrollView.addSubview(infoView)
         self.addSubview(scrollView)
         self.addSubview(addOperationButton)
     }
