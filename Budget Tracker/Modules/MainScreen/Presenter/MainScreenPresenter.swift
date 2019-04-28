@@ -25,6 +25,10 @@ class MainScreenPresenter:
         router.showStatisticScreen()
     }
     
+    func addOperationClicked() {
+        router.showAddScreen()
+    }
+    
     // MARK: - MainScreenViewOutput
     
     // MARK: - MainScreenInteractorOutput

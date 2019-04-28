@@ -12,7 +12,7 @@ class MainScreenViewController: UIViewController {
     
     var presenter: MainScreenViewOutput!
     
-    lazy var contentView = MainScreenView()
+    private lazy var contentView = MainScreenView()
     
     override func loadView() {
         super.loadView()
@@ -31,9 +31,14 @@ class MainScreenViewController: UIViewController {
         configureNavigationBar()
     }
     
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private func addTargets() {
         contentView.statisticButton.addTarget(self, action: #selector(onClickStatistic), for: .touchUpInside)
         contentView.profileButton.addTarget(self, action: #selector(onClickProfile), for: .touchUpInside)
+        contentView.addOperationButton.addTarget(self, action: #selector(onClickAddOperation), for: .touchUpInside)
     }
     
     private func configureNavigationBar() {
@@ -53,24 +58,30 @@ class MainScreenViewController: UIViewController {
     
     // MARK: - Button's handlers
     
-    @objc func onClickProfile(sender: UIButton){
+    @objc private func onClickProfile(sender: UIButton) {
         sender.pulsate()
         presenter.showProfileClicked()
     }
     
-    @objc func onClickStatistic(sender: UIButton){
+    @objc private func onClickStatistic(sender: UIButton) {
         sender.pulsate()
         presenter.showStatisticClicked()
     }
     
-    // MARK: - Textfield's handler
-    
-    @objc func doneDatePicker() {
-        view.endEditing(true)
+    @objc private func onClickAddOperation(sender: UIButton) {
+        sender.pulsate()
+        presenter.addOperationClicked()
     }
     
-    @objc func cancelDatePicker() {
-        view.endEditing(true)
+    
+    // MARK: - Date picker handlers
+    
+    @objc private func doneDatePicker() {
+        contentView.dateTextField.endEditing(true)
+    }
+    
+    @objc private func cancelDatePicker() {
+        contentView.dateTextField.endEditing(true)
     }
 }
 

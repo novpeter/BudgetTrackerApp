@@ -15,4 +15,7 @@ protocol MainScreenViewOutput: AnyObject {
     
     /// Calls presenter to show statistic screen
     func showStatisticClicked()
+    
+    /// Calls presenter to show "Add operation" screen
+    func addOperationClicked()
 }

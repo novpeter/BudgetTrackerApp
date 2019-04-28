@@ -122,14 +122,14 @@ class MainScreenView: UIView {
         label.textColor = TextColors.Green
         label.font = Fonts.PoppinsMedium16
         label.textAlignment = .center
-        label.text = "88200 "  + Currency.Rubble
+        label.text = "88200 " + Currency.Rubble
         return label
     }()
     
     lazy var differenceStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [differenceLabel, differenceTotalLabel])
         stackView.axis = .horizontal
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
         stackView.spacing = 5
         return stackView
     }()
@@ -150,6 +150,19 @@ class MainScreenView: UIView {
         view.backgroundColor = BackgroundColors.Blue
         view.addSubview(infoStackView)
         return view
+    }()
+    
+    lazy var addOperationButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 32
+        button.layer.borderWidth = UIConstants.buttonBorderWidth
+        button.layer.masksToBounds = false
+        button.clipsToBounds = true
+        button.backgroundColor = ButtonColors.Blue
+        button.tintColor = TextColors.White
+        button.titleLabel?.font = Fonts.PoppinsLight48
+        button.setTitle("+", for: .normal)
+        return button
     }()
     
     lazy var scrollView: UIScrollView = {
@@ -181,12 +194,20 @@ class MainScreenView: UIView {
     
     private func addSubviews() {
         self.addSubview(scrollView)
+        self.addSubview(addOperationButton)
     }
     
     private func addConstraints() {
         
         dateTextField.snp.makeConstraints { (make) in
             make.width.equalTo(120)
+        }
+        
+        addOperationButton.snp.makeConstraints { (make) in
+            make.width.equalTo(64)
+            make.height.equalTo(64)
+            make.bottom.equalTo(self.snp_bottom).offset(-30)
+            make.right.equalTo(self.snp_right).offset(-30)
         }
         
         scrollView.snp.makeConstraints { (make) in

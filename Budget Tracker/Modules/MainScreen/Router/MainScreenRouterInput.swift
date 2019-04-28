@@ -15,4 +15,7 @@ protocol MainScreenRouterInput: AnyObject {
     
     /// Shows statistic screen
     func showStatisticScreen()
+    
+    /// Shows add screen
+    func showAddScreen()
 }

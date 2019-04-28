@@ -22,4 +22,8 @@ class MainScreenRouter: MainScreenRouterInput {
     func showStatisticScreen() {
         // TODO: - implement statistic screen segue
     }
+    
+    func showAddScreen() {
+        // TODO: - implement statistic screen segue
+    }
 }
