@@ -21,8 +21,8 @@ class ProfileScreenViewController: UIViewController {
         addTargets()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         configureNavigationBar()
     }
     
@@ -33,6 +33,7 @@ class ProfileScreenViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
+        navigationController?.navigationBar.barTintColor = BackgroundColors.White
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.backButton)
     }
     

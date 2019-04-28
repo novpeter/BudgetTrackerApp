@@ -23,17 +23,21 @@ class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
         configureToolbar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar()
     }
     
     private func addTargets() {
         contentView.statisticButton.addTarget(self, action: #selector(onClickStatistic), for: .touchUpInside)
         contentView.profileButton.addTarget(self, action: #selector(onClickProfile), for: .touchUpInside)
-        contentView.dateTextField.addTarget(self, action: #selector(onClickDate), for: .touchUpInside)
     }
     
     private func configureNavigationBar() {
+        navigationController?.navigationBar.barTintColor = BackgroundColors.Blue
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.profileButton)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: contentView.statisticButton)
         navigationItem.titleView = contentView.dateTextField
@@ -60,10 +64,6 @@ class MainScreenViewController: UIViewController {
     }
     
     // MARK: - Textfield's handler
-    
-    @objc func onClickDate(sender: UITextField){
-        print("CLICK")
-    }
     
     @objc func doneDatePicker() {
         view.endEditing(true)

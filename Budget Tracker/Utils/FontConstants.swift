@@ -27,5 +27,6 @@ struct Fonts{
     
     static let PoppinsBold12 = UIFont(name: "Poppins-Bold", size: 12.0)
     static let PoppinsBold20 = UIFont(name: "Poppins-Bold", size: 20.0)
+    static let PoppinsBold32 = UIFont(name: "Poppins-Bold", size: 32.0)
     static let PoppinsBold48 = UIFont(name: "Poppins-Bold", size: 48.0)
 }
