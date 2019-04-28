@@ -7,6 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B294A2F2276303E00AF9697 /* StatisticsScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A1F2276303E00AF9697 /* StatisticsScreenFactoryProtocol.swift */; };
+		4B294A302276303E00AF9697 /* StatisticsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A202276303E00AF9697 /* StatisticsScreenAssembly.swift */; };
+		4B294A312276303E00AF9697 /* StatisticsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A222276303E00AF9697 /* StatisticsScreenPresenter.swift */; };
+		4B294A322276303E00AF9697 /* StatisticsScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A242276303E00AF9697 /* StatisticsScreenViewInput.swift */; };
+		4B294A332276303E00AF9697 /* StatisticsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A252276303E00AF9697 /* StatisticsScreenViewController.swift */; };
+		4B294A342276303E00AF9697 /* StatisticsScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A262276303E00AF9697 /* StatisticsScreenViewOutput.swift */; };
+		4B294A352276303E00AF9697 /* StatisticsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A282276303E00AF9697 /* StatisticsScreenInteractor.swift */; };
+		4B294A362276303E00AF9697 /* StatisticsScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A292276303E00AF9697 /* StatisticsScreenInteractorOutput.swift */; };
+		4B294A372276303E00AF9697 /* StatisticsScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A2A2276303E00AF9697 /* StatisticsScreenInteractorInput.swift */; };
+		4B294A382276303E00AF9697 /* StatisticsScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A2C2276303E00AF9697 /* StatisticsScreenRouterInput.swift */; };
+		4B294A392276303E00AF9697 /* StatisticsScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A2D2276303E00AF9697 /* StatisticsScreenRouterOutput.swift */; };
+		4B294A3A2276303E00AF9697 /* StatisticsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A2E2276303E00AF9697 /* StatisticsScreenRouter.swift */; };
+		4B294A4F2276306F00AF9697 /* AddingScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A3F2276306F00AF9697 /* AddingScreenAssembly.swift */; };
+		4B294A502276306F00AF9697 /* AddingScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A402276306F00AF9697 /* AddingScreenFactoryProtocol.swift */; };
+		4B294A512276306F00AF9697 /* AddingScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A422276306F00AF9697 /* AddingScreenPresenter.swift */; };
+		4B294A522276306F00AF9697 /* AddingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A442276306F00AF9697 /* AddingScreenViewController.swift */; };
+		4B294A532276306F00AF9697 /* AddingScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A452276306F00AF9697 /* AddingScreenViewOutput.swift */; };
+		4B294A542276306F00AF9697 /* AddingScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A462276306F00AF9697 /* AddingScreenViewInput.swift */; };
+		4B294A552276306F00AF9697 /* AddingScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A482276306F00AF9697 /* AddingScreenInteractorInput.swift */; };
+		4B294A562276306F00AF9697 /* AddingScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A492276306F00AF9697 /* AddingScreenInteractorOutput.swift */; };
+		4B294A572276306F00AF9697 /* AddingScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A4A2276306F00AF9697 /* AddingScreenInteractor.swift */; };
+		4B294A582276306F00AF9697 /* AddingScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A4C2276306F00AF9697 /* AddingScreenRouterInput.swift */; };
+		4B294A592276306F00AF9697 /* AddingScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A4D2276306F00AF9697 /* AddingScreenRouterOutput.swift */; };
+		4B294A5A2276306F00AF9697 /* AddingScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A4E2276306F00AF9697 /* AddingScreenRouter.swift */; };
+		4B294A6F227630ED00AF9697 /* DetailScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A5F227630ED00AF9697 /* DetailScreenFactoryProtocol.swift */; };
+		4B294A70227630ED00AF9697 /* DetailScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A60227630ED00AF9697 /* DetailScreenAssembly.swift */; };
+		4B294A71227630ED00AF9697 /* DetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A62227630ED00AF9697 /* DetailScreenPresenter.swift */; };
+		4B294A72227630ED00AF9697 /* DetailScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A64227630ED00AF9697 /* DetailScreenViewOutput.swift */; };
+		4B294A73227630ED00AF9697 /* DetailScreenViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A65227630ED00AF9697 /* DetailScreenViewInput.swift */; };
+		4B294A74227630ED00AF9697 /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A66227630ED00AF9697 /* DetailScreenViewController.swift */; };
+		4B294A75227630ED00AF9697 /* DetailScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A68227630ED00AF9697 /* DetailScreenInteractor.swift */; };
+		4B294A76227630ED00AF9697 /* DetailScreenInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A69227630ED00AF9697 /* DetailScreenInteractorInput.swift */; };
+		4B294A77227630ED00AF9697 /* DetailScreenInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A6A227630ED00AF9697 /* DetailScreenInteractorOutput.swift */; };
+		4B294A78227630ED00AF9697 /* DetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A6C227630ED00AF9697 /* DetailScreenRouter.swift */; };
+		4B294A79227630ED00AF9697 /* DetailScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A6D227630ED00AF9697 /* DetailScreenRouterOutput.swift */; };
+		4B294A7A227630ED00AF9697 /* DetailScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A6E227630ED00AF9697 /* DetailScreenRouterInput.swift */; };
 		4B47791D225E6D74000E673B /* SignInScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47790D225E6D74000E673B /* SignInScreenFactoryProtocol.swift */; };
 		4B47791E225E6D74000E673B /* SignInScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47790E225E6D74000E673B /* SignInScreenAssembly.swift */; };
 		4B47791F225E6D74000E673B /* SignInScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477910225E6D74000E673B /* SignInScreenPresenter.swift */; };
@@ -118,6 +154,42 @@
 
 /* Begin PBXFileReference section */
 		05EA09A1DDC79F8B124A207B /* Pods_Budget_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B294A1F2276303E00AF9697 /* StatisticsScreenFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenFactoryProtocol.swift; sourceTree = "<group>"; };
+		4B294A202276303E00AF9697 /* StatisticsScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenAssembly.swift; sourceTree = "<group>"; };
+		4B294A222276303E00AF9697 /* StatisticsScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenPresenter.swift; sourceTree = "<group>"; };
+		4B294A242276303E00AF9697 /* StatisticsScreenViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenViewInput.swift; sourceTree = "<group>"; };
+		4B294A252276303E00AF9697 /* StatisticsScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenViewController.swift; sourceTree = "<group>"; };
+		4B294A262276303E00AF9697 /* StatisticsScreenViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenViewOutput.swift; sourceTree = "<group>"; };
+		4B294A282276303E00AF9697 /* StatisticsScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenInteractor.swift; sourceTree = "<group>"; };
+		4B294A292276303E00AF9697 /* StatisticsScreenInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		4B294A2A2276303E00AF9697 /* StatisticsScreenInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenInteractorInput.swift; sourceTree = "<group>"; };
+		4B294A2C2276303E00AF9697 /* StatisticsScreenRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenRouterInput.swift; sourceTree = "<group>"; };
+		4B294A2D2276303E00AF9697 /* StatisticsScreenRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenRouterOutput.swift; sourceTree = "<group>"; };
+		4B294A2E2276303E00AF9697 /* StatisticsScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenRouter.swift; sourceTree = "<group>"; };
+		4B294A3F2276306F00AF9697 /* AddingScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenAssembly.swift; sourceTree = "<group>"; };
+		4B294A402276306F00AF9697 /* AddingScreenFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenFactoryProtocol.swift; sourceTree = "<group>"; };
+		4B294A422276306F00AF9697 /* AddingScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenPresenter.swift; sourceTree = "<group>"; };
+		4B294A442276306F00AF9697 /* AddingScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenViewController.swift; sourceTree = "<group>"; };
+		4B294A452276306F00AF9697 /* AddingScreenViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenViewOutput.swift; sourceTree = "<group>"; };
+		4B294A462276306F00AF9697 /* AddingScreenViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenViewInput.swift; sourceTree = "<group>"; };
+		4B294A482276306F00AF9697 /* AddingScreenInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenInteractorInput.swift; sourceTree = "<group>"; };
+		4B294A492276306F00AF9697 /* AddingScreenInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		4B294A4A2276306F00AF9697 /* AddingScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenInteractor.swift; sourceTree = "<group>"; };
+		4B294A4C2276306F00AF9697 /* AddingScreenRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenRouterInput.swift; sourceTree = "<group>"; };
+		4B294A4D2276306F00AF9697 /* AddingScreenRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenRouterOutput.swift; sourceTree = "<group>"; };
+		4B294A4E2276306F00AF9697 /* AddingScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingScreenRouter.swift; sourceTree = "<group>"; };
+		4B294A5F227630ED00AF9697 /* DetailScreenFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenFactoryProtocol.swift; sourceTree = "<group>"; };
+		4B294A60227630ED00AF9697 /* DetailScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenAssembly.swift; sourceTree = "<group>"; };
+		4B294A62227630ED00AF9697 /* DetailScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenPresenter.swift; sourceTree = "<group>"; };
+		4B294A64227630ED00AF9697 /* DetailScreenViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenViewOutput.swift; sourceTree = "<group>"; };
+		4B294A65227630ED00AF9697 /* DetailScreenViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenViewInput.swift; sourceTree = "<group>"; };
+		4B294A66227630ED00AF9697 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
+		4B294A68227630ED00AF9697 /* DetailScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenInteractor.swift; sourceTree = "<group>"; };
+		4B294A69227630ED00AF9697 /* DetailScreenInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenInteractorInput.swift; sourceTree = "<group>"; };
+		4B294A6A227630ED00AF9697 /* DetailScreenInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenInteractorOutput.swift; sourceTree = "<group>"; };
+		4B294A6C227630ED00AF9697 /* DetailScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenRouter.swift; sourceTree = "<group>"; };
+		4B294A6D227630ED00AF9697 /* DetailScreenRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenRouterOutput.swift; sourceTree = "<group>"; };
+		4B294A6E227630ED00AF9697 /* DetailScreenRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenRouterInput.swift; sourceTree = "<group>"; };
 		4B47790D225E6D74000E673B /* SignInScreenFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenFactoryProtocol.swift; sourceTree = "<group>"; };
 		4B47790E225E6D74000E673B /* SignInScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenAssembly.swift; sourceTree = "<group>"; };
 		4B477910225E6D74000E673B /* SignInScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenPresenter.swift; sourceTree = "<group>"; };
@@ -249,6 +321,183 @@
 				BCC674DBB633E0D2F858BEF9 /* Pods-Budget Tracker.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4B294A1D2276303E00AF9697 /* StatisticsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A1E2276303E00AF9697 /* Assembly */,
+				4B294A212276303E00AF9697 /* Presenter */,
+				4B294A232276303E00AF9697 /* View */,
+				4B294A272276303E00AF9697 /* Interactor */,
+				4B294A2B2276303E00AF9697 /* Router */,
+			);
+			path = StatisticsScreen;
+			sourceTree = "<group>";
+		};
+		4B294A1E2276303E00AF9697 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A1F2276303E00AF9697 /* StatisticsScreenFactoryProtocol.swift */,
+				4B294A202276303E00AF9697 /* StatisticsScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		4B294A212276303E00AF9697 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A222276303E00AF9697 /* StatisticsScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4B294A232276303E00AF9697 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A242276303E00AF9697 /* StatisticsScreenViewInput.swift */,
+				4B294A252276303E00AF9697 /* StatisticsScreenViewController.swift */,
+				4B294A262276303E00AF9697 /* StatisticsScreenViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B294A272276303E00AF9697 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A282276303E00AF9697 /* StatisticsScreenInteractor.swift */,
+				4B294A292276303E00AF9697 /* StatisticsScreenInteractorOutput.swift */,
+				4B294A2A2276303E00AF9697 /* StatisticsScreenInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4B294A2B2276303E00AF9697 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A2C2276303E00AF9697 /* StatisticsScreenRouterInput.swift */,
+				4B294A2D2276303E00AF9697 /* StatisticsScreenRouterOutput.swift */,
+				4B294A2E2276303E00AF9697 /* StatisticsScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4B294A3D2276306F00AF9697 /* AddingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A3E2276306F00AF9697 /* Assembly */,
+				4B294A412276306F00AF9697 /* Presenter */,
+				4B294A432276306F00AF9697 /* View */,
+				4B294A472276306F00AF9697 /* Interactor */,
+				4B294A4B2276306F00AF9697 /* Router */,
+			);
+			path = AddingScreen;
+			sourceTree = "<group>";
+		};
+		4B294A3E2276306F00AF9697 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A3F2276306F00AF9697 /* AddingScreenAssembly.swift */,
+				4B294A402276306F00AF9697 /* AddingScreenFactoryProtocol.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		4B294A412276306F00AF9697 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A422276306F00AF9697 /* AddingScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4B294A432276306F00AF9697 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A442276306F00AF9697 /* AddingScreenViewController.swift */,
+				4B294A452276306F00AF9697 /* AddingScreenViewOutput.swift */,
+				4B294A462276306F00AF9697 /* AddingScreenViewInput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B294A472276306F00AF9697 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A482276306F00AF9697 /* AddingScreenInteractorInput.swift */,
+				4B294A492276306F00AF9697 /* AddingScreenInteractorOutput.swift */,
+				4B294A4A2276306F00AF9697 /* AddingScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4B294A4B2276306F00AF9697 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A4C2276306F00AF9697 /* AddingScreenRouterInput.swift */,
+				4B294A4D2276306F00AF9697 /* AddingScreenRouterOutput.swift */,
+				4B294A4E2276306F00AF9697 /* AddingScreenRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4B294A5D227630ED00AF9697 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A5E227630ED00AF9697 /* Assembly */,
+				4B294A61227630ED00AF9697 /* Presenter */,
+				4B294A63227630ED00AF9697 /* View */,
+				4B294A67227630ED00AF9697 /* Interactor */,
+				4B294A6B227630ED00AF9697 /* Router */,
+			);
+			path = DetailScreen;
+			sourceTree = "<group>";
+		};
+		4B294A5E227630ED00AF9697 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A5F227630ED00AF9697 /* DetailScreenFactoryProtocol.swift */,
+				4B294A60227630ED00AF9697 /* DetailScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		4B294A61227630ED00AF9697 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A62227630ED00AF9697 /* DetailScreenPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4B294A63227630ED00AF9697 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A64227630ED00AF9697 /* DetailScreenViewOutput.swift */,
+				4B294A65227630ED00AF9697 /* DetailScreenViewInput.swift */,
+				4B294A66227630ED00AF9697 /* DetailScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B294A67227630ED00AF9697 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A68227630ED00AF9697 /* DetailScreenInteractor.swift */,
+				4B294A69227630ED00AF9697 /* DetailScreenInteractorInput.swift */,
+				4B294A6A227630ED00AF9697 /* DetailScreenInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4B294A6B227630ED00AF9697 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4B294A6C227630ED00AF9697 /* DetailScreenRouter.swift */,
+				4B294A6D227630ED00AF9697 /* DetailScreenRouterOutput.swift */,
+				4B294A6E227630ED00AF9697 /* DetailScreenRouterInput.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		4B47790B225E6D74000E673B /* SignInScreen */ = {
@@ -509,6 +758,9 @@
 				4B47790B225E6D74000E673B /* SignInScreen */,
 				4B47792B225E6DC6000E673B /* SignUpScreen */,
 				4B4D1F9722608DBA0013D0E6 /* MainScreen */,
+				4B294A3D2276306F00AF9697 /* AddingScreen */,
+				4B294A5D227630ED00AF9697 /* DetailScreen */,
+				4B294A1D2276303E00AF9697 /* StatisticsScreen */,
 				4BF6062C2269117C00EB7FFB /* LogOutScreen */,
 			);
 			path = Modules;
@@ -899,17 +1151,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B294A74227630ED00AF9697 /* DetailScreenViewController.swift in Sources */,
 				4B4D1FB422608DBA0013D0E6 /* MainScreenRouter.swift in Sources */,
 				4B4A1F4D225D003A005D1819 /* NetworkManagerProtocol.swift in Sources */,
+				4B294A392276303E00AF9697 /* StatisticsScreenRouterOutput.swift in Sources */,
 				4B477948225E6DC6000E673B /* SignUpScreenRouterOutput.swift in Sources */,
 				4BF606452269117C00EB7FFB /* LogOutScreenInteractorInput.swift in Sources */,
 				4B4A1F41225CFD43005D1819 /* WelcomeScreenInteractorInput.swift in Sources */,
+				4B294A2F2276303E00AF9697 /* StatisticsScreenFactoryProtocol.swift in Sources */,
 				4BF6063E2269117C00EB7FFB /* LogOutScreenFactoryProtocol.swift in Sources */,
 				4BBA5F862268B59800666F36 /* NetworkAPI.swift in Sources */,
 				4B4A1F43225CFD43005D1819 /* WelcomeScreenRouter.swift in Sources */,
 				4B47791F225E6D74000E673B /* SignInScreenPresenter.swift in Sources */,
 				4B4D1FB122608DBA0013D0E6 /* MainScreenInteractor.swift in Sources */,
+				4B294A562276306F00AF9697 /* AddingScreenInteractorOutput.swift in Sources */,
+				4B294A542276306F00AF9697 /* AddingScreenViewInput.swift in Sources */,
 				4BABA0DD225D3A6700CA1E08 /* WelcomeScreenView.swift in Sources */,
+				4B294A512276306F00AF9697 /* AddingScreenPresenter.swift in Sources */,
 				4B477943225E6DC6000E673B /* SignUpScreenInteractorInput.swift in Sources */,
 				4B477942225E6DC6000E673B /* SignUpScreenViewInput.swift in Sources */,
 				4B47793F225E6DC6000E673B /* SignUpScreenPresenter.swift in Sources */,
@@ -918,43 +1176,64 @@
 				4BC4491D2271E54E00EE3842 /* NumericConstants.swift in Sources */,
 				4B4A1F4B225CFFE6005D1819 /* NetworkManager.swift in Sources */,
 				4B4D1FAD22608DBA0013D0E6 /* MainScreenViewInput.swift in Sources */,
+				4B294A78227630ED00AF9697 /* DetailScreenRouter.swift in Sources */,
 				4B4D1FAC22608DBA0013D0E6 /* MainScreenViewOutput.swift in Sources */,
 				4BA1D158226C93F40071D35A /* AuthServiceProtocol.swift in Sources */,
 				4BF606492269117C00EB7FFB /* LogOutScreenRouterInput.swift in Sources */,
 				4B477927225E6D74000E673B /* SignInScreenRouterInput.swift in Sources */,
+				4B294A5A2276306F00AF9697 /* AddingScreenRouter.swift in Sources */,
 				4B477926225E6D74000E673B /* SignInScreenRouter.swift in Sources */,
 				4BF606432269117C00EB7FFB /* LogOutScreenViewController.swift in Sources */,
+				4B294A522276306F00AF9697 /* AddingScreenViewController.swift in Sources */,
 				4BF606422269117C00EB7FFB /* LogOutScreenViewOutput.swift in Sources */,
 				4BF606462269117C00EB7FFB /* LogOutScreenInteractorOutput.swift in Sources */,
 				4B5B09CD225BC07700A10365 /* FontConstants.swift in Sources */,
+				4B294A3A2276303E00AF9697 /* StatisticsScreenRouter.swift in Sources */,
 				4B47791E225E6D74000E673B /* SignInScreenAssembly.swift in Sources */,
 				4BABA0DB225D375700CA1E08 /* TextConstants.swift in Sources */,
+				4B294A73227630ED00AF9697 /* DetailScreenViewInput.swift in Sources */,
+				4B294A382276303E00AF9697 /* StatisticsScreenRouterInput.swift in Sources */,
 				4B4A1F45225CFD43005D1819 /* WelcomeScreenRouterOutput.swift in Sources */,
 				4BABA0E1225E203000CA1E08 /* UserModel.swift in Sources */,
+				4B294A4F2276306F00AF9697 /* AddingScreenAssembly.swift in Sources */,
 				4B477941225E6DC6000E673B /* SignUpScreenViewController.swift in Sources */,
 				4B4D1F94225FF10F0013D0E6 /* SignUpScreenView.swift in Sources */,
+				4B294A552276306F00AF9697 /* AddingScreenInteractorInput.swift in Sources */,
+				4B294A342276303E00AF9697 /* StatisticsScreenViewOutput.swift in Sources */,
 				4B4A1F44225CFD43005D1819 /* WelcomeScreenRouterInput.swift in Sources */,
 				4BF606442269117C00EB7FFB /* LogOutScreenInteractor.swift in Sources */,
+				4B294A532276306F00AF9697 /* AddingScreenViewOutput.swift in Sources */,
 				4B477940225E6DC6000E673B /* SignUpScreenViewOutput.swift in Sources */,
 				4B4D1FAA22608DBA0013D0E6 /* MainScreenFactoryProtocol.swift in Sources */,
 				4B5B09CB225BC06C00A10365 /* ColorConstants.swift in Sources */,
 				4B477920225E6D74000E673B /* SignInScreenViewController.swift in Sources */,
 				4B4D1FAF22608DBA0013D0E6 /* MainScreenInteractorOutput.swift in Sources */,
 				4B4A1F49225CFFB9005D1819 /* RealmManagerProtocol.swift in Sources */,
+				4B294A75227630ED00AF9697 /* DetailScreenInteractor.swift in Sources */,
+				4B294A77227630ED00AF9697 /* DetailScreenInteractorOutput.swift in Sources */,
+				4B294A592276306F00AF9697 /* AddingScreenRouterOutput.swift in Sources */,
 				4BF606272269001700EB7FFB /* ErrorResponse.swift in Sources */,
 				4B4D1FAE22608DBA0013D0E6 /* MainScreenViewController.swift in Sources */,
 				4B477944225E6DC6000E673B /* SignUpScreenInteractor.swift in Sources */,
+				4B294A502276306F00AF9697 /* AddingScreenFactoryProtocol.swift in Sources */,
 				4BBA5F8F2268C73200666F36 /* OperationRequests.swift in Sources */,
+				4B294A76227630ED00AF9697 /* DetailScreenInteractorInput.swift in Sources */,
 				4B47793D225E6DC6000E673B /* SignUpScreenAssembly.swift in Sources */,
 				4B4D1FB322608DBA0013D0E6 /* MainScreenRouterOutput.swift in Sources */,
 				4B4D1FA922608DBA0013D0E6 /* MainScreenAssembly.swift in Sources */,
 				4BF606402269117C00EB7FFB /* LogOutScreenPresenter.swift in Sources */,
+				4B294A572276306F00AF9697 /* AddingScreenInteractor.swift in Sources */,
 				4BF6063F2269117C00EB7FFB /* LogOutScreenAssembly.swift in Sources */,
 				4B477946225E6DC6000E673B /* SignUpScreenRouter.swift in Sources */,
+				4B294A312276303E00AF9697 /* StatisticsScreenPresenter.swift in Sources */,
 				4BBA5F8D2268C4B100666F36 /* UserRequests.swift in Sources */,
 				4BAC0D78227056EB008F7813 /* AlertManagerProtocol.swift in Sources */,
+				4B294A322276303E00AF9697 /* StatisticsScreenViewInput.swift in Sources */,
+				4B294A7A227630ED00AF9697 /* DetailScreenRouterInput.swift in Sources */,
+				4B294A372276303E00AF9697 /* StatisticsScreenInteractorInput.swift in Sources */,
 				4B47793E225E6DC6000E673B /* SignUpScreenFactoryProtocol.swift in Sources */,
 				4B477928225E6D74000E673B /* SignInScreenRouterOutput.swift in Sources */,
+				4B294A70227630ED00AF9697 /* DetailScreenAssembly.swift in Sources */,
 				4B4A1F3C225CFD43005D1819 /* WelcomeScreenPresenter.swift in Sources */,
 				4B477945225E6DC6000E673B /* SignUpScreenInteractorOutput.swift in Sources */,
 				4B4A1F3D225CFD43005D1819 /* WelcomeScreenViewController.swift in Sources */,
@@ -967,14 +1246,23 @@
 				4B4A1F42225CFD43005D1819 /* WelcomeScreenInteractor.swift in Sources */,
 				4BA060A7225E827F0024E6FE /* Extensions.swift in Sources */,
 				4BABA0E3225E203B00CA1E08 /* OperationModel.swift in Sources */,
+				4B294A79227630ED00AF9697 /* DetailScreenRouterOutput.swift in Sources */,
+				4B294A6F227630ED00AF9697 /* DetailScreenFactoryProtocol.swift in Sources */,
 				4B477947225E6DC6000E673B /* SignUpScreenRouterInput.swift in Sources */,
+				4B294A582276306F00AF9697 /* AddingScreenRouterInput.swift in Sources */,
+				4B294A72227630ED00AF9697 /* DetailScreenViewOutput.swift in Sources */,
 				4B4D1F92225FD9040013D0E6 /* SignInScreenView.swift in Sources */,
 				4BAC0D76227056DA008F7813 /* AlertManager.swift in Sources */,
 				4B477925225E6D74000E673B /* SignInScreenInteractor.swift in Sources */,
 				4B47791D225E6D74000E673B /* SignInScreenFactoryProtocol.swift in Sources */,
+				4B294A302276303E00AF9697 /* StatisticsScreenAssembly.swift in Sources */,
+				4B294A352276303E00AF9697 /* StatisticsScreenInteractor.swift in Sources */,
+				4B294A71227630ED00AF9697 /* DetailScreenPresenter.swift in Sources */,
+				4B294A332276303E00AF9697 /* StatisticsScreenViewController.swift in Sources */,
 				4B4A1F3B225CFD43005D1819 /* WelcomeScreenAssembly.swift in Sources */,
 				4BF606472269117C00EB7FFB /* LogOutScreenRouterOutput.swift in Sources */,
 				4B4A1F47225CFF97005D1819 /* RealmManager.swift in Sources */,
+				4B294A362276303E00AF9697 /* StatisticsScreenInteractorOutput.swift in Sources */,
 				4B4A1F3E225CFD43005D1819 /* WelcomeScreenViewOutput.swift in Sources */,
 				4B4D1FAB22608DBA0013D0E6 /* MainScreenPresenter.swift in Sources */,
 				4B4A1F3F225CFD43005D1819 /* WelcomeScreenViewInput.swift in Sources */,
