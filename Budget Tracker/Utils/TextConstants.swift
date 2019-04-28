@@ -77,3 +77,9 @@ struct AuthType {
 struct Currency {
     static let Rubble = "₽"
 }
+
+struct MainScreenMock {
+    static let Income = "120650 " + Currency.Rubble
+    static let Expense = "32450 " + Currency.Rubble
+    static let Difference = "88200 " + Currency.Rubble
+}

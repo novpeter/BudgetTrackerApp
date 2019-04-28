@@ -15,7 +15,7 @@ class ProfileScreenView: UIView {
     lazy var backButton: UIButton = {
         let backButton = UIButton()
         backButton.setImage(UIImage(named: "backButton"), for: .normal)
-        backButton.frame = UIConstants.navigationBarBattonFrame
+        backButton.frame = UIConstants.navigationBarButtonFrame
         return backButton
     }()
     

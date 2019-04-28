@@ -15,14 +15,14 @@ class MainScreenView: UIView {
     lazy var profileButton: UIButton = {
         let profileButton = UIButton()
         profileButton.setImage(UIImage(named: "profileButtonWhite"), for: .normal)
-        profileButton.frame = UIConstants.navigationBarBattonFrame
+        profileButton.frame = UIConstants.navigationBarButtonFrame
         return profileButton
     }()
     
     lazy var statisticButton: UIButton = {
         let statisticButton = UIButton()
         statisticButton.setImage(UIImage(named: "statisticButtonWhite"), for: .normal)
-        statisticButton.frame = UIConstants.navigationBarBattonFrame
+        statisticButton.frame = UIConstants.navigationBarButtonFrame
         return statisticButton
     }()
     
@@ -64,7 +64,7 @@ class MainScreenView: UIView {
         label.textColor = TextColors.White
         label.font = Fonts.PoppinsBold32
         label.textAlignment = .right
-        label.text = "120650 " + Currency.Rubble
+        label.text = MainScreenMock.Income
         return label
     }()
     
@@ -88,7 +88,7 @@ class MainScreenView: UIView {
         label.textColor = TextColors.White
         label.font = Fonts.PoppinsBold32
         label.textAlignment = .right
-        label.text = "32450 " + Currency.Rubble
+        label.text = MainScreenMock.Expense
         return label
     }()
     
@@ -122,7 +122,7 @@ class MainScreenView: UIView {
         label.textColor = TextColors.Green
         label.font = Fonts.PoppinsMedium16
         label.textAlignment = .center
-        label.text = "88200 " + Currency.Rubble
+        label.text = MainScreenMock.Difference
         return label
     }()
     
