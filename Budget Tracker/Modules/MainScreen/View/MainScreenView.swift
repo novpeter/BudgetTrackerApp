@@ -204,8 +204,8 @@ class MainScreenView: UIView {
         addOperationButton.snp.makeConstraints { (make) in
             make.width.equalTo(64)
             make.height.equalTo(64)
-            make.bottom.equalTo(self.snp_bottom).offset(-30)
-            make.right.equalTo(self.snp_right).offset(-30)
+            make.bottom.equalTo(self.snp_bottom).inset(30)
+            make.right.equalTo(self.snp_right).inset(30)
         }
         
         scrollView.snp.makeConstraints { (make) in
