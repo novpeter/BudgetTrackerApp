@@ -1,5 +1,5 @@
 //
-//  LogOutScreenViewController.swift
+//  ProfileScreenViewController.swift
 //  Budget Tracker
 //
 //  Created by Петр on 18/04/2019.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class LogOutScreenViewController: UIViewController {
+class ProfileScreenViewController: UIViewController {
     
-    var presenter: LogOutScreenViewOutput!
+    var presenter: ProfileScreenViewOutput!
     
-    lazy var contentView = LogOutScreenView()
+    lazy var contentView = ProfileScreenView()
     
     override func loadView() {
         super.loadView()
@@ -21,17 +21,20 @@ class LogOutScreenViewController: UIViewController {
         addTargets()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar()
+    }
+    
     private func addTargets() {
         contentView.syncButton.addTarget(self, action: #selector(syncButtonClicked), for: .touchUpInside)
         contentView.logOutButton.addTarget(self, action: #selector(logOutButtonClicked), for: .touchUpInside)
+        contentView.backButton.addTarget(self, action: #selector(onClickBack), for: .touchUpInside)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "backButton")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backButton")
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    private func configureNavigationBar() {
+        navigationController?.navigationBar.barTintColor = BackgroundColors.White
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.backButton)
     }
     
     // MARK: - Button's handlers
@@ -46,8 +49,12 @@ class LogOutScreenViewController: UIViewController {
         presenter.logOutButtonClicked()
     }
     
+    @objc func onClickBack(){
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
-extension LogOutScreenViewController: LogOutScreenViewInput {
+extension ProfileScreenViewController: ProfileScreenViewInput {
     
 }

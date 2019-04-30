@@ -9,5 +9,13 @@
 import Foundation
 
 protocol MainScreenRouterInput: AnyObject {
+ 
+    /// Shows profile screen
+    func showProfileScreen()
     
+    /// Shows statistic screen
+    func showStatisticScreen()
+    
+    /// Shows add screen
+    func showAddScreen()
 }

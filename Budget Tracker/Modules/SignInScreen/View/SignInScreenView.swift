@@ -13,6 +13,13 @@ class SignInScreenView: UIView {
     
     // MARK: - Components
     
+    lazy var backButton: UIButton = {
+        let backButton: UIButton = UIButton()
+        backButton.setImage(UIImage(named: "backButton"), for: .normal)
+        backButton.frame = UIConstants.navigationBarButtonFrame
+        return backButton
+    }()
+    
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.keyboardType = .default

@@ -1,5 +1,5 @@
 //
-//  LogOutScreenViewOutput.swift
+//  ProfileScreenViewOutput.swift
 //  Budget Tracker
 //
 //  Created by Петр on 18/04/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LogOutScreenViewOutput: AnyObject {
+protocol ProfileScreenViewOutput: AnyObject {
     
     /// Sync button was clicked
     func syncButtonClicked()

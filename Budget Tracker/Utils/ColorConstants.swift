@@ -22,3 +22,8 @@ struct ButtonColors {
     static let Blue = UIColor(red: 101/255, green: 125/255, blue: 190/255, alpha: 1)
     static let White = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
 }
+
+struct BackgroundColors {
+    static let Blue = UIColor(red: 101/255, green: 125/255, blue: 190/255, alpha: 1)
+    static let White = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+}

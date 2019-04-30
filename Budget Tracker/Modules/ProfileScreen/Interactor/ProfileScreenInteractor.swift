@@ -1,5 +1,5 @@
 //
-//  LogOutScreenInteractor.swift
+//  ProfileScreenInteractor.swift
 //  Budget Tracker
 //
 //  Created by Петр on 18/04/2019.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class LogOutScreenInteractor: LogOutScreenInteractorInput {
+class ProfileScreenInteractor: ProfileScreenInteractorInput {
     
-    var presenter: LogOutScreenInteractorOutput!
+    var presenter: ProfileScreenInteractorOutput!
     var authService: AuthServiceProtocol!
     
     func logOut() {

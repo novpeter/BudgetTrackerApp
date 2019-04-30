@@ -12,7 +12,7 @@ struct Titles {
     static let AppNameTopPart = "Budget"
     static let AppNameBottomPart = "Tracker"
     static let Statistics = "Statistics"
-    static let Difference = "Difference"
+    static let Difference = "Difference:"
     static let ShowDetailedStatistic = "Show detailed statistic"
 }
 
@@ -72,4 +72,14 @@ struct URLConstants {
 struct AuthType {
     static let Regular = "Regular"
     static let Google = "Google"
+}
+
+struct Currency {
+    static let Rubble = "₽"
+}
+
+struct MainScreenMock {
+    static let Income = "120650 " + Currency.Rubble
+    static let Expense = "32450 " + Currency.Rubble
+    static let Difference = "88200 " + Currency.Rubble
 }

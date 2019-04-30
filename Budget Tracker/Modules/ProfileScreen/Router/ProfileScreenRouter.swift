@@ -1,5 +1,5 @@
 //
-//  LogOutScreenRouter.swift
+//  ProfileScreenRouter.swift
 //  Budget Tracker
 //
 //  Created by Петр on 18/04/2019.
@@ -10,9 +10,9 @@ import UIKit
 import SCLAlertView
 import SVProgressHUD
 
-class LogOutScreenRouter: LogOutScreenRouterInput {
+class ProfileScreenRouter: ProfileScreenRouterInput {
     
-    var presenter: LogOutScreenRouterOutput!
+    var presenter: ProfileScreenRouterOutput!
     var welcomeAssembly: WelcomeScreenFactoryProtocol!
     var alertManager: AlertManagerProtocol!
     

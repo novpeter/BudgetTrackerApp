@@ -1,5 +1,5 @@
 //
-//  LogOutScreenPresenter.swift
+//  ProfileScreenPresenter.swift
 //  Budget Tracker
 //
 //  Created by Петр on 18/04/2019.
@@ -8,14 +8,14 @@
 
 import SCLAlertView
 
-class LogOutScreenPresenter:
-    LogOutScreenViewOutput,
-    LogOutScreenInteractorOutput,
-    LogOutScreenRouterOutput {
+class ProfileScreenPresenter:
+    ProfileScreenViewOutput,
+    ProfileScreenInteractorOutput,
+    ProfileScreenRouterOutput {
     
-    weak var view: LogOutScreenViewInput!
-    var router: LogOutScreenRouterInput!
-    var interactor: LogOutScreenInteractorInput!
+    weak var view: ProfileScreenViewInput!
+    var router: ProfileScreenRouterInput!
+    var interactor: ProfileScreenInteractorInput!
     
     func syncButtonClicked() {
         interactor.synchronize()
@@ -25,9 +25,9 @@ class LogOutScreenPresenter:
         interactor.logOut()
     }
     
-    // MARK: - LogOutScreenViewOutput
+    // MARK: - ProfileScreenViewOutput
     
-    // MARK: - LogOutScreenInteractorOutput
+    // MARK: - ProfileScreenInteractorOutput
     
     func showWelcomeScreen() {
         router.showWelcomeScreen()
@@ -45,5 +45,5 @@ class LogOutScreenPresenter:
         router.stopLoading()
     }
     
-    // MARK: - LogOutScreenRouterOutput
+    // MARK: - ProfileScreenRouterOutput
 }

@@ -1,5 +1,5 @@
 //
-//  LogOutScreenInteractorOutput.swift
+//  ProfileScreenInteractorOutput.swift
 //  Budget Tracker
 //
 //  Created by Петр on 18/04/2019.
@@ -8,7 +8,7 @@
 
 import SCLAlertView
 
-protocol LogOutScreenInteractorOutput: AnyObject {
+protocol ProfileScreenInteractorOutput: AnyObject {
     
     /// Calls router to show welcome screen
     func showWelcomeScreen()

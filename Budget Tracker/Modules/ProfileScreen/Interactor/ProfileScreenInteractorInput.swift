@@ -1,5 +1,5 @@
 //
-//  LogOutScreenInteractorInput.swift
+//  ProfileScreenInteractorInput.swift
 //  Budget Tracker
 //
 //  Created by Петр on 18/04/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LogOutScreenInteractorInput: AnyObject {
+protocol ProfileScreenInteractorInput: AnyObject {
     
     /// Logs out from current session
     func logOut()

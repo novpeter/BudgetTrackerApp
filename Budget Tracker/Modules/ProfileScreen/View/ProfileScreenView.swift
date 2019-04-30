@@ -1,5 +1,5 @@
 //
-//  LogOutScreenView.swift
+//  ProfileScreenView.swift
 //  Budget Tracker
 //
 //  Created by Петр on 19/04/2019.
@@ -8,9 +8,16 @@
 
 import UIKit
 
-class LogOutScreenView: UIView {
+class ProfileScreenView: UIView {
     
     // MARK: - Info stack view
+    
+    lazy var backButton: UIButton = {
+        let backButton = UIButton()
+        backButton.setImage(UIImage(named: "backButton"), for: .normal)
+        backButton.frame = UIConstants.navigationBarButtonFrame
+        return backButton
+    }()
     
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()

@@ -28,15 +28,11 @@ class SignUpScreenViewController: UIViewController {
     
     private func addTargets() {
         contentView.signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
+        contentView.backButton.addTarget(self, action: #selector(onClickBack), for: .touchUpInside)
     }
     
     private func configureNavigationBar() {
-        let backButton: UIButton = UIButton()
-        backButton.setImage(UIImage(named: "backButton"), for: .normal)
-        backButton.addTarget(self, action: #selector(onClickBack), for: .touchUpInside)
-        backButton.frame = CGRect(x: 0, y: 0, width: 48, height: 34)
-        let barButton = UIBarButtonItem(customView: backButton)
-        navigationItem.leftBarButtonItem = barButton
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.backButton)
     }
  
     // MARK: - Button's handlers

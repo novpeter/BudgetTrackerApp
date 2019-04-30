@@ -1,5 +1,5 @@
 //
-//  LogOutScreenRouterInput.swift
+//  ProfileScreenRouterInput.swift
 //  Budget Tracker
 //
 //  Created by Петр on 18/04/2019.
@@ -8,7 +8,7 @@
 
 import SCLAlertView
 
-protocol LogOutScreenRouterInput: AnyObject {
+protocol ProfileScreenRouterInput: AnyObject {
  
     /// Calls alert managet to show alert with given title and description
     ///

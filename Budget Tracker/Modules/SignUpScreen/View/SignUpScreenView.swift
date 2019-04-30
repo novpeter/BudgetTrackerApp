@@ -13,6 +13,13 @@ class SignUpScreenView: UIView {
     
     // MARK: - Components
     
+    lazy var backButton: UIButton = {
+        let backButton = UIButton()
+        backButton.setImage(UIImage(named: "backButton"), for: .normal)
+        backButton.frame = UIConstants.navigationBarButtonFrame
+        return backButton
+    }()
+    
     lazy var nameTextField: UITextField = {
         
         let textField = UITextField()
