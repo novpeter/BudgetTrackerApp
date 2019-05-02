@@ -33,11 +33,21 @@ class AddingScreenViewController: UIViewController {
     }
     
     private func addTargets() {
+        contentView.categoryPicker.delegate = self
+        contentView.commentTextView.delegate = self
+        
         contentView.addButton.addTarget(self, action: #selector(onClickAdd), for: .touchUpInside)
         contentView.closeButton.addTarget(self, action: #selector(onClickClose), for: .touchUpInside)
         contentView.datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
-        contentView.categoryPicker.delegate = self
-        contentView.commentTextView.delegate = self
+        
+        contentView
+            .operationTypeSegmentedControl
+            .incomeTypeButton
+            .addTarget(self, action: #selector(selectType), for: .touchUpInside)
+        contentView
+            .operationTypeSegmentedControl
+            .expenseTypeButton
+            .addTarget(self, action: #selector(selectType), for: .touchUpInside)
     }
     
     private func configureNavigationBar() {
@@ -64,9 +74,13 @@ class AddingScreenViewController: UIViewController {
         sender.pulsate()
     }
     
-    @objc func onClickClose(_ sender: UIButton){
+    @objc func onClickClose(_ sender: UIButton) {
         sender.pulsate()
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func selectType(_ sender: UIButton) {
+        contentView.operationTypeSegmentedControl.selectType(index: sender.tag)
     }
     
     

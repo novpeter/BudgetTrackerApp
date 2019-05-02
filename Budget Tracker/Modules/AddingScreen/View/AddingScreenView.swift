@@ -16,9 +16,14 @@ class AddingScreenView: UIView {
     
     lazy var closeButton: UIButton = {
         let button = UIButton()
-        button.setImage(Images.getImage(.CloseButtonIcon)(), for: .normal)
+        button.setImage(Images.getImage(.CloseButtonIcon), for: .normal)
         button.frame = UIConstants.navigationBarButtonFrame
         return button
+    }()
+    
+    lazy var operationTypeSegmentedControl: OperationTypeSegmentedControl = {
+        let segmentedControl = OperationTypeSegmentedControl()
+        return segmentedControl
     }()
     
     lazy var titleTextField: UITextField = {
@@ -85,7 +90,7 @@ class AddingScreenView: UIView {
     
     lazy var dateIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Images.getImage(.CalendarIcon)()
+        imageView.image = Images.getImage(.CalendarIcon)
         return imageView
     }()
     
@@ -151,6 +156,7 @@ class AddingScreenView: UIView {
     
     lazy var mainStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
+                operationTypeSegmentedControl,
                 titleTextField,
                 commentTextView,
                 categoryStackView,
@@ -199,6 +205,7 @@ class AddingScreenView: UIView {
     
         scrollView.snp_makeConstraints { (make) in
             make.edges.equalToSuperview()
+            make.center.equalToSuperview()
         }
         
         mainStackView.snp_makeConstraints { (make) in
@@ -207,6 +214,11 @@ class AddingScreenView: UIView {
             make.bottom.greaterThanOrEqualTo(scrollView.snp_bottom).offset(appearance.mainStackViewVerticalConstraint)
             make.leading.equalToSuperview().inset(appearance.mainStackViewHorizontalConstraint)
             make.trailing.equalToSuperview().offset(appearance.mainStackViewHorizontalConstraint)
+        }
+        
+        operationTypeSegmentedControl.snp_makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.height.equalTo(appearance.titleTextFieldHeight)
         }
         
         titleTextField.snp_makeConstraints { (make) in

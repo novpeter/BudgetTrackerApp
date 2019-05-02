@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B132378227B70C600F30B8F /* OperationTypeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B132377227B70C600F30B8F /* OperationTypeSegmentedControl.swift */; };
 		4B294A2F2276303E00AF9697 /* StatisticsScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A1F2276303E00AF9697 /* StatisticsScreenFactoryProtocol.swift */; };
 		4B294A302276303E00AF9697 /* StatisticsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A202276303E00AF9697 /* StatisticsScreenAssembly.swift */; };
 		4B294A312276303E00AF9697 /* StatisticsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A222276303E00AF9697 /* StatisticsScreenPresenter.swift */; };
@@ -157,6 +158,7 @@
 
 /* Begin PBXFileReference section */
 		05EA09A1DDC79F8B124A207B /* Pods_Budget_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budget_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B132377227B70C600F30B8F /* OperationTypeSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTypeSegmentedControl.swift; sourceTree = "<group>"; };
 		4B294A1F2276303E00AF9697 /* StatisticsScreenFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenFactoryProtocol.swift; sourceTree = "<group>"; };
 		4B294A202276303E00AF9697 /* StatisticsScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenAssembly.swift; sourceTree = "<group>"; };
 		4B294A222276303E00AF9697 /* StatisticsScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsScreenPresenter.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				4B294A442276306F00AF9697 /* AddingScreenViewController.swift */,
+				4B132377227B70C600F30B8F /* OperationTypeSegmentedControl.swift */,
 				4B6CF7A2227AB56400E771B3 /* AddingScreenView.swift */,
 				4B294A452276306F00AF9697 /* AddingScreenViewOutput.swift */,
 				4B294A462276306F00AF9697 /* AddingScreenViewInput.swift */,
@@ -1232,6 +1235,7 @@
 				4B6CF7A3227AB56400E771B3 /* AddingScreenView.swift in Sources */,
 				4B294A77227630ED00AF9697 /* DetailScreenInteractorOutput.swift in Sources */,
 				4B294A592276306F00AF9697 /* AddingScreenRouterOutput.swift in Sources */,
+				4B132378227B70C600F30B8F /* OperationTypeSegmentedControl.swift in Sources */,
 				4BF606272269001700EB7FFB /* ErrorResponse.swift in Sources */,
 				4B4D1FAE22608DBA0013D0E6 /* MainScreenViewController.swift in Sources */,
 				4B477944225E6DC6000E673B /* SignUpScreenInteractor.swift in Sources */,

@@ -38,10 +38,8 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
     }
     
     func commonSetup() {
-        // population years
         self.years = Array(2000...2099)
         
-        // population months with localized names
         var months: [String] = []
         var month = 0
         for _ in 1...12 {

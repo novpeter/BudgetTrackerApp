@@ -23,11 +23,19 @@ struct UIConstants {
 enum Images {
     case CalendarIcon
     case CloseButtonIcon
+    case IncomeTypeIconWhite
+    case IncomeTypeIconBlack
+    case ExpenseTypeIconWhite
+    case ExpenseTypeIconBlack
 
-    func getImage() -> UIImage {
-        switch self {
+    static func getImage(_ imageName: Images) -> UIImage {
+        switch imageName {
         case .CalendarIcon: return UIImage(named: "calendarIcon")!
         case .CloseButtonIcon: return UIImage(named: "closeButton")!
+        case .IncomeTypeIconWhite: return UIImage(named: "incomeTypeIconWhite")!
+        case .IncomeTypeIconBlack: return UIImage(named: "incomeTypeIconBlack")!
+        case .ExpenseTypeIconWhite: return UIImage(named: "expenseTypeIconWhite")!
+        case .ExpenseTypeIconBlack: return UIImage(named: "expenseTypeIconBlack")!
         }
     }
 }
