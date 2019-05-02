@@ -39,6 +39,7 @@ class AddingScreenView: UIView {
         textView.font = Fonts.PoppinsMedium16
         textView.textColor = TextColors.Grey
         textView.tintColor = TextColors.Grey
+        textView.tag = 1
         return textView
     }()
     
@@ -62,11 +63,15 @@ class AddingScreenView: UIView {
     lazy var categoryToolBar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
+        toolbar.backgroundColor = BackgroundColors.White
+        toolbar.tintColor = TextColors.Black
+        toolbar.isTranslucent = true
         return toolbar
     }()
     
     lazy var categoryPicker: UIPickerView = {
         let picker = UIPickerView()
+        picker.backgroundColor = BackgroundColors.White
         return picker
     }()
     
@@ -96,12 +101,16 @@ class AddingScreenView: UIView {
     lazy var dateToolBar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
+        toolbar.backgroundColor = BackgroundColors.White
+        toolbar.tintColor = TextColors.Black
+        toolbar.isTranslucent = true
         return toolbar
     }()
     
     lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
+        datePicker.backgroundColor = BackgroundColors.White
         return datePicker
     }()
     

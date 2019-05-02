@@ -24,6 +24,7 @@ class AddingScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDateToolbar()
+        configureCategoryToolbar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +37,7 @@ class AddingScreenViewController: UIViewController {
         contentView.closeButton.addTarget(self, action: #selector(onClickClose), for: .touchUpInside)
         contentView.datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
         contentView.categoryPicker.delegate = self
+        contentView.commentTextView.delegate = self
     }
     
     private func configureNavigationBar() {
@@ -78,15 +80,6 @@ class AddingScreenViewController: UIViewController {
         }
     }
     
-    @objc func categoryPickerValueChanged(_ sender: UIDatePicker) {
-        DispatchQueue.main.async {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            dateFormatter.timeStyle = .none
-            self.contentView.dateTextField.text = dateFormatter.string(from: sender.date)
-        }
-    }
-    
     @objc private func endEditingCategoryTextField() {
         contentView.categoryTextField.endEditing(true)
     }
@@ -100,6 +93,8 @@ extension AddingScreenViewController: AddingScreenViewInput {
     
 }
 
+
+// MARK: - Category picker methods
 extension AddingScreenViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -117,5 +112,25 @@ extension AddingScreenViewController: UIPickerViewDataSource, UIPickerViewDelega
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         contentView.categoryTextField.text = Categories.allValues[row].rawValue
         contentView.categoryIcon.image = Categories.getCategoryIcon(Categories.allValues[row])
+    }
+}
+
+// MARK: - Comment text view methods
+extension AddingScreenViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        guard textView.tag == 1 else { return }
+        if textView.textColor == TextColors.Grey {
+            textView.text = nil
+            textView.textColor = TextColors.Black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        guard textView.tag == 1 else { return }
+        if textView.text.isEmpty {
+            textView.text = Placeholders.Comment
+            textView.textColor = TextColors.Grey
+        }
     }
 }
