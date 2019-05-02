@@ -26,15 +26,18 @@ class MainScreenView: UIView {
         return statisticButton
     }()
     
-    lazy var datePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.datePickerMode = .date
+    lazy var datePicker: MonthYearPickerView = {
+        let picker = MonthYearPickerView()
+        picker.backgroundColor = BackgroundColors.White
         return picker
     }()
     
     lazy var dateToolBar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
+        toolbar.backgroundColor = BackgroundColors.White
+        toolbar.tintColor = TextColors.Black
+        toolbar.isTranslucent = true
         return toolbar
     }()
     

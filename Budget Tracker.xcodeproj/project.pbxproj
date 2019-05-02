@@ -119,6 +119,7 @@
 		4B5B09CB225BC06C00A10365 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B09CA225BC06C00A10365 /* ColorConstants.swift */; };
 		4B5B09CD225BC07700A10365 /* FontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B09CC225BC07700A10365 /* FontConstants.swift */; };
 		4B6CF7A3227AB56400E771B3 /* AddingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6CF7A2227AB56400E771B3 /* AddingScreenView.swift */; };
+		4B6CF7A6227B13FD00E771B3 /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6CF7A5227B13FD00E771B3 /* MonthYearPickerView.swift */; };
 		4BA060A7225E827F0024E6FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA060A6225E827F0024E6FE /* Extensions.swift */; };
 		4BA1D156226C904B0071D35A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA1D155226C904B0071D35A /* AuthService.swift */; };
 		4BA1D158226C93F40071D35A /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA1D157226C93F40071D35A /* AuthServiceProtocol.swift */; };
@@ -268,6 +269,7 @@
 		4B5B09CA225BC06C00A10365 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		4B5B09CC225BC07700A10365 /* FontConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConstants.swift; sourceTree = "<group>"; };
 		4B6CF7A2227AB56400E771B3 /* AddingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingScreenView.swift; sourceTree = "<group>"; };
+		4B6CF7A5227B13FD00E771B3 /* MonthYearPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
 		4BA060A6225E827F0024E6FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4BA1D155226C904B0071D35A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4BA1D157226C93F40071D35A /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
@@ -748,6 +750,7 @@
 		4B5B0986225B9A0D00A10365 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4B6CF7A4227B13E800E771B3 /* Base */,
 				4B5B09CA225BC06C00A10365 /* ColorConstants.swift */,
 				4B5B09CC225BC07700A10365 /* FontConstants.swift */,
 				4BABA0DA225D375700CA1E08 /* TextConstants.swift */,
@@ -817,6 +820,14 @@
 				4B4A1F05225CC024005D1819 /* Poppins-ThinItalic.ttf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		4B6CF7A4227B13E800E771B3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4B6CF7A5227B13FD00E771B3 /* MonthYearPickerView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		4BA1D154226C90350071D35A /* Services */ = {
@@ -1193,6 +1204,7 @@
 				4BF606422269117C00EB7FFB /* ProfileScreenViewOutput.swift in Sources */,
 				4BF606462269117C00EB7FFB /* ProfileScreenInteractorOutput.swift in Sources */,
 				4B294A522276306F00AF9697 /* AddingScreenViewController.swift in Sources */,
+				4B6CF7A6227B13FD00E771B3 /* MonthYearPickerView.swift in Sources */,
 				4B5B09CD225BC07700A10365 /* FontConstants.swift in Sources */,
 				4B294A3A2276303E00AF9697 /* StatisticsScreenRouter.swift in Sources */,
 				4B47791E225E6D74000E673B /* SignInScreenAssembly.swift in Sources */,

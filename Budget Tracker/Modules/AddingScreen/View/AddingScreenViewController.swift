@@ -64,7 +64,8 @@ class AddingScreenViewController: UIViewController {
         sender.pulsate()
     }
     
-    @objc func onClickClose(){
+    @objc func onClickClose(_ sender: UIButton){
+        sender.pulsate()
         navigationController?.popViewController(animated: true)
     }
     
@@ -89,6 +90,7 @@ class AddingScreenViewController: UIViewController {
     }
 }
 
+// MARK: - Adding Screen View Input
 extension AddingScreenViewController: AddingScreenViewInput {
     
 }
@@ -115,7 +117,7 @@ extension AddingScreenViewController: UIPickerViewDataSource, UIPickerViewDelega
     }
 }
 
-// MARK: - Comment text view methods
+// MARK: - Comment TextView methods
 extension AddingScreenViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {

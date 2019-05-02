@@ -49,10 +49,9 @@ class MainScreenViewController: UIViewController {
     }
     
     private func configureToolbar() {
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker));
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(endEditingDateTextField));
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
-        contentView.dateToolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        contentView.dateToolBar.setItems([spaceButton, doneButton], animated: false)
     }
     
     
@@ -74,13 +73,9 @@ class MainScreenViewController: UIViewController {
     }
     
     
-    // MARK: - Date picker handlers
+    // MARK: - Date picker handler
     
-    @objc private func doneDatePicker() {
-        contentView.dateTextField.endEditing(true)
-    }
-    
-    @objc private func cancelDatePicker() {
+    @objc private func endEditingDateTextField() {
         contentView.dateTextField.endEditing(true)
     }
 }
