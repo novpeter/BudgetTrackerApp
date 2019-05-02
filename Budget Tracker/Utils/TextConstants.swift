@@ -23,6 +23,7 @@ struct Placeholders {
     static let Name = "Name"
     static let Title = "Title"
     static let Comment = "Comment"
+    static let ZeroSum = "0 " + Currency.Rubble
 }
 
 struct ButtonTitles {

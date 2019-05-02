@@ -21,63 +21,49 @@ class SignUpScreenView: UIView {
     }()
     
     lazy var nameTextField: UITextField = {
-        
         let textField = UITextField()
-        
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Name
         textField.font = Fonts.PoppinsMedium16
         textField.textColor = TextColors.Black
         textField.tintColor = TextColors.Grey
-        
         return textField
     }()
     
     lazy var emailTextField: UITextField = {
-        
         let textField = UITextField()
-        
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Email
         textField.font = Fonts.PoppinsMedium16
         textField.textColor = TextColors.Black
         textField.tintColor = TextColors.Grey
-        
         return textField
     }()
     
     lazy var passwordTextField: UITextField = {
-        
         let textField = UITextField()
-        
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Password
         textField.font = Fonts.PoppinsMedium16
         textField.textColor = TextColors.Black
         textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
-        
         return textField
     }()
     
     lazy var confirmPasswordTextField: UITextField = {
-        
         let textField = UITextField()
-        
         textField.keyboardType = .default
         textField.placeholder = Placeholders.ConfirmPassword
         textField.font = Fonts.PoppinsMedium16
         textField.textColor = TextColors.Black
         textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
-        
         return textField
     }()
     
     lazy var signUpButton: UIButton = {
-        
         let button = UIButton()
-        
         button.layer.cornerRadius = UIConstants.buttonCornerRadius
         button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
@@ -89,7 +75,6 @@ class SignUpScreenView: UIView {
         button.setTitleColor(TextColors.Grey, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
         button.backgroundColor = ButtonColors.White
-        
         return button
     }()
     
@@ -135,8 +120,8 @@ class SignUpScreenView: UIView {
     // MARK: - Congigurating
     
     private func addSubviews() {
-        self.backgroundColor = .white
-        self.addSubview(scrollView)
+        backgroundColor = .white
+        addSubview(scrollView)
         scrollView.addSubview(mainStackView)
     }
     

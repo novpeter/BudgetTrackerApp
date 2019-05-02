@@ -118,6 +118,7 @@
 		4B4D1FB62260A88E0013D0E6 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D1FB52260A88E0013D0E6 /* credentials.plist */; };
 		4B5B09CB225BC06C00A10365 /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B09CA225BC06C00A10365 /* ColorConstants.swift */; };
 		4B5B09CD225BC07700A10365 /* FontConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B09CC225BC07700A10365 /* FontConstants.swift */; };
+		4B6CF7A3227AB56400E771B3 /* AddingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6CF7A2227AB56400E771B3 /* AddingScreenView.swift */; };
 		4BA060A7225E827F0024E6FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA060A6225E827F0024E6FE /* Extensions.swift */; };
 		4BA1D156226C904B0071D35A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA1D155226C904B0071D35A /* AuthService.swift */; };
 		4BA1D158226C93F40071D35A /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA1D157226C93F40071D35A /* AuthServiceProtocol.swift */; };
@@ -130,7 +131,7 @@
 		4BBA5F862268B59800666F36 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F852268B59800666F36 /* NetworkAPI.swift */; };
 		4BBA5F8D2268C4B100666F36 /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F8C2268C4B100666F36 /* UserRequests.swift */; };
 		4BBA5F8F2268C73200666F36 /* OperationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F8E2268C73200666F36 /* OperationRequests.swift */; };
-		4BC4491D2271E54E00EE3842 /* NumericConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4491C2271E54E00EE3842 /* NumericConstants.swift */; };
+		4BC4491D2271E54E00EE3842 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4491C2271E54E00EE3842 /* UIConstants.swift */; };
 		4BC4491F2271ECA500EE3842 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4491E2271ECA500EE3842 /* MainScreenView.swift */; };
 		4BF606272269001700EB7FFB /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF606262269001700EB7FFB /* ErrorResponse.swift */; };
 		4BF606292269066200EB7FFB /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF606282269066200EB7FFB /* AuthResponse.swift */; };
@@ -266,6 +267,7 @@
 		4B4D1FB52260A88E0013D0E6 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		4B5B09CA225BC06C00A10365 /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
 		4B5B09CC225BC07700A10365 /* FontConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConstants.swift; sourceTree = "<group>"; };
+		4B6CF7A2227AB56400E771B3 /* AddingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingScreenView.swift; sourceTree = "<group>"; };
 		4BA060A6225E827F0024E6FE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4BA1D155226C904B0071D35A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4BA1D157226C93F40071D35A /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
@@ -278,7 +280,7 @@
 		4BBA5F852268B59800666F36 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		4BBA5F8C2268C4B100666F36 /* UserRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequests.swift; sourceTree = "<group>"; };
 		4BBA5F8E2268C73200666F36 /* OperationRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationRequests.swift; sourceTree = "<group>"; };
-		4BC4491C2271E54E00EE3842 /* NumericConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericConstants.swift; sourceTree = "<group>"; };
+		4BC4491C2271E54E00EE3842 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		4BC4491E2271ECA500EE3842 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		4BF606262269001700EB7FFB /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		4BF606282269066200EB7FFB /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
@@ -388,8 +390,8 @@
 			isa = PBXGroup;
 			children = (
 				4B294A3E2276306F00AF9697 /* Assembly */,
-				4B294A412276306F00AF9697 /* Presenter */,
 				4B294A432276306F00AF9697 /* View */,
+				4B294A412276306F00AF9697 /* Presenter */,
 				4B294A472276306F00AF9697 /* Interactor */,
 				4B294A4B2276306F00AF9697 /* Router */,
 			);
@@ -417,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				4B294A442276306F00AF9697 /* AddingScreenViewController.swift */,
+				4B6CF7A2227AB56400E771B3 /* AddingScreenView.swift */,
 				4B294A452276306F00AF9697 /* AddingScreenViewOutput.swift */,
 				4B294A462276306F00AF9697 /* AddingScreenViewInput.swift */,
 			);
@@ -749,7 +752,7 @@
 				4B5B09CC225BC07700A10365 /* FontConstants.swift */,
 				4BABA0DA225D375700CA1E08 /* TextConstants.swift */,
 				4BA060A6225E827F0024E6FE /* Extensions.swift */,
-				4BC4491C2271E54E00EE3842 /* NumericConstants.swift */,
+				4BC4491C2271E54E00EE3842 /* UIConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1176,7 +1179,7 @@
 				4B47793F225E6DC6000E673B /* SignUpScreenPresenter.swift in Sources */,
 				4B4A1F40225CFD43005D1819 /* WelcomeScreenInteractorOutput.swift in Sources */,
 				4B477921225E6D74000E673B /* SignInScreenViewInput.swift in Sources */,
-				4BC4491D2271E54E00EE3842 /* NumericConstants.swift in Sources */,
+				4BC4491D2271E54E00EE3842 /* UIConstants.swift in Sources */,
 				4B4A1F4B225CFFE6005D1819 /* NetworkManager.swift in Sources */,
 				4B4D1FAD22608DBA0013D0E6 /* MainScreenViewInput.swift in Sources */,
 				4B294A78227630ED00AF9697 /* DetailScreenRouter.swift in Sources */,
@@ -1214,6 +1217,7 @@
 				4B4D1FAF22608DBA0013D0E6 /* MainScreenInteractorOutput.swift in Sources */,
 				4B4A1F49225CFFB9005D1819 /* RealmManagerProtocol.swift in Sources */,
 				4B294A75227630ED00AF9697 /* DetailScreenInteractor.swift in Sources */,
+				4B6CF7A3227AB56400E771B3 /* AddingScreenView.swift in Sources */,
 				4B294A77227630ED00AF9697 /* DetailScreenInteractorOutput.swift in Sources */,
 				4B294A592276306F00AF9697 /* AddingScreenRouterOutput.swift in Sources */,
 				4BF606272269001700EB7FFB /* ErrorResponse.swift in Sources */,

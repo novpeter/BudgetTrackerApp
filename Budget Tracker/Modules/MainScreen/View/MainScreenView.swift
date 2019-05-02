@@ -119,7 +119,7 @@ class MainScreenView: UIView {
     
     lazy var differenceTotalLabel: UILabel = {
         let label = UILabel()
-        label.textColor = TextColors.Green
+        label.textColor = TextColors.Green  
         label.font = Fonts.PoppinsMedium16
         label.textAlignment = .center
         label.text = MainScreenMock.Difference
@@ -139,7 +139,6 @@ class MainScreenView: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.spacing = 12
-        stackView.backgroundColor = .red
         return stackView
     }()
     
@@ -191,8 +190,8 @@ class MainScreenView: UIView {
     private func addSubviews() {
         infoView.addSubview(infoStackView)
         scrollView.addSubview(infoView)
-        self.addSubview(scrollView)
-        self.addSubview(addOperationButton)
+        addSubview(scrollView)
+        addSubview(addOperationButton)
     }
     
     private func addConstraints() {
@@ -202,9 +201,8 @@ class MainScreenView: UIView {
         }
         
         addOperationButton.snp.makeConstraints { (make) in
-            make.width.equalTo(64)
-            make.height.equalTo(64)
-            make.bottom.equalTo(self.snp_bottom).inset(30)
+            make.width.height.equalTo(64)
+            make.bottom.equalToSuperview().inset(30)
             make.right.equalTo(self.snp_right).inset(30)
         }
         
@@ -220,7 +218,7 @@ class MainScreenView: UIView {
         
         infoStackView.snp.makeConstraints { (make) in
             make.center.equalTo(infoView)
-            make.top.equalTo(infoView).offset(28)
+            make.top.equalTo(infoView.snp.top).offset(28)
         }
 
         incomeExpenseStackView.snp.makeConstraints { (make) in
