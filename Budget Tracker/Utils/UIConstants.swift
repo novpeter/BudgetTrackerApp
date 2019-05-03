@@ -52,7 +52,7 @@ enum Categories: String {
     case Health = "Health"
     case Other = "Other"
     
-    static let allValues = [Food, Transport, Shopping, Communication, Recreation, Sport, Home, Health, Other]
+    static let allValues = [Other, Food, Transport, Shopping, Communication, Recreation, Sport, Home, Health]
     
     static func getCategoryIcon(_ category: Categories) -> UIImage {
         switch category {

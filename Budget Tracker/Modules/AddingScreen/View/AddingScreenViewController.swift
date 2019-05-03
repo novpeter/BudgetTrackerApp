@@ -23,6 +23,10 @@ class AddingScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        contentView.categoryPicker.delegate = self
+        contentView.commentTextView.delegate = self
+        
         configureDateToolbar()
         configureCategoryToolbar()
     }
@@ -30,12 +34,10 @@ class AddingScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationBar()
+        presenter.setInitialState()
     }
     
     private func addTargets() {
-        contentView.categoryPicker.delegate = self
-        contentView.commentTextView.delegate = self
-        
         contentView.addButton.addTarget(self, action: #selector(onClickAdd), for: .touchUpInside)
         contentView.closeButton.addTarget(self, action: #selector(onClickClose), for: .touchUpInside)
         contentView.datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
@@ -72,6 +74,13 @@ class AddingScreenViewController: UIViewController {
     
     @objc func onClickAdd(_ sender: UIButton) {
         sender.pulsate()
+        presenter.addNewOperation(
+            title: contentView.titleTextField.text,
+            comment: contentView.commentTextView.text,
+            category: contentView.categoryTextField.text,
+            date: contentView.dateTextField.text,
+            sum: contentView.sumTextField.text
+        )
     }
     
     @objc func onClickClose(_ sender: UIButton) {
@@ -81,13 +90,20 @@ class AddingScreenViewController: UIViewController {
     
     @objc func selectType(_ sender: UIButton) {
         contentView.operationTypeSegmentedControl.selectType(index: sender.tag)
+        if sender.tag == 0 {
+            contentView.categoryStackView.isHidden = true
+        }
+        else if sender.tag == 1 {
+            contentView.categoryStackView.isHidden = false
+        }
     }
     
     
     // MARK: - Picker handlers
     
     @objc func datePickerValueChanged(_ sender: UIDatePicker) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
             dateFormatter.timeStyle = .none
@@ -107,6 +123,21 @@ class AddingScreenViewController: UIViewController {
 // MARK: - Adding Screen View Input
 extension AddingScreenViewController: AddingScreenViewInput {
     
+    func setValues(selectedIndex: Int, category: Categories, date: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if selectedIndex == 0 {
+                self.contentView.categoryStackView.isHidden = true
+            }
+            else if selectedIndex == 1 {
+                self.contentView.categoryStackView.isHidden = false
+            }
+            self.contentView.operationTypeSegmentedControl.selectType(index: selectedIndex)
+            self.contentView.categoryTextField.text = category.rawValue
+            self.contentView.categoryIcon.image = Categories.getCategoryIcon(category)
+            self.contentView.dateTextField.text = date
+        }
+    }
 }
 
 

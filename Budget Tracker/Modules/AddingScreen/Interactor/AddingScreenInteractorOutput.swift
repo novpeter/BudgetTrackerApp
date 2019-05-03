@@ -6,8 +6,16 @@
 //  Copyright © 2019 DreamTeam. All rights reserved.
 //
 
-import Foundation
-
 protocol AddingScreenInteractorOutput: AnyObject {
     
+    /// Calls presenter to set values in fields
+    ///
+    /// - Parameters:
+    ///   - selectedIndex: operation type
+    ///   - category: selected category
+    ///   - date: date as string
+    func setValues(selectedIndex: Int, category: Categories, date: String)
+    
+    /// Calls router to close adding screen
+    func closeAddingScreen()
 }

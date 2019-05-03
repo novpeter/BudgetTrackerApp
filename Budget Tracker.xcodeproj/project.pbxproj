@@ -434,9 +434,9 @@
 		4B294A472276306F00AF9697 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				4B294A4A2276306F00AF9697 /* AddingScreenInteractor.swift */,
 				4B294A482276306F00AF9697 /* AddingScreenInteractorInput.swift */,
 				4B294A492276306F00AF9697 /* AddingScreenInteractorOutput.swift */,
-				4B294A4A2276306F00AF9697 /* AddingScreenInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -444,9 +444,9 @@
 		4B294A4B2276306F00AF9697 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				4B294A4E2276306F00AF9697 /* AddingScreenRouter.swift */,
 				4B294A4C2276306F00AF9697 /* AddingScreenRouterInput.swift */,
 				4B294A4D2276306F00AF9697 /* AddingScreenRouterOutput.swift */,
-				4B294A4E2276306F00AF9697 /* AddingScreenRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";

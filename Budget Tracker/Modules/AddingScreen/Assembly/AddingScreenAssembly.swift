@@ -26,6 +26,8 @@ class AddingScreenAssembly: AddingScreenFactoryProtocol {
         let router = AddingScreenRouter()
         let interactor = AddingScreenInteractor()
         
+        let alertManager = AlertManager()
+        
         view.presenter = presenter
         
         presenter.view = view
@@ -33,5 +35,9 @@ class AddingScreenAssembly: AddingScreenFactoryProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
+        
+        router.presenter = presenter
+        router.alertManager = alertManager
+        router.view = view
     }
 }

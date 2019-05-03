@@ -23,6 +23,10 @@ class AddingScreenView: UIView {
     
     lazy var operationTypeSegmentedControl: OperationTypeSegmentedControl = {
         let segmentedControl = OperationTypeSegmentedControl()
+        segmentedControl.layer.shadowColor = UIConstants.buttonShadowColor
+        segmentedControl.layer.shadowOffset = UIConstants.buttonShadowOffset
+        segmentedControl.layer.shadowOpacity = UIConstants.buttonShadowOpacity
+        segmentedControl.layer.shadowRadius = UIConstants.buttonShadowRadius
         return segmentedControl
     }()
     
