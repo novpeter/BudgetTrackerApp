@@ -107,16 +107,14 @@ class WelcomeScreenView: UIView {
     private func addConstraints() {
         
         labelsStackView.snp.makeConstraints({ (make) in
-            make.left.equalTo(self).offset(64)
-            make.right.equalTo(self).offset(-64)
-            make.top.equalTo(self).offset(120)
+            make.left.right.equalToSuperview().inset(64)
+            make.top.equalToSuperview().offset(120)
             make.height.lessThanOrEqualTo(140)
         })
         
         buttonsStackView.snp.makeConstraints { (make) in
-            make.left.equalTo(self).offset(48)
-            make.right.equalTo(self).offset(-48)
-            make.bottom.equalTo(self).offset(-120)
+            make.left.right.equalToSuperview().inset(48)
+            make.bottom.equalToSuperview().inset(80)
         }
         
         signInButton.snp.makeConstraints { (make) in
@@ -126,7 +124,7 @@ class WelcomeScreenView: UIView {
         
         signUpButton.snp.makeConstraints { (make) in
             make.height.equalTo(50)
-            make.centerX.equalTo(buttonsStackView)
+            make.centerX.equalToSuperview()
         }
     }
 }

@@ -19,7 +19,7 @@ struct Titles {
 struct Placeholders {
     static let Email = "Email"
     static let Password = "Password"
-    static let ConfirmPassword = "ConfirmPassword"
+    static let ConfirmPassword = "Confirm password"
     static let Name = "Name"
     static let Title = "Title"
     static let Comment = "Comment"

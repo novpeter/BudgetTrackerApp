@@ -128,13 +128,13 @@ class SignUpScreenView: UIView {
     private func addConstraints() {
         
         scrollView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
+            make.edges.equalToSuperview()
         }
         
         mainStackView.snp.makeConstraints { (make) in
-            make.left.equalTo(self).offset(48)
-            make.right.equalTo(self).offset(-48)
-            make.top.equalTo(self).offset(44)
+            make.centerX.equalToSuperview()
+            make.left.equalToSuperview().inset(48)
+            make.top.equalToSuperview().offset(44)
         }
         
         signUpButton.snp.makeConstraints { (make) in

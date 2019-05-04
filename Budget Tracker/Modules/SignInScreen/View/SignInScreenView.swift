@@ -138,9 +138,9 @@ class SignInScreenView: UIView {
     private func addConstraints() {
         
         mainStackView.snp.makeConstraints { (make) in
-            make.left.equalTo(self).offset(48)
-            make.right.equalTo(self).offset(-48)
-            make.top.equalTo(self).offset(44)
+            make.left.equalToSuperview().offset(48)
+            make.right.equalToSuperview().offset(-48)
+            make.top.equalToSuperview().offset(44)
         }
         
         signInButton.snp.makeConstraints { (make) in
@@ -157,7 +157,7 @@ class SignInScreenView: UIView {
         
         forgotPasswordButton.snp.makeConstraints { (make) in
             make.bottom.equalTo(mainStackView).offset(40)
-            make.centerX.equalTo(self)
+            make.centerX.equalToSuperview()
             make.height.equalTo(20)
             make.width.equalTo(120)
         }
