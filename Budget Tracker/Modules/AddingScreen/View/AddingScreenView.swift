@@ -207,43 +207,42 @@ class AddingScreenView: UIView {
     
     private func addConstraints() {
     
-        scrollView.snp_makeConstraints { (make) in
+        scrollView.snp_makeConstraints { make in
             make.edges.equalToSuperview()
             make.center.equalToSuperview()
         }
         
-        mainStackView.snp_makeConstraints { (make) in
+        mainStackView.snp_makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(scrollView.snp_top).offset(appearance.mainStackViewVerticalConstraint)
-            make.bottom.greaterThanOrEqualTo(scrollView.snp_bottom).offset(appearance.mainStackViewVerticalConstraint)
-            make.leading.equalToSuperview().inset(appearance.mainStackViewHorizontalConstraint)
-            make.trailing.equalToSuperview().offset(appearance.mainStackViewHorizontalConstraint)
+            make.top.equalTo(scrollView.snp_top).inset(appearance.mainStackViewVerticalConstraint)
+            make.bottom.greaterThanOrEqualTo(scrollView.snp_bottom).inset(appearance.mainStackViewVerticalConstraint)
+            make.leading.trailing.equalToSuperview().inset(appearance.mainStackViewHorizontalConstraint)
         }
         
-        operationTypeSegmentedControl.snp_makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.height.equalTo(appearance.titleTextFieldHeight)
-        }
-        
-        titleTextField.snp_makeConstraints { (make) in
+        operationTypeSegmentedControl.snp_makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(appearance.titleTextFieldHeight)
         }
         
-        commentTextView.snp_makeConstraints { (make) in
+        titleTextField.snp_makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.height.equalTo(appearance.titleTextFieldHeight)
+        }
+        
+        commentTextView.snp_makeConstraints { make in
             make.height.equalTo(appearance.commentTextViewHeight)
             make.centerX.equalToSuperview()
         }
         
-        dateIcon.snp_makeConstraints { (make) in
-            make.height.width.equalTo(appearance.iconHeightWidth)
+        dateIcon.snp_makeConstraints { make in
+            make.height.width.equalTo(appearance.iconSize)
         }
         
-        categoryIcon.snp_makeConstraints { (make) in
-            make.height.width.equalTo(appearance.iconHeightWidth)
+        categoryIcon.snp_makeConstraints { make in
+            make.height.width.equalTo(appearance.iconSize)
         }
         
-        addButton.snp_makeConstraints { (make) in
+        addButton.snp_makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(UIConstants.buttonHeight)
         }
@@ -261,7 +260,7 @@ extension AddingScreenView {
         let mainStackViewHorizontalConstraint = 40
         let mainStackViewSpacing: CGFloat = 28
         
-        let iconHeightWidth = 24
+        let iconSize = 24
         
         let titleTextFieldHeight: CGFloat = 35
         let commentTextViewHeight: CGFloat = 70

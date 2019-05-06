@@ -137,36 +137,36 @@ class SignInScreenView: UIView {
     
     private func addConstraints() {
         
-        mainStackView.snp.makeConstraints { (make) in
+        mainStackView.snp.makeConstraints { make in
             make.left.equalTo(self).offset(48)
             make.right.equalTo(self).offset(-48)
             make.top.equalTo(self).offset(44)
         }
         
-        signInButton.snp.makeConstraints { (make) in
+        signInButton.snp.makeConstraints { make in
             make.centerX.equalTo(buttonsStackView)
             make.height.equalTo(50)
         }
         
-        googleSignInButton.snp.makeConstraints { (make) in
+        googleSignInButton.snp.makeConstraints { make in
             make.centerX.equalTo(buttonsStackView)
             make.height.equalTo(50)
         }
         
         googleSignInButton.imageEdgeInsets.right = 40.0
         
-        forgotPasswordButton.snp.makeConstraints { (make) in
+        forgotPasswordButton.snp.makeConstraints { make in
             make.bottom.equalTo(mainStackView).offset(40)
             make.centerX.equalTo(self)
             make.height.equalTo(20)
             make.width.equalTo(120)
         }
         
-        emailTextField.snp.makeConstraints { (make) in
+        emailTextField.snp.makeConstraints { make in
             make.centerX.equalTo(textFieldsStackView)
         }
         
-        passwordTextField.snp.makeConstraints { (make) in
+        passwordTextField.snp.makeConstraints { make in
             make.centerX.equalTo(textFieldsStackView)
         }
     }

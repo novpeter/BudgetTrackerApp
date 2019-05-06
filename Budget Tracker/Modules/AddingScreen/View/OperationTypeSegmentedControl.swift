@@ -80,7 +80,7 @@ class OperationTypeSegmentedControl: UIView {
     }
     
     private func addConstraints() {
-        buttonsStackView.snp_makeConstraints { (make) in
+        buttonsStackView.snp_makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }

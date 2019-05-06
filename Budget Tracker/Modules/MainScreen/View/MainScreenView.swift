@@ -199,54 +199,54 @@ class MainScreenView: UIView {
     
     private func addConstraints() {
         
-        dateTextField.snp.makeConstraints { (make) in
+        dateTextField.snp.makeConstraints { make in
             make.width.equalTo(120)
         }
         
-        addOperationButton.snp.makeConstraints { (make) in
+        addOperationButton.snp.makeConstraints { make in
             make.width.height.equalTo(64)
             make.bottom.equalToSuperview().inset(30)
             make.right.equalTo(self.snp_right).inset(30)
         }
         
-        scrollView.snp.makeConstraints { (make) in
+        scrollView.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
         
-        infoView.snp.makeConstraints { (make) in
+        infoView.snp.makeConstraints { make in
             make.top.equalTo(scrollView.snp_top)
             make.width.equalTo(scrollView)
             make.centerX.equalTo(scrollView)
         }
         
-        infoStackView.snp.makeConstraints { (make) in
+        infoStackView.snp.makeConstraints { make in
             make.center.equalTo(infoView)
             make.top.equalTo(infoView.snp.top).offset(28)
         }
 
-        incomeExpenseStackView.snp.makeConstraints { (make) in
+        incomeExpenseStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
         }
 
-        incomeIcon.snp.makeConstraints { (make) in
+        incomeIcon.snp.makeConstraints { make in
             make.height.equalTo(36)
             make.width.equalTo(36)
         }
         
-        incomeStackView.snp.makeConstraints { (make) in
+        incomeStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
         }
 
-        expenseIcon.snp.makeConstraints { (make) in
+        expenseIcon.snp.makeConstraints { make in
             make.height.equalTo(incomeIcon)
             make.width.equalTo(incomeIcon)
         }
         
-        expenseStackView.snp.makeConstraints { (make) in
+        expenseStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
         }
         
-        differenceStackView.snp.makeConstraints { (make) in
+        differenceStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
         }
     }

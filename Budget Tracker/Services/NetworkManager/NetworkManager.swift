@@ -17,7 +17,7 @@ class NetworkManager: NetworkManagerProtocol {
         success successCallback: @escaping (Response) -> Void,
         error errorCallback: @escaping (Swift.Error) -> Void) {
 
-        NetworkManager.provider.request(target) { (result) in
+        NetworkManager.provider.request(target) { result in
             switch result {
             case .success(let response):
                 if response.statusCode >= 200 && response.statusCode <= 300 {

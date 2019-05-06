@@ -127,34 +127,34 @@ class SignUpScreenView: UIView {
     
     private func addConstraints() {
         
-        scrollView.snp.makeConstraints { (make) in
+        scrollView.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
         
-        mainStackView.snp.makeConstraints { (make) in
+        mainStackView.snp.makeConstraints { make in
             make.left.equalTo(self).offset(48)
             make.right.equalTo(self).offset(-48)
             make.top.equalTo(self).offset(44)
         }
         
-        signUpButton.snp.makeConstraints { (make) in
+        signUpButton.snp.makeConstraints { make in
             make.centerX.equalTo(mainStackView)
             make.height.equalTo(50)
         }
         
-        nameTextField.snp.makeConstraints { (make) in
+        nameTextField.snp.makeConstraints { make in
             make.centerX.equalTo(mainStackView)
         }
         
-        emailTextField.snp.makeConstraints { (make) in
+        emailTextField.snp.makeConstraints { make in
             make.centerX.equalTo(mainStackView)
         }
         
-        passwordTextField.snp.makeConstraints { (make) in
+        passwordTextField.snp.makeConstraints { make in
             make.centerX.equalTo(mainStackView)
         }
         
-        confirmPasswordTextField.snp.makeConstraints { (make) in
+        confirmPasswordTextField.snp.makeConstraints { make in
             make.centerX.equalTo(mainStackView)
         }
     }

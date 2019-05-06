@@ -30,7 +30,7 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
         
         presenter.startLoading()
         
-        authService.signIn(email: email, password: password) { (result) in
+        authService.signIn(email: email, password: password) { result in
             self.presenter.stopLoading()
             switch result {
             case .Success:
@@ -44,7 +44,7 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
     
     func googleSignIn(token: String, email: String, fullName: String) {
         presenter.startLoading()
-        authService.googleSignIn(token: token, email: email, fullName: fullName) { (result) in
+        authService.googleSignIn(token: token, email: email, fullName: fullName) { result in
             self.presenter.stopLoading()
             switch result {
             case .Success:

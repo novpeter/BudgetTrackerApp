@@ -15,7 +15,7 @@ class ProfileScreenInteractor: ProfileScreenInteractorInput {
     
     func logOut() {
         presenter.startLoading()
-        authService.logOut { (result) in
+        authService.logOut { result in
             self.presenter.stopLoading()
             switch result {
             case .Success:
@@ -29,7 +29,7 @@ class ProfileScreenInteractor: ProfileScreenInteractorInput {
     
     func synchronize() {
         presenter.startLoading()
-        authService.synchronize { (result) in
+        authService.synchronize { result in
             self.presenter.stopLoading()
             switch result {
             case .Success:

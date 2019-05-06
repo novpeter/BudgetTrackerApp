@@ -128,37 +128,37 @@ class ProfileScreenView: UIView {
     
     private func addConstraints() {
         
-        infoStackView.snp.makeConstraints({ (make) in
+        infoStackView.snp.makeConstraints({ make in
             make.left.equalTo(self).offset(64)
             make.right.equalTo(self).offset(-64)
             make.top.equalTo(self).offset(120)
         })
         
-        profileImageView.snp.makeConstraints { (make) in
+        profileImageView.snp.makeConstraints { make in
             make.height.equalTo(120)
             make.width.lessThanOrEqualTo(120)
         }
         
-        fullNameLabel.snp.makeConstraints { (make) in
+        fullNameLabel.snp.makeConstraints { make in
             make.height.equalTo(30)
         }
         
-        emailLabel.snp.makeConstraints { (make) in
+        emailLabel.snp.makeConstraints { make in
             make.height.equalTo(25)
         }
         
-        buttonsStackView.snp.makeConstraints { (make) in
+        buttonsStackView.snp.makeConstraints { make in
             make.left.equalTo(self).offset(48)
             make.right.equalTo(self).offset(-48)
             make.bottom.equalTo(self).offset(-120)
         }
         
-        logOutButton.snp.makeConstraints { (make) in
+        logOutButton.snp.makeConstraints { make in
             make.centerX.equalTo(buttonsStackView)
             make.height.equalTo(50)
         }
         
-        syncButton.snp.makeConstraints { (make) in
+        syncButton.snp.makeConstraints { make in
             make.height.equalTo(50)
             make.centerX.equalTo(buttonsStackView)
         }
