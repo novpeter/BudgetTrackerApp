@@ -34,7 +34,7 @@ class ProfileScreenView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = Fonts.PoppinsBold20
-        label.textColor = TextColors.Black
+        label.textColor = .black
         label.text = "Anton Ivanov"
         return label
     }()
@@ -72,7 +72,7 @@ class ProfileScreenView: UIView {
         button.setTitle(ButtonTitles.Synchronize, for: .normal)
         button.setTitleColor(TextColors.Grey, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = ButtonColors.White
+        button.backgroundColor = .white
         return button
     }()
     
@@ -86,7 +86,7 @@ class ProfileScreenView: UIView {
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.LogOut, for: .normal)
-        button.setTitleColor(TextColors.White, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
         button.backgroundColor = ButtonColors.Red
         return button

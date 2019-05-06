@@ -53,7 +53,7 @@ class AddingScreenViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        navigationController?.navigationBar.barTintColor = BackgroundColors.White
+        navigationController?.navigationBar.barTintColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.closeButton)
     }
     
@@ -169,7 +169,7 @@ extension AddingScreenViewController: UITextViewDelegate {
         guard textView.tag == 1 else { return }
         if textView.textColor == TextColors.Grey {
             textView.text = nil
-            textView.textColor = TextColors.Black
+            textView.textColor = .black
         }
     }
     

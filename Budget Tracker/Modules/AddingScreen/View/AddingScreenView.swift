@@ -36,7 +36,7 @@ class AddingScreenView: UIView {
         textField.textAlignment = .left
         textField.placeholder = Placeholders.Title
         textField.font = Fonts.PoppinsBold20
-        textField.textColor = TextColors.Black
+        textField.textColor = .black
         textField.tintColor = TextColors.Grey
         return textField
     }()
@@ -62,7 +62,7 @@ class AddingScreenView: UIView {
         let textField = UITextField()
         textField.textAlignment = .left
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
+        textField.textColor = .black
         textField.text = Categories.Other.rawValue
         textField.inputView = categoryPicker
         textField.inputAccessoryView = categoryToolBar
@@ -72,15 +72,15 @@ class AddingScreenView: UIView {
     lazy var categoryToolBar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        toolbar.backgroundColor = BackgroundColors.White
-        toolbar.tintColor = TextColors.Black
+        toolbar.backgroundColor = .white
+        toolbar.tintColor = .black
         toolbar.isTranslucent = true
         return toolbar
     }()
     
     lazy var categoryPicker: UIPickerView = {
         let picker = UIPickerView()
-        picker.backgroundColor = BackgroundColors.White
+        picker.backgroundColor = .white
         return picker
     }()
     
@@ -101,7 +101,7 @@ class AddingScreenView: UIView {
     lazy var dateTextField: UITextField = {
         let textField = UITextField()
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
+        textField.textColor = .black
         textField.inputView = datePicker
         textField.inputAccessoryView = dateToolBar
         return textField
@@ -110,8 +110,8 @@ class AddingScreenView: UIView {
     lazy var dateToolBar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        toolbar.backgroundColor = BackgroundColors.White
-        toolbar.tintColor = TextColors.Black
+        toolbar.backgroundColor = .white
+        toolbar.tintColor = .black
         toolbar.isTranslucent = true
         return toolbar
     }()
@@ -119,7 +119,7 @@ class AddingScreenView: UIView {
     lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
-        datePicker.backgroundColor = BackgroundColors.White
+        datePicker.backgroundColor = .white
         return datePicker
     }()
     
@@ -137,7 +137,7 @@ class AddingScreenView: UIView {
         textField.textAlignment = .center
         textField.placeholder = Placeholders.ZeroSum
         textField.font = Fonts.PoppinsMedium48
-        textField.textColor = TextColors.Black
+        textField.textColor = .black
         textField.tintColor = TextColors.Grey
         return textField
     }()
@@ -152,7 +152,7 @@ class AddingScreenView: UIView {
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.Add, for: .normal)
-        button.setTitleColor(TextColors.White, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
         button.backgroundColor = ButtonColors.Blue
         return button
@@ -176,7 +176,7 @@ class AddingScreenView: UIView {
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = BackgroundColors.White
+        scrollView.backgroundColor = .white
         return scrollView
     }()
     

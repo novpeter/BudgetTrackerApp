@@ -23,7 +23,7 @@ class OperationTypeSegmentedControl: UIView {
         button.tag = 0
         button.backgroundColor = ButtonColors.Red
         button.titleLabel?.font = Fonts.PoppinsMedium16
-        button.setTitleColor(TextColors.White, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.setTitle(ButtonTitles.Income, for: .normal)
         button.setImage(Images.getImage(.IncomeTypeIconWhite), for: .normal)
         button.layer.borderWidth = UIConstants.buttonBorderWidth
@@ -36,9 +36,9 @@ class OperationTypeSegmentedControl: UIView {
     lazy var expenseTypeButton: UIButton = {
         let button = UIButton()
         button.tag = 1
-        button.backgroundColor = ButtonColors.White
+        button.backgroundColor = .white
         button.titleLabel?.font = Fonts.PoppinsMedium16
-        button.setTitleColor(TextColors.Black, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.setTitle(ButtonTitles.Expense, for: .normal)
         button.setImage(Images.getImage(.ExpenseTypeIconBlack), for: .normal)
         button.clipsToBounds = true
@@ -105,7 +105,7 @@ class OperationTypeSegmentedControl: UIView {
     
     private func makeButtonSelected(button: UIButton) {
         button.backgroundColor = ButtonColors.Red
-        button.setTitleColor(TextColors.White, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         switch button.tag {
         case 0: button.setImage(Images.getImage(.IncomeTypeIconWhite), for: .normal)
         case 1: button.setImage(Images.getImage(.ExpenseTypeIconWhite), for: .normal)
@@ -114,8 +114,8 @@ class OperationTypeSegmentedControl: UIView {
     }
     
     private func makeButtonDeselected(button: UIButton) {
-        button.backgroundColor = ButtonColors.White
-        button.setTitleColor(TextColors.Black, for: .normal)
+        button.backgroundColor = .white
+        button.setTitleColor(.black, for: .normal)
         switch button.tag {
         case 0: button.setImage(Images.getImage(.IncomeTypeIconBlack), for: .normal)
         case 1: button.setImage(Images.getImage(.ExpenseTypeIconBlack), for: .normal)

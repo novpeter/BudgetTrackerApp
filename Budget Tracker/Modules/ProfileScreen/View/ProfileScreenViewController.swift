@@ -33,7 +33,7 @@ class ProfileScreenViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        navigationController?.navigationBar.barTintColor = BackgroundColors.White
+        navigationController?.navigationBar.barTintColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.backButton)
     }
     

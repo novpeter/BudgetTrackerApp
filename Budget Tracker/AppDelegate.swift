@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: Fonts.PoppinsMedium16!]
-        UINavigationBar.appearance().tintColor = TextColors.Black
+        UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().barTintColor = .white
     
         var viewController: UIViewController

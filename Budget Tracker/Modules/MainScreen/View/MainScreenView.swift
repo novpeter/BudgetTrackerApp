@@ -28,15 +28,15 @@ class MainScreenView: UIView {
     
     lazy var datePicker: MonthYearPickerView = {
         let picker = MonthYearPickerView()
-        picker.backgroundColor = BackgroundColors.White
+        picker.backgroundColor = .white
         return picker
     }()
     
     lazy var dateToolBar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        toolbar.backgroundColor = BackgroundColors.White
-        toolbar.tintColor = TextColors.Black
+        toolbar.backgroundColor = .white
+        toolbar.tintColor = .black
         toolbar.isTranslucent = true
         return toolbar
     }()
@@ -44,7 +44,7 @@ class MainScreenView: UIView {
     lazy var dateTextField: UITextField = {
         let textField = UITextField()
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.White
+        textField.textColor = .white
         textField.text = "April 2019"
         textField.textAlignment = .center
         textField.inputAccessoryView = dateToolBar
@@ -64,7 +64,7 @@ class MainScreenView: UIView {
     
     lazy var incomeLabel: UILabel = {
         let label = UILabel()
-        label.textColor = TextColors.White
+        label.textColor = .white
         label.font = Fonts.PoppinsBold32
         label.textAlignment = .right
         label.text = MainScreenMock.Income
@@ -88,7 +88,7 @@ class MainScreenView: UIView {
     
     lazy var expenseLabel: UILabel = {
         let label = UILabel()
-        label.textColor = TextColors.White
+        label.textColor = .white
         label.font = Fonts.PoppinsBold32
         label.textAlignment = .right
         label.text = MainScreenMock.Expense
@@ -113,7 +113,7 @@ class MainScreenView: UIView {
     
     lazy var differenceLabel: UILabel = {
         let label = UILabel()
-        label.textColor = TextColors.White
+        label.textColor = .white
         label.font = Fonts.PoppinsMedium16
         label.textAlignment = .center
         label.text = Titles.Difference
@@ -158,7 +158,7 @@ class MainScreenView: UIView {
         button.layer.masksToBounds = false
         button.clipsToBounds = true
         button.backgroundColor = ButtonColors.Blue
-        button.tintColor = TextColors.White
+        button.tintColor = .white
         button.titleLabel?.font = Fonts.PoppinsLight48
         button.setTitle("+", for: .normal)
         return button
@@ -166,7 +166,7 @@ class MainScreenView: UIView {
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = BackgroundColors.White
+        scrollView.backgroundColor = .white
         return scrollView
     }()
     

@@ -25,7 +25,7 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Name
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
+        textField.textColor = .black
         textField.tintColor = TextColors.Grey
         return textField
     }()
@@ -35,7 +35,7 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Email
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
+        textField.textColor = .black
         textField.tintColor = TextColors.Grey
         return textField
     }()
@@ -45,7 +45,7 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Password
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
+        textField.textColor = .black
         textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
         return textField
@@ -56,7 +56,7 @@ class SignUpScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.ConfirmPassword
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
+        textField.textColor = .black
         textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
         return textField
@@ -74,7 +74,7 @@ class SignUpScreenView: UIView {
         button.setTitle(ButtonTitles.SignUp, for: .normal)
         button.setTitleColor(TextColors.Grey, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = ButtonColors.White
+        button.backgroundColor = .white
         return button
     }()
     

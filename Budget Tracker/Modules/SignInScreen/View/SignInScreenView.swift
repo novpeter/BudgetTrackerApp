@@ -25,7 +25,7 @@ class SignInScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Email
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
+        textField.textColor = .black
         textField.tintColor = TextColors.Grey
         return textField
     }()
@@ -35,7 +35,7 @@ class SignInScreenView: UIView {
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Password
         textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
+        textField.textColor = .black
         textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
         return textField
@@ -62,7 +62,7 @@ class SignInScreenView: UIView {
         button.setTitleColor(TextColors.Grey, for: .normal)
         button.setImage(UIImage(named: "google"), for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = ButtonColors.White
+        button.backgroundColor = .white
         return button
     }()
     
@@ -76,7 +76,7 @@ class SignInScreenView: UIView {
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.SignIn, for: .normal)
-        button.setTitleColor(TextColors.White, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = Fonts.PoppinsSemiBold16
         button.backgroundColor = ButtonColors.Blue
         return button
