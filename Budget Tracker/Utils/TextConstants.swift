@@ -45,25 +45,25 @@ struct Regex {
 }
 
 enum AlertTitles: String {
-    case GenericError = "Oops..."
-    case WrongName = "Wrong name"
-    case WrongEmail = "Wrong email"
-    case WrongPassword = "Wrong password"
-    case Done = "Done!"
+    case genericError = "Oops..."
+    case wrongName = "Wrong name"
+    case wrongEmail = "Wrong email"
+    case wrongPassword = "Wrong password"
+    case done = "Done!"
 }
 
 enum AlertSubTitles: String {
-    case GenericError = "Something went wrong"
-    case PasswordReciepe = "Password should contain one upper case and lower case letter, one digit and lenght more than 8"
-    case PasswordWasSent = "The password was sent on entered email"
-    case CheckAllFields = "Check all fields"
-    case SynchronizeComplete = "All data was synchronize"
-    case PasswordsNotMatch = "Passwords do not match"
-    case Empty = ""
-    case SignUpError = "Sign up error. Please, try later"
-    case SignInError = "Sign in error. Please, try later"
-    case SyncError = "Cannot synchtonize now. Please, try later"
-    case LogOutError = "Cannot log out now. Please, check internet connection"
+    case genericError = "Something went wrong"
+    case passwordReciepe = "Password should contain one upper case and lower case letter, one digit and lenght more than 8"
+    case passwordWasSent = "The password was sent on entered email"
+    case checkAllFields = "Check all fields"
+    case synchronizeComplete = "All data was synchronize"
+    case passwordsNotMatch = "Passwords do not match"
+    case empty = ""
+    case signUpError = "Sign up error. Please, try later"
+    case signInError = "Sign in error. Please, try later"
+    case syncError = "Cannot synchtonize now. Please, try later"
+    case logOutError = "Cannot log out now. Please, check internet connection"
 }
 
 struct URLConstants {

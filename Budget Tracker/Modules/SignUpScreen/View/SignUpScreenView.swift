@@ -120,7 +120,6 @@ class SignUpScreenView: UIView {
     // MARK: - Congigurating
     
     private func addSubviews() {
-        backgroundColor = .white
         addSubview(scrollView)
         scrollView.addSubview(mainStackView)
     }

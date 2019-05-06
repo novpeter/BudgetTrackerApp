@@ -21,50 +21,50 @@ struct UIConstants {
 }
 
 enum Images {
-    case CalendarIcon
-    case CloseButtonIcon
-    case IncomeTypeIconWhite
-    case IncomeTypeIconBlack
-    case ExpenseTypeIconWhite
-    case ExpenseTypeIconBlack
+    case calendarIcon
+    case closeButtonIcon
+    case incomeTypeIconWhite
+    case incomeTypeIconBlack
+    case expenseTypeIconWhite
+    case expenseTypeIconBlack
 
     static func getImage(_ imageName: Images) -> UIImage {
         switch imageName {
-        case .CalendarIcon: return UIImage(named: "calendarIcon")!
-        case .CloseButtonIcon: return UIImage(named: "closeButton")!
-        case .IncomeTypeIconWhite: return UIImage(named: "incomeTypeIconWhite")!
-        case .IncomeTypeIconBlack: return UIImage(named: "incomeTypeIconBlack")!
-        case .ExpenseTypeIconWhite: return UIImage(named: "expenseTypeIconWhite")!
-        case .ExpenseTypeIconBlack: return UIImage(named: "expenseTypeIconBlack")!
+        case .calendarIcon: return UIImage(named: "calendarIcon")!
+        case .closeButtonIcon: return UIImage(named: "closeButton")!
+        case .incomeTypeIconWhite: return UIImage(named: "incomeTypeIconWhite")!
+        case .incomeTypeIconBlack: return UIImage(named: "incomeTypeIconBlack")!
+        case .expenseTypeIconWhite: return UIImage(named: "expenseTypeIconWhite")!
+        case .expenseTypeIconBlack: return UIImage(named: "expenseTypeIconBlack")!
         }
     }
 }
 
 
 enum Categories: String {
-    case Food = "Food"
-    case Transport = "Transport"
-    case Shopping = "Shopping"
-    case Communication = "Communication"
-    case Recreation = "Recreation"
-    case Sport = "Sport"
-    case Home = "Home"
-    case Health = "Health"
-    case Other = "Other"
+    case food = "Food"
+    case transport = "Transport"
+    case shopping = "Shopping"
+    case communication = "Communication"
+    case recreation = "Recreation"
+    case sport = "Sport"
+    case home = "Home"
+    case health = "Health"
+    case other = "Other"
     
-    static let allValues = [Other, Food, Transport, Shopping, Communication, Recreation, Sport, Home, Health]
+    static let allValues = [other, food, transport, shopping, communication, recreation, sport, home, health]
     
     static func getCategoryIcon(_ category: Categories) -> UIImage {
         switch category {
-        case .Food: return UIImage(named: "foodIcon")!
-        case .Transport: return UIImage(named: "transportIcon")!
-        case .Shopping: return UIImage(named: "shoppingIcon")!
-        case .Communication: return UIImage(named: "communicationIcon")!
-        case .Recreation: return UIImage(named: "recreationIcon")!
-        case .Sport: return UIImage(named: "sportIcon")!
-        case .Home: return UIImage(named: "homeIcon")!
-        case .Health: return UIImage(named: "healthIcon")!
-        case .Other: return UIImage(named: "otherIcon")!
+        case .food: return UIImage(named: "foodIcon")!
+        case .transport: return UIImage(named: "transportIcon")!
+        case .shopping: return UIImage(named: "shoppingIcon")!
+        case .communication: return UIImage(named: "communicationIcon")!
+        case .recreation: return UIImage(named: "recreationIcon")!
+        case .sport: return UIImage(named: "sportIcon")!
+        case .home: return UIImage(named: "homeIcon")!
+        case .health: return UIImage(named: "healthIcon")!
+        case .other: return UIImage(named: "otherIcon")!
         }
     }  
 }

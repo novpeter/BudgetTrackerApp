@@ -16,23 +16,23 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
     func signUp(name: String?, email: String?, password: String?, confirmedPassword: String?) {
         guard let name = name, let email = email?.lowercased(), let password = password, let confirmedPassword = confirmedPassword
         else {
-            presenter.showAlert(title: .GenericError, subTitle: .CheckAllFields, alertType: .error)
+            presenter.showAlert(title: .genericError, subTitle: .checkAllFields, alertType: .error)
             return
         }
         if name.count < 3 {
-            presenter.showAlert(title: AlertTitles.WrongName, subTitle: .Empty, alertType: .error)
+            presenter.showAlert(title: .wrongName, subTitle: .empty, alertType: .error)
             return
         }
         if !email.regex(mask: Regex.Email) {
-            presenter.showAlert(title: AlertTitles.WrongEmail, subTitle: .Empty, alertType: .error)
+            presenter.showAlert(title: .wrongEmail, subTitle: .empty, alertType: .error)
             return
         }
         if !password.regex(mask: Regex.Password) {
-            presenter.showAlert(title: .WrongPassword, subTitle: .PasswordReciepe, alertType: .error)
+            presenter.showAlert(title: .wrongPassword, subTitle: .passwordReciepe, alertType: .error)
             return
         }
         if password != confirmedPassword {
-            presenter.showAlert(title: .WrongPassword, subTitle: .PasswordsNotMatch, alertType: .error)
+            presenter.showAlert(title: .wrongPassword, subTitle: .passwordsNotMatch, alertType: .error)
             return
         }
         
@@ -45,7 +45,7 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
                 self.presenter.showMainScreen()
             case .Error(let error):
                 print("Sign up error: \(error.localizedDescription)")
-                self.presenter.showAlert(title: .GenericError, subTitle: .SignUpError, alertType: .error)
+                self.presenter.showAlert(title: .genericError, subTitle: .signUpError, alertType: .error)
             }
         }
     }

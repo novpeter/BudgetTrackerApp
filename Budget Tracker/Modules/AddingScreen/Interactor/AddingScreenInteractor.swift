@@ -14,7 +14,7 @@ class AddingScreenInteractor: AddingScreenInteractorInput {
     
     func setInitialState() {
         let operationTypeSelectedIndex = 0
-        let currentCategory = Categories.Other
+        let currentCategory = Categories.other
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none

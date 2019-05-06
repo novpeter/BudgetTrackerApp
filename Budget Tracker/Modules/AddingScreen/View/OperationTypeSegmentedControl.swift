@@ -25,7 +25,7 @@ class OperationTypeSegmentedControl: UIView {
         button.titleLabel?.font = Fonts.PoppinsMedium16
         button.setTitleColor(.white, for: .normal)
         button.setTitle(ButtonTitles.Income, for: .normal)
-        button.setImage(Images.getImage(.IncomeTypeIconWhite), for: .normal)
+        button.setImage(Images.getImage(.incomeTypeIconWhite), for: .normal)
         button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.clipsToBounds = true
         button.layer.cornerRadius = appearance.buttonCornerRadius
@@ -40,7 +40,7 @@ class OperationTypeSegmentedControl: UIView {
         button.titleLabel?.font = Fonts.PoppinsMedium16
         button.setTitleColor(.black, for: .normal)
         button.setTitle(ButtonTitles.Expense, for: .normal)
-        button.setImage(Images.getImage(.ExpenseTypeIconBlack), for: .normal)
+        button.setImage(Images.getImage(.expenseTypeIconBlack), for: .normal)
         button.clipsToBounds = true
         button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.cornerRadius = appearance.buttonCornerRadius
@@ -107,8 +107,8 @@ class OperationTypeSegmentedControl: UIView {
         button.backgroundColor = ButtonColors.Red
         button.setTitleColor(.white, for: .normal)
         switch button.tag {
-        case 0: button.setImage(Images.getImage(.IncomeTypeIconWhite), for: .normal)
-        case 1: button.setImage(Images.getImage(.ExpenseTypeIconWhite), for: .normal)
+        case 0: button.setImage(Images.getImage(.incomeTypeIconWhite), for: .normal)
+        case 1: button.setImage(Images.getImage(.expenseTypeIconWhite), for: .normal)
         default: break
         }
     }
@@ -117,8 +117,8 @@ class OperationTypeSegmentedControl: UIView {
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         switch button.tag {
-        case 0: button.setImage(Images.getImage(.IncomeTypeIconBlack), for: .normal)
-        case 1: button.setImage(Images.getImage(.ExpenseTypeIconBlack), for: .normal)
+        case 0: button.setImage(Images.getImage(.incomeTypeIconBlack), for: .normal)
+        case 1: button.setImage(Images.getImage(.expenseTypeIconBlack), for: .normal)
         default: break
         }
     }

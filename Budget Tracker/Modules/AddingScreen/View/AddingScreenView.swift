@@ -16,7 +16,7 @@ class AddingScreenView: UIView {
     
     lazy var closeButton: UIButton = {
         let button = UIButton()
-        button.setImage(Images.getImage(.CloseButtonIcon), for: .normal)
+        button.setImage(Images.getImage(.closeButtonIcon), for: .normal)
         button.frame = UIConstants.navigationBarButtonFrame
         return button
     }()
@@ -54,7 +54,7 @@ class AddingScreenView: UIView {
     
     lazy var categoryIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Categories.getCategoryIcon(.Other)
+        imageView.image = Categories.getCategoryIcon(.other)
         return imageView
     }()
     
@@ -63,7 +63,7 @@ class AddingScreenView: UIView {
         textField.textAlignment = .left
         textField.font = Fonts.PoppinsMedium16
         textField.textColor = .black
-        textField.text = Categories.Other.rawValue
+        textField.text = Categories.other.rawValue
         textField.inputView = categoryPicker
         textField.inputAccessoryView = categoryToolBar
         return textField
@@ -88,13 +88,13 @@ class AddingScreenView: UIView {
         let stackView = UIStackView(arrangedSubviews: [categoryIcon, categoryTextField])
         stackView.axis = .horizontal
         stackView.distribution = .fill
-        stackView.spacing = appearance.categoryStackViewSpacing
+        stackView.spacing = appearance.stackViewSpacing
         return stackView
     }()
     
     lazy var dateIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Images.getImage(.CalendarIcon)
+        imageView.image = Images.getImage(.calendarIcon)
         return imageView
     }()
     
@@ -127,7 +127,7 @@ class AddingScreenView: UIView {
         let stackView = UIStackView(arrangedSubviews: [dateIcon, dateTextField])
         stackView.axis = .horizontal
         stackView.distribution = .fill
-        stackView.spacing = appearance.dateStackViewSpacing
+        stackView.spacing = appearance.stackViewSpacing
         return stackView
     }()
     
@@ -208,8 +208,7 @@ class AddingScreenView: UIView {
     private func addConstraints() {
     
         scrollView.snp_makeConstraints { make in
-            make.edges.equalToSuperview()
-            make.center.equalToSuperview()
+            make.center.edges.equalToSuperview()
         }
         
         mainStackView.snp_makeConstraints { make in
@@ -252,9 +251,7 @@ class AddingScreenView: UIView {
 extension AddingScreenView {
     
     fileprivate struct Appearance {
-        let categoryStackViewSpacing: CGFloat = 16
-        
-        let dateStackViewSpacing: CGFloat = 16
+        let stackViewSpacing: CGFloat = 16
         
         let mainStackViewVerticalConstraint = 32
         let mainStackViewHorizontalConstraint = 40
