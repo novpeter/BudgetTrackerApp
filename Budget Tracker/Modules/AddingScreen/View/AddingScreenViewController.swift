@@ -8,11 +8,12 @@
 
 import UIKit
 
-class AddingScreenViewController: UIViewController {
+class AddingScreenViewController: UIViewController, UITextFieldDelegate {
     
     var presenter: AddingScreenViewOutput!
     
     private lazy var contentView = AddingScreenView()
+    private lazy var notificationCenter = NotificationCenter.default
     
     override func loadView() {
         super.loadView()
@@ -26,9 +27,11 @@ class AddingScreenViewController: UIViewController {
         
         contentView.categoryPicker.delegate = self
         contentView.commentTextView.delegate = self
+        contentView.titleTextField.delegate = self
         
         configureDateToolbar()
         configureCategoryToolbar()
+        configureKeyboardObservers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +39,11 @@ class AddingScreenViewController: UIViewController {
         configureNavigationBar()
         presenter.setInitialState()
     }
+    
+    deinit {
+        notificationCenter.removeObserver(self)
+    }
+    
     
     private func addTargets() {
         contentView.addButton.addTarget(self, action: #selector(onClickAdd), for: .touchUpInside)
@@ -67,6 +75,35 @@ class AddingScreenViewController: UIViewController {
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(endEditingCategoryTextField));
         contentView.categoryToolBar.setItems([spaceButton, doneButton], animated: false)
+    }
+    
+    
+    // MARK: - Keyboard observers
+    
+    private func configureKeyboardObservers() {
+        notificationCenter.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { (notification) in
+            self.showKeyboard(notification: notification)
+        }
+        notificationCenter.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main) { (notification) in
+            self.hideKeyboard()
+        }
+    }
+    
+    @objc private func showKeyboard(notification: Notification) {
+        guard let keyboardFrameValue = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue else { return }
+        let keyboardFrame = view.convert(keyboardFrameValue.cgRectValue, from: nil)
+        contentView.scrollView.contentInset.bottom = keyboardFrame.size.height
+        contentView.scrollView.scrollIndicatorInsets = contentView.scrollView.contentInset
+    }
+    
+    @objc private func hideKeyboard() {
+        contentView.scrollView.contentInset = .zero
+        contentView.scrollView.scrollIndicatorInsets = contentView.scrollView.contentInset
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     

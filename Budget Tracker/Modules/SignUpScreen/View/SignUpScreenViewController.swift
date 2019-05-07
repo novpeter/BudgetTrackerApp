@@ -8,11 +8,12 @@
 
 import UIKit
 
-class SignUpScreenViewController: UIViewController {
+class SignUpScreenViewController: UIViewController, UITextFieldDelegate {
     
     var presenter: SignUpScreenViewOutput!
     
-    lazy var contentView = SignUpScreenView()
+    private lazy var contentView = SignUpScreenView()
+    private lazy var notificationCenter = NotificationCenter.default
     
     override func loadView() {
         super.loadView()
@@ -23,7 +24,18 @@ class SignUpScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        contentView.nameTextField.delegate = self
+        contentView.emailTextField.delegate = self
+        contentView.passwordTextField.delegate = self
+        contentView.confirmPasswordTextField.delegate = self
+        
         configureNavigationBar()
+        configureKeyboardObservers()
+    }
+    
+    deinit {
+        notificationCenter.removeObserver(self)
     }
     
     private func addTargets() {
@@ -34,7 +46,37 @@ class SignUpScreenViewController: UIViewController {
     private func configureNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.backButton)
     }
- 
+   
+    
+    // MARK: - Keyboard observers
+    
+    private func configureKeyboardObservers() {
+        notificationCenter.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { (notification) in
+            self.showKeyboard(notification: notification)
+        }
+        notificationCenter.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main) { (notification) in
+            self.hideKeyboard()
+        }
+    }
+    
+    @objc private func showKeyboard(notification: Notification) {
+        guard let keyboardFrameValue = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue else { return }
+        let keyboardFrame = view.convert(keyboardFrameValue.cgRectValue, from: nil)
+        contentView.scrollView.contentInset.bottom = keyboardFrame.size.height
+        contentView.scrollView.scrollIndicatorInsets = contentView.scrollView.contentInset
+    }
+    
+    @objc private func hideKeyboard() {
+        contentView.scrollView.contentInset = .zero
+        contentView.scrollView.scrollIndicatorInsets = contentView.scrollView.contentInset
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
     // MARK: - Button's handlers
     
     @objc

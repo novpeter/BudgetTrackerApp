@@ -126,7 +126,7 @@ class SignUpScreenView: UIView {
     }
     
     private func addConstraints() {
-        
+
         scrollView.snp.makeConstraints { make in
             make.center.edges.equalToSuperview()
         }

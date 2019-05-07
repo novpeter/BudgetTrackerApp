@@ -136,7 +136,7 @@ class SignInScreenView: UIView {
     }
     
     private func addConstraints() {
-        
+
         mainStackView.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(48)
             make.top.equalToSuperview().inset(44)
@@ -153,7 +153,7 @@ class SignInScreenView: UIView {
         }
         
         googleSignInButton.imageEdgeInsets.right = 40.0
-        
+    
         forgotPasswordButton.snp.makeConstraints { make in
             make.top.equalTo(mainStackView.snp_bottom).offset(40)
             make.centerX.equalToSuperview()

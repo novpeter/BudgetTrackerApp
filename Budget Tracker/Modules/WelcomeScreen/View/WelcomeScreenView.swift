@@ -124,7 +124,7 @@ class WelcomeScreenView: UIView {
         
         signUpButton.snp.makeConstraints { make in
             make.height.equalTo(50)
-            make.centerX.equalTo(buttonsStackView)
+            make.centerX.equalToSuperview()
         }
     }
 }

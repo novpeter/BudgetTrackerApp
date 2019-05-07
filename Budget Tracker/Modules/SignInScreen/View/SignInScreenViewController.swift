@@ -9,7 +9,7 @@
 import UIKit
 import GoogleSignIn
 
-class SignInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
+class SignInScreenViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
     
     var presenter: SignInScreenViewOutput!
     
@@ -18,18 +18,17 @@ class SignInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSign
     override func loadView() {
         super.loadView()
         
-        let googleCredentials = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "credentials", ofType: "plist")!)
-        
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().clientID = googleCredentials!["CLIENT_ID"] as? String
-
         view = contentView
         addTargets()
+        connectGoogleSignIn()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        contentView.emailTextField.delegate = self
+        contentView.passwordTextField.delegate = self
+        
         configureNavigationBar()
     }
     
@@ -40,8 +39,24 @@ class SignInScreenViewController: UIViewController, GIDSignInUIDelegate, GIDSign
         contentView.backButton.addTarget(self, action: #selector(onClickBack), for: .touchUpInside)
     }
     
+    private func connectGoogleSignIn() {
+        let googleCredentials = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "credentials", ofType: "plist")!)
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().clientID = googleCredentials!["CLIENT_ID"] as? String
+    }
+    
     private func configureNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.backButton)
+    }
+    
+    
+    // MARK: - Keyboard
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     
