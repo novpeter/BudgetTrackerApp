@@ -13,6 +13,7 @@ class AddingScreenViewController: UIViewController, UITextFieldDelegate {
     var presenter: AddingScreenViewOutput!
     
     private lazy var contentView = AddingScreenView()
+    private lazy var notificationCenter = NotificationCenter.default
     
     override func loadView() {
         super.loadView()
@@ -40,7 +41,7 @@ class AddingScreenViewController: UIViewController, UITextFieldDelegate {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        notificationCenter.removeObserver(self)
     }
     
     
@@ -80,10 +81,10 @@ class AddingScreenViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Keyboard observers
     
     private func configureKeyboardObservers() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { (notification) in
+        notificationCenter.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { (notification) in
             self.showKeyboard(notification: notification)
         }
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main) { (notification) in
+        notificationCenter.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main) { (notification) in
             self.hideKeyboard()
         }
     }

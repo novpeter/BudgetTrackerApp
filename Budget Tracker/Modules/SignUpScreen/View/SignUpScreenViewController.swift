@@ -12,7 +12,8 @@ class SignUpScreenViewController: UIViewController, UITextFieldDelegate {
     
     var presenter: SignUpScreenViewOutput!
     
-    lazy var contentView = SignUpScreenView()
+    private lazy var contentView = SignUpScreenView()
+    private lazy var notificationCenter = NotificationCenter.default
     
     override func loadView() {
         super.loadView()
@@ -34,7 +35,7 @@ class SignUpScreenViewController: UIViewController, UITextFieldDelegate {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        notificationCenter.removeObserver(self)
     }
     
     private func addTargets() {
@@ -50,10 +51,10 @@ class SignUpScreenViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Keyboard observers
     
     private func configureKeyboardObservers() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { (notification) in
+        notificationCenter.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { (notification) in
             self.showKeyboard(notification: notification)
         }
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main) { (notification) in
+        notificationCenter.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main) { (notification) in
             self.hideKeyboard()
         }
     }
