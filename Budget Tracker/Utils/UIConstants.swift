@@ -30,12 +30,12 @@ enum Images {
 
     static func getImage(_ imageName: Images) -> UIImage {
         switch imageName {
-        case .calendarIcon: return UIImage(named: "calendarIcon")!
-        case .closeButtonIcon: return UIImage(named: "closeButton")!
-        case .incomeTypeIconWhite: return UIImage(named: "incomeTypeIconWhite")!
-        case .incomeTypeIconBlack: return UIImage(named: "incomeTypeIconBlack")!
-        case .expenseTypeIconWhite: return UIImage(named: "expenseTypeIconWhite")!
-        case .expenseTypeIconBlack: return UIImage(named: "expenseTypeIconBlack")!
+        case .calendarIcon: return UIImage(named: "calendarIcon") ?? UIImage()
+        case .closeButtonIcon: return UIImage(named: "closeButton") ?? UIImage()
+        case .incomeTypeIconWhite: return UIImage(named: "incomeTypeIconWhite") ?? UIImage()
+        case .incomeTypeIconBlack: return UIImage(named: "incomeTypeIconBlack") ?? UIImage()
+        case .expenseTypeIconWhite: return UIImage(named: "expenseTypeIconWhite") ?? UIImage()
+        case .expenseTypeIconBlack: return UIImage(named: "expenseTypeIconBlack") ?? UIImage()
         }
     }
 }
@@ -56,15 +56,15 @@ enum Categories: String {
     
     static func getCategoryIcon(_ category: Categories) -> UIImage {
         switch category {
-        case .food: return UIImage(named: "foodIcon")!
-        case .transport: return UIImage(named: "transportIcon")!
-        case .shopping: return UIImage(named: "shoppingIcon")!
-        case .communication: return UIImage(named: "communicationIcon")!
-        case .recreation: return UIImage(named: "recreationIcon")!
-        case .sport: return UIImage(named: "sportIcon")!
-        case .home: return UIImage(named: "homeIcon")!
-        case .health: return UIImage(named: "healthIcon")!
-        case .other: return UIImage(named: "otherIcon")!
+        case .food: return UIImage(named: "foodIcon") ?? UIImage()
+        case .transport: return UIImage(named: "transportIcon") ?? UIImage()
+        case .shopping: return UIImage(named: "shoppingIcon") ?? UIImage()
+        case .communication: return UIImage(named: "communicationIcon") ?? UIImage()
+        case .recreation: return UIImage(named: "recreationIcon") ?? UIImage()
+        case .sport: return UIImage(named: "sportIcon") ?? UIImage()
+        case .home: return UIImage(named: "homeIcon") ?? UIImage()
+        case .health: return UIImage(named: "healthIcon") ?? UIImage()
+        case .other: return UIImage(named: "otherIcon") ?? UIImage()
         }
     }  
 }
