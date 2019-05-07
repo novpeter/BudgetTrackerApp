@@ -17,7 +17,7 @@ class WelcomeScreenView: UIView {
         let label: UILabel = UILabel()
         label.textAlignment = .left
         label.text = Titles.AppNameTopPart
-        label.font = Fonts.PoppinsBold48
+        label.font = Fonts.poppinsBold48
         label.textColor = .black
         return label
     }()
@@ -26,7 +26,7 @@ class WelcomeScreenView: UIView {
         let label: UILabel = UILabel()
         label.textAlignment = .right
         label.text = Titles.AppNameBottomPart
-        label.font = Fonts.PoppinsBold48
+        label.font = Fonts.poppinsBold48
         label.textColor = .black
         return label
     }()
@@ -50,7 +50,7 @@ class WelcomeScreenView: UIView {
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.SignIn, for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
         button.backgroundColor = ButtonColors.Blue
         return button
     }()
@@ -66,7 +66,7 @@ class WelcomeScreenView: UIView {
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.SignUp, for: .normal)
         button.setTitleColor(TextColors.Grey, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
         button.backgroundColor = .white
         return button
     }()
@@ -99,24 +99,22 @@ class WelcomeScreenView: UIView {
     // MARK: - Congigurating
     
     private func addSubviews() {
-        self.backgroundColor = .white
-        self.addSubview(labelsStackView)
-        self.addSubview(buttonsStackView)
+        backgroundColor = .white
+        addSubview(labelsStackView)
+        addSubview(buttonsStackView)
     }
     
     private func addConstraints() {
         
         labelsStackView.snp.makeConstraints({ make in
-            make.left.equalTo(self).offset(64)
-            make.right.equalTo(self).offset(-64)
-            make.top.equalTo(self).offset(120)
+            make.left.right.equalToSuperview().inset(64)
+            make.top.equalToSuperview().inset(90)
             make.height.lessThanOrEqualTo(140)
         })
         
         buttonsStackView.snp.makeConstraints { make in
-            make.left.equalTo(self).offset(48)
-            make.right.equalTo(self).offset(-48)
-            make.bottom.equalTo(self).offset(-120)
+            make.left.right.equalToSuperview().inset(48)
+            make.bottom.equalToSuperview().inset(90)
         }
         
         signInButton.snp.makeConstraints { make in

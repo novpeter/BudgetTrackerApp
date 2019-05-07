@@ -38,7 +38,7 @@ class MainScreenViewController: UIViewController {
     private func addTargets() {
         contentView.statisticButton.addTarget(self, action: #selector(onClickStatistic), for: .touchUpInside)
         contentView.profileButton.addTarget(self, action: #selector(onClickProfile), for: .touchUpInside)
-        contentView.addOperationButton.addTarget(self, action: #selector(onClickAddOperation), for: .touchUpInside)
+        contentView.showAddingScreenButton.addTarget(self, action: #selector(onClickAddOperation), for: .touchUpInside)
     }
     
     private func configureNavigationBar() {
@@ -57,17 +57,20 @@ class MainScreenViewController: UIViewController {
     
     // MARK: - Button's handlers
     
-    @objc private func onClickProfile(sender: UIButton) {
+    @objc
+    private func onClickProfile(sender: UIButton) {
         sender.pulsate()
         presenter.showProfileClicked()
     }
     
-    @objc private func onClickStatistic(sender: UIButton) {
+    @objc
+    private func onClickStatistic(sender: UIButton) {
         sender.pulsate()
         presenter.showStatisticClicked()
     }
     
-    @objc private func onClickAddOperation(sender: UIButton) {
+    @objc
+    private func onClickAddOperation(sender: UIButton) {
         sender.pulsate()
         presenter.addOperationClicked()
     }
@@ -75,7 +78,8 @@ class MainScreenViewController: UIViewController {
     
     // MARK: - Date picker handler
     
-    @objc private func endEditingDateTextField() {
+    @objc
+    private func endEditingDateTextField() {
         contentView.dateTextField.endEditing(true)
     }
 }

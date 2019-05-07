@@ -33,7 +33,7 @@ class ProfileScreenView: UIView {
     lazy var fullNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = Fonts.PoppinsBold20
+        label.font = Fonts.poppinsBold20
         label.textColor = .black
         label.text = "Anton Ivanov"
         return label
@@ -42,7 +42,7 @@ class ProfileScreenView: UIView {
     lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = Fonts.PoppinsMedium16
+        label.font = Fonts.poppinsMedium16
         label.textColor = TextColors.Grey
         label.text = "petkacool1@gmail.com"
         return label
@@ -71,7 +71,7 @@ class ProfileScreenView: UIView {
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.Synchronize, for: .normal)
         button.setTitleColor(TextColors.Grey, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
         button.backgroundColor = .white
         return button
     }()
@@ -87,7 +87,7 @@ class ProfileScreenView: UIView {
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.LogOut, for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
         button.backgroundColor = ButtonColors.Red
         return button
     }()
@@ -121,17 +121,16 @@ class ProfileScreenView: UIView {
     // MARK: - Congigurating
     
     private func addSubviews() {
-        self.backgroundColor = .white
-        self.addSubview(infoStackView)
-        self.addSubview(buttonsStackView)
+        backgroundColor = .white
+        addSubview(infoStackView)
+        addSubview(buttonsStackView)
     }
     
     private func addConstraints() {
         
         infoStackView.snp.makeConstraints({ make in
-            make.left.equalTo(self).offset(64)
-            make.right.equalTo(self).offset(-64)
-            make.top.equalTo(self).offset(120)
+            make.left.right.equalToSuperview().inset(64)
+            make.top.equalToSuperview().inset(100)
         })
         
         profileImageView.snp.makeConstraints { make in
@@ -148,9 +147,8 @@ class ProfileScreenView: UIView {
         }
         
         buttonsStackView.snp.makeConstraints { make in
-            make.left.equalTo(self).offset(48)
-            make.right.equalTo(self).offset(-48)
-            make.bottom.equalTo(self).offset(-120)
+            make.left.right.equalToSuperview().inset(48)
+            make.bottom.equalToSuperview().inset(70)
         }
         
         logOutButton.snp.makeConstraints { make in

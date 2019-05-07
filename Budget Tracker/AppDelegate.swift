@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: Fonts.PoppinsMedium16!]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: Fonts.poppinsMedium16!]
         UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().barTintColor = .white
     

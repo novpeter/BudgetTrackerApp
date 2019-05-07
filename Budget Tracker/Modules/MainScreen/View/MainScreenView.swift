@@ -43,7 +43,7 @@ class MainScreenView: UIView {
     
     lazy var dateTextField: UITextField = {
         let textField = UITextField()
-        textField.font = Fonts.PoppinsMedium16
+        textField.font = Fonts.poppinsMedium16
         textField.textColor = .white
         textField.text = "April 2019"
         textField.textAlignment = .center
@@ -65,7 +65,7 @@ class MainScreenView: UIView {
     lazy var incomeLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = Fonts.PoppinsBold32
+        label.font = Fonts.poppinsBold32
         label.textAlignment = .right
         label.text = MainScreenMock.Income
         return label
@@ -89,7 +89,7 @@ class MainScreenView: UIView {
     lazy var expenseLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = Fonts.PoppinsBold32
+        label.font = Fonts.poppinsBold32
         label.textAlignment = .right
         label.text = MainScreenMock.Expense
         return label
@@ -114,7 +114,7 @@ class MainScreenView: UIView {
     lazy var differenceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = Fonts.PoppinsMedium16
+        label.font = Fonts.poppinsMedium16
         label.textAlignment = .center
         label.text = Titles.Difference
         return label
@@ -123,7 +123,7 @@ class MainScreenView: UIView {
     lazy var differenceTotalLabel: UILabel = {
         let label = UILabel()
         label.textColor = TextColors.Green  
-        label.font = Fonts.PoppinsMedium16
+        label.font = Fonts.poppinsMedium16
         label.textAlignment = .center
         label.text = MainScreenMock.Difference
         return label
@@ -151,7 +151,7 @@ class MainScreenView: UIView {
         return view
     }()
     
-    lazy var addOperationButton: UIButton = {
+    lazy var showAddingScreenButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 32
         button.layer.borderWidth = UIConstants.buttonBorderWidth
@@ -159,7 +159,7 @@ class MainScreenView: UIView {
         button.clipsToBounds = true
         button.backgroundColor = ButtonColors.Blue
         button.tintColor = .white
-        button.titleLabel?.font = Fonts.PoppinsLight48
+        button.titleLabel?.font = Fonts.poppinsLight48
         button.setTitle("+", for: .normal)
         return button
     }()
@@ -194,7 +194,7 @@ class MainScreenView: UIView {
         infoView.addSubview(infoStackView)
         scrollView.addSubview(infoView)
         addSubview(scrollView)
-        addSubview(addOperationButton)
+        addSubview(showAddingScreenButton)
     }
     
     private func addConstraints() {
@@ -203,7 +203,7 @@ class MainScreenView: UIView {
             make.width.equalTo(120)
         }
         
-        addOperationButton.snp.makeConstraints { make in
+        showAddingScreenButton.snp.makeConstraints { make in
             make.width.height.equalTo(64)
             make.bottom.equalToSuperview().inset(30)
             make.right.equalTo(self.snp_right).inset(30)
@@ -221,7 +221,7 @@ class MainScreenView: UIView {
         
         infoStackView.snp.makeConstraints { make in
             make.center.equalTo(infoView)
-            make.top.equalTo(infoView.snp.top).offset(28)
+            make.top.equalTo(infoView.snp.top).inset(28)
         }
 
         incomeExpenseStackView.snp.makeConstraints { make in
@@ -229,8 +229,7 @@ class MainScreenView: UIView {
         }
 
         incomeIcon.snp.makeConstraints { make in
-            make.height.equalTo(36)
-            make.width.equalTo(36)
+            make.height.width.equalTo(36)
         }
         
         incomeStackView.snp.makeConstraints { make in

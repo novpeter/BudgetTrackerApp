@@ -13,8 +13,8 @@ class OperationTypeSegmentedControl: UIView {
     private let appearance = Appearance()
     
     // MARK: - Selected index
-    private var _selectedIndex: Int = 0
-    var selectedIndex: Int { get { return _selectedIndex } }
+    private var currentIndex: Int = 0
+    var selectedIndex: Int { get { return currentIndex } }
     
     // MARK: - Components
     
@@ -22,7 +22,7 @@ class OperationTypeSegmentedControl: UIView {
         let button = UIButton()
         button.tag = 0
         button.backgroundColor = ButtonColors.Red
-        button.titleLabel?.font = Fonts.PoppinsMedium16
+        button.titleLabel?.font = Fonts.poppinsMedium16
         button.setTitleColor(.white, for: .normal)
         button.setTitle(ButtonTitles.Income, for: .normal)
         button.setImage(Images.getImage(.incomeTypeIconWhite), for: .normal)
@@ -37,7 +37,7 @@ class OperationTypeSegmentedControl: UIView {
         let button = UIButton()
         button.tag = 1
         button.backgroundColor = .white
-        button.titleLabel?.font = Fonts.PoppinsMedium16
+        button.titleLabel?.font = Fonts.poppinsMedium16
         button.setTitleColor(.black, for: .normal)
         button.setTitle(ButtonTitles.Expense, for: .normal)
         button.setImage(Images.getImage(.expenseTypeIconBlack), for: .normal)
@@ -82,6 +82,7 @@ class OperationTypeSegmentedControl: UIView {
     private func addConstraints() {
         buttonsStackView.snp_makeConstraints { make in
             make.edges.equalToSuperview()
+            make.height.equalTo(40)
         }
     }
     
@@ -89,8 +90,8 @@ class OperationTypeSegmentedControl: UIView {
     // MARK: - Segmented control method
     
     func selectType(index: Int) {
-        guard index == 0 || index == 1 || _selectedIndex == index else { return }
-        _selectedIndex = index
+        guard index == 0 || index == 1 || currentIndex == index else { return }
+        currentIndex = index
         switch index {
         case 0:
             makeButtonSelected(button: incomeTypeButton)

@@ -24,7 +24,7 @@ class SignUpScreenView: UIView {
         let textField = UITextField()
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Name
-        textField.font = Fonts.PoppinsMedium16
+        textField.font = Fonts.poppinsMedium16
         textField.textColor = .black
         textField.tintColor = TextColors.Grey
         return textField
@@ -34,7 +34,7 @@ class SignUpScreenView: UIView {
         let textField = UITextField()
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Email
-        textField.font = Fonts.PoppinsMedium16
+        textField.font = Fonts.poppinsMedium16
         textField.textColor = .black
         textField.tintColor = TextColors.Grey
         return textField
@@ -44,7 +44,7 @@ class SignUpScreenView: UIView {
         let textField = UITextField()
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Password
-        textField.font = Fonts.PoppinsMedium16
+        textField.font = Fonts.poppinsMedium16
         textField.textColor = .black
         textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
@@ -55,7 +55,7 @@ class SignUpScreenView: UIView {
         let textField = UITextField()
         textField.keyboardType = .default
         textField.placeholder = Placeholders.ConfirmPassword
-        textField.font = Fonts.PoppinsMedium16
+        textField.font = Fonts.poppinsMedium16
         textField.textColor = .black
         textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
@@ -73,7 +73,7 @@ class SignUpScreenView: UIView {
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.SignUp, for: .normal)
         button.setTitleColor(TextColors.Grey, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
         button.backgroundColor = .white
         return button
     }()
@@ -120,6 +120,7 @@ class SignUpScreenView: UIView {
     // MARK: - Congigurating
     
     private func addSubviews() {
+        backgroundColor = .white
         addSubview(scrollView)
         scrollView.addSubview(mainStackView)
     }
@@ -127,13 +128,13 @@ class SignUpScreenView: UIView {
     private func addConstraints() {
         
         scrollView.snp.makeConstraints { make in
-            make.edges.equalTo(self)
+            make.center.edges.equalToSuperview()
         }
         
         mainStackView.snp.makeConstraints { make in
-            make.left.equalTo(self).offset(48)
-            make.right.equalTo(self).offset(-48)
-            make.top.equalTo(self).offset(44)
+            make.left.equalToSuperview().inset(48)
+            make.top.equalToSuperview().inset(44)
+            make.centerX.equalToSuperview()
         }
         
         signUpButton.snp.makeConstraints { make in

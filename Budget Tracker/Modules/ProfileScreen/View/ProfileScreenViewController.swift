@@ -39,17 +39,20 @@ class ProfileScreenViewController: UIViewController {
     
     // MARK: - Button's handlers
     
-    @objc func syncButtonClicked(sender: UIButton) {
+    @objc
+    func syncButtonClicked(sender: UIButton) {
         sender.pulsate()
         presenter.syncButtonClicked()
     }
     
-    @objc func logOutButtonClicked(sender: UIButton) {
+    @objc
+    func logOutButtonClicked(sender: UIButton) {
         sender.pulsate()
         presenter.logOutButtonClicked()
     }
     
-    @objc func onClickBack(){
+    @objc
+    func onClickBack(){
         navigationController?.popViewController(animated: true)
     }
     

@@ -24,7 +24,7 @@ class SignInScreenView: UIView {
         let textField = UITextField()
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Email
-        textField.font = Fonts.PoppinsMedium16
+        textField.font = Fonts.poppinsMedium16
         textField.textColor = .black
         textField.tintColor = TextColors.Grey
         return textField
@@ -34,7 +34,7 @@ class SignInScreenView: UIView {
         let textField = UITextField()
         textField.keyboardType = .default
         textField.placeholder = Placeholders.Password
-        textField.font = Fonts.PoppinsMedium16
+        textField.font = Fonts.poppinsMedium16
         textField.textColor = .black
         textField.tintColor = TextColors.Grey
         textField.isSecureTextEntry = true
@@ -61,7 +61,7 @@ class SignInScreenView: UIView {
         button.setTitle(ButtonTitles.GoogleSignIn, for: .normal)
         button.setTitleColor(TextColors.Grey, for: .normal)
         button.setImage(UIImage(named: "google"), for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
         button.backgroundColor = .white
         return button
     }()
@@ -77,7 +77,7 @@ class SignInScreenView: UIView {
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.SignIn, for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
         button.backgroundColor = ButtonColors.Blue
         return button
     }()
@@ -88,7 +88,7 @@ class SignInScreenView: UIView {
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.ForgotPassword, for: .normal)
         button.setTitleColor(TextColors.Blue, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsBold12
+        button.titleLabel?.font = Fonts.poppinsBold12
         button.backgroundColor = .clear
         return button
     }()
@@ -130,17 +130,16 @@ class SignInScreenView: UIView {
     // MARK: - Congigurating
     
     private func addSubviews() {
-        self.backgroundColor = .white
-        self.addSubview(mainStackView)
-        self.addSubview(forgotPasswordButton)
+        backgroundColor = .white
+        addSubview(mainStackView)
+        addSubview(forgotPasswordButton)
     }
     
     private func addConstraints() {
         
         mainStackView.snp.makeConstraints { make in
-            make.left.equalTo(self).offset(48)
-            make.right.equalTo(self).offset(-48)
-            make.top.equalTo(self).offset(44)
+            make.left.right.equalToSuperview().inset(48)
+            make.top.equalToSuperview().inset(44)
         }
         
         signInButton.snp.makeConstraints { make in
@@ -156,8 +155,8 @@ class SignInScreenView: UIView {
         googleSignInButton.imageEdgeInsets.right = 40.0
         
         forgotPasswordButton.snp.makeConstraints { make in
-            make.bottom.equalTo(mainStackView).offset(40)
-            make.centerX.equalTo(self)
+            make.top.equalTo(mainStackView.snp_bottom).offset(40)
+            make.centerX.equalToSuperview()
             make.height.equalTo(20)
             make.width.equalTo(120)
         }

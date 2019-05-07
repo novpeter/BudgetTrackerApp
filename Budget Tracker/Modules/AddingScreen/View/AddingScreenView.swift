@@ -35,7 +35,7 @@ class AddingScreenView: UIView {
         textField.keyboardType = .default
         textField.textAlignment = .left
         textField.placeholder = Placeholders.Title
-        textField.font = Fonts.PoppinsBold20
+        textField.font = Fonts.poppinsBold20
         textField.textColor = .black
         textField.tintColor = TextColors.Grey
         return textField
@@ -45,7 +45,7 @@ class AddingScreenView: UIView {
         let textView = UITextView()
         textView.keyboardType = .default
         textView.text = Placeholders.Comment
-        textView.font = Fonts.PoppinsMedium16
+        textView.font = Fonts.poppinsMedium16
         textView.textColor = TextColors.Grey
         textView.tintColor = TextColors.Grey
         textView.tag = 1
@@ -61,7 +61,7 @@ class AddingScreenView: UIView {
     lazy var categoryTextField: UITextField = {
         let textField = UITextField()
         textField.textAlignment = .left
-        textField.font = Fonts.PoppinsMedium16
+        textField.font = Fonts.poppinsMedium16
         textField.textColor = .black
         textField.text = Categories.other.rawValue
         textField.inputView = categoryPicker
@@ -100,7 +100,7 @@ class AddingScreenView: UIView {
     
     lazy var dateTextField: UITextField = {
         let textField = UITextField()
-        textField.font = Fonts.PoppinsMedium16
+        textField.font = Fonts.poppinsMedium16
         textField.textColor = .black
         textField.inputView = datePicker
         textField.inputAccessoryView = dateToolBar
@@ -136,7 +136,7 @@ class AddingScreenView: UIView {
         textField.keyboardType = .phonePad
         textField.textAlignment = .center
         textField.placeholder = Placeholders.ZeroSum
-        textField.font = Fonts.PoppinsMedium48
+        textField.font = Fonts.poppinsMedium48
         textField.textColor = .black
         textField.tintColor = TextColors.Grey
         return textField
@@ -153,7 +153,7 @@ class AddingScreenView: UIView {
         button.layer.masksToBounds = false
         button.setTitle(ButtonTitles.Add, for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
         button.backgroundColor = ButtonColors.Blue
         return button
     }()
@@ -220,12 +220,10 @@ class AddingScreenView: UIView {
         
         operationTypeSegmentedControl.snp_makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(appearance.titleTextFieldHeight)
         }
         
         titleTextField.snp_makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(appearance.titleTextFieldHeight)
         }
         
         commentTextView.snp_makeConstraints { make in
@@ -259,7 +257,6 @@ extension AddingScreenView {
         
         let iconSize = 24
         
-        let titleTextFieldHeight: CGFloat = 35
         let commentTextViewHeight: CGFloat = 70
     }
 }
