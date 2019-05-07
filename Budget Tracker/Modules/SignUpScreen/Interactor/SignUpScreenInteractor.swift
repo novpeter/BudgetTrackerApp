@@ -23,11 +23,11 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
             presenter.showAlert(title: .wrongName, subTitle: .empty, alertType: .error)
             return
         }
-        if !email.regex(mask: Regex.Email) {
+        if !email.regex(mask: Regex.email) {
             presenter.showAlert(title: .wrongEmail, subTitle: .empty, alertType: .error)
             return
         }
-        if !password.regex(mask: Regex.Password) {
+        if !password.regex(mask: Regex.password) {
             presenter.showAlert(title: .wrongPassword, subTitle: .passwordReciepe, alertType: .error)
             return
         }

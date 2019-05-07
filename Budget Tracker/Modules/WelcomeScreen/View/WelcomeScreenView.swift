@@ -16,7 +16,7 @@ class WelcomeScreenView: UIView {
     lazy var topLabel: UILabel = {
         let label: UILabel = UILabel()
         label.textAlignment = .left
-        label.text = Titles.AppNameTopPart
+        label.text = Titles.appNameTopPart
         label.font = Fonts.poppinsBold48
         label.textColor = .black
         return label
@@ -25,7 +25,7 @@ class WelcomeScreenView: UIView {
     lazy var bottomLabel: UILabel = {
         let label: UILabel = UILabel()
         label.textAlignment = .right
-        label.text = Titles.AppNameBottomPart
+        label.text = Titles.appNameBottomPart
         label.font = Fonts.poppinsBold48
         label.textColor = .black
         return label
@@ -48,10 +48,10 @@ class WelcomeScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.SignIn, for: .normal)
+        button.setTitle(ButtonTitles.signIn, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = Fonts.poppinsSemiBold16
-        button.backgroundColor = ButtonColors.Blue
+        button.backgroundColor = ButtonColors.blue
         return button
     }()
     
@@ -64,8 +64,8 @@ class WelcomeScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.SignUp, for: .normal)
-        button.setTitleColor(TextColors.Grey, for: .normal)
+        button.setTitle(ButtonTitles.signUp, for: .normal)
+        button.setTitleColor(TextColors.gray, for: .normal)
         button.titleLabel?.font = Fonts.poppinsSemiBold16
         button.backgroundColor = .white
         return button

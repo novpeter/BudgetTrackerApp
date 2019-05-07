@@ -34,20 +34,20 @@ class AddingScreenView: UIView {
         let textField = UITextField()
         textField.keyboardType = .default
         textField.textAlignment = .left
-        textField.placeholder = Placeholders.Title
+        textField.placeholder = Placeholders.title
         textField.font = Fonts.poppinsBold20
         textField.textColor = .black
-        textField.tintColor = TextColors.Grey
+        textField.tintColor = TextColors.gray
         return textField
     }()
     
     lazy var commentTextView: UITextView = {
         let textView = UITextView()
         textView.keyboardType = .default
-        textView.text = Placeholders.Comment
+        textView.text = Placeholders.comment
         textView.font = Fonts.poppinsMedium16
-        textView.textColor = TextColors.Grey
-        textView.tintColor = TextColors.Grey
+        textView.textColor = TextColors.gray
+        textView.tintColor = TextColors.gray
         textView.tag = 1
         return textView
     }()
@@ -135,10 +135,10 @@ class AddingScreenView: UIView {
         let textField = UITextField()
         textField.keyboardType = .phonePad
         textField.textAlignment = .center
-        textField.placeholder = Placeholders.ZeroSum
+        textField.placeholder = Placeholders.zeroSum
         textField.font = Fonts.poppinsMedium48
         textField.textColor = .black
-        textField.tintColor = TextColors.Grey
+        textField.tintColor = TextColors.gray
         return textField
     }()
     
@@ -151,10 +151,10 @@ class AddingScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.Add, for: .normal)
+        button.setTitle(ButtonTitles.add, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = Fonts.poppinsSemiBold16
-        button.backgroundColor = ButtonColors.Blue
+        button.backgroundColor = ButtonColors.blue
         return button
     }()
     

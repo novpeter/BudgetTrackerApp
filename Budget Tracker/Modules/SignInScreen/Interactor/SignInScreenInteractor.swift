@@ -18,12 +18,12 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
     func signIn(email: String?, password: String?) {
         guard let email = email?.lowercased(), let password = password else { return }
         
-        if !email.regex(mask: Regex.Email) {
+        if !email.regex(mask: Regex.email) {
             presenter.showAlert(title: .wrongEmail, subTitle: .empty, alertType: .error)
             return
         }
         
-        if !password.regex(mask: Regex.Password) {
+        if !password.regex(mask: Regex.password) {
             presenter.showAlert(title: .wrongPassword, subTitle: .passwordReciepe, alertType: .error)
             return
         }
@@ -57,7 +57,7 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
     }
     
     func forgotPassword(email: String?) {
-        guard let email = email, email.regex(mask: Regex.Email) else {
+        guard let email = email, email.regex(mask: Regex.email) else {
             presenter.showAlert(title: .wrongEmail, subTitle: .empty, alertType: .error)
             return
         }

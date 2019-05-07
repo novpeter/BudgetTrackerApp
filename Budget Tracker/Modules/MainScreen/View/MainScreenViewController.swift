@@ -42,7 +42,7 @@ class MainScreenViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        navigationController?.navigationBar.barTintColor = BackgroundColors.Blue
+        navigationController?.navigationBar.barTintColor = BackgroundColors.blue
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.profileButton)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: contentView.statisticButton)
         navigationItem.titleView = contentView.dateTextField

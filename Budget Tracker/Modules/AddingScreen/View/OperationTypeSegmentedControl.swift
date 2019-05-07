@@ -21,10 +21,10 @@ class OperationTypeSegmentedControl: UIView {
     lazy var incomeTypeButton: UIButton = {
         let button = UIButton()
         button.tag = 0
-        button.backgroundColor = ButtonColors.Red
+        button.backgroundColor = ButtonColors.red
         button.titleLabel?.font = Fonts.poppinsMedium16
         button.setTitleColor(.white, for: .normal)
-        button.setTitle(ButtonTitles.Income, for: .normal)
+        button.setTitle(ButtonTitles.income, for: .normal)
         button.setImage(Images.getImage(.incomeTypeIconWhite), for: .normal)
         button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.clipsToBounds = true
@@ -39,7 +39,7 @@ class OperationTypeSegmentedControl: UIView {
         button.backgroundColor = .white
         button.titleLabel?.font = Fonts.poppinsMedium16
         button.setTitleColor(.black, for: .normal)
-        button.setTitle(ButtonTitles.Expense, for: .normal)
+        button.setTitle(ButtonTitles.expense, for: .normal)
         button.setImage(Images.getImage(.expenseTypeIconBlack), for: .normal)
         button.clipsToBounds = true
         button.layer.borderWidth = UIConstants.buttonBorderWidth
@@ -105,7 +105,7 @@ class OperationTypeSegmentedControl: UIView {
     }
     
     private func makeButtonSelected(button: UIButton) {
-        button.backgroundColor = ButtonColors.Red
+        button.backgroundColor = ButtonColors.red
         button.setTitleColor(.white, for: .normal)
         switch button.tag {
         case 0: button.setImage(Images.getImage(.incomeTypeIconWhite), for: .normal)

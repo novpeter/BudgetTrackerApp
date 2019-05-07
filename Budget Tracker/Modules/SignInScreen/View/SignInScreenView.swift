@@ -23,20 +23,20 @@ class SignInScreenView: UIView {
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.keyboardType = .default
-        textField.placeholder = Placeholders.Email
+        textField.placeholder = Placeholders.email
         textField.font = Fonts.poppinsMedium16
         textField.textColor = .black
-        textField.tintColor = TextColors.Grey
+        textField.tintColor = TextColors.gray
         return textField
     }()
     
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.keyboardType = .default
-        textField.placeholder = Placeholders.Password
+        textField.placeholder = Placeholders.password
         textField.font = Fonts.poppinsMedium16
         textField.textColor = .black
-        textField.tintColor = TextColors.Grey
+        textField.tintColor = TextColors.gray
         textField.isSecureTextEntry = true
         return textField
     }()
@@ -58,8 +58,8 @@ class SignInScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.GoogleSignIn, for: .normal)
-        button.setTitleColor(TextColors.Grey, for: .normal)
+        button.setTitle(ButtonTitles.googleSignIn, for: .normal)
+        button.setTitleColor(TextColors.gray, for: .normal)
         button.setImage(UIImage(named: "google"), for: .normal)
         button.titleLabel?.font = Fonts.poppinsSemiBold16
         button.backgroundColor = .white
@@ -75,10 +75,10 @@ class SignInScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.SignIn, for: .normal)
+        button.setTitle(ButtonTitles.signIn, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = Fonts.poppinsSemiBold16
-        button.backgroundColor = ButtonColors.Blue
+        button.backgroundColor = ButtonColors.blue
         return button
     }()
     
@@ -86,8 +86,8 @@ class SignInScreenView: UIView {
         let button = UIButton()
         button.layer.borderWidth = 0
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.ForgotPassword, for: .normal)
-        button.setTitleColor(TextColors.Blue, for: .normal)
+        button.setTitle(ButtonTitles.forgotPassword, for: .normal)
+        button.setTitleColor(TextColors.blue, for: .normal)
         button.titleLabel?.font = Fonts.poppinsBold12
         button.backgroundColor = .clear
         return button

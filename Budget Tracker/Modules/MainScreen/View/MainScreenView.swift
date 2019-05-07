@@ -67,7 +67,7 @@ class MainScreenView: UIView {
         label.textColor = .white
         label.font = Fonts.poppinsBold32
         label.textAlignment = .right
-        label.text = MainScreenMock.Income
+        label.text = MainScreenMock.income
         return label
     }()
     
@@ -91,7 +91,7 @@ class MainScreenView: UIView {
         label.textColor = .white
         label.font = Fonts.poppinsBold32
         label.textAlignment = .right
-        label.text = MainScreenMock.Expense
+        label.text = MainScreenMock.expense
         return label
     }()
     
@@ -116,16 +116,16 @@ class MainScreenView: UIView {
         label.textColor = .white
         label.font = Fonts.poppinsMedium16
         label.textAlignment = .center
-        label.text = Titles.Difference
+        label.text = Titles.difference
         return label
     }()
     
     lazy var differenceTotalLabel: UILabel = {
         let label = UILabel()
-        label.textColor = TextColors.Green  
+        label.textColor = TextColors.green  
         label.font = Fonts.poppinsMedium16
         label.textAlignment = .center
-        label.text = MainScreenMock.Difference
+        label.text = MainScreenMock.difference
         return label
     }()
     
@@ -147,7 +147,7 @@ class MainScreenView: UIView {
     
     lazy var infoView: UIView = {
         let view = UIView()
-        view.backgroundColor = BackgroundColors.Blue
+        view.backgroundColor = BackgroundColors.blue
         return view
     }()
     
@@ -157,7 +157,7 @@ class MainScreenView: UIView {
         button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.masksToBounds = false
         button.clipsToBounds = true
-        button.backgroundColor = ButtonColors.Blue
+        button.backgroundColor = ButtonColors.blue
         button.tintColor = .white
         button.titleLabel?.font = Fonts.poppinsLight48
         button.setTitle("+", for: .normal)
@@ -205,8 +205,8 @@ class MainScreenView: UIView {
         
         showAddingScreenButton.snp.makeConstraints { make in
             make.width.height.equalTo(64)
-            make.bottom.equalToSuperview().inset(30)
-            make.right.equalTo(self.snp_right).inset(30)
+            make.bottom.equalToSuperview().inset(24)
+            make.right.equalTo(self.snp_right).inset(24)
         }
         
         scrollView.snp.makeConstraints { make in

@@ -43,7 +43,7 @@ class ProfileScreenView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = Fonts.poppinsMedium16
-        label.textColor = TextColors.Grey
+        label.textColor = TextColors.gray
         label.text = "petkacool1@gmail.com"
         return label
     }()
@@ -69,8 +69,8 @@ class ProfileScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.Synchronize, for: .normal)
-        button.setTitleColor(TextColors.Grey, for: .normal)
+        button.setTitle(ButtonTitles.synchronize, for: .normal)
+        button.setTitleColor(TextColors.gray, for: .normal)
         button.titleLabel?.font = Fonts.poppinsSemiBold16
         button.backgroundColor = .white
         return button
@@ -85,10 +85,10 @@ class ProfileScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.LogOut, for: .normal)
+        button.setTitle(ButtonTitles.logOut, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = Fonts.poppinsSemiBold16
-        button.backgroundColor = ButtonColors.Red
+        button.backgroundColor = ButtonColors.red
         return button
     }()
     

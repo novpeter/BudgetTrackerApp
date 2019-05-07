@@ -21,7 +21,7 @@ class AuthService: AuthServiceProtocol {
  
     func signIn(email: String, password: String, completionBlock: @escaping (ResponseResult) -> ()) {
         let user = SignInUser(fullName: nil, email: email, token: nil, password: password)
-        let requestBody = SignInRequestBody(authType: AuthType.Regular, payload: user)
+        let requestBody = SignInRequestBody(authType: AuthType.regular, payload: user)
         
         networkManager.request(target: .signIn(body: requestBody), success: { response in
             do
@@ -50,7 +50,7 @@ class AuthService: AuthServiceProtocol {
     
     func googleSignIn(token: String, email: String, fullName: String, completionBlock: @escaping (ResponseResult) -> ()) {
         let user = SignInUser(fullName: fullName, email: email, token: token, password: nil)
-        let requestBody = SignInRequestBody(authType: AuthType.Google, payload: user)
+        let requestBody = SignInRequestBody(authType: AuthType.google, payload: user)
         
         networkManager.request(target: .signIn(body: requestBody), success: { response in
             do

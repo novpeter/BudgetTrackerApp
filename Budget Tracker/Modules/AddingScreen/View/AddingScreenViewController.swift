@@ -175,7 +175,7 @@ extension AddingScreenViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         guard textView.tag == 1 else { return }
-        if textView.textColor == TextColors.Grey {
+        if textView.textColor == TextColors.gray {
             textView.text = nil
             textView.textColor = .black
         }
@@ -184,8 +184,8 @@ extension AddingScreenViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         guard textView.tag == 1 else { return }
         if textView.text.isEmpty {
-            textView.text = Placeholders.Comment
-            textView.textColor = TextColors.Grey
+            textView.text = Placeholders.comment
+            textView.textColor = TextColors.gray
         }
     }
 }
