@@ -42,12 +42,14 @@ class WelcomeScreenViewController: UIViewController {
     
     // MARK: - Button's handlers
     
-    @objc func signInButtonClicked(sender: UIButton) {
+    @objc
+    func signInButtonClicked(sender: UIButton) {
         sender.pulsate()
         presenter.signInButtonClicked()
     }
     
-    @objc func signUpButtonClicked(sender: UIButton) {
+    @objc
+    func signUpButtonClicked(sender: UIButton) {
         sender.pulsate()
         presenter.signUpButtonClicked()
     }

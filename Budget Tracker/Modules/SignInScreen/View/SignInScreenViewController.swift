@@ -62,7 +62,8 @@ class SignInScreenViewController: UIViewController, UITextFieldDelegate, GIDSign
     
     // MARK: - Button's handlers
     
-    @objc private func signInButtonClicked(sender: UIButton) {
+    @objc
+    private func signInButtonClicked(sender: UIButton) {
         sender.pulsate()
         
         let email = contentView.emailTextField.text
@@ -70,22 +71,24 @@ class SignInScreenViewController: UIViewController, UITextFieldDelegate, GIDSign
         presenter.signInButtonClicked(email: email, password: password)
     }
     
-    
-    @objc private func forgotPasswordButtonClicked(sender: UIButton) {
+    @objc
+    private func forgotPasswordButtonClicked(sender: UIButton) {
         sender.pulsate()
         
         let email = contentView.emailTextField.text
         presenter.forgotPasswordButtonClicked(email: email)
     }
     
-    @objc func onClickBack() {
+    @objc
+    func onClickBack() {
         navigationController?.popViewController(animated: true)
     }
     
     
     // MARK: - Google auth
-   
-    @objc private func googleSignInButtonClicked(sender: UIButton) {
+    
+    @objc
+    private func googleSignInButtonClicked(sender: UIButton) {
         sender.pulsate()
         GIDSignIn.sharedInstance().signIn()
     }

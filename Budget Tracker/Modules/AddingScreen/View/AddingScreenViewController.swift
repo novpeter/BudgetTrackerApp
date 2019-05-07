@@ -60,7 +60,7 @@ class AddingScreenViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func configureNavigationBar() {
-        navigationController?.navigationBar.barTintColor = BackgroundColors.White
+        navigationController?.navigationBar.barTintColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.closeButton)
     }
     
@@ -108,7 +108,8 @@ class AddingScreenViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Button handlers
     
-    @objc func onClickAdd(_ sender: UIButton) {
+    @objc
+    func onClickAdd(_ sender: UIButton) {
         sender.pulsate()
         presenter.addNewOperation(
             title: contentView.titleTextField.text,
@@ -119,25 +120,29 @@ class AddingScreenViewController: UIViewController, UITextFieldDelegate {
         )
     }
     
-    @objc func onClickClose(_ sender: UIButton) {
+    @objc
+    func onClickClose(_ sender: UIButton) {
         sender.pulsate()
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func selectType(_ sender: UIButton) {
+    @objc
+    func selectType(_ sender: UIButton) {
         contentView.operationTypeSegmentedControl.selectType(index: sender.tag)
-        if sender.tag == 0 {
+        switch sender.tag {
+        case 0:
             contentView.categoryStackView.isHidden = true
-        }
-        else if sender.tag == 1 {
+        case 1:
             contentView.categoryStackView.isHidden = false
+        default: break
         }
     }
     
     
     // MARK: - Picker handlers
     
-    @objc func datePickerValueChanged(_ sender: UIDatePicker) {
+    @objc
+    func datePickerValueChanged(_ sender: UIDatePicker) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             let dateFormatter = DateFormatter()
@@ -147,11 +152,13 @@ class AddingScreenViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @objc private func endEditingCategoryTextField() {
+    @objc
+    private func endEditingCategoryTextField() {
         contentView.categoryTextField.endEditing(true)
     }
     
-    @objc private func endEditingDateTextField() {
+    @objc
+    private func endEditingDateTextField() {
         contentView.dateTextField.endEditing(true)
     }
 }
@@ -162,11 +169,12 @@ extension AddingScreenViewController: AddingScreenViewInput {
     func setValues(selectedIndex: Int, category: Categories, date: String) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            if selectedIndex == 0 {
+            switch selectedIndex {
+            case 0:
                 self.contentView.categoryStackView.isHidden = true
-            }
-            else if selectedIndex == 1 {
+            case 1:
                 self.contentView.categoryStackView.isHidden = false
+            default: break
             }
             self.contentView.operationTypeSegmentedControl.selectType(index: selectedIndex)
             self.contentView.categoryTextField.text = category.rawValue
@@ -203,17 +211,17 @@ extension AddingScreenViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         guard textView.tag == 1 else { return }
-        if textView.textColor == TextColors.Grey {
+        if textView.textColor == TextColors.gray {
             textView.text = nil
-            textView.textColor = TextColors.Black
+            textView.textColor = .black
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         guard textView.tag == 1 else { return }
         if textView.text.isEmpty {
-            textView.text = Placeholders.Comment
-            textView.textColor = TextColors.Grey
+            textView.text = Placeholders.comment
+            textView.textColor = TextColors.gray
         }
     }
 }

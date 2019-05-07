@@ -9,61 +9,61 @@
 import Foundation
 
 struct Titles {
-    static let AppNameTopPart = "Budget"
-    static let AppNameBottomPart = "Tracker"
-    static let Statistics = "Statistics"
-    static let Difference = "Difference:"
-    static let ShowDetailedStatistic = "Show detailed statistic"
+    static let appNameTopPart = "Budget"
+    static let appNameBottomPart = "Tracker"
+    static let statistics = "Statistics"
+    static let difference = "Difference:"
+    static let showDetailedStatistic = "Show detailed statistic"
 }
 
 struct Placeholders {
-    static let Email = "Email"
-    static let Password = "Password"
-    static let ConfirmPassword = "Confirm password"
-    static let Name = "Name"
-    static let Title = "Title"
-    static let Comment = "Comment"
-    static let ZeroSum = "0 " + Currency.Rubble
+    static let email = "Email"
+    static let password = "Password"
+    static let confirmPassword = "ConfirmPassword"
+    static let name = "Name"
+    static let title = "Title"
+    static let comment = "Comment"
+    static let zeroSum = "0 " + Currency.rubble
 }
 
 struct ButtonTitles {
-    static let SignUp = "Sign up"
-    static let SignIn = "Sign in"
-    static let ForgotPassword = "Forgot password?"
-    static let GoogleSignIn = "via Google account"
-    static let Add = "Add"
-    static let Synchronize = "Synchronize"
-    static let LogOut = "Log out"
-    static let Back = "back"
-    static let Income = "Income"
-    static let Expense = "Expense"
+    static let signUp = "Sign up"
+    static let signIn = "Sign in"
+    static let forgotPassword = "Forgot password?"
+    static let googleSignIn = "via Google account"
+    static let add = "Add"
+    static let synchronize = "Synchronize"
+    static let logOut = "Log out"
+    static let back = "back"
+    static let income = "Income"
+    static let expense = "Expense"
 }
 
 struct Regex {
-    static let Email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    static let Password = "[0-9a-zA-Z]{8,20}"
+    static let email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    static let password = "[0-9a-zA-Z]{8,20}"
 }
 
 enum AlertTitles: String {
-    case GenericError = "Oops..."
-    case WrongName = "Wrong name"
-    case WrongEmail = "Wrong email"
-    case WrongPassword = "Wrong password"
-    case Done = "Done!"
+    case genericError = "Oops..."
+    case wrongName = "Wrong name"
+    case wrongEmail = "Wrong email"
+    case wrongPassword = "Wrong password"
+    case done = "Done!"
 }
 
 enum AlertSubTitles: String {
-    case GenericError = "Something went wrong"
-    case PasswordReciepe = "Password should contain one upper case and lower case letter, one digit and lenght more than 8"
-    case PasswordWasSent = "The password was sent on entered email"
-    case CheckAllFields = "Check all fields"
-    case SynchronizeComplete = "All data was synchronize"
-    case PasswordsNotMatch = "Passwords do not match"
-    case Empty = ""
-    case SignUpError = "Sign up error. Please, try later"
-    case SignInError = "Sign in error. Please, try later"
-    case SyncError = "Cannot synchtonize now. Please, try later"
-    case LogOutError = "Cannot log out now. Please, check internet connection"
+    case genericError = "Something went wrong"
+    case passwordReciepe = "Password should contain one upper case and lower case letter, one digit and lenght more than 8"
+    case passwordWasSent = "The password was sent on entered email"
+    case checkAllFields = "Check all fields"
+    case synchronizeComplete = "All data was synchronize"
+    case passwordsNotMatch = "Passwords do not match"
+    case empty = ""
+    case signUpError = "Sign up error. Please, try later"
+    case signInError = "Sign in error. Please, try later"
+    case syncError = "Cannot synchtonize now. Please, try later"
+    case logOutError = "Cannot log out now. Please, check internet connection"
 }
 
 struct URLConstants {
@@ -71,16 +71,16 @@ struct URLConstants {
 }
 
 struct AuthType {
-    static let Regular = "Regular"
-    static let Google = "Google"
+    static let regular = "Regular"
+    static let google = "Google"
 }
 
 struct Currency {
-    static let Rubble = "₽"
+    static let rubble = "₽"
 }
 
 struct MainScreenMock {
-    static let Income = "120650 " + Currency.Rubble
-    static let Expense = "32450 " + Currency.Rubble
-    static let Difference = "88200 " + Currency.Rubble
+    static let income = "120650 " + Currency.rubble
+    static let expense = "32450 " + Currency.rubble
+    static let difference = "88200 " + Currency.rubble
 }

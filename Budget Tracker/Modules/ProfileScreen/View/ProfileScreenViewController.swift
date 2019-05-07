@@ -33,23 +33,26 @@ class ProfileScreenViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        navigationController?.navigationBar.barTintColor = BackgroundColors.White
+        navigationController?.navigationBar.barTintColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.backButton)
     }
     
     // MARK: - Button's handlers
     
-    @objc func syncButtonClicked(sender: UIButton) {
+    @objc
+    func syncButtonClicked(sender: UIButton) {
         sender.pulsate()
         presenter.syncButtonClicked()
     }
     
-    @objc func logOutButtonClicked(sender: UIButton) {
+    @objc
+    func logOutButtonClicked(sender: UIButton) {
         sender.pulsate()
         presenter.logOutButtonClicked()
     }
     
-    @objc func onClickBack(){
+    @objc
+    func onClickBack(){
         navigationController?.popViewController(animated: true)
     }
     

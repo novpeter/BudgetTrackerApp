@@ -21,9 +21,9 @@ class AuthService: AuthServiceProtocol {
  
     func signIn(email: String, password: String, completionBlock: @escaping (ResponseResult) -> ()) {
         let user = SignInUser(fullName: nil, email: email, token: nil, password: password)
-        let requestBody = SignInRequestBody(authType: AuthType.Regular, payload: user)
+        let requestBody = SignInRequestBody(authType: AuthType.regular, payload: user)
         
-        networkManager.request(target: .signIn(body: requestBody), success: { (response) in
+        networkManager.request(target: .signIn(body: requestBody), success: { response in
             do
             {
                 let response = try JSONDecoder().decode(AuthResponse.self, from: response.data)
@@ -32,7 +32,7 @@ class AuthService: AuthServiceProtocol {
                 currentUser.fullName = ""
                 currentUser.sessionToken = response.payload.sessionToken
                 
-                self.realmManager.saveObjects(objects: [currentUser], errorBlock: { (error) in
+                self.realmManager.saveObjects(objects: [currentUser], errorBlock: { error in
                     if let error = error {
                         completionBlock(.Error(error))
                     }
@@ -43,16 +43,16 @@ class AuthService: AuthServiceProtocol {
             catch let error {
                 completionBlock(.Error(error))
             }
-        }, error: { (error) in
+        }, error: { error in
             completionBlock(.Error(error))
         })
     }
     
     func googleSignIn(token: String, email: String, fullName: String, completionBlock: @escaping (ResponseResult) -> ()) {
         let user = SignInUser(fullName: fullName, email: email, token: token, password: nil)
-        let requestBody = SignInRequestBody(authType: AuthType.Google, payload: user)
+        let requestBody = SignInRequestBody(authType: AuthType.google, payload: user)
         
-        networkManager.request(target: .signIn(body: requestBody), success: { (response) in
+        networkManager.request(target: .signIn(body: requestBody), success: { response in
             do
             {
                 let response = try JSONDecoder().decode(AuthResponse.self, from: response.data)
@@ -61,7 +61,7 @@ class AuthService: AuthServiceProtocol {
                 currentUser.fullName = fullName
                 currentUser.sessionToken = response.payload.sessionToken
                 
-                self.realmManager.saveObjects(objects: [currentUser], errorBlock: { (error) in
+                self.realmManager.saveObjects(objects: [currentUser], errorBlock: { error in
                     if let error = error {
                         completionBlock(.Error(error))
                     }
@@ -72,7 +72,7 @@ class AuthService: AuthServiceProtocol {
             catch let error {
                 completionBlock(.Error(error))
             }
-        }, error: { (error) in
+        }, error: { error in
             completionBlock(.Error(error))
         })
     }
@@ -85,7 +85,7 @@ class AuthService: AuthServiceProtocol {
         let user = SignUpUser(name: name, email: email, password: password)
         let requestBody = SignUpRequestBody(payload: user)
         
-        networkManager.request(target: .signUp(body: requestBody), success: { (response) in
+        networkManager.request(target: .signUp(body: requestBody), success: { response in
             do
             {
                 let response = try JSONDecoder().decode(AuthResponse.self, from: response.data)
@@ -94,7 +94,7 @@ class AuthService: AuthServiceProtocol {
                 currentUser.fullName = name
                 currentUser.sessionToken = response.payload.sessionToken
                 
-                self.realmManager.saveObjects(objects: [currentUser], errorBlock: { (error) in
+                self.realmManager.saveObjects(objects: [currentUser], errorBlock: { error in
                     if let error = error {
                         completionBlock(.Error(error))
                     }
@@ -105,7 +105,7 @@ class AuthService: AuthServiceProtocol {
             catch let error {
                 completionBlock(.Error(error))
             }
-        }, error: { (error) in
+        }, error: { error in
             completionBlock(.Error(error))
         })
     }
@@ -124,11 +124,11 @@ class AuthService: AuthServiceProtocol {
         
         GIDSignIn.sharedInstance().signOut()
         
-        networkManager.request(target: .logOut(token: userToken), success: { (response) in
+        networkManager.request(target: .logOut(token: userToken), success: { response in
             do
             {
                 if  (200...300).contains(response.statusCode) {
-                    self.realmManager.deleteObjects(objects: [user], errorBlock: { (error) in
+                    self.realmManager.deleteObjects(objects: [user], errorBlock: { error in
                         if let error = error {
                             completionBlock(.Error(error))
                         }
@@ -145,7 +145,7 @@ class AuthService: AuthServiceProtocol {
             catch let error {
                 completionBlock(.Error(error))
             }
-        }, error: { (error) in
+        }, error: { error in
             completionBlock(.Error(error))
         })
     }

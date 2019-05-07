@@ -33,8 +33,8 @@ class ProfileScreenView: UIView {
     lazy var fullNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = Fonts.PoppinsBold20
-        label.textColor = TextColors.Black
+        label.font = Fonts.poppinsBold20
+        label.textColor = .black
         label.text = "Anton Ivanov"
         return label
     }()
@@ -42,8 +42,8 @@ class ProfileScreenView: UIView {
     lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = Fonts.PoppinsMedium16
-        label.textColor = TextColors.Grey
+        label.font = Fonts.poppinsMedium16
+        label.textColor = TextColors.gray
         label.text = "petkacool1@gmail.com"
         return label
     }()
@@ -69,10 +69,10 @@ class ProfileScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.Synchronize, for: .normal)
-        button.setTitleColor(TextColors.Grey, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = ButtonColors.White
+        button.setTitle(ButtonTitles.synchronize, for: .normal)
+        button.setTitleColor(TextColors.gray, for: .normal)
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
+        button.backgroundColor = .white
         return button
     }()
     
@@ -85,10 +85,10 @@ class ProfileScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.LogOut, for: .normal)
-        button.setTitleColor(TextColors.White, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = ButtonColors.Red
+        button.setTitle(ButtonTitles.logOut, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
+        button.backgroundColor = ButtonColors.red
         return button
     }()
     
@@ -121,44 +121,42 @@ class ProfileScreenView: UIView {
     // MARK: - Congigurating
     
     private func addSubviews() {
-        self.backgroundColor = .white
-        self.addSubview(infoStackView)
-        self.addSubview(buttonsStackView)
+        backgroundColor = .white
+        addSubview(infoStackView)
+        addSubview(buttonsStackView)
     }
     
     private func addConstraints() {
         
-        infoStackView.snp.makeConstraints({ (make) in
-            make.left.equalTo(self).offset(64)
-            make.right.equalTo(self).offset(-64)
-            make.top.equalTo(self).offset(120)
+        infoStackView.snp.makeConstraints({ make in
+            make.left.right.equalToSuperview().inset(64)
+            make.top.equalToSuperview().inset(100)
         })
         
-        profileImageView.snp.makeConstraints { (make) in
+        profileImageView.snp.makeConstraints { make in
             make.height.equalTo(120)
             make.width.lessThanOrEqualTo(120)
         }
         
-        fullNameLabel.snp.makeConstraints { (make) in
+        fullNameLabel.snp.makeConstraints { make in
             make.height.equalTo(30)
         }
         
-        emailLabel.snp.makeConstraints { (make) in
+        emailLabel.snp.makeConstraints { make in
             make.height.equalTo(25)
         }
         
-        buttonsStackView.snp.makeConstraints { (make) in
-            make.left.equalTo(self).offset(48)
-            make.right.equalTo(self).offset(-48)
-            make.bottom.equalTo(self).offset(-120)
+        buttonsStackView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(48)
+            make.bottom.equalToSuperview().inset(70)
         }
         
-        logOutButton.snp.makeConstraints { (make) in
+        logOutButton.snp.makeConstraints { make in
             make.centerX.equalTo(buttonsStackView)
             make.height.equalTo(50)
         }
         
-        syncButton.snp.makeConstraints { (make) in
+        syncButton.snp.makeConstraints { make in
             make.height.equalTo(50)
             make.centerX.equalTo(buttonsStackView)
         }

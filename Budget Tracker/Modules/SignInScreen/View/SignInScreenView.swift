@@ -23,20 +23,20 @@ class SignInScreenView: UIView {
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.keyboardType = .default
-        textField.placeholder = Placeholders.Email
-        textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
-        textField.tintColor = TextColors.Grey
+        textField.placeholder = Placeholders.email
+        textField.font = Fonts.poppinsMedium16
+        textField.textColor = .black
+        textField.tintColor = TextColors.gray
         return textField
     }()
     
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.keyboardType = .default
-        textField.placeholder = Placeholders.Password
-        textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
-        textField.tintColor = TextColors.Grey
+        textField.placeholder = Placeholders.password
+        textField.font = Fonts.poppinsMedium16
+        textField.textColor = .black
+        textField.tintColor = TextColors.gray
         textField.isSecureTextEntry = true
         return textField
     }()
@@ -58,11 +58,11 @@ class SignInScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.GoogleSignIn, for: .normal)
-        button.setTitleColor(TextColors.Grey, for: .normal)
+        button.setTitle(ButtonTitles.googleSignIn, for: .normal)
+        button.setTitleColor(TextColors.gray, for: .normal)
         button.setImage(UIImage(named: "google"), for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = ButtonColors.White
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
+        button.backgroundColor = .white
         return button
     }()
     
@@ -75,10 +75,10 @@ class SignInScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.SignIn, for: .normal)
-        button.setTitleColor(TextColors.White, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = ButtonColors.Blue
+        button.setTitle(ButtonTitles.signIn, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
+        button.backgroundColor = ButtonColors.blue
         return button
     }()
     
@@ -86,9 +86,9 @@ class SignInScreenView: UIView {
         let button = UIButton()
         button.layer.borderWidth = 0
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.ForgotPassword, for: .normal)
-        button.setTitleColor(TextColors.Blue, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsBold12
+        button.setTitle(ButtonTitles.forgotPassword, for: .normal)
+        button.setTitleColor(TextColors.blue, for: .normal)
+        button.titleLabel?.font = Fonts.poppinsBold12
         button.backgroundColor = .clear
         return button
     }()
@@ -130,43 +130,42 @@ class SignInScreenView: UIView {
     // MARK: - Congigurating
     
     private func addSubviews() {
-        self.backgroundColor = .white
-        self.addSubview(mainStackView)
-        self.addSubview(forgotPasswordButton)
+        backgroundColor = .white
+        addSubview(mainStackView)
+        addSubview(forgotPasswordButton)
     }
     
     private func addConstraints() {
-        
-        mainStackView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(48)
-            make.right.equalToSuperview().offset(-48)
-            make.top.equalToSuperview().offset(44)
+
+        mainStackView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(48)
+            make.top.equalToSuperview().inset(44)
         }
         
-        signInButton.snp.makeConstraints { (make) in
+        signInButton.snp.makeConstraints { make in
             make.centerX.equalTo(buttonsStackView)
             make.height.equalTo(50)
         }
         
-        googleSignInButton.snp.makeConstraints { (make) in
+        googleSignInButton.snp.makeConstraints { make in
             make.centerX.equalTo(buttonsStackView)
             make.height.equalTo(50)
         }
         
         googleSignInButton.imageEdgeInsets.right = 40.0
-        
-        forgotPasswordButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(mainStackView).offset(40)
+    
+        forgotPasswordButton.snp.makeConstraints { make in
+            make.top.equalTo(mainStackView.snp_bottom).offset(40)
             make.centerX.equalToSuperview()
             make.height.equalTo(20)
             make.width.equalTo(120)
         }
         
-        emailTextField.snp.makeConstraints { (make) in
+        emailTextField.snp.makeConstraints { make in
             make.centerX.equalTo(textFieldsStackView)
         }
         
-        passwordTextField.snp.makeConstraints { (make) in
+        passwordTextField.snp.makeConstraints { make in
             make.centerX.equalTo(textFieldsStackView)
         }
     }

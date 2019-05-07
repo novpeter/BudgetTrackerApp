@@ -15,28 +15,28 @@ class ProfileScreenInteractor: ProfileScreenInteractorInput {
     
     func logOut() {
         presenter.startLoading()
-        authService.logOut { (result) in
+        authService.logOut { result in
             self.presenter.stopLoading()
             switch result {
             case .Success:
                 self.presenter.showWelcomeScreen()
             case .Error(let error):
                 print("Log out error: \(error.localizedDescription)")
-                self.presenter.showAlert(title: .GenericError, subTitle: .LogOutError, alertType: .error)
+                self.presenter.showAlert(title: .genericError, subTitle: .logOutError, alertType: .error)
             }
         }
     }
     
     func synchronize() {
         presenter.startLoading()
-        authService.synchronize { (result) in
+        authService.synchronize { result in
             self.presenter.stopLoading()
             switch result {
             case .Success:
-                self.presenter.showAlert(title: .Done, subTitle: .SynchronizeComplete, alertType: .success)
+                self.presenter.showAlert(title: .done, subTitle: .synchronizeComplete, alertType: .success)
             case .Error(let error):
                 print("Sync error: \(error.localizedDescription)")
-                self.presenter.showAlert(title: .GenericError, subTitle: .SyncError, alertType: .error)
+                self.presenter.showAlert(title: .genericError, subTitle: .syncError, alertType: .error)
             }
         }
     }

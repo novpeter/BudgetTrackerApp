@@ -78,7 +78,8 @@ class SignUpScreenViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - Button's handlers
     
-    @objc func signUpButtonClicked(sender: UIButton) {
+    @objc
+    func signUpButtonClicked(sender: UIButton) {
         sender.pulsate()
         
         let name = contentView.nameTextField.text
@@ -89,7 +90,8 @@ class SignUpScreenViewController: UIViewController, UITextFieldDelegate {
         presenter.signUpButtonClicked(name: name, email: email, password: password, confirmedPassword: confirmedPassword)
     }
     
-    @objc func onClickBack(){
+    @objc
+    func onClickBack(){
         navigationController?.popViewController(animated: true)
     }
 }

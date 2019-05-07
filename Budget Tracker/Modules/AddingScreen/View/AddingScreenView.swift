@@ -16,7 +16,7 @@ class AddingScreenView: UIView {
     
     lazy var closeButton: UIButton = {
         let button = UIButton()
-        button.setImage(Images.getImage(.CloseButtonIcon), for: .normal)
+        button.setImage(Images.getImage(.closeButtonIcon), for: .normal)
         button.frame = UIConstants.navigationBarButtonFrame
         return button
     }()
@@ -34,36 +34,36 @@ class AddingScreenView: UIView {
         let textField = UITextField()
         textField.keyboardType = .default
         textField.textAlignment = .left
-        textField.placeholder = Placeholders.Title
-        textField.font = Fonts.PoppinsBold20
-        textField.textColor = TextColors.Black
-        textField.tintColor = TextColors.Grey
+        textField.placeholder = Placeholders.title
+        textField.font = Fonts.poppinsBold20
+        textField.textColor = .black
+        textField.tintColor = TextColors.gray
         return textField
     }()
     
     lazy var commentTextView: UITextView = {
         let textView = UITextView()
         textView.keyboardType = .default
-        textView.text = Placeholders.Comment
-        textView.font = Fonts.PoppinsMedium16
-        textView.textColor = TextColors.Grey
-        textView.tintColor = TextColors.Grey
+        textView.text = Placeholders.comment
+        textView.font = Fonts.poppinsMedium16
+        textView.textColor = TextColors.gray
+        textView.tintColor = TextColors.gray
         textView.tag = 1
         return textView
     }()
     
     lazy var categoryIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Categories.getCategoryIcon(.Other)
+        imageView.image = Categories.getCategoryIcon(.other)
         return imageView
     }()
     
     lazy var categoryTextField: UITextField = {
         let textField = UITextField()
         textField.textAlignment = .left
-        textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
-        textField.text = Categories.Other.rawValue
+        textField.font = Fonts.poppinsMedium16
+        textField.textColor = .black
+        textField.text = Categories.other.rawValue
         textField.inputView = categoryPicker
         textField.inputAccessoryView = categoryToolBar
         return textField
@@ -72,15 +72,15 @@ class AddingScreenView: UIView {
     lazy var categoryToolBar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        toolbar.backgroundColor = BackgroundColors.White
-        toolbar.tintColor = TextColors.Black
+        toolbar.backgroundColor = .white
+        toolbar.tintColor = .black
         toolbar.isTranslucent = true
         return toolbar
     }()
     
     lazy var categoryPicker: UIPickerView = {
         let picker = UIPickerView()
-        picker.backgroundColor = BackgroundColors.White
+        picker.backgroundColor = .white
         return picker
     }()
     
@@ -88,20 +88,20 @@ class AddingScreenView: UIView {
         let stackView = UIStackView(arrangedSubviews: [categoryIcon, categoryTextField])
         stackView.axis = .horizontal
         stackView.distribution = .fill
-        stackView.spacing = appearance.categoryStackViewSpacing
+        stackView.spacing = appearance.stackViewSpacing
         return stackView
     }()
     
     lazy var dateIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Images.getImage(.CalendarIcon)
+        imageView.image = Images.getImage(.calendarIcon)
         return imageView
     }()
     
     lazy var dateTextField: UITextField = {
         let textField = UITextField()
-        textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
+        textField.font = Fonts.poppinsMedium16
+        textField.textColor = .black
         textField.inputView = datePicker
         textField.inputAccessoryView = dateToolBar
         return textField
@@ -110,8 +110,8 @@ class AddingScreenView: UIView {
     lazy var dateToolBar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        toolbar.backgroundColor = BackgroundColors.White
-        toolbar.tintColor = TextColors.Black
+        toolbar.backgroundColor = .white
+        toolbar.tintColor = .black
         toolbar.isTranslucent = true
         return toolbar
     }()
@@ -119,7 +119,7 @@ class AddingScreenView: UIView {
     lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
-        datePicker.backgroundColor = BackgroundColors.White
+        datePicker.backgroundColor = .white
         return datePicker
     }()
     
@@ -127,7 +127,7 @@ class AddingScreenView: UIView {
         let stackView = UIStackView(arrangedSubviews: [dateIcon, dateTextField])
         stackView.axis = .horizontal
         stackView.distribution = .fill
-        stackView.spacing = appearance.dateStackViewSpacing
+        stackView.spacing = appearance.stackViewSpacing
         return stackView
     }()
     
@@ -135,10 +135,10 @@ class AddingScreenView: UIView {
         let textField = UITextField()
         textField.keyboardType = .phonePad
         textField.textAlignment = .center
-        textField.placeholder = Placeholders.ZeroSum
-        textField.font = Fonts.PoppinsMedium48
-        textField.textColor = TextColors.Black
-        textField.tintColor = TextColors.Grey
+        textField.placeholder = Placeholders.zeroSum
+        textField.font = Fonts.poppinsMedium48
+        textField.textColor = .black
+        textField.tintColor = TextColors.gray
         return textField
     }()
     
@@ -151,10 +151,10 @@ class AddingScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.Add, for: .normal)
-        button.setTitleColor(TextColors.White, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = ButtonColors.Blue
+        button.setTitle(ButtonTitles.add, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
+        button.backgroundColor = ButtonColors.blue
         return button
     }()
     
@@ -176,7 +176,7 @@ class AddingScreenView: UIView {
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = BackgroundColors.White
+        scrollView.backgroundColor = .white
         return scrollView
     }()
     
@@ -207,43 +207,39 @@ class AddingScreenView: UIView {
     
     private func addConstraints() {
     
-        scrollView.snp_makeConstraints { (make) in
-            make.edges.equalToSuperview()
-            make.center.equalToSuperview()
+        scrollView.snp_makeConstraints { make in
+            make.center.edges.equalToSuperview()
         }
         
-        mainStackView.snp_makeConstraints { (make) in
+        mainStackView.snp_makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(scrollView.snp_top).offset(appearance.mainStackViewVerticalConstraint)
-            make.bottom.greaterThanOrEqualTo(scrollView.snp_bottom).offset(appearance.mainStackViewVerticalConstraint)
-            make.leading.equalToSuperview().inset(appearance.mainStackViewHorizontalConstraint)
-            make.trailing.equalToSuperview().offset(appearance.mainStackViewHorizontalConstraint)
+            make.top.equalTo(scrollView.snp_top).inset(appearance.mainStackViewVerticalConstraint)
+            make.bottom.greaterThanOrEqualTo(scrollView.snp_bottom).inset(appearance.mainStackViewVerticalConstraint)
+            make.leading.trailing.equalToSuperview().inset(appearance.mainStackViewHorizontalConstraint)
         }
         
-        operationTypeSegmentedControl.snp_makeConstraints { (make) in
+        operationTypeSegmentedControl.snp_makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(appearance.titleTextFieldHeight)
         }
         
-        titleTextField.snp_makeConstraints { (make) in
+        titleTextField.snp_makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(appearance.titleTextFieldHeight)
         }
         
-        commentTextView.snp_makeConstraints { (make) in
+        commentTextView.snp_makeConstraints { make in
             make.height.equalTo(appearance.commentTextViewHeight)
             make.centerX.equalToSuperview()
         }
         
-        dateIcon.snp_makeConstraints { (make) in
-            make.height.width.equalTo(appearance.iconHeightWidth)
+        dateIcon.snp_makeConstraints { make in
+            make.height.width.equalTo(appearance.iconSize)
         }
         
-        categoryIcon.snp_makeConstraints { (make) in
-            make.height.width.equalTo(appearance.iconHeightWidth)
+        categoryIcon.snp_makeConstraints { make in
+            make.height.width.equalTo(appearance.iconSize)
         }
         
-        addButton.snp_makeConstraints { (make) in
+        addButton.snp_makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(UIConstants.buttonHeight)
         }
@@ -253,17 +249,14 @@ class AddingScreenView: UIView {
 extension AddingScreenView {
     
     fileprivate struct Appearance {
-        let categoryStackViewSpacing: CGFloat = 16
-        
-        let dateStackViewSpacing: CGFloat = 16
+        let stackViewSpacing: CGFloat = 16
         
         let mainStackViewVerticalConstraint = 32
         let mainStackViewHorizontalConstraint = 40
         let mainStackViewSpacing: CGFloat = 28
         
-        let iconHeightWidth = 24
+        let iconSize = 24
         
-        let titleTextFieldHeight: CGFloat = 35
         let commentTextViewHeight: CGFloat = 70
     }
 }

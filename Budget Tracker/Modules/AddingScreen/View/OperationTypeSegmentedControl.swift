@@ -13,19 +13,19 @@ class OperationTypeSegmentedControl: UIView {
     private let appearance = Appearance()
     
     // MARK: - Selected index
-    private var _selectedIndex: Int = 0
-    var selectedIndex: Int { get { return _selectedIndex } }
+    private var currentIndex: Int = 0
+    var selectedIndex: Int { get { return currentIndex } }
     
     // MARK: - Components
     
     lazy var incomeTypeButton: UIButton = {
         let button = UIButton()
         button.tag = 0
-        button.backgroundColor = ButtonColors.Red
-        button.titleLabel?.font = Fonts.PoppinsMedium16
-        button.setTitleColor(TextColors.White, for: .normal)
-        button.setTitle(ButtonTitles.Income, for: .normal)
-        button.setImage(Images.getImage(.IncomeTypeIconWhite), for: .normal)
+        button.backgroundColor = ButtonColors.red
+        button.titleLabel?.font = Fonts.poppinsMedium16
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle(ButtonTitles.income, for: .normal)
+        button.setImage(Images.getImage(.incomeTypeIconWhite), for: .normal)
         button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.clipsToBounds = true
         button.layer.cornerRadius = appearance.buttonCornerRadius
@@ -36,11 +36,11 @@ class OperationTypeSegmentedControl: UIView {
     lazy var expenseTypeButton: UIButton = {
         let button = UIButton()
         button.tag = 1
-        button.backgroundColor = ButtonColors.White
-        button.titleLabel?.font = Fonts.PoppinsMedium16
-        button.setTitleColor(TextColors.Black, for: .normal)
-        button.setTitle(ButtonTitles.Expense, for: .normal)
-        button.setImage(Images.getImage(.ExpenseTypeIconBlack), for: .normal)
+        button.backgroundColor = .white
+        button.titleLabel?.font = Fonts.poppinsMedium16
+        button.setTitleColor(.black, for: .normal)
+        button.setTitle(ButtonTitles.expense, for: .normal)
+        button.setImage(Images.getImage(.expenseTypeIconBlack), for: .normal)
         button.clipsToBounds = true
         button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.cornerRadius = appearance.buttonCornerRadius
@@ -80,8 +80,9 @@ class OperationTypeSegmentedControl: UIView {
     }
     
     private func addConstraints() {
-        buttonsStackView.snp_makeConstraints { (make) in
+        buttonsStackView.snp_makeConstraints { make in
             make.edges.equalToSuperview()
+            make.height.equalTo(40)
         }
     }
     
@@ -89,8 +90,8 @@ class OperationTypeSegmentedControl: UIView {
     // MARK: - Segmented control method
     
     func selectType(index: Int) {
-        guard index == 0 || index == 1 || _selectedIndex == index else { return }
-        _selectedIndex = index
+        guard index == 0 || index == 1 || currentIndex == index else { return }
+        currentIndex = index
         switch index {
         case 0:
             makeButtonSelected(button: incomeTypeButton)
@@ -104,21 +105,21 @@ class OperationTypeSegmentedControl: UIView {
     }
     
     private func makeButtonSelected(button: UIButton) {
-        button.backgroundColor = ButtonColors.Red
-        button.setTitleColor(TextColors.White, for: .normal)
+        button.backgroundColor = ButtonColors.red
+        button.setTitleColor(.white, for: .normal)
         switch button.tag {
-        case 0: button.setImage(Images.getImage(.IncomeTypeIconWhite), for: .normal)
-        case 1: button.setImage(Images.getImage(.ExpenseTypeIconWhite), for: .normal)
+        case 0: button.setImage(Images.getImage(.incomeTypeIconWhite), for: .normal)
+        case 1: button.setImage(Images.getImage(.expenseTypeIconWhite), for: .normal)
         default: break
         }
     }
     
     private func makeButtonDeselected(button: UIButton) {
-        button.backgroundColor = ButtonColors.White
-        button.setTitleColor(TextColors.Black, for: .normal)
+        button.backgroundColor = .white
+        button.setTitleColor(.black, for: .normal)
         switch button.tag {
-        case 0: button.setImage(Images.getImage(.IncomeTypeIconBlack), for: .normal)
-        case 1: button.setImage(Images.getImage(.ExpenseTypeIconBlack), for: .normal)
+        case 0: button.setImage(Images.getImage(.incomeTypeIconBlack), for: .normal)
+        case 1: button.setImage(Images.getImage(.expenseTypeIconBlack), for: .normal)
         default: break
         }
     }
