@@ -10,4 +10,16 @@ import Foundation
 
 protocol AddingScreenInteractorInput: AnyObject {
     
+    /// Sets initial values
+    func setInitialState()
+    
+    /// validates and creates new operation values
+    ///
+    /// - Parameters:
+    ///   - title: title
+    ///   - comment: comment
+    ///   - category: operation category
+    ///   - date: operation date
+    ///   - sum: operation sum
+    func addNewOperation(title: String?, comment: String?, category: String?, date: String?, sum: String?)
 }

@@ -13,6 +13,7 @@ class MainScreenRouter: MainScreenRouterInput {
     weak var view: UIViewController!
     var presenter: MainScreenRouterOutput!
     var profileAssembly: ProfileScreenFactoryProtocol!
+    var addingAssembly: AddingScreenFactoryProtocol!
     
     func showProfileScreen() {
         let profileViewController = profileAssembly.getViewController()
@@ -24,6 +25,7 @@ class MainScreenRouter: MainScreenRouterInput {
     }
     
     func showAddScreen() {
-        // TODO: - implement statistic screen segue
+        let addingScreenViewController = addingAssembly.getViewController()
+        view?.navigationController?.pushViewController(addingScreenViewController, animated: true)
     }
 }

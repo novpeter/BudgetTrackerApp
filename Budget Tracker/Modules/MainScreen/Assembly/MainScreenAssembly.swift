@@ -27,6 +27,7 @@ class MainScreenAssembly: MainScreenFactoryProtocol {
         let interactor = MainScreenInteractor()
         
         let profileAssembly = ProfileScreenAssembly()
+        let addingAssembly = AddingScreenAssembly()
         
         view.presenter = presenter
         
@@ -38,5 +39,6 @@ class MainScreenAssembly: MainScreenFactoryProtocol {
         
         router.view = view
         router.profileAssembly = profileAssembly
+        router.addingAssembly = addingAssembly
     }
 }

@@ -21,63 +21,49 @@ class SignUpScreenView: UIView {
     }()
     
     lazy var nameTextField: UITextField = {
-        
         let textField = UITextField()
-        
         textField.keyboardType = .default
-        textField.placeholder = Placeholders.Name
-        textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
-        textField.tintColor = TextColors.Grey
-        
+        textField.placeholder = Placeholders.name
+        textField.font = Fonts.poppinsMedium16
+        textField.textColor = .black
+        textField.tintColor = TextColors.gray
         return textField
     }()
     
     lazy var emailTextField: UITextField = {
-        
         let textField = UITextField()
-        
         textField.keyboardType = .default
-        textField.placeholder = Placeholders.Email
-        textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
-        textField.tintColor = TextColors.Grey
-        
+        textField.placeholder = Placeholders.email
+        textField.font = Fonts.poppinsMedium16
+        textField.textColor = .black
+        textField.tintColor = TextColors.gray
         return textField
     }()
     
     lazy var passwordTextField: UITextField = {
-        
         let textField = UITextField()
-        
         textField.keyboardType = .default
-        textField.placeholder = Placeholders.Password
-        textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
-        textField.tintColor = TextColors.Grey
+        textField.placeholder = Placeholders.password
+        textField.font = Fonts.poppinsMedium16
+        textField.textColor = .black
+        textField.tintColor = TextColors.gray
         textField.isSecureTextEntry = true
-        
         return textField
     }()
     
     lazy var confirmPasswordTextField: UITextField = {
-        
         let textField = UITextField()
-        
         textField.keyboardType = .default
-        textField.placeholder = Placeholders.ConfirmPassword
-        textField.font = Fonts.PoppinsMedium16
-        textField.textColor = TextColors.Black
-        textField.tintColor = TextColors.Grey
+        textField.placeholder = Placeholders.confirmPassword
+        textField.font = Fonts.poppinsMedium16
+        textField.textColor = .black
+        textField.tintColor = TextColors.gray
         textField.isSecureTextEntry = true
-        
         return textField
     }()
     
     lazy var signUpButton: UIButton = {
-        
         let button = UIButton()
-        
         button.layer.cornerRadius = UIConstants.buttonCornerRadius
         button.layer.borderWidth = UIConstants.buttonBorderWidth
         button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
@@ -85,11 +71,10 @@ class SignUpScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.SignUp, for: .normal)
-        button.setTitleColor(TextColors.Grey, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = ButtonColors.White
-        
+        button.setTitle(ButtonTitles.signUp, for: .normal)
+        button.setTitleColor(TextColors.gray, for: .normal)
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
+        button.backgroundColor = .white
         return button
     }()
     
@@ -135,41 +120,41 @@ class SignUpScreenView: UIView {
     // MARK: - Congigurating
     
     private func addSubviews() {
-        self.backgroundColor = .white
-        self.addSubview(scrollView)
+        backgroundColor = .white
+        addSubview(scrollView)
         scrollView.addSubview(mainStackView)
     }
     
     private func addConstraints() {
         
-        scrollView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
+        scrollView.snp.makeConstraints { make in
+            make.center.edges.equalToSuperview()
         }
         
-        mainStackView.snp.makeConstraints { (make) in
-            make.left.equalTo(self).offset(48)
-            make.right.equalTo(self).offset(-48)
-            make.top.equalTo(self).offset(44)
+        mainStackView.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(48)
+            make.top.equalToSuperview().inset(44)
+            make.centerX.equalToSuperview()
         }
         
-        signUpButton.snp.makeConstraints { (make) in
+        signUpButton.snp.makeConstraints { make in
             make.centerX.equalTo(mainStackView)
             make.height.equalTo(50)
         }
         
-        nameTextField.snp.makeConstraints { (make) in
+        nameTextField.snp.makeConstraints { make in
             make.centerX.equalTo(mainStackView)
         }
         
-        emailTextField.snp.makeConstraints { (make) in
+        emailTextField.snp.makeConstraints { make in
             make.centerX.equalTo(mainStackView)
         }
         
-        passwordTextField.snp.makeConstraints { (make) in
+        passwordTextField.snp.makeConstraints { make in
             make.centerX.equalTo(mainStackView)
         }
         
-        confirmPasswordTextField.snp.makeConstraints { (make) in
+        confirmPasswordTextField.snp.makeConstraints { make in
             make.centerX.equalTo(mainStackView)
         }
     }

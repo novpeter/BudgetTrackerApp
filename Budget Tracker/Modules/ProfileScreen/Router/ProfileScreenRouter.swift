@@ -25,8 +25,8 @@ class ProfileScreenRouter: ProfileScreenRouterInput {
         let navigationController = UINavigationController(rootViewController: welcomeScreenViewController)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: Fonts.PoppinsMedium16!]
-        UINavigationBar.appearance().tintColor = TextColors.Black
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: Fonts.poppinsMedium16!]
+        UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().barTintColor = .white
         
         navigationController.navigationBar.isTranslucent = false

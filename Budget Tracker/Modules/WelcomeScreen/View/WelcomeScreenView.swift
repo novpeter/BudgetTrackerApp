@@ -16,18 +16,18 @@ class WelcomeScreenView: UIView {
     lazy var topLabel: UILabel = {
         let label: UILabel = UILabel()
         label.textAlignment = .left
-        label.text = Titles.AppNameTopPart
-        label.font = Fonts.PoppinsBold48
-        label.textColor = TextColors.Black
+        label.text = Titles.appNameTopPart
+        label.font = Fonts.poppinsBold48
+        label.textColor = .black
         return label
     }()
     
     lazy var bottomLabel: UILabel = {
         let label: UILabel = UILabel()
         label.textAlignment = .right
-        label.text = Titles.AppNameBottomPart
-        label.font = Fonts.PoppinsBold48
-        label.textColor = TextColors.Black
+        label.text = Titles.appNameBottomPart
+        label.font = Fonts.poppinsBold48
+        label.textColor = .black
         return label
     }()
     
@@ -48,10 +48,10 @@ class WelcomeScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.SignIn, for: .normal)
-        button.setTitleColor(TextColors.White, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = ButtonColors.Blue
+        button.setTitle(ButtonTitles.signIn, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
+        button.backgroundColor = ButtonColors.blue
         return button
     }()
     
@@ -64,10 +64,10 @@ class WelcomeScreenView: UIView {
         button.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         button.layer.shadowRadius = UIConstants.buttonShadowRadius
         button.layer.masksToBounds = false
-        button.setTitle(ButtonTitles.SignUp, for: .normal)
-        button.setTitleColor(TextColors.Grey, for: .normal)
-        button.titleLabel?.font = Fonts.PoppinsSemiBold16
-        button.backgroundColor = ButtonColors.White
+        button.setTitle(ButtonTitles.signUp, for: .normal)
+        button.setTitleColor(TextColors.gray, for: .normal)
+        button.titleLabel?.font = Fonts.poppinsSemiBold16
+        button.backgroundColor = .white
         return button
     }()
     
@@ -99,32 +99,30 @@ class WelcomeScreenView: UIView {
     // MARK: - Congigurating
     
     private func addSubviews() {
-        self.backgroundColor = .white
-        self.addSubview(labelsStackView)
-        self.addSubview(buttonsStackView)
+        backgroundColor = .white
+        addSubview(labelsStackView)
+        addSubview(buttonsStackView)
     }
     
     private func addConstraints() {
         
-        labelsStackView.snp.makeConstraints({ (make) in
-            make.left.equalTo(self).offset(64)
-            make.right.equalTo(self).offset(-64)
-            make.top.equalTo(self).offset(120)
+        labelsStackView.snp.makeConstraints({ make in
+            make.left.right.equalToSuperview().inset(64)
+            make.top.equalToSuperview().inset(90)
             make.height.lessThanOrEqualTo(140)
         })
         
-        buttonsStackView.snp.makeConstraints { (make) in
-            make.left.equalTo(self).offset(48)
-            make.right.equalTo(self).offset(-48)
-            make.bottom.equalTo(self).offset(-120)
+        buttonsStackView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(48)
+            make.bottom.equalToSuperview().inset(90)
         }
         
-        signInButton.snp.makeConstraints { (make) in
+        signInButton.snp.makeConstraints { make in
             make.centerX.equalTo(buttonsStackView)
             make.height.equalTo(50)
         }
         
-        signUpButton.snp.makeConstraints { (make) in
+        signUpButton.snp.makeConstraints { make in
             make.height.equalTo(50)
             make.centerX.equalTo(buttonsStackView)
         }
