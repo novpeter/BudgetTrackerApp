@@ -178,13 +178,7 @@ class AuthService: AuthServiceProtocol {
         completionBlock(.success)
     }
     
-    func getCurrentUser(success successCallback: @escaping (UserModel) -> (), error errorCallback: @escaping (Error) -> ()) {
-        if let user = realmManager.getObjects(with: UserModel.self)?.first {
-            successCallback(user)
-        }
-        else {
-            let error = NSError(domain: "Auth", code: 404, userInfo: [NSLocalizedDescriptionKey: "No user"])
-            errorCallback(error)
-        }
+    func getCurrentUser() -> UserModel? {
+        return realmManager.getObjects(with: UserModel.self)?.first
     }
 }

@@ -69,6 +69,5 @@ class AddingScreenInteractor: AddingScreenInteractorInput {
                 break
             }
         })
-
     }
 }

@@ -44,6 +44,19 @@ class RealmManager: RealmManagerProtocol {
         }
     }
     
+    func updateObjects<T>(objects: Array<T>, completion completionBlock: (RealmResult) -> ()) where T: Object {
+        do {
+            try mainRealm.write {
+                mainRealm.add(objects, update: true)
+            }
+            completionBlock(.success)
+        }
+        catch {
+            print("Error during delete operation")
+            completionBlock(.error(error))
+        }
+    }
+    
     func performTransaction(transaction: () -> (), completion completionBlock: (RealmResult) -> ()) {
         do {
             try mainRealm.write {

@@ -8,11 +8,13 @@
 
 enum CRUDResult {
     case success
-    case savingError(error: Error)
-    case updatingError(error: Error)
-    case deletingError(error: Error)
-    case syncError(error: Error)
-    case error(error: Error)
+    case successReading(OperationModel)
+    case savingError(Error)
+    case updatingError(Error)
+    case deletingError(Error)
+    case syncError(Error)
+    case readingError(Error)
+    case error(Error)
 }
 
 protocol OperationsManagerProtocol {
@@ -29,14 +31,9 @@ protocol OperationsManagerProtocol {
     /// Requests operation from server. If there is any difference, updates locally
     ///
     /// - Parameters:
-    ///   - serverId: operation
-    ///   - successCallback: success callback
-    ///   - errorCallback: error callback
-    func readOperation(
-        operation: OperationModel,
-        success successCallback: @escaping (OperationModel) -> Void,
-        error errorCallback: @escaping (CRUDResult) -> Void
-    )
+    ///   - operationClientId: operation client id
+    ///   - completionBlock: result of reading
+    func readOperation(operationClientId: String, completion completionCallback: @escaping (CRUDResult) -> Void)
     
     /// Updates operation and syncs with backend
     ///
