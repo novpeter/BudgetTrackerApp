@@ -17,6 +17,7 @@ enum NetworkAPI {
     case updateOperation(token: String, operation: OperationRequestBody)
     case getOperation(token: String, id: String)
     case getOperations(token: String)
+    case forgotPassword(email: String)
 }
 
 extension NetworkAPI: TargetType {
@@ -43,6 +44,8 @@ extension NetworkAPI: TargetType {
              .createOperation,
              .updateOperation:
             return "/operation"
+        case .forgotPassword(let email):
+            return "/password-recovery/\(email)"
         }
     }
     
@@ -54,7 +57,8 @@ extension NetworkAPI: TargetType {
         case .signIn,
             .signUp,
             .logOut,
-            .createOperation:
+            .createOperation,
+            .forgotPassword:
             return .post
         case .deleteOperation: return .delete
         case .updateOperation: return .put

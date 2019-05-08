@@ -42,8 +42,6 @@ class AuthService: AuthServiceProtocol {
                             completionBlock(.error(error))
                         }
                     })
-                    
-                    
                 }
                 catch let error {
                     completionBlock(.error(error))
@@ -90,7 +88,7 @@ class AuthService: AuthServiceProtocol {
     }
     
     func forgotPassword(email: String) {
-        
+        // TODO: - implemet request
     }
     
     func signUp(name: String, email: String, password: String, completionBlock: @escaping (ResponseResult) -> ()) {
@@ -136,9 +134,7 @@ class AuthService: AuthServiceProtocol {
         }
         
         let userToken = user.sessionToken
-        
-        // TODO: sync all operation
-        
+            
         GIDSignIn.sharedInstance().signOut()
         
         networkManager.request(
