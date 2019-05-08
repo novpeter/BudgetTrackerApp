@@ -9,6 +9,11 @@
 import Foundation
 import RealmSwift
 
+enum RealmResult {
+    case success
+    case error(Error)
+}
+
 protocol RealmManagerProtocol {
         
     /// Return objects by given type
@@ -20,16 +25,16 @@ protocol RealmManagerProtocol {
     /// Save given objects in database
     ///
     /// - Parameter objects: list of objects
-    func saveObjects<T>(objects: Array<T>, errorBlock: (Error?) -> ()) where T : Object
+    func saveObjects<T>(objects: Array<T>, completion completionBlock: (RealmResult) -> ()) where T : Object
     
     /// Delete objects
     ///
     /// - Parameter objects: list of objects
-    func deleteObjects<T>(objects: Array<T>, errorBlock: (Error?) -> ()) where T : Object
+    func deleteObjects<T>(objects: Array<T>, completion completionBlock: (RealmResult) -> ()) where T : Object
     
     /// Perfom given transaction in "write" block
     ///
     /// - Parameter transaction: given transaction
-    func performTransaction(transaction: () -> (), errorBlock: (Error?) -> ())
+    func performTransaction(transaction: () -> (), completion completionBlock: (RealmResult) -> ())
 }
 

@@ -6,6 +6,8 @@
 //  Copyright © 2019 DreamTeam. All rights reserved.
 //
 
+import SCLAlertView
+
 protocol AddingScreenInteractorOutput: AnyObject {
     
     /// Calls presenter to set values in fields
@@ -18,4 +20,18 @@ protocol AddingScreenInteractorOutput: AnyObject {
     
     /// Calls router to close adding screen
     func closeAddingScreen()
+    
+    /// Notifies presenter to call alert
+    ///
+    /// - Parameters:
+    ///   - title: alert title
+    ///   - subTitle: alert subTitle
+    ///   - alertType: alert type
+    func showAlert(title: AlertTitles, subTitle: AlertSubTitles, alertType: SCLAlertViewStyle)
+    
+    /// Calls router to show loading spinner
+    func startLoading()
+    
+    /// Calls router to dismiss loading spinner
+    func stopLoading()
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2019 DreamTeam. All rights reserved.
 //
 
-import Foundation
+import SCLAlertView
 
 class AddingScreenPresenter:
     AddingScreenViewOutput,
@@ -21,8 +21,8 @@ class AddingScreenPresenter:
         interactor.setInitialState()
     }
     
-    func addNewOperation(title: String?, comment: String?, category: String?, date: String?, sum: String?) {
-        interactor.addNewOperation(title: title, comment: comment, category: category, date: date, sum: sum)
+    func addNewOperation(type: Int, title: String?, comment: String?, category: String?, date: String?, sum: String?) {
+        interactor.addNewOperation(type: type, title: title, comment: comment, category: category, date: date, sum: sum)
     }
     
     // MARK: - AddingScreenViewOutput
@@ -35,6 +35,18 @@ class AddingScreenPresenter:
     
     func closeAddingScreen() {
         router.closeAddingScreen()
+    }
+    
+    func showAlert(title: AlertTitles, subTitle: AlertSubTitles, alertType: SCLAlertViewStyle) {
+        router.showAlert(title: title, subTitle: subTitle, type: alertType)
+    }
+    
+    func startLoading() {
+        router.startLoading()
+    }
+    
+    func stopLoading() {
+        router.stopLoading()
     }
     
     // MARK: - AddingScreenRouterOutput

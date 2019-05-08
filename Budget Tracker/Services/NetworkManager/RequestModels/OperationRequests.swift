@@ -31,7 +31,7 @@ struct OperationRequestBody: Codable {
 }
 
 struct OperationRequestModel: Codable {
-    var type: String
+    var type: Int
     var userEmail: String
     var title: String
     var comment: String?
@@ -40,14 +40,14 @@ struct OperationRequestModel: Codable {
     var sum: Double
 
     
-    init(type: String, userEmail: String, title: String, comment: String?, category: String, date: Date, sum: Double) {
-        self.type = type
-        self.userEmail = userEmail
-        self.title = title
-        self.comment = comment
-        self.category = category
-        self.date = date
-        self.sum = sum
+    init(with operation: OperationModel) {
+        type = operation.type
+        userEmail = operation.userEmail
+        title = operation.title
+        comment = operation.comment
+        category = operation.category
+        date = operation.date
+        sum = operation.sum
     }
     
     enum CodingKeys: String, CodingKey {
@@ -73,7 +73,7 @@ struct OperationRequestModel: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        type = try container.decode(String.self, forKey: .type)
+        type = try container.decode(Int.self, forKey: .type)
         userEmail = try container.decode(String.self, forKey: .userEmail)
         title = try container.decode(String.self, forKey: .title)
         comment = try container.decode(String.self, forKey: .comment)

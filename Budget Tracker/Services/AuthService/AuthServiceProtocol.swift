@@ -50,4 +50,11 @@ protocol AuthServiceProtocol {
     ///
     /// - Parameter completionBlock: completion block
     func synchronize(completionBlock: @escaping (ResponseResult) -> ())
+    
+    /// Returns current user
+    ///
+    /// - Parameters:
+    ///   - successCallback: success callback
+    ///   - errorCallback: error callback
+    func getCurrentUser(success successCallback: @escaping (UserModel) -> (), error errorCallback: @escaping (Error) -> ())
 }

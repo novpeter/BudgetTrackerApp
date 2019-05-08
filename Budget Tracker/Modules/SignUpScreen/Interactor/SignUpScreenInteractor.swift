@@ -41,9 +41,9 @@ class SignUpScreenInteractor: SignUpScreenInteractorInput {
         authService.signUp(name: name, email: email, password: password) { result in
             self.presenter.stopLoading()
             switch result {
-            case .Success:
+            case .success:
                 self.presenter.showMainScreen()
-            case .Error(let error):
+            case .error(let error):
                 print("Sign up error: \(error.localizedDescription)")
                 self.presenter.showAlert(title: .genericError, subTitle: .signUpError, alertType: .error)
             }

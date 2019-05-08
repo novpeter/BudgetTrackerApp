@@ -33,9 +33,9 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
         authService.signIn(email: email, password: password) { result in
             self.presenter.stopLoading()
             switch result {
-            case .Success:
+            case .success:
                 self.presenter.showMainScreen()
-            case .Error(let error):
+            case .error(let error):
                 print("Sign in error: \(error.localizedDescription)")
                 self.presenter.showAlert(title: .genericError, subTitle: .signInError, alertType: .error)
             }
@@ -47,9 +47,9 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
         authService.googleSignIn(token: token, email: email, fullName: fullName) { result in
             self.presenter.stopLoading()
             switch result {
-            case .Success:
+            case .success:
                 self.presenter.showMainScreen()
-            case .Error(let error):
+            case .error(let error):
                 print("Sign in error: \(error.localizedDescription)")
                 self.presenter.showAlert(title: .genericError, subTitle: .signInError, alertType: .error)
             }
