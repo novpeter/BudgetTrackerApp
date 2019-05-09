@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class OperationsManager: OperationsManagerProtocol {
     
@@ -14,12 +15,14 @@ class OperationsManager: OperationsManagerProtocol {
     var networkManager: NetworkManagerProtocol!
     var authService: AuthServiceProtocol!
     
-    lazy var dateFormatter: DateFormatter = {
+    private lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         return dateFormatter
     }()
+    
+    private lazy var calendar = Calendar.current
     
     // MARK: - CRUD operations
     
@@ -84,7 +87,7 @@ class OperationsManager: OperationsManagerProtocol {
     
     func readOperation(operationClientId: String, completion completionCallback: @escaping (CRUDResult) -> Void) {
         // 1. Get operation from realm
-        guard let operation = realmManager.getObjects(with: OperationModel.self)?.first(where: { $0.clientId == operationClientId })
+        guard let operation = realmManager.getObjects(with: OperationModel.self).first(where: { $0.clientId == operationClientId })
             else {
                 let error = NSError(
                     domain: "Realm error",
@@ -234,5 +237,17 @@ class OperationsManager: OperationsManagerProtocol {
                 completionCallback(.syncError(error))
             }
         )
+    }
+    
+    
+    // MARK: - Statistic
+    
+    func getOperations(month: Int, year: Int) -> [OperationModel] {
+        let operations = realmManager.getObjects(with: OperationModel.self).filter({ operation -> Bool in
+            let date = operation.date
+            let components = self.calendar.dateComponents([.day, .month, .year], from: date)
+            return components.month == month && components.year == year
+        })
+        return operations
     }
 }

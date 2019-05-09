@@ -14,7 +14,7 @@ class RealmManager: RealmManagerProtocol {
  
     fileprivate lazy var mainRealm: Realm = try! Realm(configuration: .defaultConfiguration)
     
-    func getObjects<T>(with type: T.Type) -> Array<T>? where T : Object {
+    func getObjects<T>(with type: T.Type) -> Array<T> where T : Object {
         return Array(mainRealm.objects(T.self))
     }
     

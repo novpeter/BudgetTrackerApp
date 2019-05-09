@@ -126,7 +126,7 @@ class AuthService: AuthServiceProtocol {
     }
     
     func logOut(completionBlock: @escaping (ResponseResult) -> ()) {
-        guard let user = realmManager.getObjects(with: UserModel.self)?.first
+        guard let user = realmManager.getObjects(with: UserModel.self).first
         else {
             let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Authentication error"])
             completionBlock(.error(error))
@@ -175,6 +175,6 @@ class AuthService: AuthServiceProtocol {
     }
     
     func getCurrentUser() -> UserModel? {
-        return realmManager.getObjects(with: UserModel.self)?.first
+        return realmManager.getObjects(with: UserModel.self).first
     }
 }

@@ -50,7 +50,13 @@ protocol OperationsManagerProtocol {
     func deleteOperation(operation: OperationModel, completion completionCallback: @escaping (CRUDResult) -> Void)
     
     
-    // MARK: - Fetch operations
+    // MARK: - Selection
     
-    // TODO: - implement fetching with date
+    /// Gets operations with given date
+    ///
+    /// - Parameters:
+    ///   - month: month
+    ///   - year: year
+    /// - Returns: array of operations
+    func getOperations(month: Int, year: Int) -> [OperationModel]
 }

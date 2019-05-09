@@ -51,8 +51,6 @@ protocol AuthServiceProtocol {
     /// - Parameter completionBlock: completion block
     func synchronize(completionBlock: @escaping (ResponseResult) -> ())
     
-   
-
     /// Returns current user
     ///
     /// - Returns: current user

@@ -20,7 +20,7 @@ protocol RealmManagerProtocol {
     ///
     /// - Parameter type: type of objects
     /// - Returns: list of objects
-    func getObjects<T>(with type: T.Type) -> Array<T>? where T : Object
+    func getObjects<T>(with type: T.Type) -> Array<T> where T : Object
     
     /// Saves given objects in database
     ///

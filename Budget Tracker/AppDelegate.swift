@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         var viewController: UIViewController
         
-        if (realmManager.getObjects(with: UserModel.self)?.first) != nil {
+        if (realmManager.getObjects(with: UserModel.self).first) != nil {
             viewController = MainScreenAssembly().getViewController()
         }
         else {
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = navigationController
         
-        print("REALM: \(Realm.Configuration.defaultConfiguration.fileURL)\n")
+        print("REALM: \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))\n")
         
         return true
     }
