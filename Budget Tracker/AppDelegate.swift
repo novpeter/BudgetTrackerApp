@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         var viewController: UIViewController
         
-        if (realmManager.getObjects(with: UserModel.self)?.first) != nil {
+        if (realmManager.getObjects(with: UserModel.self).first) != nil {
             viewController = MainScreenAssembly().getViewController()
         }
         else {
@@ -40,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.topItem?.title = " "
         
         window?.rootViewController = navigationController
+        
+        print("REALM: \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))\n")
         
         return true
     }

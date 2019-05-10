@@ -16,10 +16,11 @@ protocol AddingScreenInteractorInput: AnyObject {
     /// validates and creates new operation values
     ///
     /// - Parameters:
+    ///   - type: operation type
     ///   - title: title
     ///   - comment: comment
     ///   - category: operation category
     ///   - date: operation date
     ///   - sum: operation sum
-    func addNewOperation(title: String?, comment: String?, category: String?, date: String?, sum: String?)
+    func addNewOperation(type: Int, title: String?, comment: String?, category: String?, date: String?, sum: String?)
 }

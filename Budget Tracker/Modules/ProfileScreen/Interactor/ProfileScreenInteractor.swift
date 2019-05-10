@@ -18,9 +18,9 @@ class ProfileScreenInteractor: ProfileScreenInteractorInput {
         authService.logOut { result in
             self.presenter.stopLoading()
             switch result {
-            case .Success:
+            case .success:
                 self.presenter.showWelcomeScreen()
-            case .Error(let error):
+            case .error(let error):
                 print("Log out error: \(error.localizedDescription)")
                 self.presenter.showAlert(title: .genericError, subTitle: .logOutError, alertType: .error)
             }
@@ -32,9 +32,9 @@ class ProfileScreenInteractor: ProfileScreenInteractorInput {
         authService.synchronize { result in
             self.presenter.stopLoading()
             switch result {
-            case .Success:
+            case .success:
                 self.presenter.showAlert(title: .done, subTitle: .synchronizeComplete, alertType: .success)
-            case .Error(let error):
+            case .error(let error):
                 print("Sync error: \(error.localizedDescription)")
                 self.presenter.showAlert(title: .genericError, subTitle: .syncError, alertType: .error)
             }

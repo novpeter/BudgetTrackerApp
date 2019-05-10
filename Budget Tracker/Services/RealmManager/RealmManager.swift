@@ -14,46 +14,59 @@ class RealmManager: RealmManagerProtocol {
  
     fileprivate lazy var mainRealm: Realm = try! Realm(configuration: .defaultConfiguration)
     
-    func getObjects<T>(with type: T.Type) -> Array<T>? where T : Object {
+    func getObjects<T>(with type: T.Type) -> Array<T> where T : Object {
         return Array(mainRealm.objects(T.self))
     }
     
-    func saveObjects<T>(objects: Array<T>, errorBlock: (Error?) -> ()) where T: Object {
+    func saveObjects<T>(objects: Array<T>, completion completionBlock: (RealmResult) -> ()) where T: Object {
         do {
             try mainRealm.write {
                 mainRealm.add(objects)
             }
-            errorBlock(nil)
+            completionBlock(.success)
         }
         catch {
             print("Error during save operation")
-            errorBlock(error)
+            completionBlock(.error(error))
         }
     }
     
-    func deleteObjects<T>(objects: Array<T>, errorBlock: (Error?) -> ()) where T: Object {
+    func deleteObjects<T>(objects: Array<T>, completion completionBlock: (RealmResult) -> ()) where T: Object {
         do {
             try mainRealm.write {
                 mainRealm.delete(objects, cascading: true)
             }
-            errorBlock(nil)
+            completionBlock(.success)
         }
         catch {
             print("Error during delete operation")
-            errorBlock(error)
+            completionBlock(.error(error))
         }
     }
     
-    func performTransaction(transaction: () -> (), errorBlock: (Error?) -> ()) {
+    func updateObjects<T>(objects: Array<T>, completion completionBlock: (RealmResult) -> ()) where T: Object {
+        do {
+            try mainRealm.write {
+                mainRealm.add(objects, update: true)
+            }
+            completionBlock(.success)
+        }
+        catch {
+            print("Error during delete operation")
+            completionBlock(.error(error))
+        }
+    }
+    
+    func performTransaction(transaction: () -> (), completion completionBlock: (RealmResult) -> ()) {
         do {
             try mainRealm.write {
                 transaction()
             }
-            errorBlock(nil)
+            completionBlock(.success)
         }
         catch {
             print("Error during perform transaction")
-            errorBlock(error)
+            completionBlock(.error(error))
         }
         
     }

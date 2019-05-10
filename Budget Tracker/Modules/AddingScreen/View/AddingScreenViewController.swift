@@ -113,6 +113,7 @@ class AddingScreenViewController: UIViewController, UITextFieldDelegate {
     func onClickAdd(_ sender: UIButton) {
         sender.pulsate()
         presenter.addNewOperation(
+            type: contentView.operationTypeSegmentedControl.selectedIndex,
             title: contentView.titleTextField.text,
             comment: contentView.commentTextView.text,
             category: contentView.categoryTextField.text,

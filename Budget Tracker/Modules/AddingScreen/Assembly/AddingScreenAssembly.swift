@@ -27,6 +27,15 @@ class AddingScreenAssembly: AddingScreenFactoryProtocol {
         let interactor = AddingScreenInteractor()
         
         let alertManager = AlertManager()
+        let authService = AuthService()
+        let realmManager = RealmManager()
+        let networkManager = NetworkManager()
+        let operationsManager = OperationsManager()
+        
+        authService.realmManager = realmManager
+        operationsManager.authService = authService
+        operationsManager.realmManager = realmManager
+        operationsManager.networkManager = networkManager
         
         view.presenter = presenter
         
@@ -35,6 +44,7 @@ class AddingScreenAssembly: AddingScreenFactoryProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
+        interactor.operationsManager = operationsManager
         
         router.presenter = presenter
         router.alertManager = alertManager
