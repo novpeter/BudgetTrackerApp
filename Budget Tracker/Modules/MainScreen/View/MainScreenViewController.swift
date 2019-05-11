@@ -14,6 +14,8 @@ class MainScreenViewController: UIViewController {
     
     private lazy var contentView = MainScreenView()
     
+    var currentOperations: [OperationModel]!
+    
     override func loadView() {
         super.loadView()
         
@@ -29,6 +31,7 @@ class MainScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationBar()
+        presenter.updateValues(month: contentView.datePicker.month, year: contentView.datePicker.year)
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -36,7 +39,6 @@ class MainScreenViewController: UIViewController {
     }
     
     private func addTargets() {
-        contentView.statisticButton.addTarget(self, action: #selector(onClickStatistic), for: .touchUpInside)
         contentView.profileButton.addTarget(self, action: #selector(onClickProfile), for: .touchUpInside)
         contentView.showAddingScreenButton.addTarget(self, action: #selector(onClickAddOperation), for: .touchUpInside)
     }
@@ -44,7 +46,6 @@ class MainScreenViewController: UIViewController {
     private func configureNavigationBar() {
         navigationController?.navigationBar.barTintColor = BackgroundColors.blue
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: contentView.profileButton)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: contentView.statisticButton)
         navigationItem.titleView = contentView.dateTextField
     }
     
@@ -64,12 +65,6 @@ class MainScreenViewController: UIViewController {
     }
     
     @objc
-    private func onClickStatistic(sender: UIButton) {
-        sender.pulsate()
-        presenter.showStatisticClicked()
-    }
-    
-    @objc
     private func onClickAddOperation(sender: UIButton) {
         sender.pulsate()
         presenter.addOperationClicked()
@@ -81,9 +76,49 @@ class MainScreenViewController: UIViewController {
     @objc
     private func endEditingDateTextField() {
         contentView.dateTextField.endEditing(true)
+        presenter.updateValues(month: contentView.datePicker.month, year: contentView.datePicker.year)
     }
 }
 
 extension MainScreenViewController: MainScreenViewInput {
+    
+    func setValues(income: Double, expense: Double, operations: [OperationModel]) {
+        currentOperations = operations
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            let difference = income - expense
+            self.contentView.incomeLabel.text = String(income)
+            self.contentView.expenseLabel.text = String(expense)
+            self.contentView.differenceTotalLabel.text = String(difference)
+            difference < 0
+                ? (self.contentView.differenceTotalLabel.textColor = .red)
+                : (self.contentView.differenceTotalLabel.textColor = TextColors.green)
+            self.contentView.tableView.reloadData()
+        }
+    }
+}
+
+extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return currentOperations.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = contentView.tableView.dequeueReusableCell(withIdentifier: UIConstants.cellIdentifier) as! OperationCell
+        cell.configure(with: currentOperations[indexPath.row])
+        return cell
+    }
+    
     
 }

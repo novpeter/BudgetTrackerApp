@@ -10,6 +10,9 @@ import UIKit
 
 class MainScreenView: UIView {
     
+    lazy var dateFormatter = DateFormatter()
+    
+    
     // MARK: - Navigation bar
     
     lazy var profileButton: UIButton = {
@@ -19,16 +22,14 @@ class MainScreenView: UIView {
         return profileButton
     }()
     
-    lazy var statisticButton: UIButton = {
-        let statisticButton = UIButton()
-        statisticButton.setImage(UIImage(named: "statisticButtonWhite"), for: .normal)
-        statisticButton.frame = UIConstants.navigationBarButtonFrame
-        return statisticButton
-    }()
-    
     lazy var datePicker: MonthYearPickerView = {
         let picker = MonthYearPickerView()
         picker.backgroundColor = .white
+        picker.onDateSelected = { (month: Int, year: Int) in
+            let months = self.dateFormatter.shortMonthSymbols
+            let monthSymbol = months![month-1]
+            self.dateTextField.text = "\(monthSymbol), \(year)"
+        }
         return picker
     }()
     
@@ -43,9 +44,11 @@ class MainScreenView: UIView {
     
     lazy var dateTextField: UITextField = {
         let textField = UITextField()
+        let months = self.dateFormatter.shortMonthSymbols
+        let monthSymbol = months![datePicker.month-1]
         textField.font = Fonts.poppinsMedium16
         textField.textColor = .white
-        textField.text = "April 2019"
+        textField.text = "\(monthSymbol), \(datePicker.year)"
         textField.textAlignment = .center
         textField.inputAccessoryView = dateToolBar
         textField.inputView = datePicker
@@ -151,6 +154,28 @@ class MainScreenView: UIView {
         return view
     }()
     
+    lazy var lastOperationsLabel: UILabel = {
+        let label = UILabel()
+        label.font = Fonts.poppinsMedium16
+        label.textColor = .black
+        label.text = Titles.lastOperations
+        return label
+    }()
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(OperationCell.self, forCellReuseIdentifier: UIConstants.cellIdentifier)
+        return tableView
+    }()
+    
+    lazy var tableViewStack: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [lastOperationsLabel, tableView])
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 18
+        return stackView
+    }()
+    
     lazy var showAddingScreenButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 32
@@ -193,6 +218,7 @@ class MainScreenView: UIView {
     private func addSubviews() {
         infoView.addSubview(infoStackView)
         scrollView.addSubview(infoView)
+        scrollView.addSubview(tableViewStack)
         addSubview(scrollView)
         addSubview(showAddingScreenButton)
     }
@@ -247,6 +273,20 @@ class MainScreenView: UIView {
         
         differenceStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
+        }
+        
+        lastOperationsLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.height.equalTo(tableView.contentSize.height)
+        }
+        
+        tableViewStack.snp.makeConstraints { make in
+            make.top.equalTo(infoView.snp_bottom).offset(18)
+            make.leading.trailing.bottom.equalToSuperview().inset(18)
         }
     }
 }

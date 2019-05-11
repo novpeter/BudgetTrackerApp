@@ -14,6 +14,7 @@ struct Titles {
     static let statistics = "Statistics"
     static let difference = "Difference:"
     static let showDetailedStatistic = "Show detailed statistic"
+    static let lastOperations = "Last operations"
 }
 
 struct Placeholders {

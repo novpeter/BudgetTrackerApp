@@ -21,17 +21,29 @@ class MainScreenPresenter:
         router.showProfileScreen()
     }
     
-    func showStatisticClicked() {
-        router.showStatisticScreen()
-    }
-    
     func addOperationClicked() {
         router.showAddScreen()
+    }
+    
+    func updateValues(month: Int, year: Int) {
+        interactor.updateValues(month: month, year: year)
     }
     
     // MARK: - MainScreenViewOutput
     
     // MARK: - MainScreenInteractorOutput
+    
+    func setValues(income: Double, expense: Double, operations: [OperationModel]) {
+        view.setValues(income: income, expense: expense, operations: operations)
+    }
+    
+    func startLoading() {
+        router.startLoading()
+    }
+    
+    func stopLoading() {
+        router.stopLoading()
+    }
     
     // MARK: - MainScreenRouterOutput
 }

@@ -13,9 +13,13 @@ protocol MainScreenViewOutput: AnyObject {
     /// Calls presenter to show profile screen
     func showProfileClicked()
     
-    /// Calls presenter to show statistic screen
-    func showStatisticClicked()
-    
     /// Calls presenter to show "Add operation" screen
     func addOperationClicked()
+    
+    /// Calls interactor to get new values (income, expense, operations) for selected time period
+    ///
+    /// - Parameters:
+    ///   - month: selected month
+    ///   - year: selected year
+    func updateValues(month: Int, year: Int)
 }

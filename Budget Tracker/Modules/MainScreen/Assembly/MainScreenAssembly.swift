@@ -29,6 +29,16 @@ class MainScreenAssembly: MainScreenFactoryProtocol {
         let profileAssembly = ProfileScreenAssembly()
         let addingAssembly = AddingScreenAssembly()
         
+        let authService = AuthService()
+        let realmManager = RealmManager()
+        let networkManager = NetworkManager()
+        let operationsManager = OperationsManager()
+        
+        authService.realmManager = realmManager
+        operationsManager.authService = authService
+        operationsManager.realmManager = realmManager
+        operationsManager.networkManager = networkManager
+        
         view.presenter = presenter
         
         presenter.view = view
@@ -36,6 +46,7 @@ class MainScreenAssembly: MainScreenFactoryProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
+        interactor.operationsManager = operationsManager
         
         router.view = view
         router.profileAssembly = profileAssembly

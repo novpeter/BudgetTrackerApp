@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class MainScreenRouter: MainScreenRouterInput {
     
@@ -20,12 +21,16 @@ class MainScreenRouter: MainScreenRouterInput {
         view?.navigationController?.pushViewController(profileViewController, animated: true)
     }
     
-    func showStatisticScreen() {
-        // TODO: - implement statistic screen segue
-    }
-    
     func showAddScreen() {
         let addingScreenViewController = addingAssembly.getViewController()
         view?.navigationController?.pushViewController(addingScreenViewController, animated: true)
+    }
+    
+    func startLoading() {
+        SVProgressHUD.show()
+    }
+    
+    func stopLoading() {
+        SVProgressHUD.dismiss()
     }
 }

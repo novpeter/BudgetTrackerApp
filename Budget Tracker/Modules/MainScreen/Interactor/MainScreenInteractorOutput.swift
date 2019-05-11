@@ -10,4 +10,17 @@ import Foundation
 
 protocol MainScreenInteractorOutput: AnyObject {
     
+    /// Calls view to set values in Main screen
+    ///
+    /// - Parameters:
+    ///   - income: income value
+    ///   - expense: expense value
+    ///   - operations: list of operations
+    func setValues(income: Double, expense: Double, operations: [OperationModel])
+    
+    /// Calls router to show loading spinner
+    func startLoading()
+    
+    /// Calls router to dismiss loading spinner
+    func stopLoading()
 }

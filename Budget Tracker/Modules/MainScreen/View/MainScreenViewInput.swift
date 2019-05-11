@@ -10,4 +10,11 @@ import Foundation
 
 protocol MainScreenViewInput: AnyObject {
     
+    /// Sets income, expense, difference and operations values
+    ///
+    /// - Parameters:
+    ///   - income: income value
+    ///   - expense: expense value
+    ///   - operations: array of operations for given period
+    func setValues(income: Double, expense: Double, operations: [OperationModel])
 }

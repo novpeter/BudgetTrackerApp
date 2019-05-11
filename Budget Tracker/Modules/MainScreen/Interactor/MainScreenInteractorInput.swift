@@ -9,5 +9,11 @@
 import Foundation
 
 protocol MainScreenInteractorInput: AnyObject {
-    
+ 
+    /// Calls operations manager to get operations for given period
+    ///
+    /// - Parameters:
+    ///   - month: selected month
+    ///   - year: selected year
+    func updateValues(month: Int, year: Int)
 }

@@ -32,6 +32,7 @@
 		4B294A78227630ED00AF9697 /* DetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A6C227630ED00AF9697 /* DetailScreenRouter.swift */; };
 		4B294A79227630ED00AF9697 /* DetailScreenRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A6D227630ED00AF9697 /* DetailScreenRouterOutput.swift */; };
 		4B294A7A227630ED00AF9697 /* DetailScreenRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B294A6E227630ED00AF9697 /* DetailScreenRouterInput.swift */; };
+		4B2A5B8F22871489006400CA /* OperationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2A5B8E22871489006400CA /* OperationCell.swift */; };
 		4B47791D225E6D74000E673B /* SignInScreenFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47790D225E6D74000E673B /* SignInScreenFactoryProtocol.swift */; };
 		4B47791E225E6D74000E673B /* SignInScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B47790E225E6D74000E673B /* SignInScreenAssembly.swift */; };
 		4B47791F225E6D74000E673B /* SignInScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B477910225E6D74000E673B /* SignInScreenPresenter.swift */; };
@@ -174,6 +175,7 @@
 		4B294A6C227630ED00AF9697 /* DetailScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenRouter.swift; sourceTree = "<group>"; };
 		4B294A6D227630ED00AF9697 /* DetailScreenRouterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenRouterOutput.swift; sourceTree = "<group>"; };
 		4B294A6E227630ED00AF9697 /* DetailScreenRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailScreenRouterInput.swift; sourceTree = "<group>"; };
+		4B2A5B8E22871489006400CA /* OperationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCell.swift; sourceTree = "<group>"; };
 		4B47790D225E6D74000E673B /* SignInScreenFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenFactoryProtocol.swift; sourceTree = "<group>"; };
 		4B47790E225E6D74000E673B /* SignInScreenAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenAssembly.swift; sourceTree = "<group>"; };
 		4B477910225E6D74000E673B /* SignInScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInScreenPresenter.swift; sourceTree = "<group>"; };
@@ -647,6 +649,7 @@
 			children = (
 				4B4D1FA022608DBA0013D0E6 /* MainScreenViewController.swift */,
 				4BC4491E2271ECA500EE3842 /* MainScreenView.swift */,
+				4B2A5B8E22871489006400CA /* OperationCell.swift */,
 				4B4D1F9E22608DBA0013D0E6 /* MainScreenViewOutput.swift */,
 				4B4D1F9F22608DBA0013D0E6 /* MainScreenViewInput.swift */,
 			);
@@ -656,9 +659,9 @@
 		4B4D1FA122608DBA0013D0E6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				4B4D1FA422608DBA0013D0E6 /* MainScreenInteractor.swift */,
 				4B4D1FA222608DBA0013D0E6 /* MainScreenInteractorOutput.swift */,
 				4B4D1FA322608DBA0013D0E6 /* MainScreenInteractorInput.swift */,
-				4B4D1FA422608DBA0013D0E6 /* MainScreenInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -1215,6 +1218,7 @@
 				4B4D1FAB22608DBA0013D0E6 /* MainScreenPresenter.swift in Sources */,
 				4B4A1F3F225CFD43005D1819 /* WelcomeScreenViewInput.swift in Sources */,
 				4B4A1F3A225CFD43005D1819 /* WelcomeScreenFactoryProtocol.swift in Sources */,
+				4B2A5B8F22871489006400CA /* OperationCell.swift in Sources */,
 				4BF606412269117C00EB7FFB /* ProfileScreenViewInput.swift in Sources */,
 				4BA1D156226C904B0071D35A /* AuthService.swift in Sources */,
 				4B477922225E6D74000E673B /* SignInScreenViewOutput.swift in Sources */,
