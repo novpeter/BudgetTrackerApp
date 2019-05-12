@@ -21,4 +21,9 @@ protocol MainScreenRouterInput: AnyObject {
     
     /// Dismiss loading spinner
     func stopLoading()
+    
+    /// Shows detailed screen
+    ///
+    /// - Parameter operation: selected operation
+    func showDetailScreen(with operation: OperationModel)
 }

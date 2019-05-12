@@ -28,6 +28,7 @@ class MainScreenAssembly: MainScreenFactoryProtocol {
         
         let profileAssembly = ProfileScreenAssembly()
         let addingAssembly = AddingScreenAssembly()
+        let detailAssembly = DetailScreenAssembly()
         
         let authService = AuthService()
         let realmManager = RealmManager()
@@ -51,5 +52,6 @@ class MainScreenAssembly: MainScreenFactoryProtocol {
         router.view = view
         router.profileAssembly = profileAssembly
         router.addingAssembly = addingAssembly
+        router.detailAssembly = detailAssembly
     }
 }

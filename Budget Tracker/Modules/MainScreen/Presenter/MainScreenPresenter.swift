@@ -29,6 +29,10 @@ class MainScreenPresenter:
         interactor.updateValues(month: month, year: year)
     }
     
+    func showDetailScreen(with operation: OperationModel) {
+        router.showDetailScreen(with: operation)
+    }
+    
     // MARK: - MainScreenViewOutput
     
     // MARK: - MainScreenInteractorOutput

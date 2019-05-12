@@ -120,12 +120,21 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contentView.operationsTableView.dequeueReusableCell(withIdentifier: UIConstants.cellIdentifier) as! OperationCell
         cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: CGFloat.greatestFiniteMagnitude)
+        cell.selectionStyle = .none
         cell.directionalLayoutMargins = .zero
         cell.configure(with: currentOperations[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self, let cell = tableView.cellForRow(at: indexPath) as? OperationCell else { return }
+            cell.setSelected(true)
+            self.presenter.showDetailScreen(with: self.currentOperations[indexPath.row])
+            tableView.reloadRows(at: [indexPath], with: .none)
+            tableView.deselectRow(at: indexPath, animated: true)
+            cell.setSelected(false)
+            tableView.reloadRows(at: [indexPath], with: .none)
+        }
     }
 }

@@ -15,6 +15,7 @@ class MainScreenRouter: MainScreenRouterInput {
     var presenter: MainScreenRouterOutput!
     var profileAssembly: ProfileScreenFactoryProtocol!
     var addingAssembly: AddingScreenFactoryProtocol!
+    var detailAssembly: DetailScreenFactoryProtocol!
     
     func showProfileScreen() {
         let profileViewController = profileAssembly.getViewController()
@@ -23,6 +24,11 @@ class MainScreenRouter: MainScreenRouterInput {
     
     func showAddScreen() {
         let addingScreenViewController = addingAssembly.getViewController()
+        view?.navigationController?.pushViewController(addingScreenViewController, animated: true)
+    }
+    
+    func showDetailScreen(with operation: OperationModel) {
+        let addingScreenViewController = detailAssembly.getViewController(with: operation)
         view?.navigationController?.pushViewController(addingScreenViewController, animated: true)
     }
     

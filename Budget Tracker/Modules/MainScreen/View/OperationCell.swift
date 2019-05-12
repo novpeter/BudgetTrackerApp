@@ -64,6 +64,24 @@ class OperationCell: UITableViewCell {
             break
         }
     }
+    
+    func setSelected(_ selected: Bool) {
+        switch selected {
+        case true:
+            content.backgroundColor = BackgroundColors.blue
+            content.titleLabel.textColor = .white
+            content.dateLabel.textColor = .white
+            content.sumLabel.textColor = .white
+        case false:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+                guard let self = self else { return }
+                self.content.backgroundColor = .white
+                self.content.titleLabel.textColor = .black
+                self.content.dateLabel.textColor = .black
+                self.content.sumLabel.textColor = .black
+            }
+        }
+    }
 }
 
 fileprivate class OperationCellView: UIView {

@@ -22,4 +22,9 @@ protocol MainScreenViewOutput: AnyObject {
     ///   - month: selected month
     ///   - year: selected year
     func updateValues(month: Int, year: Int)
+    
+    /// Calls router to show detailed screen
+    ///
+    /// - Parameter operation: selected operation
+    func showDetailScreen(with operation: OperationModel)
 }
