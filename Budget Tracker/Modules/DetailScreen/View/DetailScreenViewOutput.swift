@@ -10,4 +10,8 @@ import Foundation
 
 protocol DetailScreenViewOutput: AnyObject {
     
+    /// Calls interactor to check current operation
+    ///
+    /// - Parameter operationId: current operation id
+    func updateValues(with operationId: String)
 }

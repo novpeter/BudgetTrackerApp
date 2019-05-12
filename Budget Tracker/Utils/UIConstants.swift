@@ -30,6 +30,7 @@ enum Images {
     case expenseTypeIconWhite
     case expenseTypeIconBlack
     case incomeImage
+    case deleteIcon
 
     static func getImage(_ imageName: Images) -> UIImage {
         switch imageName {
@@ -40,6 +41,7 @@ enum Images {
         case .expenseTypeIconWhite: return UIImage(named: "expenseTypeIconWhite") ?? UIImage()
         case .expenseTypeIconBlack: return UIImage(named: "expenseTypeIconBlack") ?? UIImage()
         case .incomeImage: return UIImage(named: "incomeImage") ?? UIImage()
+        case .deleteIcon: return UIImage(named: "deleteButton") ?? UIImage()
         }
     }
 }

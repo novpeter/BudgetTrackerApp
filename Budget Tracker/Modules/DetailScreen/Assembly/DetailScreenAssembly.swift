@@ -11,11 +11,11 @@ import UIKit
 
 class DetailScreenAssembly: DetailScreenFactoryProtocol {
     
-    func getViewController(with operation: OperationModel) -> DetailScreenViewController {
+    func getViewController(with operationId: String) -> DetailScreenViewController {
         
         let viewController = DetailScreenViewController()
         configureModule(with: viewController)
-        viewController.currentOperation = operation
+        viewController.currentOperationId = operationId
         return viewController
     }
     
@@ -27,6 +27,17 @@ class DetailScreenAssembly: DetailScreenFactoryProtocol {
         let router = DetailScreenRouter()
         let interactor = DetailScreenInteractor()
         
+        let alertManager = AlertManager()
+        let authService = AuthService()
+        let realmManager = RealmManager()
+        let networkManager = NetworkManager()
+        let operationsManager = OperationsManager()
+        
+        authService.realmManager = realmManager
+        operationsManager.authService = authService
+        operationsManager.realmManager = realmManager
+        operationsManager.networkManager = networkManager
+        
         view.presenter = presenter
         
         presenter.view = view
@@ -34,5 +45,8 @@ class DetailScreenAssembly: DetailScreenFactoryProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
+        interactor.operationsManager = operationsManager
+        
+        router.alertManager = alertManager
     }
 }

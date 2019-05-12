@@ -10,4 +10,8 @@ import Foundation
 
 protocol DetailScreenInteractorInput: AnyObject {
     
+    /// Sends request to the server to get operation
+    ///
+    /// - Parameter operationId: current operation
+    func updateValues(with operationId: String)
 }

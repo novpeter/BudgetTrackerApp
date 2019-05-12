@@ -10,5 +10,5 @@ import Foundation
 
 protocol DetailScreenFactoryProtocol: AnyObject {
     
-    func getViewController(with operation: OperationModel) -> DetailScreenViewController
+    func getViewController(with operationId: String) -> DetailScreenViewController
 }

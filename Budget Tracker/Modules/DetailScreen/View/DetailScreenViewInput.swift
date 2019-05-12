@@ -10,4 +10,14 @@ import Foundation
 
 protocol DetailScreenViewInput: AnyObject {
     
+    /// Sets values of current operation
+    ///
+    /// - Parameters:
+    ///   - type: operation type
+    ///   - title: operation title
+    ///   - date: operation date
+    ///   - category: operation category
+    ///   - sum: operation sum
+    ///   - comment: operation comment
+    func setValues(type: Int, title: String, date: String, category: Categories, sum: String, comment: String)
 }
