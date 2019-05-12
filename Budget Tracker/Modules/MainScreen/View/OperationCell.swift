@@ -34,7 +34,7 @@ class OperationCell: UITableViewCell {
     private func configureContentView() {
         content.layer.cornerRadius = UIConstants.buttonCornerRadius
         content.layer.borderWidth = UIConstants.buttonBorderWidth
-        content.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        content.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         content.layer.shadowOffset = CGSize(width: 3, height: 10)
         content.layer.shadowOpacity = UIConstants.buttonShadowOpacity
         content.layer.shadowRadius = UIConstants.buttonShadowRadius
@@ -51,9 +51,8 @@ class OperationCell: UITableViewCell {
     
     func configure(with operation: OperationModel) {
         content.titleLabel.text = operation.title
-        print(operation.date.description)
         content.dateLabel.text = dateFormatter.string(from: operation.date)
-        content.sumLabel.text = "\(Int(operation.sum)) \(Currency.rubble)"
+        content.sumLabel.text = "\(String(format: "%.0f", operation.sum)) \(Currency.rubble)"
         
         switch operation.type {
         case 0:

@@ -187,8 +187,9 @@ class MainScreenView: UIView {
         return view
     }()
     
-    lazy var operationsTableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
+    lazy var operationsTableView: OperationTableView = {
+        let tableView = OperationTableView(frame: .zero, style: .plain)
+        tableView.tableFooterView = UIView(frame: .zero)
         return tableView
     }()
     
@@ -255,24 +256,22 @@ class MainScreenView: UIView {
             make.width.equalToSuperview()
         }
         
+        infoView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview()
+            make.top.equalTo(tableHeaderView.snp_top)
+        }
+        
         lastOperationsLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(24)
             make.top.equalTo(infoView.snp_bottom).offset(18)
             make.leading.equalToSuperview().inset(18)
             make.bottom.equalToSuperview().inset(9)
         }
         
-        infoView.snp.makeConstraints { make in
-            make.height.equalTo(160)
-            make.width.equalToSuperview()
-            make.top.equalToSuperview()
-            make.centerX.equalToSuperview()
-        }
-        
         infoStackView.snp.makeConstraints { make in
             make.center.equalTo(infoView)
-            make.top.equalTo(infoView.snp.top).inset(28)
+            make.top.greaterThanOrEqualTo(infoView.snp.top).inset(28)
         }
         
         expenseCurrencyLabel.snp.makeConstraints { make in
@@ -296,8 +295,7 @@ class MainScreenView: UIView {
         }
 
         expenseIcon.snp.makeConstraints { make in
-            make.height.equalTo(incomeIcon)
-            make.width.equalTo(incomeIcon)
+            make.height.width.equalTo(incomeIcon)
         }
         
         expenseStackView.snp.makeConstraints { make in

@@ -123,6 +123,7 @@
 		4BAC0D76227056DA008F7813 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC0D75227056DA008F7813 /* AlertManager.swift */; };
 		4BAC0D78227056EB008F7813 /* AlertManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC0D77227056EB008F7813 /* AlertManagerProtocol.swift */; };
 		4BB6BA4B2288003400E52BF2 /* DetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB6BA4A2288003400E52BF2 /* DetailScreenView.swift */; };
+		4BB6BA4D228826CA00E52BF2 /* OperationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB6BA4C228826CA00E52BF2 /* OperationTableView.swift */; };
 		4BBA5F862268B59800666F36 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F852268B59800666F36 /* NetworkAPI.swift */; };
 		4BBA5F8D2268C4B100666F36 /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F8C2268C4B100666F36 /* UserRequests.swift */; };
 		4BBA5F8F2268C73200666F36 /* OperationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F8E2268C73200666F36 /* OperationRequests.swift */; };
@@ -267,6 +268,7 @@
 		4BAC0D75227056DA008F7813 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		4BAC0D77227056EB008F7813 /* AlertManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManagerProtocol.swift; sourceTree = "<group>"; };
 		4BB6BA4A2288003400E52BF2 /* DetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenView.swift; sourceTree = "<group>"; };
+		4BB6BA4C228826CA00E52BF2 /* OperationTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTableView.swift; sourceTree = "<group>"; };
 		4BBA5F852268B59800666F36 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		4BBA5F8C2268C4B100666F36 /* UserRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequests.swift; sourceTree = "<group>"; };
 		4BBA5F8E2268C73200666F36 /* OperationRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationRequests.swift; sourceTree = "<group>"; };
@@ -652,6 +654,7 @@
 			children = (
 				4B4D1FA022608DBA0013D0E6 /* MainScreenViewController.swift */,
 				4BC4491E2271ECA500EE3842 /* MainScreenView.swift */,
+				4BB6BA4C228826CA00E52BF2 /* OperationTableView.swift */,
 				4B2A5B8E22871489006400CA /* OperationCell.swift */,
 				4B4D1F9E22608DBA0013D0E6 /* MainScreenViewOutput.swift */,
 				4B4D1F9F22608DBA0013D0E6 /* MainScreenViewInput.swift */,
@@ -1206,6 +1209,7 @@
 				4BABA0E3225E203B00CA1E08 /* OperationModel.swift in Sources */,
 				4B294A79227630ED00AF9697 /* DetailScreenRouterOutput.swift in Sources */,
 				4B294A6F227630ED00AF9697 /* DetailScreenFactoryProtocol.swift in Sources */,
+				4BB6BA4D228826CA00E52BF2 /* OperationTableView.swift in Sources */,
 				4B477947225E6DC6000E673B /* SignUpScreenRouterInput.swift in Sources */,
 				4B294A582276306F00AF9697 /* AddingScreenRouterInput.swift in Sources */,
 				4B294A72227630ED00AF9697 /* DetailScreenViewOutput.swift in Sources */,
