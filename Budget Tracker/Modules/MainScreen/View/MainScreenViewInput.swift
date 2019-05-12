@@ -16,5 +16,5 @@ protocol MainScreenViewInput: AnyObject {
     ///   - income: income value
     ///   - expense: expense value
     ///   - operations: array of operations for given period
-    func setValues(income: Double, expense: Double, operations: [OperationModel])
+    func setValues(income: Int, expense: Int, operations: [OperationModel])
 }

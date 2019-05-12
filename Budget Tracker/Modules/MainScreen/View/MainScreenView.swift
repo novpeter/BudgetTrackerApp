@@ -58,6 +58,15 @@ class MainScreenView: UIView {
     
     // MARK: - Components
     
+    lazy var incomeCurrencyLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = Fonts.poppinsBold32
+        label.textAlignment = .center
+        label.text = Currency.rubble
+        return label
+    }()
+    
     lazy var incomeIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "incomeIcon")
@@ -70,16 +79,25 @@ class MainScreenView: UIView {
         label.textColor = .white
         label.font = Fonts.poppinsBold32
         label.textAlignment = .right
-        label.text = MainScreenMock.income
+        label.text = "0.0"
         return label
     }()
     
     lazy var incomeStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [incomeIcon, incomeLabel])
+        let stackView = UIStackView(arrangedSubviews: [incomeIcon, incomeLabel, incomeCurrencyLabel])
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.spacing = 10
         return stackView
+    }()
+    
+    lazy var expenseCurrencyLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = Fonts.poppinsBold32
+        label.textAlignment = .center
+        label.text = Currency.rubble
+        return label
     }()
     
     lazy var expenseIcon: UIImageView = {
@@ -94,12 +112,12 @@ class MainScreenView: UIView {
         label.textColor = .white
         label.font = Fonts.poppinsBold32
         label.textAlignment = .right
-        label.text = MainScreenMock.expense
+        label.text = "0.0"
         return label
     }()
     
     lazy var expenseStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [expenseIcon, expenseLabel])
+        let stackView = UIStackView(arrangedSubviews: [expenseIcon, expenseLabel, expenseCurrencyLabel])
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.spacing = 10
@@ -128,14 +146,14 @@ class MainScreenView: UIView {
         label.textColor = TextColors.green  
         label.font = Fonts.poppinsMedium16
         label.textAlignment = .center
-        label.text = MainScreenMock.difference
+        label.text = "0.0"
         return label
     }()
     
     lazy var differenceStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [differenceLabel, differenceTotalLabel])
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         stackView.spacing = 5
         return stackView
     }()
@@ -159,21 +177,19 @@ class MainScreenView: UIView {
         label.font = Fonts.poppinsMedium16
         label.textColor = .black
         label.text = Titles.lastOperations
+        label.textAlignment = .left
         return label
     }()
     
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(OperationCell.self, forCellReuseIdentifier: UIConstants.cellIdentifier)
-        return tableView
+    lazy var tableHeaderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
     }()
     
-    lazy var tableViewStack: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [lastOperationsLabel, tableView])
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.spacing = 18
-        return stackView
+    lazy var operationsTableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        return tableView
     }()
     
     lazy var showAddingScreenButton: UIButton = {
@@ -187,12 +203,6 @@ class MainScreenView: UIView {
         button.titleLabel?.font = Fonts.poppinsLight48
         button.setTitle("+", for: .normal)
         return button
-    }()
-    
-    lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.backgroundColor = .white
-        return scrollView
     }()
     
     
@@ -217,9 +227,10 @@ class MainScreenView: UIView {
     
     private func addSubviews() {
         infoView.addSubview(infoStackView)
-        scrollView.addSubview(infoView)
-        scrollView.addSubview(tableViewStack)
-        addSubview(scrollView)
+        tableHeaderView.addSubview(infoView)
+        tableHeaderView.addSubview(lastOperationsLabel)
+        operationsTableView.tableHeaderView = tableHeaderView
+        addSubview(operationsTableView)
         addSubview(showAddingScreenButton)
     }
     
@@ -235,19 +246,41 @@ class MainScreenView: UIView {
             make.right.equalTo(self.snp_right).inset(24)
         }
         
-        scrollView.snp.makeConstraints { make in
+        operationsTableView.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
         
+        tableHeaderView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview()
+        }
+        
+        lastOperationsLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.height.equalTo(24)
+            make.top.equalTo(infoView.snp_bottom).offset(18)
+            make.leading.equalToSuperview().inset(18)
+            make.bottom.equalToSuperview().inset(9)
+        }
+        
         infoView.snp.makeConstraints { make in
-            make.top.equalTo(scrollView.snp_top)
-            make.width.equalTo(scrollView)
-            make.centerX.equalTo(scrollView)
+            make.height.equalTo(160)
+            make.width.equalToSuperview()
+            make.top.equalToSuperview()
+            make.centerX.equalToSuperview()
         }
         
         infoStackView.snp.makeConstraints { make in
             make.center.equalTo(infoView)
             make.top.equalTo(infoView.snp.top).inset(28)
+        }
+        
+        expenseCurrencyLabel.snp.makeConstraints { make in
+            make.width.equalTo(22)
+        }
+        
+        incomeCurrencyLabel.snp.makeConstraints { make in
+            make.width.equalTo(expenseCurrencyLabel.snp_width)
         }
 
         incomeExpenseStackView.snp.makeConstraints { make in
@@ -271,22 +304,13 @@ class MainScreenView: UIView {
             make.centerX.equalToSuperview()
         }
         
+        differenceLabel.snp.makeConstraints { make in
+            make.width.equalTo(100)
+        }
+        
         differenceStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
         }
-        
-        lastOperationsLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-        }
-        
-        tableView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.height.equalTo(tableView.contentSize.height)
-        }
-        
-        tableViewStack.snp.makeConstraints { make in
-            make.top.equalTo(infoView.snp_bottom).offset(18)
-            make.leading.trailing.bottom.equalToSuperview().inset(18)
-        }
+
     }
 }

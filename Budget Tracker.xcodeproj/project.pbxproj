@@ -122,6 +122,7 @@
 		4BABA0E3225E203B00CA1E08 /* OperationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BABA0E2225E203B00CA1E08 /* OperationModel.swift */; };
 		4BAC0D76227056DA008F7813 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC0D75227056DA008F7813 /* AlertManager.swift */; };
 		4BAC0D78227056EB008F7813 /* AlertManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAC0D77227056EB008F7813 /* AlertManagerProtocol.swift */; };
+		4BB6BA4B2288003400E52BF2 /* DetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB6BA4A2288003400E52BF2 /* DetailScreenView.swift */; };
 		4BBA5F862268B59800666F36 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F852268B59800666F36 /* NetworkAPI.swift */; };
 		4BBA5F8D2268C4B100666F36 /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F8C2268C4B100666F36 /* UserRequests.swift */; };
 		4BBA5F8F2268C73200666F36 /* OperationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA5F8E2268C73200666F36 /* OperationRequests.swift */; };
@@ -265,6 +266,7 @@
 		4BABA0E2225E203B00CA1E08 /* OperationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationModel.swift; sourceTree = "<group>"; };
 		4BAC0D75227056DA008F7813 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		4BAC0D77227056EB008F7813 /* AlertManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManagerProtocol.swift; sourceTree = "<group>"; };
+		4BB6BA4A2288003400E52BF2 /* DetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenView.swift; sourceTree = "<group>"; };
 		4BBA5F852268B59800666F36 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		4BBA5F8C2268C4B100666F36 /* UserRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequests.swift; sourceTree = "<group>"; };
 		4BBA5F8E2268C73200666F36 /* OperationRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationRequests.swift; sourceTree = "<group>"; };
@@ -380,8 +382,8 @@
 			isa = PBXGroup;
 			children = (
 				4B294A5E227630ED00AF9697 /* Assembly */,
-				4B294A61227630ED00AF9697 /* Presenter */,
 				4B294A63227630ED00AF9697 /* View */,
+				4B294A61227630ED00AF9697 /* Presenter */,
 				4B294A67227630ED00AF9697 /* Interactor */,
 				4B294A6B227630ED00AF9697 /* Router */,
 			);
@@ -408,9 +410,10 @@
 		4B294A63227630ED00AF9697 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4B294A66227630ED00AF9697 /* DetailScreenViewController.swift */,
+				4BB6BA4A2288003400E52BF2 /* DetailScreenView.swift */,
 				4B294A64227630ED00AF9697 /* DetailScreenViewOutput.swift */,
 				4B294A65227630ED00AF9697 /* DetailScreenViewInput.swift */,
-				4B294A66227630ED00AF9697 /* DetailScreenViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1160,6 +1163,7 @@
 				4B477940225E6DC6000E673B /* SignUpScreenViewOutput.swift in Sources */,
 				4B4D1FAA22608DBA0013D0E6 /* MainScreenFactoryProtocol.swift in Sources */,
 				4B5B09CB225BC06C00A10365 /* ColorConstants.swift in Sources */,
+				4BB6BA4B2288003400E52BF2 /* DetailScreenView.swift in Sources */,
 				4B69ECCC2282148200D653F2 /* OperationsManager.swift in Sources */,
 				4B477920225E6D74000E673B /* SignInScreenViewController.swift in Sources */,
 				4B4D1FAF22608DBA0013D0E6 /* MainScreenInteractorOutput.swift in Sources */,

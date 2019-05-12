@@ -16,7 +16,7 @@ protocol MainScreenInteractorOutput: AnyObject {
     ///   - income: income value
     ///   - expense: expense value
     ///   - operations: list of operations
-    func setValues(income: Double, expense: Double, operations: [OperationModel])
+    func setValues(income: Int, expense: Int, operations: [OperationModel])
     
     /// Calls router to show loading spinner
     func startLoading()

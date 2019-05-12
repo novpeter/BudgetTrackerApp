@@ -32,6 +32,6 @@ class MainScreenInteractor: MainScreenInteractorInput {
         }
         
         presenter.stopLoading()
-        presenter.setValues(income: incomeTotal, expense: expenseTotal, operations: operations)
+        presenter.setValues(income: Int(incomeTotal), expense: Int(expenseTotal), operations: operations)
     }
 }

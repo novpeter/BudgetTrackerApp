@@ -33,7 +33,7 @@ class MainScreenPresenter:
     
     // MARK: - MainScreenInteractorOutput
     
-    func setValues(income: Double, expense: Double, operations: [OperationModel]) {
+    func setValues(income: Int, expense: Int, operations: [OperationModel]) {
         view.setValues(income: income, expense: expense, operations: operations)
     }
     

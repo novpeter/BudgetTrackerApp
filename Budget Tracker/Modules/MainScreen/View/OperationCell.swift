@@ -14,6 +14,7 @@ class OperationCell: UITableViewCell {
     
     private lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss +zzzz"
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         return dateFormatter
@@ -41,6 +42,7 @@ class OperationCell: UITableViewCell {
     
     private func configureConstraints() {
         content.snp.makeConstraints { make in
+            make.height.lessThanOrEqualTo(80)
             make.center.equalToSuperview()
             make.top.equalToSuperview().inset(10)
             make.leading.equalToSuperview().inset(18)
@@ -49,8 +51,9 @@ class OperationCell: UITableViewCell {
     
     func configure(with operation: OperationModel) {
         content.titleLabel.text = operation.title
-        content.dateLabel.text = String(describing: dateFormatter.date(from: String(describing: operation.date)))
-        content.sumLabel.text = String(describing: operation.sum)
+        print(operation.date.description)
+        content.dateLabel.text = dateFormatter.string(from: operation.date)
+        content.sumLabel.text = "\(Int(operation.sum)) \(Currency.rubble)"
         
         switch operation.type {
         case 0:
@@ -92,7 +95,7 @@ fileprivate class OperationCellView: UIView {
     
     lazy var sumLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
+        label.text = "0 \(Currency.rubble)"
         label.textColor = .black
         label.font = Fonts.poppinsMedium16
         label.textAlignment = .right
@@ -135,6 +138,7 @@ fileprivate class OperationCellView: UIView {
     // MARK: - Configurating
     
     private func addSubviews() {
+        backgroundColor = .white
         addSubview(mainStackView)
     }
     
@@ -145,8 +149,12 @@ fileprivate class OperationCellView: UIView {
             make.leading.top.equalTo(appearance.mainStackViewInset)
         }
         
+        titleLabel.snp.makeConstraints { make in
+            make.height.equalTo(24)
+        }
+        
         categoryIcon.snp_makeConstraints { make in
-            make.height.width.equalTo(appearance.iconSize)
+            make.height.width.equalTo(mainStackView.snp_height)
         }
         
         sumLabel.snp.makeConstraints { make in
@@ -158,13 +166,13 @@ fileprivate class OperationCellView: UIView {
 extension OperationCellView {
     
     fileprivate struct Appearance {
-        let iconSize: CGFloat = 24
+        let iconSize: CGFloat = 28
         
         let sumMaxWidth: CGFloat = 54
         
-        let textStackViewSpacing: CGFloat = 10
+        let textStackViewSpacing: CGFloat = 1
         
         let mainStackViewSpacing: CGFloat = 20
-        let mainStackViewInset: CGFloat = 20
+        let mainStackViewInset: CGFloat = 18
     }
 }

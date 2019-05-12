@@ -18,13 +18,17 @@ class MainScreenViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        
         view = contentView
         addTargets()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        contentView.operationsTableView.register(OperationCell.self, forCellReuseIdentifier: UIConstants.cellIdentifier)
+        contentView.operationsTableView.delegate = self
+        contentView.operationsTableView.dataSource = self
+        
         configureToolbar()
     }
     
@@ -82,7 +86,7 @@ class MainScreenViewController: UIViewController {
 
 extension MainScreenViewController: MainScreenViewInput {
     
-    func setValues(income: Double, expense: Double, operations: [OperationModel]) {
+    func setValues(income: Int, expense: Int, operations: [OperationModel]) {
         currentOperations = operations
         
         DispatchQueue.main.async { [weak self] in
@@ -90,17 +94,16 @@ extension MainScreenViewController: MainScreenViewInput {
             let difference = income - expense
             self.contentView.incomeLabel.text = String(income)
             self.contentView.expenseLabel.text = String(expense)
-            self.contentView.differenceTotalLabel.text = String(difference)
+            self.contentView.differenceTotalLabel.text = "\(String(difference)) \(Currency.rubble)"
             difference < 0
                 ? (self.contentView.differenceTotalLabel.textColor = .red)
                 : (self.contentView.differenceTotalLabel.textColor = TextColors.green)
-            self.contentView.tableView.reloadData()
+            self.contentView.operationsTableView.reloadData()
         }
     }
 }
 
 extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -115,7 +118,9 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = contentView.tableView.dequeueReusableCell(withIdentifier: UIConstants.cellIdentifier) as! OperationCell
+        let cell = contentView.operationsTableView.dequeueReusableCell(withIdentifier: UIConstants.cellIdentifier) as! OperationCell
+        cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: CGFloat.greatestFiniteMagnitude)
+        cell.directionalLayoutMargins = .zero
         cell.configure(with: currentOperations[indexPath.row])
         return cell
     }
