@@ -11,6 +11,8 @@ import UIKit
 class DetailScreenViewController: UIViewController {
     
     var presenter: DetailScreenViewOutput!
+    var currentOperation: OperationModel!
+    private lazy var contentView = DetailScreenView()
     
     
     override func viewDidLoad() {

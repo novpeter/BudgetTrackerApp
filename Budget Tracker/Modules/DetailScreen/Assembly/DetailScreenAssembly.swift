@@ -11,10 +11,11 @@ import UIKit
 
 class DetailScreenAssembly: DetailScreenFactoryProtocol {
     
-    func getViewController() -> DetailScreenViewController {
+    func getViewController(with operation: OperationModel) -> DetailScreenViewController {
         
         let viewController = DetailScreenViewController()
         configureModule(with: viewController)
+        viewController.currentOperation = operation
         return viewController
     }
     

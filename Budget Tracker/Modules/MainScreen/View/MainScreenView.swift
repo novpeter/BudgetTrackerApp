@@ -10,6 +10,9 @@ import UIKit
 
 class MainScreenView: UIView {
     
+    lazy var dateFormatter = DateFormatter()
+    
+    
     // MARK: - Navigation bar
     
     lazy var profileButton: UIButton = {
@@ -19,16 +22,14 @@ class MainScreenView: UIView {
         return profileButton
     }()
     
-    lazy var statisticButton: UIButton = {
-        let statisticButton = UIButton()
-        statisticButton.setImage(UIImage(named: "statisticButtonWhite"), for: .normal)
-        statisticButton.frame = UIConstants.navigationBarButtonFrame
-        return statisticButton
-    }()
-    
     lazy var datePicker: MonthYearPickerView = {
         let picker = MonthYearPickerView()
         picker.backgroundColor = .white
+        picker.onDateSelected = { (month: Int, year: Int) in
+            let months = self.dateFormatter.shortMonthSymbols
+            let monthSymbol = months![month-1]
+            self.dateTextField.text = "\(monthSymbol), \(year)"
+        }
         return picker
     }()
     
@@ -43,9 +44,11 @@ class MainScreenView: UIView {
     
     lazy var dateTextField: UITextField = {
         let textField = UITextField()
+        let months = self.dateFormatter.shortMonthSymbols
+        let monthSymbol = months![datePicker.month-1]
         textField.font = Fonts.poppinsMedium16
         textField.textColor = .white
-        textField.text = "April 2019"
+        textField.text = "\(monthSymbol), \(datePicker.year)"
         textField.textAlignment = .center
         textField.inputAccessoryView = dateToolBar
         textField.inputView = datePicker
@@ -54,6 +57,15 @@ class MainScreenView: UIView {
     
     
     // MARK: - Components
+    
+    lazy var incomeCurrencyLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = Fonts.poppinsBold32
+        label.textAlignment = .center
+        label.text = Currency.rubble
+        return label
+    }()
     
     lazy var incomeIcon: UIImageView = {
         let imageView = UIImageView()
@@ -67,16 +79,25 @@ class MainScreenView: UIView {
         label.textColor = .white
         label.font = Fonts.poppinsBold32
         label.textAlignment = .right
-        label.text = MainScreenMock.income
+        label.text = "0.0"
         return label
     }()
     
     lazy var incomeStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [incomeIcon, incomeLabel])
+        let stackView = UIStackView(arrangedSubviews: [incomeIcon, incomeLabel, incomeCurrencyLabel])
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.spacing = 10
         return stackView
+    }()
+    
+    lazy var expenseCurrencyLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = Fonts.poppinsBold32
+        label.textAlignment = .center
+        label.text = Currency.rubble
+        return label
     }()
     
     lazy var expenseIcon: UIImageView = {
@@ -91,12 +112,12 @@ class MainScreenView: UIView {
         label.textColor = .white
         label.font = Fonts.poppinsBold32
         label.textAlignment = .right
-        label.text = MainScreenMock.expense
+        label.text = "0.0"
         return label
     }()
     
     lazy var expenseStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [expenseIcon, expenseLabel])
+        let stackView = UIStackView(arrangedSubviews: [expenseIcon, expenseLabel, expenseCurrencyLabel])
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.spacing = 10
@@ -125,14 +146,14 @@ class MainScreenView: UIView {
         label.textColor = TextColors.green  
         label.font = Fonts.poppinsMedium16
         label.textAlignment = .center
-        label.text = MainScreenMock.difference
+        label.text = "0.0"
         return label
     }()
     
     lazy var differenceStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [differenceLabel, differenceTotalLabel])
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         stackView.spacing = 5
         return stackView
     }()
@@ -151,6 +172,27 @@ class MainScreenView: UIView {
         return view
     }()
     
+    lazy var lastOperationsLabel: UILabel = {
+        let label = UILabel()
+        label.font = Fonts.poppinsMedium16
+        label.textColor = .black
+        label.text = Titles.lastOperations
+        label.textAlignment = .left
+        return label
+    }()
+    
+    lazy var tableHeaderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+    
+    lazy var operationsTableView: OperationTableView = {
+        let tableView = OperationTableView(frame: .zero, style: .plain)
+        tableView.tableFooterView = UIView(frame: .zero)
+        return tableView
+    }()
+    
     lazy var showAddingScreenButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 32
@@ -162,12 +204,6 @@ class MainScreenView: UIView {
         button.titleLabel?.font = Fonts.poppinsLight48
         button.setTitle("+", for: .normal)
         return button
-    }()
-    
-    lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.backgroundColor = .white
-        return scrollView
     }()
     
     
@@ -192,8 +228,10 @@ class MainScreenView: UIView {
     
     private func addSubviews() {
         infoView.addSubview(infoStackView)
-        scrollView.addSubview(infoView)
-        addSubview(scrollView)
+        tableHeaderView.addSubview(infoView)
+        tableHeaderView.addSubview(lastOperationsLabel)
+        operationsTableView.tableHeaderView = tableHeaderView
+        addSubview(operationsTableView)
         addSubview(showAddingScreenButton)
     }
     
@@ -209,19 +247,39 @@ class MainScreenView: UIView {
             make.right.equalTo(self.snp_right).inset(24)
         }
         
-        scrollView.snp.makeConstraints { make in
+        operationsTableView.snp.makeConstraints { make in
             make.edges.equalTo(self)
         }
         
+        tableHeaderView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview()
+        }
+        
         infoView.snp.makeConstraints { make in
-            make.top.equalTo(scrollView.snp_top)
-            make.width.equalTo(scrollView)
-            make.centerX.equalTo(scrollView)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview()
+            make.top.equalTo(tableHeaderView.snp_top)
+        }
+        
+        lastOperationsLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(infoView.snp_bottom).offset(18)
+            make.leading.equalToSuperview().inset(18)
+            make.bottom.equalToSuperview().inset(9)
         }
         
         infoStackView.snp.makeConstraints { make in
             make.center.equalTo(infoView)
-            make.top.equalTo(infoView.snp.top).inset(28)
+            make.top.greaterThanOrEqualTo(infoView.snp.top).inset(28)
+        }
+        
+        expenseCurrencyLabel.snp.makeConstraints { make in
+            make.width.equalTo(22)
+        }
+        
+        incomeCurrencyLabel.snp.makeConstraints { make in
+            make.width.equalTo(expenseCurrencyLabel.snp_width)
         }
 
         incomeExpenseStackView.snp.makeConstraints { make in
@@ -237,16 +295,20 @@ class MainScreenView: UIView {
         }
 
         expenseIcon.snp.makeConstraints { make in
-            make.height.equalTo(incomeIcon)
-            make.width.equalTo(incomeIcon)
+            make.height.width.equalTo(incomeIcon)
         }
         
         expenseStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
         }
         
+        differenceLabel.snp.makeConstraints { make in
+            make.width.equalTo(100)
+        }
+        
         differenceStackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
         }
+
     }
 }

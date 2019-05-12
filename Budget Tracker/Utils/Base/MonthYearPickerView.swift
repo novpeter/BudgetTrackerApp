@@ -21,7 +21,7 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
     
     var year = Calendar.current.component(.year, from: Date()) {
         didSet {
-            selectRow(years.index(of: year)!, inComponent: 1, animated: true)
+            selectRow(year - 2000, inComponent: 1, animated: true)
         }
     }
     
@@ -51,8 +51,10 @@ class MonthYearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataS
         self.delegate = self
         self.dataSource = self
         
-        let currentMonth = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.month, from: NSDate() as Date)
-        self.selectRow(currentMonth - 1, inComponent: 0, animated: false)
+        let currentMonth = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.month, from: Date())
+        let currentYear = NSCalendar(identifier: NSCalendar.Identifier.gregorian)!.component(.year, from: Date())
+        self.selectRow(currentMonth - 1, inComponent: 0, animated: true)
+        self.selectRow(currentYear - 2000, inComponent: 1, animated: true)
     }
     
     

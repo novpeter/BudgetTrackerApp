@@ -18,6 +18,8 @@ struct UIConstants {
     static let buttonHeight: CGFloat = 50
     
     static let navigationBarButtonFrame: CGRect = CGRect(x: 0, y: 0, width: 48, height: 34)
+    
+    static let cellIdentifier: String = "cell"
 }
 
 enum Images {
@@ -27,6 +29,7 @@ enum Images {
     case incomeTypeIconBlack
     case expenseTypeIconWhite
     case expenseTypeIconBlack
+    case incomeImage
 
     static func getImage(_ imageName: Images) -> UIImage {
         switch imageName {
@@ -36,6 +39,7 @@ enum Images {
         case .incomeTypeIconBlack: return UIImage(named: "incomeTypeIconBlack") ?? UIImage()
         case .expenseTypeIconWhite: return UIImage(named: "expenseTypeIconWhite") ?? UIImage()
         case .expenseTypeIconBlack: return UIImage(named: "expenseTypeIconBlack") ?? UIImage()
+        case .incomeImage: return UIImage(named: "incomeImage") ?? UIImage()
         }
     }
 }

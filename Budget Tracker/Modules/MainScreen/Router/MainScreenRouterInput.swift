@@ -13,9 +13,17 @@ protocol MainScreenRouterInput: AnyObject {
     /// Shows profile screen
     func showProfileScreen()
     
-    /// Shows statistic screen
-    func showStatisticScreen()
-    
     /// Shows add screen
     func showAddScreen()
+    
+    /// Shows loading spinner
+    func startLoading()
+    
+    /// Dismiss loading spinner
+    func stopLoading()
+    
+    /// Shows detailed screen
+    ///
+    /// - Parameter operation: selected operation
+    func showDetailScreen(with operation: OperationModel)
 }
