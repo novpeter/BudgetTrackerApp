@@ -14,6 +14,12 @@ class AddingScreenViewController: UIViewController, UITextFieldDelegate {
     
     private lazy var contentView = AddingScreenView()
     private lazy var notificationCenter = NotificationCenter.default
+    private lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        return dateFormatter
+    }()
     
     override func loadView() {
         super.loadView()
@@ -147,10 +153,7 @@ class AddingScreenViewController: UIViewController, UITextFieldDelegate {
     func datePickerValueChanged(_ sender: UIDatePicker) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            dateFormatter.timeStyle = .none
-            self.contentView.dateTextField.text = dateFormatter.string(from: sender.date)
+            self.contentView.dateTextField.text = self.dateFormatter.string(from: sender.date)
         }
     }
     

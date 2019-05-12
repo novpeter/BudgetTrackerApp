@@ -12,6 +12,13 @@ class DetailScreenView: UIView {
     
     private let appearance = Appearance()
     
+    private lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        return dateFormatter
+    }()
+    
     // MARK: - Components
     
     lazy var backButton: UIButton = {
@@ -48,6 +55,7 @@ class DetailScreenView: UIView {
         label.textAlignment = .left
         label.textColor = .black
         label.font = Fonts.poppinsMedium20
+        label.text = dateFormatter.string(from: Date())
         return label
     }()
     
@@ -61,6 +69,7 @@ class DetailScreenView: UIView {
     
     lazy var categoryIcon: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = Categories.getCategoryIcon(.other)
         return imageView
     }()
 
@@ -68,6 +77,7 @@ class DetailScreenView: UIView {
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = .black
+        label.text = Titles.other
         label.font = Fonts.poppinsMedium20
         return label
     }()
@@ -94,6 +104,7 @@ class DetailScreenView: UIView {
         label.textAlignment = .right
         label.textColor = .black
         label.font = Fonts.poppinsMedium20
+        label.text = Titles.emptyTotal
         return label
     }()
     
@@ -119,7 +130,7 @@ class DetailScreenView: UIView {
         label.textAlignment = .left
         label.textColor = TextColors.gray
         label.font = Fonts.poppinsRegular16
-        label.text = Titles.comment
+        label.text = Titles.commentText
         return label
     }()
     

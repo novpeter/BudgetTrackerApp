@@ -48,5 +48,7 @@ class DetailScreenAssembly: DetailScreenFactoryProtocol {
         interactor.operationsManager = operationsManager
         
         router.alertManager = alertManager
+        router.presenter = presenter
+        router.view = view
     }
 }

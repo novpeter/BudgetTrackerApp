@@ -14,4 +14,9 @@ protocol DetailScreenViewOutput: AnyObject {
     ///
     /// - Parameter operationId: current operation id
     func updateValues(with operationId: String)
+    
+    /// Calls router to show action sheet
+    ///
+    /// - Parameter operationId: operation id to delete
+    func showDeleteActionSheet(for operationId: String)
 }

@@ -115,12 +115,16 @@ class OperationsManager: OperationsManagerProtocol {
                 do
                 {
                     // 3. Retrieve, compare and update locally
-                    let response = try JSONDecoder().decode(GetOperationResponse.self, from: response.data)
-                    let operationFromServer = response.payload
+                    let response = try JSONDecoder().decode(GetOperationsResponse.self, from: response.data)
+                    guard let operationFromServer = response.payload.first
+                        else {
+                            let error = NSError(domain: "ServerError", code: 404, userInfo: [NSLocalizedDescriptionKey: "No operation with given client id"])
+                            completionCallback(.readSyncError(error, operation))
+                            return
+                    }
                     self.realmManager.performTransaction(
                         transaction: {
-                            operation.clientId = operationFromServer.clientId
-                            operation.serverId = operationFromServer.serverId
+                            operation.serverId = String(operationFromServer.serverId)
                             operation.userEmail = operationFromServer.userEmail
                             operation.type = operationFromServer.type
                             operation.title = operationFromServer.title
@@ -140,11 +144,11 @@ class OperationsManager: OperationsManagerProtocol {
                     )
                 }
                 catch let error {
-                    completionCallback(.syncError(error))
+                    completionCallback(.readSyncError(error, operation))
                 }
             },
             error: { error in
-                completionCallback(.successReading(operation))
+                completionCallback(.readSyncError(error, operation))
             }
         )
     }
@@ -194,8 +198,15 @@ class OperationsManager: OperationsManagerProtocol {
         )
     }
     
-    func deleteOperation(operation: OperationModel, completion completionCallback: @escaping (CRUDResult) -> Void) {
-        let operationClientId =  operation.clientId
+    func deleteOperation(operationId: String, completion completionCallback: @escaping (CRUDResult) -> Void) {
+        let operationClientId =  operationId
+        
+        guard let operation = realmManager.getObjects(with: OperationModel.self).first(where: { $0.clientId == operationClientId })
+            else {
+                let error = NSError(domain: "Realm", code: 100, userInfo: [NSLocalizedDescriptionKey: "No operation with given id"])
+                completionCallback(.deletingError(error))
+                return
+        }
         
         // 1. Delete operation locally
         realmManager.deleteObjects(objects: [operation]) { result in
@@ -239,6 +250,58 @@ class OperationsManager: OperationsManagerProtocol {
         )
     }
     
+    func syncAllOperations(completion completionCallback: @escaping (CRUDResult) -> Void) {
+        // 1. Get current user with session token
+        guard let currentUser = authService.getCurrentUser() else {
+            let error = NSError(
+                domain: "Realm error",
+                code: 400,
+                userInfo: [NSLocalizedDescriptionKey: "Cannot get current user"]
+            )
+            completionCallback(.readingError(error))
+            return
+        }
+        
+        // 2. Find operations without server id and send them to the server
+        // TODO: - Sync all operations
+        
+        // 3. Get all operations from server and save
+        networkManager.request(
+            target: .getOperations(token: currentUser.sessionToken),
+            success: { response in
+                do {
+                    let response = try JSONDecoder().decode(GetOperationsResponse.self, from: response.data)
+                    let operations = response.payload.map({ (operationPayload) -> OperationModel in
+                        let newOperation = OperationModel()
+                        newOperation.clientId = operationPayload.clientId
+                        newOperation.serverId = String(operationPayload.serverId)
+                        newOperation.type = operationPayload.type
+                        newOperation.title = operationPayload.title
+                        newOperation.category = operationPayload.category
+                        newOperation.date = self.dateFormatter.date(from:operationPayload.date) ?? Date()
+                        newOperation.comment = operationPayload.comment
+                        newOperation.sum = operationPayload.sum
+                        return newOperation
+                    })
+                    
+                    self.realmManager.updateObjects(objects: operations, completion: { result in
+                        switch result {
+                        case .success:
+                            break
+                        case .error(let updateError):
+                            completionCallback(.updatingError(updateError))
+                        }
+                    })
+                }
+                catch let error {
+                    completionCallback(.error(error))
+                }
+            },
+            error: { requestError in
+                completionCallback(.error(requestError))
+            }
+        )
+    }
     
     // MARK: - Statistic
     
@@ -250,4 +313,6 @@ class OperationsManager: OperationsManagerProtocol {
         })
         return operations
     }
+    
+    
 }

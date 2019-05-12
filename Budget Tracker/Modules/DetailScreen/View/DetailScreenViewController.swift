@@ -33,7 +33,7 @@ class DetailScreenViewController: UIViewController {
     
     private func addTargets() {
         contentView.backButton.addTarget(self, action: #selector(onClickBack), for: .touchUpInside)
-        contentView.deleteButton.addTarget(self, action: #selector(onClickDelete), for: .valueChanged)
+        contentView.deleteButton.addTarget(self, action: #selector(onClickDelete), for: .touchUpInside)
     }
     
     private func configureNavigationBar() {
@@ -55,7 +55,7 @@ class DetailScreenViewController: UIViewController {
     @objc
     func onClickDelete(_ sender: UIButton) {
         sender.pulsate()
-        
+        presenter.showDeleteActionSheet(for: currentOperationId)
     }
     
 }

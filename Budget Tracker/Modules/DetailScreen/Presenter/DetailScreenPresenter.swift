@@ -21,6 +21,17 @@ class DetailScreenPresenter:
         interactor.updateValues(with: operationId)
     }
     
+    func showDeleteActionSheet(for operationId: String) {
+        router.showDeleteActionSheet { result in
+            switch result {
+            case .delete:
+                self.interactor.deleteOperation(with: operationId)
+            case .cancel:
+                break
+            }
+        }
+    }
+    
     // MARK: - DetailScreenViewOutput
     
     // MARK: - DetailScreenInteractorOutput
@@ -31,6 +42,10 @@ class DetailScreenPresenter:
     
     func showAlert(title: AlertTitles, subTitle: AlertSubTitles, alertType: SCLAlertViewStyle) {
         router.showAlert(title: title, subTitle: subTitle, type: alertType)
+    }
+    
+    func returnToMainScreen() {
+        router.showMainScreen()
     }
     
     func startLoading() {

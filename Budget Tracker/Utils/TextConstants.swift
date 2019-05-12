@@ -18,7 +18,10 @@ struct Titles {
     static let total = "Total"
     static let comment = "Comment"
     static let title = "Title"
+    static let commentText = "Comment text"
     static let income = "Income"
+    static let other = "Other"
+    static let emptyTotal = "0 " + Currency.rubble
 }
 
 struct Placeholders {

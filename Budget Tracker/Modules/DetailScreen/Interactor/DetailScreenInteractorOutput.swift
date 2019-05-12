@@ -29,6 +29,8 @@ protocol DetailScreenInteractorOutput: AnyObject {
     ///   - alertType: alert type
     func showAlert(title: AlertTitles, subTitle: AlertSubTitles, alertType: SCLAlertViewStyle)
     
+    /// Calls router to return back to the main screen
+    func returnToMainScreen()
     
     /// Calls router to show loading spinner
     func startLoading()
