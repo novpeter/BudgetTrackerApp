@@ -12,6 +12,7 @@ class ProfileScreenInteractor: ProfileScreenInteractorInput {
     
     var presenter: ProfileScreenInteractorOutput!
     var authService: AuthServiceProtocol!
+    var operationsManager: OperationsManagerProtocol!
     
     func logOut() {
         presenter.startLoading()
@@ -29,15 +30,24 @@ class ProfileScreenInteractor: ProfileScreenInteractorInput {
     
     func synchronize() {
         presenter.startLoading()
-        authService.synchronize { result in
+        operationsManager.syncUnsetOperations { result in
             self.presenter.stopLoading()
             switch result {
             case .success:
-                self.presenter.showAlert(title: .done, subTitle: .synchronizeComplete, alertType: .success)
-            case .error(let error):
-                print("Sync error: \(error.localizedDescription)")
-                self.presenter.showAlert(title: .genericError, subTitle: .syncError, alertType: .error)
+                self.presenter.showAlert(title: .done, subTitle: .empty, alertType: .success)
+            case .updatingError(let error),
+                 .readingError(let error),
+                 .error(let error):
+                print("Sync unset operations error: \(error.localizedDescription)")
+                self.presenter.showAlert(title: .genericError, subTitle: .genericError, alertType: .error)
+            default:
+                break
             }
         }
+    }
+    
+    func updateValues() {
+        guard let currentUser = authService.getCurrentUser() else { return }
+        presenter.setValues(email: currentUser.email)
     }
 }

@@ -30,6 +30,14 @@ class SignInScreenAssembly: SignInScreenFactoryProtocol {
         let realmManager = RealmManager()
         let authService = AuthService()
         let alertManager = AlertManager()
+        let operationsManager = OperationsManager()
+        
+        operationsManager.authService = authService
+        operationsManager.realmManager = realmManager
+        operationsManager.networkManager = networkManager
+        
+        authService.networkManager = networkManager
+        authService.realmManager = realmManager
         
         view.presenter = presenter
         
@@ -39,8 +47,7 @@ class SignInScreenAssembly: SignInScreenFactoryProtocol {
         
         interactor.presenter = presenter
         interactor.authService = authService
-        authService.networkManager = networkManager
-        authService.realmManager = realmManager
+        interactor.operationsManager = operationsManager
         
         router.presenter = presenter
         router.mainAssembly = MainScreenAssembly()

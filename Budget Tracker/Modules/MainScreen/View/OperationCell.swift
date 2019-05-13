@@ -185,7 +185,7 @@ extension OperationCellView {
     fileprivate struct Appearance {
         let iconSize: CGFloat = 28
         
-        let sumMaxWidth: CGFloat = 54
+        let sumMaxWidth: CGFloat = 74
         
         let textStackViewSpacing: CGFloat = 1
         

@@ -46,11 +46,6 @@ protocol AuthServiceProtocol {
     /// - Parameter completionBlock: completion block
     func logOut(completionBlock: @escaping (ResponseResult) -> ())
     
-    /// Synchronize all data with server
-    ///
-    /// - Parameter completionBlock: completion block
-    func synchronize(completionBlock: @escaping (ResponseResult) -> ())
-    
     /// Returns current user
     ///
     /// - Returns: current user

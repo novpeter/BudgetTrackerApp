@@ -30,8 +30,31 @@ struct OperationRequestBody: Codable {
     }
 }
 
+struct OperationsRequestBody: Codable {
+    var payload: [OperationRequestModel]
+    
+    init(payload: [OperationRequestModel]) {
+        self.payload = payload
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case payload = "Payload"
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(payload, forKey: .payload)
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        payload = try container.decode([OperationRequestModel].self, forKey: .payload)
+    }
+}
+
 struct OperationRequestModel: Codable {
     var type: Int
+    var clientId: String
     var userEmail: String
     var title: String
     var comment: String?
@@ -42,6 +65,7 @@ struct OperationRequestModel: Codable {
     
     init(with operation: OperationModel) {
         type = operation.type
+        clientId = operation.clientId
         userEmail = operation.userEmail
         title = operation.title
         comment = operation.comment
@@ -52,6 +76,7 @@ struct OperationRequestModel: Codable {
     
     enum CodingKeys: String, CodingKey {
         case type = "Type"
+        case clientId = "ClientId"
         case userEmail = "UserEmail"
         case title = "Title"
         case comment = "Comment"
@@ -62,6 +87,7 @@ struct OperationRequestModel: Codable {
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(clientId, forKey: .clientId)
         try container.encode(type, forKey: .type)
         try container.encode(userEmail, forKey: .userEmail)
         try container.encode(title, forKey: .title)
@@ -73,6 +99,7 @@ struct OperationRequestModel: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        clientId = try container.decode(String.self, forKey: .clientId)
         type = try container.decode(Int.self, forKey: .type)
         userEmail = try container.decode(String.self, forKey: .userEmail)
         title = try container.decode(String.self, forKey: .title)

@@ -21,6 +21,11 @@ protocol ProfileScreenInteractorOutput: AnyObject {
     ///   - alertType: alert type
     func showAlert(title: AlertTitles, subTitle: AlertSubTitles, alertType: SCLAlertViewStyle)
     
+    /// Calls view to set values
+    ///
+    /// - Parameter email: user email
+    func setValues(email: String)
+    
     /// Calls router to show loading spinner
     func startLoading()
     

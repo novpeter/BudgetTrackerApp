@@ -10,4 +10,8 @@ import Foundation
 
 protocol ProfileScreenViewInput: AnyObject {
     
+    /// Sets values
+    ///
+    /// - Parameter email: user email
+    func setValues(email: String)
 }

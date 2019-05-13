@@ -30,15 +30,6 @@ class ProfileScreenView: UIView {
         return imageView
     }()
     
-    lazy var fullNameLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.font = Fonts.poppinsBold20
-        label.textColor = .black
-        label.text = "Anton Ivanov"
-        return label
-    }()
-    
     lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -49,7 +40,7 @@ class ProfileScreenView: UIView {
     }()
     
     lazy var infoStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [profileImageView, fullNameLabel, emailLabel])
+        let stackView = UIStackView(arrangedSubviews: [profileImageView, emailLabel])
         stackView.axis = .vertical
         stackView.spacing = 5
         stackView.alignment = .center
@@ -136,10 +127,6 @@ class ProfileScreenView: UIView {
         profileImageView.snp.makeConstraints { make in
             make.height.equalTo(120)
             make.width.lessThanOrEqualTo(120)
-        }
-        
-        fullNameLabel.snp.makeConstraints { make in
-            make.height.equalTo(30)
         }
         
         emailLabel.snp.makeConstraints { make in

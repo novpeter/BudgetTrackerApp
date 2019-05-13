@@ -15,4 +15,7 @@ protocol ProfileScreenInteractorInput: AnyObject {
  
     /// Synchronize all data with server
     func synchronize()
+    
+    /// Fetch user info if needs and calls presenter to set info
+    func updateValues()
 }

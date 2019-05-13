@@ -28,7 +28,7 @@ class MainScreenRouter: MainScreenRouterInput {
     }
     
     func showDetailScreen(with operation: OperationModel) {
-        let addingScreenViewController = detailAssembly.getViewController(with: operation)
+        let addingScreenViewController = detailAssembly.getViewController(with: operation.clientId)
         view?.navigationController?.pushViewController(addingScreenViewController, animated: true)
     }
     

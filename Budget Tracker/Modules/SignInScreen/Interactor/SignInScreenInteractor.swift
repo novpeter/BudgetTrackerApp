@@ -13,6 +13,7 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
     
     var presenter: SignInScreenInteractorOutput!
     var authService: AuthServiceProtocol!
+    var operationsManager: OperationsManagerProtocol!
     
     
     func signIn(email: String?, password: String?) {
@@ -31,12 +32,12 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
         presenter.startLoading()
         
         authService.signIn(email: email, password: password) { result in
-            self.presenter.stopLoading()
             switch result {
             case .success:
-                self.presenter.showMainScreen()
+                self.fetchAllOperations()
             case .error(let error):
                 print("Sign in error: \(error.localizedDescription)")
+                self.presenter.stopLoading()
                 self.presenter.showAlert(title: .genericError, subTitle: .signInError, alertType: .error)
             }
         }
@@ -45,13 +46,29 @@ class SignInScreenInteractor: SignInScreenInteractorInput {
     func googleSignIn(token: String, email: String, fullName: String) {
         presenter.startLoading()
         authService.googleSignIn(token: token, email: email, fullName: fullName) { result in
-            self.presenter.stopLoading()
             switch result {
             case .success:
-                self.presenter.showMainScreen()
+                self.fetchAllOperations()
             case .error(let error):
                 print("Sign in error: \(error.localizedDescription)")
+                self.presenter.stopLoading()
                 self.presenter.showAlert(title: .genericError, subTitle: .signInError, alertType: .error)
+            }
+        }
+    }
+    
+    private func fetchAllOperations() {
+        operationsManager.fetchAllOperations { result in
+            self.presenter.stopLoading()
+            switch result {
+            case .success,
+                 .parseError,
+                 .error:
+                self.presenter.showMainScreen()
+            case .readingError(let error):
+                print("Reading error: \(error.localizedDescription)")
+            default:
+                break
             }
         }
     }

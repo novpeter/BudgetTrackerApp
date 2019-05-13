@@ -9,12 +9,15 @@
 enum CRUDResult {
     case success
     case successReading(OperationModel)
+    case successReadingAll([OperationModel])
     case savingError(Error)
     case updatingError(Error)
     case deletingError(Error)
     case syncError(Error)
     case readingError(Error)
+    case readSyncError(Error, OperationModel)
     case error(Error)
+    case parseError(Error)
 }
 
 protocol OperationsManagerProtocol {
@@ -45,12 +48,25 @@ protocol OperationsManagerProtocol {
     /// Deletes operation and syncs with backend
     ///
     /// - Parameters:
-    ///   - opeartion: operation to delete
+    ///   - operationId: operation with id to delete
     ///   - errorCallback: error of deleting
-    func deleteOperation(operation: OperationModel, completion completionCallback: @escaping (CRUDResult) -> Void)
+    func deleteOperation(operationId: String, completion completionCallback: @escaping (CRUDResult) -> Void)
     
     
-    // MARK: - Selection
+    // MARK: - Synchronization
+    
+    /// Sends all unset operations to the server
+    ///
+    /// - Parameter completionCallback: completion callback
+    func syncUnsetOperations(completion completionCallback: @escaping (CRUDResult) -> Void)
+    
+    /// Fetches operations from the server. Used when logging in to the application
+    ///
+    /// - Parameter completionCallback: completion callback
+    func fetchAllOperations(completion completionCallback: @escaping (CRUDResult) -> Void)
+    
+    
+    // MARK: - Statistic
     
     /// Gets operations with given date
     ///

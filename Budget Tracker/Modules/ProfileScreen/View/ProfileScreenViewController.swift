@@ -24,6 +24,7 @@ class ProfileScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationBar()
+        presenter.updateValues()
     }
     
     private func addTargets() {
@@ -60,4 +61,10 @@ class ProfileScreenViewController: UIViewController {
 
 extension ProfileScreenViewController: ProfileScreenViewInput {
     
+    func setValues(email: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.contentView.emailLabel.text = email
+        }
+    }
 }

@@ -249,15 +249,15 @@ class AddingScreenView: UIView {
 extension AddingScreenView {
     
     fileprivate struct Appearance {
-        let stackViewSpacing: CGFloat = 16
+        var stackViewSpacing: CGFloat { get { return 16 } }
         
-        let mainStackViewVerticalConstraint = 32
-        let mainStackViewHorizontalConstraint = 40
-        let mainStackViewSpacing: CGFloat = 28
+        var mainStackViewVerticalConstraint: CGFloat { get { return 32 } }
+        var mainStackViewHorizontalConstraint: CGFloat{ get { return 40 } }
+        var mainStackViewSpacing: CGFloat { get { return 28 } }
         
-        let iconSize = 24
+        var iconSize: Int { get { return 24 } }
         
-        let commentTextViewHeight: CGFloat = 70
+        var commentTextViewHeight: CGFloat { get { return 70 } }
     }
 }
 

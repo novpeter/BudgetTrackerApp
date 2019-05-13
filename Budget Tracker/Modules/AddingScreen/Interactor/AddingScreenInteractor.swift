@@ -14,6 +14,7 @@ class AddingScreenInteractor: AddingScreenInteractorInput {
     var presenter: AddingScreenInteractorOutput!
     var authService: AuthServiceProtocol!
     var operationsManager: OperationsManagerProtocol!
+    var realmManager: RealmManagerProtocol!
     
     lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -44,9 +45,15 @@ class AddingScreenInteractor: AddingScreenInteractorInput {
         
         presenter.startLoading()
         
+        guard let user = realmManager.getObjects(with: UserModel.self).first else {
+            presenter.stopLoading()
+            return
+        }
+        
         // 1. Create operation
         let operation = OperationModel()
         operation.title = title
+        operation.userEmail = user.email
         operation.comment = comment == Placeholders.comment ? String() : comment ?? String()
         operation.date = date
         operation.type = type

@@ -31,6 +31,12 @@ class ProfileScreenAssembly: ProfileScreenFactoryProtocol {
         let networkManager = NetworkManager()
         let authService = AuthService()
         let alertManager = AlertManager()
+        let operationsManager = OperationsManager()
+        
+        authService.realmManager = realmManager
+        operationsManager.authService = authService
+        operationsManager.realmManager = realmManager
+        operationsManager.networkManager = networkManager
         
         view.presenter = presenter
         
@@ -39,6 +45,7 @@ class ProfileScreenAssembly: ProfileScreenFactoryProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
+        interactor.operationsManager = operationsManager
         interactor.authService = authService
         authService.realmManager = realmManager
         authService.networkManager = networkManager

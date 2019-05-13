@@ -101,7 +101,7 @@ struct GetOperationResponse: Codable {
 }
 
 struct OperationPayload: Codable {
-    var serverId: String
+    var serverId: Int
     var clientId: String
     var userEmail: String
     var type: Int
@@ -138,7 +138,7 @@ struct OperationPayload: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        serverId = try container.decode(String.self, forKey: .serverId)
+        serverId = try container.decode(Int.self, forKey: .serverId)
         clientId = try container.decode(String.self, forKey: .clientId)
         userEmail = try container.decode(String.self, forKey: .userEmail)
         type = try container.decode(Int.self, forKey: .type)

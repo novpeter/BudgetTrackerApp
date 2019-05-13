@@ -11,8 +11,9 @@ import Moya
 enum NetworkAPI {
     case signIn(body: SignInRequestBody)
     case signUp(body: SignUpRequestBody)
-    case logOut(token: String)
+    case logOut(token: String, operations: OperationsRequestBody)
     case createOperation(token: String, operation: OperationRequestBody)
+    case syncUnsetOperations(token: String, operations: OperationsRequestBody)
     case deleteOperation(token: String, id: String)
     case updateOperation(token: String, operation: OperationRequestBody)
     case getOperation(token: String, id: String)
@@ -40,10 +41,13 @@ extension NetworkAPI: TargetType {
             return "/user/log-out"
         case .deleteOperation(_, let id),
              .getOperation(_, let id): return "/operation/\(id)"
-        case .getOperations,
-             .createOperation,
+        case .getOperations:
+            return "/operation/all"
+        case .createOperation,
              .updateOperation:
             return "/operation"
+        case .syncUnsetOperations(_, _):
+            return "/operation/sync"
         case .forgotPassword(let email):
             return "/password-recovery/\(email)"
         }
@@ -58,6 +62,7 @@ extension NetworkAPI: TargetType {
             .signUp,
             .logOut,
             .createOperation,
+            .syncUnsetOperations,
             .forgotPassword:
             return .post
         case .deleteOperation: return .delete
@@ -75,9 +80,13 @@ extension NetworkAPI: TargetType {
              return .requestJSONEncodable(body)
         case .signUp(let body):
              return .requestJSONEncodable(body)
+        case .logOut(_, let body):
+            return .requestJSONEncodable(body)
         case .createOperation(_, let body):
             return .requestJSONEncodable(body)
         case .updateOperation(_, let body):
+            return .requestJSONEncodable(body)
+        case .syncUnsetOperations(_, let body):
             return .requestJSONEncodable(body)
         default:
             return .requestPlain
@@ -86,8 +95,9 @@ extension NetworkAPI: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .logOut(let token),
+        case .logOut(let token, _),
             .createOperation(let token, _),
+            .syncUnsetOperations(let token, _),
             .deleteOperation(let token, _),
             .updateOperation(let token, _),
             .getOperation(let token, _),
