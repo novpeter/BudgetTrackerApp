@@ -21,11 +21,8 @@ class ProfileScreenView: UIView {
     
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.borderWidth = 0.15
         imageView.layer.masksToBounds = false
-        imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.cornerRadius = imageView.frame.height/2
-        imageView.clipsToBounds = true
         imageView.image = UIImage(named: "profilePlaceholder")
         return imageView
     }()
@@ -34,15 +31,15 @@ class ProfileScreenView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = Fonts.poppinsMedium16
-        label.textColor = TextColors.gray
-        label.text = "petkacool1@gmail.com"
+        label.textColor = .black
+        label.text = "example@gmail.com"
         return label
     }()
     
     lazy var infoStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [profileImageView, emailLabel])
         stackView.axis = .vertical
-        stackView.spacing = 5
+        stackView.spacing = 10
         stackView.alignment = .center
         stackView.distribution = .equalSpacing
         return stackView

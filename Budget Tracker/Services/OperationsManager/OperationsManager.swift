@@ -15,13 +15,6 @@ class OperationsManager: OperationsManagerProtocol {
     var networkManager: NetworkManagerProtocol!
     var authService: AuthServiceProtocol!
     
-    private lazy var dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        return dateFormatter
-    }()
-    
     private lazy var calendar = Calendar.current
     
     // MARK: - CRUD operations
@@ -128,7 +121,7 @@ class OperationsManager: OperationsManagerProtocol {
                             operation.title = operationFromServer.title
                             operation.comment = operationFromServer.comment
                             operation.category = operationFromServer.category
-                            operation.date = self.dateFormatter.date(from: operationFromServer.date) ?? Date()
+                            operation.date = Date(timeIntervalSinceReferenceDate: Double(operationFromServer.date)!)
                             operation.sum = operationFromServer.sum
                         },
                         completion: { result in
@@ -286,7 +279,7 @@ class OperationsManager: OperationsManagerProtocol {
                         newOperation.type = operationPayload.type
                         newOperation.title = operationPayload.title
                         newOperation.category = operationPayload.category
-                        newOperation.date = self.dateFormatter.date(from:operationPayload.date) ?? Date()
+                        newOperation.date = Date(timeIntervalSinceReferenceDate: Double(operationPayload.date)!)
                         newOperation.comment = operationPayload.comment
                         newOperation.sum = operationPayload.sum
                         return newOperation
@@ -337,7 +330,7 @@ class OperationsManager: OperationsManagerProtocol {
                         newOperation.type = operationPayload.type
                         newOperation.title = operationPayload.title
                         newOperation.category = operationPayload.category
-                        newOperation.date = self.dateFormatter.date(from:operationPayload.date) ?? Date()
+                        newOperation.date = Date(timeIntervalSinceReferenceDate: Double(operationPayload.date)!)
                         newOperation.comment = operationPayload.comment
                         newOperation.sum = operationPayload.sum
                         return newOperation
