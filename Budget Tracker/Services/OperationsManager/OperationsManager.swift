@@ -57,12 +57,10 @@ class OperationsManager: OperationsManagerProtocol {
                     // 3. Retrieve server id and user email
                     let response = try JSONDecoder().decode(AddingResponse.self, from: response.data)
                     let serverId = response.payload.serverId
-                    let userEmail = response.payload.userEmail
                     
                     // 4. Set it
                     self.realmManager.performTransaction(
                         transaction: {
-                            operation.userEmail = userEmail
                             operation.serverId = serverId
                         },
                         completion: { result in
@@ -250,8 +248,18 @@ class OperationsManager: OperationsManagerProtocol {
         )
     }
     
-    func syncAllOperations(completion completionCallback: @escaping (CRUDResult) -> Void) {
-        // 1. Get current user with session token
+    
+    // MARK: - Synchronize
+    
+    func syncUnsetOperations(completion completionCallback: @escaping (CRUDResult) -> Void) {
+        // 1. Get all unset operations
+        let unsetOperations = realmManager.getObjects(with: OperationModel.self).filter({ $0.serverId.isEmpty })
+        
+        if unsetOperations.isEmpty {
+            completionCallback(.success)
+            return
+        }
+        
         guard let currentUser = authService.getCurrentUser() else {
             let error = NSError(
                 domain: "Realm error",
@@ -262,12 +270,11 @@ class OperationsManager: OperationsManagerProtocol {
             return
         }
         
-        // 2. Find operations without server id and send them to the server
-        // TODO: - Sync all operations
+        let operationsRequestBody = OperationsRequestBody(payload: unsetOperations.map({ OperationRequestModel(with: $0) }))
         
-        // 3. Get all operations from server and save
+        // 2. Send it to the server
         networkManager.request(
-            target: .getOperations(token: currentUser.sessionToken),
+            target: .syncUnsetOperations(token: currentUser.sessionToken, operations: operationsRequestBody),
             success: { response in
                 do {
                     let response = try JSONDecoder().decode(GetOperationsResponse.self, from: response.data)
@@ -275,6 +282,7 @@ class OperationsManager: OperationsManagerProtocol {
                         let newOperation = OperationModel()
                         newOperation.clientId = operationPayload.clientId
                         newOperation.serverId = String(operationPayload.serverId)
+                        newOperation.userEmail = operationPayload.userEmail
                         newOperation.type = operationPayload.type
                         newOperation.title = operationPayload.title
                         newOperation.category = operationPayload.category
@@ -287,14 +295,14 @@ class OperationsManager: OperationsManagerProtocol {
                     self.realmManager.updateObjects(objects: operations, completion: { result in
                         switch result {
                         case .success:
-                            break
+                            completionCallback(.success)
                         case .error(let updateError):
                             completionCallback(.updatingError(updateError))
                         }
                     })
                 }
-                catch let error {
-                    completionCallback(.error(error))
+                catch let parseError {
+                    completionCallback(.parseError(parseError))
                 }
             },
             error: { requestError in
@@ -302,6 +310,58 @@ class OperationsManager: OperationsManagerProtocol {
             }
         )
     }
+    
+    func fetchAllOperations(completion completionCallback: @escaping (CRUDResult) -> Void) {
+        // 1. Get current user with session token
+        guard let currentUser = authService.getCurrentUser() else {
+            let error = NSError(
+                domain: "Realm error",
+                code: 400,
+                userInfo: [NSLocalizedDescriptionKey: "Cannot get current user"]
+            )
+            completionCallback(.readingError(error))
+            return
+        }
+        
+        // 2. Fetch all operations from server and save
+        networkManager.request(
+            target: .getOperations(token: currentUser.sessionToken),
+            success: { response in
+                do {
+                    let response = try JSONDecoder().decode(GetOperationsResponse.self, from: response.data)
+                    let operations = response.payload.map({ (operationPayload) -> OperationModel in
+                        let newOperation = OperationModel()
+                        newOperation.clientId = operationPayload.clientId
+                        newOperation.serverId = String(operationPayload.serverId)
+                        newOperation.userEmail = operationPayload.userEmail
+                        newOperation.type = operationPayload.type
+                        newOperation.title = operationPayload.title
+                        newOperation.category = operationPayload.category
+                        newOperation.date = self.dateFormatter.date(from:operationPayload.date) ?? Date()
+                        newOperation.comment = operationPayload.comment
+                        newOperation.sum = operationPayload.sum
+                        return newOperation
+                    })
+                    
+                    self.realmManager.updateObjects(objects: operations, completion: { result in
+                        switch result {
+                        case .success:
+                            completionCallback(.success)
+                        case .error(let updateError):
+                            completionCallback(.updatingError(updateError))
+                        }
+                    })
+                }
+                catch let parseError {
+                    completionCallback(.parseError(parseError))
+                }
+            },
+            error: { requestError in
+                completionCallback(.error(requestError))
+            }
+        )
+    }
+    
     
     // MARK: - Statistic
     

@@ -44,6 +44,7 @@ class AddingScreenAssembly: AddingScreenFactoryProtocol {
         presenter.router = router
         
         interactor.presenter = presenter
+        interactor.realmManager = realmManager
         interactor.operationsManager = operationsManager
         
         router.presenter = presenter

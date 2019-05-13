@@ -15,4 +15,7 @@ protocol ProfileScreenViewOutput: AnyObject {
     
     /// Log out button was clicked
     func logOutButtonClicked()
+    
+    /// Calls interactor to update user info
+    func updateValues()
 }

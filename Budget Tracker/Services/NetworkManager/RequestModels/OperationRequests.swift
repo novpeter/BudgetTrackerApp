@@ -30,6 +30,28 @@ struct OperationRequestBody: Codable {
     }
 }
 
+struct OperationsRequestBody: Codable {
+    var payload: [OperationRequestModel]
+    
+    init(payload: [OperationRequestModel]) {
+        self.payload = payload
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case payload = "Payload"
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(payload, forKey: .payload)
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        payload = try container.decode([OperationRequestModel].self, forKey: .payload)
+    }
+}
+
 struct OperationRequestModel: Codable {
     var type: Int
     var clientId: String

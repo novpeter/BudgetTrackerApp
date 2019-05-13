@@ -16,7 +16,7 @@ class MainScreenInteractor: MainScreenInteractorInput {
     func updateValues(month: Int, year: Int) {
         presenter.startLoading()
         
-        let operations = operationsManager.getOperations(month: month, year: year)
+        let operations = operationsManager.getOperations(month: month, year: year).sorted(by: { $0.date > $1.date })
         var incomeTotal: Double = 0
         var expenseTotal: Double = 0
         for operation in operations {

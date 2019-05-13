@@ -25,7 +25,10 @@ class ProfileScreenPresenter:
         interactor.logOut()
     }
     
-    // MARK: - ProfileScreenViewOutput
+    func updateValues() {
+        interactor.updateValues()
+    }
+    
     
     // MARK: - ProfileScreenInteractorOutput
     
@@ -37,6 +40,10 @@ class ProfileScreenPresenter:
         router.showAlert(title: title, subTitle: subTitle, type: alertType)
     }
     
+    func setValues(email: String) {
+        view.setValues(email: email)
+    }
+    
     func startLoading() {
         router.startLoading()
     }
@@ -45,5 +52,4 @@ class ProfileScreenPresenter:
         router.stopLoading()
     }
     
-    // MARK: - ProfileScreenRouterOutput
 }

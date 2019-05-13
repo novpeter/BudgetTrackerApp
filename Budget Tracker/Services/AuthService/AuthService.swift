@@ -128,22 +128,25 @@ class AuthService: AuthServiceProtocol {
     func logOut(completionBlock: @escaping (ResponseResult) -> ()) {
         guard let user = realmManager.getObjects(with: UserModel.self).first
         else {
-            let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Authentication error"])
+            let error = NSError(domain: "Realm", code: 0, userInfo: [NSLocalizedDescriptionKey: "No objects"])
             completionBlock(.error(error))
             return
         }
         
+        let operations = realmManager.getObjects(with: OperationModel.self)
+        let unsetOperations = operations.filter({ $0.serverId.isEmpty })
+        let operationsReguestBody = OperationsRequestBody(payload: unsetOperations.map({ OperationRequestModel(with: $0)}))
         let userToken = user.sessionToken
             
         GIDSignIn.sharedInstance().signOut()
         
         networkManager.request(
-            target: .logOut(token: userToken),
+            target: .logOut(token: userToken, operations: operationsReguestBody),
             success: { response in
                 do
                 {
                     if  (200...300).contains(response.statusCode) {
-                        self.realmManager.deleteObjects(objects: [user], completion: { result in
+                        self.realmManager.deleteObjects(objects: [user] + operations, completion: { result in
                             switch result {
                             case .success:
                                 completionBlock(.success)
@@ -167,11 +170,6 @@ class AuthService: AuthServiceProtocol {
                 completionBlock(.error(error))
             }
         )
-    }
-    
-    func synchronize(completionBlock: @escaping (ResponseResult) -> ()) {
-        // TODO: - sync all data
-        completionBlock(.success)
     }
     
     func getCurrentUser() -> UserModel? {
