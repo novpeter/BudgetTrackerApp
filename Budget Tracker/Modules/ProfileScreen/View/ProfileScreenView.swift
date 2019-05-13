@@ -21,9 +21,7 @@ class ProfileScreenView: UIView {
     
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.borderWidth = 0.15
         imageView.layer.masksToBounds = false
-        imageView.layer.borderColor = UIColor.black.cgColor
         imageView.layer.cornerRadius = imageView.frame.height/2
         imageView.clipsToBounds = true
         imageView.image = UIImage(named: "profilePlaceholder")
@@ -34,8 +32,8 @@ class ProfileScreenView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = Fonts.poppinsMedium16
-        label.textColor = TextColors.gray
-        label.text = "petkacool1@gmail.com"
+        label.textColor = .black
+        label.text = "example@gmail.com"
         return label
     }()
     
@@ -125,8 +123,7 @@ class ProfileScreenView: UIView {
         })
         
         profileImageView.snp.makeConstraints { make in
-            make.height.equalTo(120)
-            make.width.lessThanOrEqualTo(120)
+            make.height.width.equalTo(120)
         }
         
         emailLabel.snp.makeConstraints { make in

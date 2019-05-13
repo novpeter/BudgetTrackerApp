@@ -183,12 +183,14 @@ class MainScreenView: UIView {
     
     lazy var tableHeaderView: UIView = {
         let view = UIView()
+        view.clipsToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         return view
     }()
     
-    lazy var operationsTableView: OperationTableView = {
-        let tableView = OperationTableView(frame: .zero, style: .plain)
+    lazy var operationsTableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.tableFooterView = UIView(frame: .zero)
         return tableView
     }()

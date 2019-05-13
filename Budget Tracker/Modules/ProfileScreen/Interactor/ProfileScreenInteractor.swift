@@ -31,13 +31,27 @@ class ProfileScreenInteractor: ProfileScreenInteractorInput {
     func synchronize() {
         presenter.startLoading()
         operationsManager.syncUnsetOperations { result in
-            self.presenter.stopLoading()
             switch result {
             case .success:
-                self.presenter.showAlert(title: .done, subTitle: .empty, alertType: .success)
+                self.operationsManager.fetchAllOperations(completion: { fetchResult in
+                    self.presenter.stopLoading()
+                    switch fetchResult {
+                    case .success:
+                        self.presenter.showAlert(title: .done, subTitle: .empty, alertType: .success)
+                    case .updatingError(let error),
+                         .readingError(let error),
+                         .error(let error):
+                        self.presenter.stopLoading()
+                        print("Sync unset operations error: \(error.localizedDescription)")
+                        self.presenter.showAlert(title: .genericError, subTitle: .genericError, alertType: .error)
+                    default:
+                        break
+                    }
+                })
             case .updatingError(let error),
                  .readingError(let error),
                  .error(let error):
+                self.presenter.stopLoading()
                 print("Sync unset operations error: \(error.localizedDescription)")
                 self.presenter.showAlert(title: .genericError, subTitle: .genericError, alertType: .error)
             default:

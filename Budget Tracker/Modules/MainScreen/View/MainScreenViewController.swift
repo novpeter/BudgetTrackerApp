@@ -9,7 +9,7 @@
 import UIKit
 
 class MainScreenViewController: UIViewController {
-    
+
     var presenter: MainScreenViewOutput!
     
     private lazy var contentView = MainScreenView()
@@ -137,4 +137,22 @@ extension MainScreenViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
+}
+
+extension MainScreenViewController: UIScrollViewDelegate {
+    
+//    override func updateViewConstraints() {
+//        super.updateViewConstraints()
+//    }
+//    
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let header = contentView.tableHeaderView.subviews.first!
+//        let tableView = contentView.operationsTableView
+//        if tableView.contentOffset.y < 0.0 {
+//            header.snp.makeConstraints { make in
+//                make.height.equalTo(header.bounds.height - tableView.contentOffset.y)
+//            }
+//            header.needsUpdateConstraints()
+//        }
+//    }
 }
